@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Norsk inflasjon historisk – fra 1960 til i dag | inflasjonskalkulator.no</title>
+<meta name="description" content="Se hvordan norsk inflasjon har utviklet seg fra 1960 til 2025. Fra tosifret prisvekst på 70-tallet til rekordlave renter og inflasjonstopper etter pandemien.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/artikler/norsk-inflasjon-historisk">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #1a7a4a; --green-light: #e8f5ee; --green-mid: #2a9d60;
+  --green-dark: #114d2e; --text: #1a1a1a; --text-muted: #5a6472;
+  --bg: #f7f8f5; --white: #ffffff; --border: #dde3d8;
+  --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --radius: 12px; --radius-sm: 8px;
+}
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.7; }
+nav { background: var(--green-dark); padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+.nav-logo span { color: #6ee09e; }
+nav ul { display: flex; gap: 1.5rem; list-style: none; }
+nav ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
+nav ul a:hover { color: #fff; }
+@media (max-width: 640px) { nav ul { display: none; } }
+.article-hero { background: var(--green-dark); padding: 3.5rem 1.5rem 4rem; }
+.container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+.breadcrumb { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+.breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.breadcrumb span { margin: 0 6px; }
+.article-tag { display: inline-block; background: rgba(110,224,158,0.15); border: 1px solid rgba(110,224,158,0.3); color: #6ee09e; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 14px; border-radius: 99px; margin-bottom: 1.25rem; }
+.article-hero h1 { font-family: var(--font-head); font-weight: 800; font-size: clamp(2rem, 5vw, 3.2rem); color: #fff; letter-spacing: -0.03em; line-height: 1.1; max-width: 680px; margin-bottom: 1rem; }
+.article-meta { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+.article-body { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+.article-body h2 { font-family: var(--font-head); font-weight: 700; font-size: 1.55rem; color: var(--green-dark); margin: 2.5rem 0 0.75rem; letter-spacing: -0.02em; }
+.article-body h3 { font-family: var(--font-head); font-weight: 600; font-size: 1.15rem; color: var(--green-dark); margin: 1.75rem 0 0.5rem; }
+.article-body p { margin-bottom: 1.25rem; }
+.article-body ul, .article-body ol { margin: 0.75rem 0 1.25rem 1.75rem; }
+.article-body li { margin-bottom: 0.5rem; }
+.highlight-box { background: var(--green-light); border-left: 4px solid var(--green); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.97rem; }
+.highlight-box strong { color: var(--green-dark); }
+.timeline { margin: 2rem 0; }
+.timeline-item { display: flex; gap: 1.25rem; margin-bottom: 0; }
+.timeline-left { display: flex; flex-direction: column; align-items: center; width: 80px; flex-shrink: 0; }
+.timeline-year { font-family: var(--font-head); font-weight: 800; font-size: 0.9rem; color: var(--green-dark); background: var(--green-light); border: 2px solid var(--green); border-radius: var(--radius-sm); padding: 4px 8px; text-align: center; white-space: nowrap; }
+.timeline-line { width: 2px; background: var(--border); flex: 1; margin: 6px 0; min-height: 20px; }
+.timeline-item:last-child .timeline-line { display: none; }
+.timeline-content { padding-bottom: 2rem; flex: 1; }
+.timeline-content h3 { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; color: var(--green-dark); margin-bottom: 0.4rem; }
+.timeline-content p { font-size: 0.95rem; margin: 0; color: var(--text-muted); }
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin: 2rem 0; }
+.stat-box { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; text-align: center; }
+.stat-yr { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.stat-val { font-family: var(--font-head); font-weight: 800; font-size: 1.6rem; color: var(--green-dark); display: block; margin: 4px 0; }
+.stat-desc { font-size: 0.78rem; color: var(--text-muted); }
+.chart-wrap { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin: 2rem 0; }
+.chart-title { font-family: var(--font-head); font-size: 0.9rem; font-weight: 700; color: var(--green-dark); margin-bottom: 1rem; }
+.bar-chart { display: flex; flex-direction: column; gap: 6px; }
+.bar-row { display: flex; align-items: center; gap: 8px; }
+.bar-lbl { font-size: 0.78rem; color: var(--text-muted); width: 38px; text-align: right; flex-shrink: 0; }
+.bar-bg { flex: 1; height: 18px; background: var(--bg); border-radius: 3px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--green); border-radius: 3px; transition: width 0.5s; }
+.bar-fill.high { background: #c0392b; }
+.bar-fill.mid { background: #e67e22; }
+.bar-val { font-size: 0.78rem; font-weight: 600; color: var(--text-muted); width: 36px; flex-shrink: 0; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #fff; text-decoration: none; font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; padding: 12px 22px; border-radius: var(--radius-sm); margin-top: 2.5rem; transition: background 0.15s; }
+.back-link:hover { background: var(--green-mid); }
+.related-box { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 3rem 0; }
+.related-box h3 { font-family: var(--font-head); font-size: 1rem; color: var(--green-dark); margin-bottom: 1rem; }
+.related-box ul { list-style: none; margin: 0; padding: 0; }
+.related-box ul li { border-bottom: 1px solid var(--border); padding: 0.6rem 0; }
+.related-box ul li:last-child { border-bottom: none; }
+.related-box a { color: var(--green); text-decoration: none; font-size: 0.95rem; }
+.related-box a:hover { text-decoration: underline; }
+footer { background: var(--green-dark); color: rgba(255,255,255,0.6); padding: 2rem 1.5rem; text-align: center; font-size: 0.88rem; }
+footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul>
+    <li><a href="/">Kalkulator</a></li>
+    <li><a href="/#kategorier">Kategorier</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="/#blogg">Blogg</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Hjem</a><span>›</span>
+      <a href="/#blogg">Artikler</a><span>›</span>
+      Historisk inflasjon
+    </div>
+    <div class="article-tag">Historie</div>
+    <h1>Norsk inflasjon historisk – fra 1960 til i dag</h1>
+    <div class="article-meta">Oppdatert januar 2026 &nbsp;·&nbsp; 10 min lesing</div>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <p>Inflasjonen i Norge har variert enormt gjennom tiårene – fra tosifret prisvekst på 1970-tallet, via rekordlave nivåer på 2000-tallet, til inflasjonstopper etter koronapandemien og energikrisen. Her er den historiske gjennomgangen, år for år og tiår for tiår.</p>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="stat-yr">Toppnivå</div>
+      <span class="stat-val">13,6 %</span>
+      <div class="stat-desc">1981 – høyeste KPI-vekst</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-yr">Laveste</div>
+      <span class="stat-val">0,8 %</span>
+      <div class="stat-desc">2004 – laveste KPI-vekst</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-yr">Gjennomsnitt</div>
+      <span class="stat-val">~4,5 %</span>
+      <div class="stat-desc">1960–2025 ca. snitt</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-yr">2025</div>
+      <span class="stat-val">3,1 %</span>
+      <div class="stat-desc">Årsvekst KPI, SSB</div>
+    </div>
+  </div>
+
+  <h2>Hva skjedde med prisene fra 1960 til i dag?</h2>
+  <p>En handlekurv som kostet 100 kr i 1960 ville i 2025 koste rundt 1 550 kr. Det vil si at prisnivået er blitt omtrent 15-doblet på 65 år. Bruker du vår <a href="/" style="color:var(--green);">inflasjonskalkulator</a>, kan du enkelt beregne nøyaktig hva ethvert beløp fra et gitt år er verdt i dag.</p>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Norsk KPI-vekst per tiår – gjennomsnitt</div>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-lbl">1960-t</div>
+        <div class="bar-bg"><div class="bar-fill" style="width:27%"></div></div>
+        <div class="bar-val">+4,1 %</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-lbl">1970-t</div>
+        <div class="bar-bg"><div class="bar-fill high" style="width:73%"></div></div>
+        <div class="bar-val">+9,5 %</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-lbl">1980-t</div>
+        <div class="bar-bg"><div class="bar-fill high" style="width:65%"></div></div>
+        <div class="bar-val">+8,4 %</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-lbl">1990-t</div>
+        <div class="bar-bg"><div class="bar-fill mid" style="width:18%"></div></div>
+        <div class="bar-val">+2,4 %</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-lbl">2000-t</div>
+        <div class="bar-bg"><div class="bar-fill" style="width:14%"></div></div>
+        <div class="bar-val">+1,9 %</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-lbl">2010-t</div>
+        <div class="bar-bg"><div class="bar-fill" style="width:17%"></div></div>
+        <div class="bar-val">+2,2 %</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-lbl">2020-t</div>
+        <div class="bar-bg"><div class="bar-fill mid" style="width:33%"></div></div>
+        <div class="bar-val">~4,5 %</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Epoke for epoke – hva drev inflasjonen?</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">1960-tallet</div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-content">
+        <h3>Gjenreising og moderat vekst</h3>
+        <p>Etterkrigstiden var preget av gjenreising og sterk optimisme. Norsk økonomi vokste, men inflasjonen var relativt beskjeden med et snitt på rundt 4 % per år. Prisveksten ble båret fram av sterk etterspørsel og høy sysselsetting, men ble holdt delvis i sjakk av faste valutakurser i det såkalte Bretton Woods-systemet.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">1970-tallet</div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-content">
+        <h3>Oljesjokk og tosifret inflasjon</h3>
+        <p>1970-tallet ble preget av to store oljesjokk – i 1973 og 1979 – som sendte energiprisene til himmels globalt. For Norge, som eksporterte olje men også importerte mye, ble konsekvensene store. Inflasjonen nådde opp i 8–12 % i store deler av tiåret. Lønningene ble regulert opp i takt, noe som skapte lønns-pris-spiraler.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">1980-tallet</div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-content">
+        <h3>Innstramming, låneboom og krakk</h3>
+        <p>Tidlig på 1980-tallet var inflasjonen fortsatt svært høy – den nådde sitt historiske toppunkt på 13,6 % i 1981. Myndighetene strammet inn kraftig. Midt på tiåret ble kredittmarkedet liberalisert, noe som utløste en voldsom låneboom og boligprisoppgang. Mot slutten av tiåret kollapset boligmarkedet og banksektoren havnet i krise. Inflasjonen falt, men til en høy pris.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">1990-tallet</div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-content">
+        <h3>Bankkrisen og stabilisering</h3>
+        <p>Norsk økonomi gikk inn i en dyp krise tidlig på 90-tallet. Bankene led store tap, arbeidsledigheten steg, og boligprisene falt kraftig. Til gjengjeld falt inflasjonen markant – ned til 2–3 % midt på tiåret. Norges Bank fikk et tydeligere inflasjonsmål og begynte å bruke renten mer aktivt. Perioden la grunnlaget for den stabile prisveksten som fulgte.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">2000-tallet</div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-content">
+        <h3>Rekordlav inflasjon – importerte billigvarer</h3>
+        <p>2000-tallet ble en periode med uvanlig lav inflasjon i Norge. Import av billige varer fra Kina og andre lavkostland holdt prisene nede på klær, elektronikk og husholdningsartikler. Innvandring bidro til å dempe lønnspresset. KPI-veksten sank til under 1 % i enkelte år, og i 2004 var den nede på 0,8 % – den laveste noensinne. Norges Bank satte til og med renten ned til 1,75 % for å hindre deflasjon.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">2010-tallet</div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-content">
+        <h3>Stabil moderat prisvekst</h3>
+        <p>Tiåret fra 2010 til 2020 var preget av relativt stabil og moderat inflasjon på 2–3 % per år – nær Norges Banks mål. Oljeprisfallet i 2014–2015 sendte kronekursen ned og løftet importprisene midlertidig, men effekten var kortvarig. Norges Bank holdt renten lav i mange år for å stimulere økonomi.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">2020-tallet</div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-content">
+        <h3>Pandemi, energikrise og prisvekst comeback</h3>
+        <p>2020-tallet startet med pandemi og historisk lave renter. Da samfunnet åpnet etter nedstengningene i 2021, eksploderte etterspørselen – men tilbudet haltret etter. Energiprisene skjøt fart etter Russlands invasjon av Ukraina i februar 2022. Norsk inflasjon nådde 7,5 % i oktober 2022 – det høyeste på 34 år. Norges Bank svarte med de raskeste og kraftigste rentehevingene siden 1980-tallet. I 2025 endte inflasjonen på 3,1 %, fremdeles over målet, men vesentlig lavere enn toppen.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Hva kan historien lære oss?</h2>
+  <p>Den historiske inflasjonshistorien gir oss noen viktige lærdommer:</p>
+  <ul>
+    <li><strong>Inflasjon kan blusse opp raskt,</strong> drevet av globale hendelser som oljekriser, pandemier og kriger – faktorer som ligger langt utenfor Norges kontroll.</li>
+    <li><strong>Sentralbanken er effektiv, men treg.</strong> Rentehevinger bremser inflasjonen, men det tar 12–24 måneder før den fulle effekten er synlig. Det krever tålmodighet.</li>
+    <li><strong>Lav inflasjon er ikke alltid stabilt.</strong> Perioden 2000–2020 med svært lav inflasjon var delvis drevet av globale strukturelle faktorer som nå ser ut til å snu.</li>
+    <li><strong>Kjøpekraft tæres gradvis.</strong> Selv en inflasjon på 2 % halverer kjøpekraften på 35 år. For langsiktige sparere er det kritisk å ta inflasjon på alvor.</li>
+  </ul>
+
+  <div class="highlight-box">
+    <strong>Prøv selv:</strong> Bruk vår <a href="/" style="color:var(--green);">inflasjonskalkulator</a> til å se hva 10 000 kr i 1980 tilsvarer i dag – svaret er overraskende. Du kan beregne kjøpekraften for alle år tilbake til 1960.
+  </div>
+
+  <h2>Hva skjer fremover?</h2>
+  <p>Norges Bank og de fleste økonomer forventer at norsk inflasjon vil nærme seg 2 %-målet i løpet av 2025–2026 etter rentehevingene. Men det er usikkerhet knyttet til energipriser, geopolitikk, kronekurs og lønnsvekst. Historien viser at inflasjon kan overraske – i begge retninger.</p>
+  <p>Det viktigste du kan gjøre er å holde deg informert, bruke historiske tall som referansepunkt og sørge for at sparepengene dine ikke settes på vent mens prisene stiger rundt deg.</p>
+
+  <div class="related-box">
+    <h3>Les også</h3>
+    <ul>
+      <li><a href="/artikler/hva-er-inflasjon">Hva er inflasjon – og hvorfor stiger prisene?</a></li>
+      <li><a href="/artikler/rentehevinger-og-inflasjon">Rentehevinger og inflasjon – hva er sammenhengen?</a></li>
+      <li><a href="/artikler/slik-beskytter-du-sparepengene">Slik beskytter du sparepengene mot inflasjon</a></li>
+    </ul>
+  </div>
+
+  <a href="/" class="back-link">← Tilbake til inflasjonskalkulator.no</a>
+
+</div>
+
+<footer>
+  <p>Tall basert på <a href="https://www.ssb.no/priser-og-prisindekser/konsumpriser/statistikk/konsumprisindeksen" target="_blank" rel="noopener">SSBs Konsumprisindeks</a>. &copy; 2025 <a href="/">inflasjonskalkulator.no</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hva er inflasjon? Enkel forklaring med eksempler | inflasjonskalkulator.no</title>
+<meta name="description" content="Hva er inflasjon, og hvorfor stiger prisene? Lær hva inflasjon betyr for lommeboken din, hvordan KPI beregnes og hva du kan gjøre for å beskytte kjøpekraften.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/artikler/hva-er-inflasjon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #1a7a4a; --green-light: #e8f5ee; --green-mid: #2a9d60;
+  --green-dark: #114d2e; --text: #1a1a1a; --text-muted: #5a6472;
+  --bg: #f7f8f5; --white: #ffffff; --border: #dde3d8;
+  --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --radius: 12px; --radius-sm: 8px;
+}
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.7; }
+nav {
+  background: var(--green-dark); padding: 0 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px; position: sticky; top: 0; z-index: 100;
+}
+.nav-logo { font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+.nav-logo span { color: #6ee09e; }
+nav ul { display: flex; gap: 1.5rem; list-style: none; }
+nav ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
+nav ul a:hover { color: #fff; }
+@media (max-width: 640px) { nav ul { display: none; } }
+.article-hero { background: var(--green-dark); padding: 3.5rem 1.5rem 4rem; }
+.container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+.breadcrumb { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+.breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.breadcrumb a:hover { color: #fff; }
+.breadcrumb span { margin: 0 6px; }
+.article-tag {
+  display: inline-block; background: rgba(110,224,158,0.15);
+  border: 1px solid rgba(110,224,158,0.3); color: #6ee09e;
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 4px 14px; border-radius: 99px; margin-bottom: 1.25rem;
+}
+.article-hero h1 {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.2rem); color: #fff;
+  letter-spacing: -0.03em; line-height: 1.1; max-width: 680px; margin-bottom: 1rem;
+}
+.article-meta { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+.article-body { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+.article-body h2 {
+  font-family: var(--font-head); font-weight: 700; font-size: 1.55rem;
+  color: var(--green-dark); margin: 2.5rem 0 0.75rem; letter-spacing: -0.02em;
+}
+.article-body h3 {
+  font-family: var(--font-head); font-weight: 600; font-size: 1.15rem;
+  color: var(--green-dark); margin: 1.75rem 0 0.5rem;
+}
+.article-body p { margin-bottom: 1.25rem; }
+.article-body ul, .article-body ol { margin: 0.75rem 0 1.25rem 1.75rem; }
+.article-body li { margin-bottom: 0.5rem; }
+.highlight-box {
+  background: var(--green-light); border-left: 4px solid var(--green);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.97rem;
+}
+.highlight-box strong { color: var(--green-dark); }
+.fact-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem; margin: 2rem 0;
+}
+.fact-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.25rem; text-align: center;
+}
+.fact-val { font-family: var(--font-head); font-weight: 800; font-size: 2rem; color: var(--green-dark); letter-spacing: -0.03em; display: block; }
+.fact-lbl { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+.back-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--green); color: #fff; text-decoration: none;
+  font-family: var(--font-head); font-weight: 700; font-size: 0.95rem;
+  padding: 12px 22px; border-radius: var(--radius-sm);
+  margin-top: 2.5rem; transition: background 0.15s;
+}
+.back-link:hover { background: var(--green-mid); }
+.related-box {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.5rem 2rem; margin: 3rem 0;
+}
+.related-box h3 { font-family: var(--font-head); font-size: 1rem; color: var(--green-dark); margin-bottom: 1rem; }
+.related-box ul { list-style: none; margin: 0; padding: 0; }
+.related-box ul li { border-bottom: 1px solid var(--border); padding: 0.6rem 0; }
+.related-box ul li:last-child { border-bottom: none; }
+.related-box a { color: var(--green); text-decoration: none; font-size: 0.95rem; }
+.related-box a:hover { text-decoration: underline; }
+footer { background: var(--green-dark); color: rgba(255,255,255,0.6); padding: 2rem 1.5rem; text-align: center; font-size: 0.88rem; margin-top: 0; }
+footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul>
+    <li><a href="/">Kalkulator</a></li>
+    <li><a href="/#kategorier">Kategorier</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="/#blogg">Blogg</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Hjem</a><span>›</span>
+      <a href="/#blogg">Artikler</a><span>›</span>
+      Hva er inflasjon
+    </div>
+    <div class="article-tag">Grunnleggende</div>
+    <h1>Hva er inflasjon – og hvorfor stiger prisene?</h1>
+    <div class="article-meta">Oppdatert januar 2026 &nbsp;·&nbsp; 8 min lesing</div>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <p>Inflasjon er et begrep du hører nesten daglig i nyhetsbildet – i forbindelse med rentehevinger, lønnsoppgjør og matpriser. Men hva betyr det egentlig, og hvorfor bør du som privatperson bry deg? I denne artikkelen forklarer vi inflasjon fra bunnen av, med konkrete norske eksempler.</p>
+
+  <div class="fact-grid">
+    <div class="fact-card">
+      <span class="fact-val">3,2 %</span>
+      <div class="fact-lbl">KPI-vekst des. 2025 (SSB)</div>
+    </div>
+    <div class="fact-card">
+      <span class="fact-val">5,2 %</span>
+      <div class="fact-lbl">Matvarepriser, 12 mnd.</div>
+    </div>
+    <div class="fact-card">
+      <span class="fact-val">2 %</span>
+      <div class="fact-lbl">Norges Banks inflasjonsmål</div>
+    </div>
+  </div>
+
+  <h2>Den enkle definisjonen på inflasjon</h2>
+  <p>Inflasjon betyr at det generelle prisnivået i en økonomi stiger over tid. Ordet kommer fra latin og betyr å «blåse opp» – altså at prisene svulmer opp. Når inflasjonen er 3 %, betyr det at de samme varene og tjenestene koster 3 % mer enn de gjorde for ett år siden.</p>
+  <p>For deg betyr det konkret at pengene dine «er verdt» litt mindre enn de var. Du kan kjøpe færre varer for de samme kronene. Kjøpekraften din faller.</p>
+
+  <div class="highlight-box">
+    <strong>Eksempel:</strong> Handlet du dagligvarer for 5 000 kr i måneden i 2020, ville den samme handlekurven koste deg rundt 6 200 kr i 2025 – en økning på over 24 % over fem år. Bruker du vår <a href="/" style="color:var(--green);">inflasjonskalkulator</a>, kan du enkelt beregne hva dine egne beløp tilsvarer etter prisvekst.
+  </div>
+
+  <h2>Hva forårsaker inflasjon?</h2>
+  <p>Inflasjon oppstår ikke av én enkelt årsak. Det er gjerne en kombinasjon av flere faktorer som virker samtidig. De vanligste er:</p>
+
+  <h3>1. Etterspørsel overstiger tilbud</h3>
+  <p>Når folk og bedrifter vil kjøpe mer enn det finnes tilgjengelig av varer og tjenester, presses prisene opp. Dette kalles gjerne «demand-pull inflation» og skjer typisk i perioder med sterk økonomisk vekst eller etter store krisepakker der mye penger tilføres samfunnet på kort tid – slik vi så etter koronapandemien.</p>
+
+  <h3>2. Høyere produksjonskostnader</h3>
+  <p>Når strøm, råvarer, frakt eller lønninger stiger, velter produsenter og butikker kostnadene over på forbrukerne. Dette kalles «cost-push inflation». Et tydelig eksempel er energiprisene: da strøm- og gassprisene eksploderte i Europa etter Russlands invasjon av Ukraina i 2022, ble det dyrere å produsere og frakte nesten alt, og inflasjonen steg kraftig.</p>
+
+  <h3>3. Pengemengden vokser for raskt</h3>
+  <p>Hvis det er mye mer penger i omløp, men like mye å kjøpe, stiger prisene. Sentralbanker kan «trykke» penger gjennom det som kalles kvantitative lettelser, og for mye likviditet i systemet kan over tid skape inflasjon.</p>
+
+  <h3>4. Importert inflasjon</h3>
+  <p>Norge importerer mye fra utlandet. Stiger prisene i utlandet, eller svekkes kronekursen, blir det dyrere å importere. Den økte kostnaden velter seg inn i norske butikkhyller.</p>
+
+  <h3>5. Inflasjonsforventninger</h3>
+  <p>Hvis ansatte forventer at prisene vil stige, krever de høyere lønn i neste lønnsoppgjør. Bedriftene dekker lønnsøkningene ved å sette opp prisene. Slik kan inflasjon bli selvforsterkende – det som kalles en lønns-pris-spiral.</p>
+
+  <h2>Slik måles inflasjon i Norge – KPI</h2>
+  <p>I Norge måles inflasjon gjennom <strong>Konsumprisindeksen (KPI)</strong>, som beregnes månedlig av Statistisk sentralbyrå (SSB). KPI-en følger prisutviklingen på en representativ kurv av varer og tjenester som norske husholdninger kjøper – alt fra brød og melk til flyreiser og husleie.</p>
+  <p>Kurven inneholder over 1 000 ulike varer og tjenester, vektet etter hva en gjennomsnittlig norsk husholdning bruker penger på. Matvarer veier tungt, bolig og energi veier tungt, mens for eksempel tobakk veier lite.</p>
+  <p>SSB publiserer nye KPI-tall den 10. i hver måned, og de er nøye fulgt av Norges Bank, politikere, fagforeninger og arbeidsgivere.</p>
+
+  <h2>KPI-JAE – kjerneinflasjonen</h2>
+  <p>I tillegg til vanlig KPI følger mange økonomer nøye med på <strong>KPI-JAE</strong> – KPI justert for avgiftsendringer og uten energivarer. Denne indikatoren kalles gjerne kjerneinflasjonen, og den brukes fordi energipriser svinger mye og kan gi et skjevt bilde av den underliggende prisveksten. I desember 2025 var KPI 3,2 % og KPI-JAE 3,1 %, altså nesten identiske.</p>
+
+  <h2>Er inflasjon alltid dårlig?</h2>
+  <p>Ikke nødvendigvis. En lav og stabil inflasjon på rundt 2 % er faktisk <em>målet</em> Norges Bank sikter mot. Det gir bedrifter insentiv til å investere og ansette, og gjør at det lønner seg å bruke penger i stedet for å sitte på kontanter. En viss inflasjon smører hjulene i en markedsøkonomi.</p>
+  <p>Problemet oppstår når inflasjonen er for høy, som i 2022–2023 da norsk inflasjon var oppe i 6–7 %. Da mister folk kjøpekraft raskere enn lønnsveksten kan kompensere, og særlig folk med lav inntekt eller mye gjeld rammes hardt.</p>
+  <p><strong>Deflasjon</strong> – det motsatte av inflasjon, altså fallende priser – er heller ikke bra. Når folk forventer lavere priser i fremtiden, utsetter de kjøp. Bedrifter selger mindre, ansetter færre, og vi kan havne i en negativ spiral som bremser hele økonomien. Japan opplevde dette i flere tiår fra 1990-tallet.</p>
+
+  <h2>Inflasjonens effekt på ulike grupper</h2>
+  <p>Inflasjon rammer ulikt, avhengig av livssituasjon:</p>
+  <ul>
+    <li><strong>Lønnsmottakere:</strong> Hvis lønnsveksten ikke holder takt med inflasjonen, får du reelt sett lavere lønn. I 2022 og 2023 fikk mange nordmenn negativ reallønnsvekst.</li>
+    <li><strong>Pensjonister:</strong> Pensjon reguleres delvis etter lønns- og prisvekst, men ikke alltid fullt ut – noe som kan svekke kjøpekraften over tid.</li>
+    <li><strong>Låntakere:</strong> Inflasjon er faktisk gunstig for dem med fast rente på lån, fordi gjelden er verdt mindre i reelle kroner. Men i Norge er de fleste lån flytende, så høy inflasjon følges av høyere rente – noe som øker lånekostnadene.</li>
+    <li><strong>Sparere:</strong> Har du penger på konto med lav rente, taper du kjøpekraft. Avkastningen på sparingen din bør minst matche inflasjonen.</li>
+    <li><strong>Eiendomseiere:</strong> Eiendomsprisene har historisk steget med eller over inflasjonen i Norge, så boligeiere er delvis beskyttet.</li>
+  </ul>
+
+  <h2>Hva kan du gjøre?</h2>
+  <p>Du kan ikke stoppe inflasjonen, men du kan ta grep for å beskytte kjøpekraften din:</p>
+  <ul>
+    <li>Sett sparepengene i produkter som gir avkastning over inflasjonen – høyrentekonto, aksjer eller fond.</li>
+    <li>Forhandle om lønn med KPI som utgangspunkt i neste lønnssamtale.</li>
+    <li>Sjekk at husleie og kontrakter er indeksregulert korrekt etter KPI.</li>
+    <li>Bruk vår <a href="/" style="color:var(--green);">inflasjonskalkulator</a> til å se hva tidligere sparebeløp, arv eller lønn er verdt i dag.</li>
+  </ul>
+
+  <div class="highlight-box">
+    <strong>Tips:</strong> Vår gratis <a href="/" style="color:var(--green);">inflasjonskalkulator</a> lar deg beregne hva et valgfritt beløp er verdt fra ett år til et annet, basert på SSBs offisielle KPI-tall tilbake til 1960.
+  </div>
+
+  <h2>Oppsummering</h2>
+  <p>Inflasjon er den generelle prisstigningen i en økonomi. Den måles i Norge av SSB gjennom Konsumprisindeksen (KPI), og Norges Bank bruker renten som sitt viktigste virkemiddel for å holde inflasjonen nær 2 %. For deg som forbruker betyr inflasjon at pengene gradvis mister kjøpekraft – og at det lønner seg å plassere sparpenger klokt, forhandle lønn og følge med på prisutviklingen.</p>
+
+  <div class="related-box">
+    <h3>Les også</h3>
+    <ul>
+      <li><a href="/artikler/rentehevinger-og-inflasjon">Rentehevinger og inflasjon – hva er sammenhengen?</a></li>
+      <li><a href="/artikler/slik-beskytter-du-sparepengene">Slik beskytter du sparepengene mot inflasjon</a></li>
+      <li><a href="/artikler/norsk-inflasjon-historisk">Norsk inflasjon historisk – fra 1960 til i dag</a></li>
+    </ul>
+  </div>
+
+  <a href="/" class="back-link">← Tilbake til inflasjonskalkulator.no</a>
+
+</div>
+
+<footer>
+  <p>Tall basert på <a href="https://www.ssb.no/priser-og-prisindekser/konsumpriser/statistikk/konsumprisindeksen" target="_blank" rel="noopener">SSBs Konsumprisindeks</a>. &copy; 2025 <a href="/">inflasjonskalkulator.no</a></p>
+</footer>
+
+</body>
+</html>
