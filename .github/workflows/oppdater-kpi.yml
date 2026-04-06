@@ -1,0 +1,36 @@
+name: Oppdater KPI-tall fra SSB
+
+on:
+  schedule:
+    # Kjører den 10. hver måned kl. 09:00 (etter SSB publiserer kl. 08:00)
+    - cron: '0 9 10 * *'
+  workflow_dispatch: # Gjør det mulig å kjøre manuelt
+
+jobs:
+  oppdater-kpi:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Hent kode
+        uses: actions/checkout@v4
+
+      - name: Sett opp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installer avhengigheter
+        run: pip install requests
+
+      - name: Hent KPI-tall fra SSB og oppdater index.html
+        run: python3 .github/scripts/oppdater_kpi.py
+
+      - name: Commit og push endringer
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add index.html
+          git diff --staged --quiet || git commit -m "Automatisk oppdatering av KPI-tall fra SSB $(date +'%Y-%m-%d')"
+          git push
