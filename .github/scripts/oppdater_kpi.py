@@ -223,7 +223,7 @@ def main():
     # Lag månedsetikett
     mnd_navn = {
         1: "jan.", 2: "feb.", 3: "mars", 4: "apr.",
-        5: "mai", 6: "juni", 7: "juli", 8. "aug.",
+        5: "mai", 6: "juni", 7: "juli", 8: "aug.",
         9: "sep.", 10: "okt.", 11: "nov.", 12: "des."
     }
     mnd_label = f"{mnd_navn[forrige_mnd.month]} {forrige_mnd.year}"
