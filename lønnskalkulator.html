@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lønnskalkulator – Beregn reallønn og kjøpekraft 2026</title>
+<meta name="description" content="Beregn din reelle lønnsvekst etter inflasjon. Finn ut om du har fått reallønnsvekst eller reallønnsfall med vår gratis lønnskalkulator.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/lønnskalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #1a7a4a; --green-light: #e8f5ee; --green-mid: #2a9d60;
+  --green-dark: #114d2e; --red: #c0392b; --text: #1a1a1a; --text-muted: #5a6472;
+  --bg: #f7f8f5; --white: #ffffff; --border: #dde3d8;
+  --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --radius: 12px; --radius-sm: 8px;
+}
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.7; }
+nav { background: var(--green-dark); padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+.nav-logo span { color: #6ee09e; }
+nav ul { display: flex; gap: 1.5rem; list-style: none; }
+nav ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
+nav ul a:hover { color: #fff; }
+@media (max-width: 640px) { nav ul { display: none; } }
+
+.hero { background: var(--green-dark); padding: 3.5rem 1.5rem 4.5rem; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+.breadcrumb { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+.breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.breadcrumb span { margin: 0 6px; }
+.hero-tag { display: inline-block; background: rgba(110,224,158,0.15); border: 1px solid rgba(110,224,158,0.3); color: #6ee09e; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 14px; border-radius: 99px; margin-bottom: 1.1rem; }
+.hero h1 { font-family: var(--font-head); font-weight: 800; font-size: clamp(1.9rem, 5vw, 3rem); color: #fff; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 0.75rem; }
+.hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 560px; font-weight: 300; }
+
+.kalk-wrap { margin-top: -2rem; position: relative; z-index: 10; }
+.kalk-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.1); padding: 2rem; }
+.kalk-title { font-family: var(--font-head); font-weight: 700; font-size: 1.25rem; color: var(--green-dark); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 540px) { .grid2 { grid-template-columns: 1fr; } }
+.field { margin-bottom: 1.1rem; }
+.field label { display: block; font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 5px; }
+.field input, .field select { width: 100%; height: 48px; padding: 0 1rem; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 1rem; color: var(--text); background: var(--bg); outline: none; -moz-appearance: textfield; transition: border-color 0.15s; }
+.field input::-webkit-outer-spin-button, .field input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.field input:focus, .field select:focus { border-color: var(--green-mid); background: #fff; }
+.kalk-btn { width: 100%; height: 52px; background: var(--green); color: #fff; border: none; border-radius: var(--radius-sm); font-family: var(--font-head); font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.15s; margin-top: 0.5rem; }
+.kalk-btn:hover { background: var(--green-mid); }
+
+.result-box { display: none; margin-top: 1.5rem; border-radius: var(--radius-sm); padding: 1.5rem; border: 1.5px solid; }
+.result-box.show { display: block; }
+.result-box.positiv { background: var(--green-light); border-color: #b2dfc6; }
+.result-box.negativ { background: #fdf0ee; border-color: #f5c4b3; }
+
+.result-main { text-align: center; margin-bottom: 1.25rem; }
+.result-val { font-family: var(--font-head); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; display: block; }
+.result-val.pos { color: var(--green-dark); }
+.result-val.neg { color: var(--red); }
+.result-lbl { font-size: 0.85rem; color: var(--text-muted); }
+.result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.08); }
+.result-item { text-align: center; }
+.result-item .val { display: block; font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--green-dark); }
+.result-item .val.neg { color: var(--red); }
+.result-item .lbl { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.result-tekst { margin-top: 1rem; font-size: 0.88rem; color: var(--text-muted); border-top: 1px solid rgba(0,0,0,0.08); padding-top: 0.85rem; line-height: 1.6; }
+
+.info-box { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; }
+.info-box h2 { font-family: var(--font-head); font-weight: 700; font-size: 1.15rem; color: var(--green-dark); margin-bottom: 0.75rem; }
+.info-box p { font-size: 0.95rem; margin-bottom: 0.75rem; }
+.info-box p:last-child { margin-bottom: 0; }
+.highlight-box { background: var(--green-light); border-left: 4px solid var(--green); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 0.93rem; }
+
+.section { padding: 2rem 0; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #fff; text-decoration: none; font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; padding: 12px 22px; border-radius: var(--radius-sm); margin-top: 1rem; transition: background 0.15s; }
+.back-link:hover { background: var(--green-mid); }
+
+footer { background: var(--green-dark); color: rgba(255,255,255,0.6); padding: 2rem 1.5rem; text-align: center; font-size: 0.88rem; margin-top: 2rem; }
+footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+.footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul>
+    <li><a href="/">Inflasjonskalkulator</a></li>
+    <li><a href="/husleiekalkulator">Husleie</a></li>
+    <li><a href="/#blogg">Blogg</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Hjem</a><span>›</span> Lønnskalkulator</div>
+    <div class="hero-tag">Gratis verktøy</div>
+    <h1>Lønnskalkulator – Reallønn og kjøpekraft</h1>
+    <p>Finn ut om du har fått reell lønnsvekst eller faktisk tapt kjøpekraft – selv om lønnen økte nominelt.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn reallønnsvekst</div>
+      <div class="grid2">
+        <div class="field">
+          <label>Lønn år 1 (kr/år)</label>
+          <input type="number" id="lonn1" placeholder="600 000" min="0">
+        </div>
+        <div class="field">
+          <label>Lønn år 2 (kr/år)</label>
+          <input type="number" id="lonn2" placeholder="625 000" min="0">
+        </div>
+        <div class="field">
+          <label>Fra år</label>
+          <select id="fra-ar"></select>
+        </div>
+        <div class="field">
+          <label>Til år</label>
+          <select id="til-ar"></select>
+        </div>
+      </div>
+      <button class="kalk-btn" onclick="beregnLonn()">Beregn reallønn</button>
+
+      <div class="result-box" id="result-box">
+        <div class="result-main">
+          <span class="result-val" id="res-real">—</span>
+          <span class="result-lbl" id="res-lbl">Reallønnsvekst</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="res-nominell">—</span>
+            <span class="lbl">Nominell vekst</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-kpi">—</span>
+            <span class="lbl">Inflasjon (KPI)</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-kr">—</span>
+            <span class="lbl">Reell endring (kr)</span>
+          </div>
+        </div>
+        <div class="result-tekst" id="res-tekst"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="info-box">
+      <h2>Hva er reallønn?</h2>
+      <p>Nominell lønn er kronebeløpet du ser på lønnsslippen. Reallønn er hva lønnen faktisk er verdt – altså kjøpekraften. Hvis lønnen din øker med 3 % men inflasjonen er 4 %, har du fått en reallønnsreduksjon på 1 % selv om du tjener mer kroner.</p>
+      <div class="highlight-box">
+        <strong>Formelen:</strong> Reallønnsvekst = Nominell lønnsvekst − Inflasjon (KPI)
+      </div>
+      <p>I 2025 var den gjennomsnittlige lønnsveksten i Norge ca. 5,0 % (SSB), mens KPI-veksten var 3,1 %. Det betyr at gjennomsnittlig norsk arbeidstaker fikk en reallønnsvekst på ca. 1,9 % i 2025.</p>
+    </div>
+
+    <div class="info-box">
+      <h2>Tips til lønnsforhandling</h2>
+      <p>Bruk KPI som minimum-argument i lønnsforhandlinger. Har du ikke fått lønnsvekst som minst tilsvarer inflasjonen, har du i praksis fått lønnsnedgang.</p>
+      <p>Argumenter du kan bruke:</p>
+      <ul>
+        <li>KPI steg X % i år – lønn bør minimum øke like mye for å beholde kjøpekraften</li>
+        <li>Bransjevis lønnsvekst (SSB lønnsstatistikk) – sammenlign deg med bransjesnittet</li>
+        <li>Produktivitetsvekst i bedriften – bidrar du til høyere verdiskapning?</li>
+      </ul>
+    </div>
+  </div>
+
+  <a href="/" class="back-link">← Tilbake til inflasjonskalkulator.no</a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="/">Hjem</a>
+      <a href="/#kalkulator">Inflasjonskalkulator</a>
+      <a href="/husleiekalkulator">Husleiekalkulator</a>
+      <a href="/lønnskalkulator">Lønnskalkulator</a>
+      <a href="/ressurser">Ressurser</a>
+    </div>
+    <p>Tall basert på <a href="https://www.ssb.no" target="_blank" rel="noopener">SSBs Konsumprisindeks</a>. Informasjonen er kun veiledende.</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 inflasjonskalkulator.no</p>
+  </div>
+</footer>
+
+<script>
+const kpiData = {
+  1995:66.4,1996:67.5,1997:69.0,1998:70.6,1999:71.8,
+  2000:74.3,2001:76.0,2002:77.1,2003:78.6,2004:78.8,
+  2005:79.5,2006:81.5,2007:82.8,2008:85.7,2009:87.2,
+  2010:89.0,2011:91.2,2012:93.0,2013:95.1,2014:97.2,
+  2015:100.0,2016:103.6,2017:105.8,2018:108.7,2019:111.1,
+  2020:112.1,2021:115.3,2022:123.7,2023:131.3,2024:135.4,2025:139.6
+};
+
+const years = Object.keys(kpiData).map(Number).sort((a,b)=>a-b);
+const fraEl = document.getElementById('fra-ar');
+const tilEl = document.getElementById('til-ar');
+years.forEach(y => { fraEl.add(new Option(y,y)); tilEl.add(new Option(y,y)); });
+fraEl.value = 2024; tilEl.value = 2025;
+
+function beregnLonn() {
+  const l1 = parseFloat(document.getElementById('lonn1').value);
+  const l2 = parseFloat(document.getElementById('lonn2').value);
+  const fra = parseInt(fraEl.value);
+  const til = parseInt(tilEl.value);
+  if (!l1||!l2||isNaN(l1)||isNaN(l2)||fra===til) { document.getElementById('result-box').classList.remove('show'); return; }
+
+  const nominellPst = ((l2-l1)/l1)*100;
+  const kpiFaktor = kpiData[til]/kpiData[fra];
+  const kpiPst = (kpiFaktor-1)*100;
+  const realPst = nominellPst - kpiPst;
+  const reellKr = l2 - (l1 * kpiFaktor);
+
+  const fmt = n => Math.round(Math.abs(n)).toLocaleString('nb-NO') + ' kr';
+  const fmtP = n => (n>=0?'+':'')+n.toFixed(1)+' %';
+
+  const box = document.getElementById('result-box');
+  box.className = 'result-box show ' + (realPst >= 0 ? 'positiv' : 'negativ');
+
+  const valEl = document.getElementById('res-real');
+  valEl.textContent = fmtP(realPst);
+  valEl.className = 'result-val ' + (realPst >= 0 ? 'pos' : 'neg');
+  document.getElementById('res-lbl').textContent = realPst >= 0 ? 'Reallønnsvekst ✓' : 'Reallønnsfall ✗';
+
+  document.getElementById('res-nominell').textContent = fmtP(nominellPst);
+  document.getElementById('res-kpi').textContent = fmtP(kpiPst);
+  const krEl = document.getElementById('res-kr');
+  krEl.textContent = (reellKr >= 0 ? '+' : '-') + fmt(reellKr);
+  krEl.className = 'val ' + (reellKr >= 0 ? '' : 'neg');
+
+  document.getElementById('res-tekst').textContent =
+    `Lønnen økte nominelt med ${fmtP(nominellPst)}, mens inflasjonen var ${fmtP(kpiPst)} fra ${fra} til ${til}. `
+    + `Det gir en reallønnsvekst på ${fmtP(realPst)}. `
+    + (reellKr >= 0
+      ? `I praksis økte kjøpekraften din med ${fmt(reellKr)} per år i ${til}-kroner.`
+      : `I praksis falt kjøpekraften din med ${fmt(reellKr)} per år – du kan kjøpe tilsvarende mindre enn i ${fra}.`);
+}
+</script>
+</body>
+</html>
