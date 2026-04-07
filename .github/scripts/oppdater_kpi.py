@@ -288,8 +288,7 @@ def oppdater_sitemap(slug, aar, pub_dato):
     with open("sitemap.xml", "r", encoding="utf-8") as f:
         sitemap = f.read()
     if f"kpi-rapport/{slug}-{aar}" not in sitemap:
-        sitemap = sitemap.replace("</urlset>", ny_url + "
-</urlset>")
+        sitemap = sitemap.replace("</urlset>", ny_url + "\n</urlset>")
         with open("sitemap.xml", "w", encoding="utf-8") as f:
             f.write(sitemap)
         print(f"Sitemap oppdatert: kpi-rapport/{slug}-{aar}")
