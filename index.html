@@ -290,8 +290,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
   }
-  @media (max-width: 700px) { .cat-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 440px) { .cat-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 860px) { .cat-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .cat-grid { grid-template-columns: 1fr; } }
   .cat-card {
     background: var(--white);
     border: 1px solid var(--border);
@@ -311,18 +311,16 @@
   .cat-info { flex: 1; min-width: 0; }
   .cat-name {
     font-weight: 500;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--text);
     margin-bottom: 1px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 1.3;
   }
   .cat-src { font-size: 0.68rem; color: var(--text-muted); }
   .cat-pct {
     font-family: var(--font-head);
     font-weight: 800;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     letter-spacing: -0.02em;
     flex-shrink: 0;
     white-space: nowrap;
@@ -726,7 +724,7 @@
         <div class="cat-card">
           <div class="cat-icon">🛒</div>
           <div class="cat-info">
-            <div class="cat-name">Matvarer og alkoholfrie drikkevarer</div>
+            <div class="cat-name">Matvarer og drikkevarer</div>
             <div class="cat-src">SSB KPI, des. 2025</div>
           </div>
           <div class="cat-pct pos">+5,2 %</div>
@@ -734,7 +732,7 @@
         <div class="cat-card">
           <div class="cat-icon">⚡</div>
           <div class="cat-info">
-            <div class="cat-name">Elektrisitet inkl. nettleie</div>
+            <div class="cat-name">Elektrisitet</div>
             <div class="cat-src">SSB KPI, des. 2025</div>
           </div>
           <div class="cat-pct pos">+6,0 %</div>
@@ -742,7 +740,7 @@
         <div class="cat-card">
           <div class="cat-icon">✈️</div>
           <div class="cat-info">
-            <div class="cat-name">Flyreiser (passasjertransport)</div>
+            <div class="cat-name">Flyreiser</div>
             <div class="cat-src">SSB KPI, des. 2025</div>
           </div>
           <div class="cat-pct pos">+4,8 %</div>
@@ -750,7 +748,7 @@
         <div class="cat-card">
           <div class="cat-icon">⛽</div>
           <div class="cat-info">
-            <div class="cat-name">Drivstoff og smøremidler</div>
+            <div class="cat-name">Drivstoff</div>
             <div class="cat-src">SSB KPI, des. 2025</div>
           </div>
           <div class="cat-pct pos">+1,9 %</div>
@@ -782,7 +780,7 @@
         <div class="cat-card">
           <div class="cat-icon">📊</div>
           <div class="cat-info">
-            <div class="cat-name">KPI totalt (alle varer)</div>
+            <div class="cat-name">KPI totalt</div>
             <div class="cat-src">SSB KPI, des. 2025</div>
           </div>
           <div class="cat-pct pos">+3,2 %</div>
@@ -790,7 +788,7 @@
         <div class="cat-card">
           <div class="cat-icon">📉</div>
           <div class="cat-info">
-            <div class="cat-name">KPI-JAE (eks. energi og avgifter)</div>
+            <div class="cat-name">KPI-JAE (u/ energi)</div>
             <div class="cat-src">SSB KPI, des. 2025</div>
           </div>
           <div class="cat-pct pos">+3,1 %</div>
@@ -955,8 +953,8 @@ const kategorier = {
   },
   mat: {
     navn: 'Matvarer',
-    beskrivelse: 'Matvarer og alkoholfrie drikkevarer. Steg 5,2 % fra des. 2024 til des. 2025. Kilde: SSB KPI.',
-    // Kilde: SSB KPI, gruppe 01 – Matvarer og alkoholfrie drikkevarer
+    beskrivelse: 'Matvarer og drikkevarer. Steg 5,2 % fra des. 2024 til des. 2025. Kilde: SSB KPI.',
+    // Kilde: SSB KPI, gruppe 01 – Matvarer og drikkevarer
     data: {
       2000: 65.2, 2001: 67.0, 2002: 68.1, 2003: 69.5, 2004: 70.3,
       2005: 71.4, 2006: 73.2, 2007: 77.1, 2008: 83.0, 2009: 84.9,
@@ -968,7 +966,7 @@ const kategorier = {
   },
   strom: {
     navn: 'Elektrisitet',
-    beskrivelse: 'Elektrisitet inkl. nettleie. Svinger mye med kraftmarkedet og Norgespris-ordningen. Kilde: SSB KPI.',
+    beskrivelse: 'Elektrisitet. Svinger mye med kraftmarkedet og Norgespris-ordningen. Kilde: SSB KPI.',
     // Kilde: SSB KPI, gruppe 04.5 – Elektrisitet, gass og andre brensler
     data: {
       2005: 67.1, 2006: 80.3, 2007: 74.2, 2008: 79.1, 2009: 68.4,
@@ -992,8 +990,8 @@ const kategorier = {
   },
   drivstoff: {
     navn: 'Drivstoff',
-    beskrivelse: 'Drivstoff og smøremidler til transportmidler. Kilde: SSB KPI.',
-    // Kilde: SSB KPI, gruppe 07.2.2 – Drivstoff og smøremidler
+    beskrivelse: 'Drivstoff til transportmidler. Kilde: SSB KPI.',
+    // Kilde: SSB KPI, gruppe 07.2.2 – Drivstoff
     data: {
       2005: 61.4, 2006: 67.2, 2007: 68.9, 2008: 81.3, 2009: 62.7,
       2010: 75.8, 2011: 86.4, 2012: 91.2, 2013: 94.7, 2014: 95.3,
