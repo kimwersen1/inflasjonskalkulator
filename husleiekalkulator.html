@@ -122,6 +122,12 @@ nav ul a:hover { color: #fff; }
 footer { background: var(--green-dark); color: rgba(255,255,255,0.6); padding: 2rem 1.5rem; text-align: center; font-size: 0.88rem; margin-top: 2rem; }
 footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
 .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+  .relatert-seksjon { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; }
+  .relatert-seksjon h2 { font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; color: var(--green-dark); margin-bottom: 1rem; letter-spacing: -0.02em; }
+  .relatert-lenker { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .relatert-lenke { background: var(--green-light); color: var(--green-dark); text-decoration: none; font-weight: 500; font-size: 0.88rem; padding: 8px 16px; border-radius: 99px; border: 1px solid #b2dfc6; transition: background 0.15s; white-space: nowrap; }
+  .relatert-lenke:hover { background: #c8ecd8; }
 </style>
 </head>
 <body>
@@ -219,6 +225,19 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
     </div>
   </div>
 
+  
+  <div class="relatert-seksjon">
+    <h2>Relaterte verktøy og artikler</h2>
+    <div class="relatert-lenker">
+      <a href="/" class="relatert-lenke">📊 Inflasjonskalkulator</a>
+      <a href="/lønnskalkulator" class="relatert-lenke">💼 Lønnskalkulator</a>
+      <a href="/pensjonskalkulator" class="relatert-lenke">🏦 Pensjonskalkulator</a>
+      <a href="/artikler/hva-er-inflasjon" class="relatert-lenke">📖 Hva er inflasjon?</a>
+      <a href="/artikler/slik-beskytter-du-sparepengene" class="relatert-lenke">💰 Beskytt sparepengene</a>
+      <a href="/artikler/norsk-inflasjon-historisk" class="relatert-lenke">📈 Historisk inflasjon</a>
+      <a href="/ressurser" class="relatert-lenke">🔗 Ressurser</a>
+    </div>
+  </div>
   <a href="/" class="back-link">← Tilbake til inflasjonskalkulator.no</a>
 </div>
 
