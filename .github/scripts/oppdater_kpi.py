@@ -515,6 +515,107 @@ def oppdater_artikler(endringer, forrige_mnd):
         print(f"{fil} oppdatert!")
 
 
+
+# ── GENERER OG-BILDER ─────────────────────────────────────────────────────────
+
+def generer_og_bilder(endringer, forrige_mnd):
+    """Genererer OG-bilder for alle sider. KPI-rapport-bildet oppdateres månedlig."""
+
+    kpi = endringer.get("kpi_total", 0)
+    mat = endringer.get("matvarer", 0)
+    strom = endringer.get("elektrisitet", 0)
+    mnd_str = MND_LANG[forrige_mnd.month]
+    aar = forrige_mnd.year
+
+    def fp(v):
+        return f"+{v:.1f} %" if v >= 0 else f"{v:.1f} %"
+
+    def lag_base_svg(tittel_linjer, undertittel, emoji, bilde_id):
+        tittel_html = ""
+        for i, linje in enumerate(tittel_linjer):
+            y = 195 + i * 82
+            tittel_html += f'  <text x="80" y="{y}" font-family="system-ui,sans-serif" font-size="68" font-weight="800" fill="#ffffff" letter-spacing="-2">{linje}</text>\n'
+
+        undertittel_y = 195 + len(tittel_linjer) * 82 + 18
+
+        return f'''<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg{bilde_id}" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d3d22"/>
+      <stop offset="100%" stop-color="#114d2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg{bilde_id})"/>
+  <circle cx="1080" cy="100" r="220" fill="#6ee09e" opacity="0.10"/>
+  <circle cx="1120" cy="520" r="160" fill="#2a9d60" opacity="0.08"/>
+  <circle cx="80" cy="560" r="180" fill="#0a2e1a" opacity="0.5"/>
+  <line x1="0" y1="210" x2="1200" y2="210" stroke="#6ee09e" stroke-width="1" opacity="0.07"/>
+  <line x1="0" y1="420" x2="1200" y2="420" stroke="#6ee09e" stroke-width="1" opacity="0.07"/>
+  <line x1="400" y1="0" x2="400" y2="630" stroke="#6ee09e" stroke-width="1" opacity="0.07"/>
+  <line x1="800" y1="0" x2="800" y2="630" stroke="#6ee09e" stroke-width="1" opacity="0.07"/>
+  <text x="900" y="390" font-size="210" text-anchor="middle" opacity="0.15">{emoji}</text>
+  <text x="80" y="78" font-family="system-ui,sans-serif" font-size="17" font-weight="500" fill="rgba(255,255,255,0.38)" letter-spacing="1">inflasjonskalkulator.no</text>
+  <rect x="80" y="98" width="60" height="5" rx="2.5" fill="#6ee09e"/>
+{tittel_html}  <text x="80" y="{undertittel_y}" font-family="system-ui,sans-serif" font-size="25" font-weight="300" fill="rgba(255,255,255,0.52)">{undertittel}</text>
+  <rect x="80" y="555" width="180" height="36" rx="18" fill="#6ee09e" opacity="0.18"/>
+  <rect x="80" y="555" width="180" height="36" rx="18" fill="none" stroke="#6ee09e" stroke-width="1" opacity="0.45"/>
+  <text x="170" y="578" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#6ee09e" text-anchor="middle" letter-spacing="1">Kilde: SSB / KPI</text>
+</svg>'''
+
+    # Statiske bilder – genereres kun hvis de ikke finnes
+    # Statiske bilder sjekkes kun – de lastes opp manuelt en gang
+    statiske = [
+        "og-index.svg", "og-husleie.svg", "og-lonn.svg", "og-pensjon.svg",
+        "og-ressurser.svg", "og-hva-inflasjon.svg", "og-rente.svg",
+        "og-sparing.svg", "og-historisk.svg",
+    ]
+    for filnavn in statiske:
+        if os.path.exists(filnavn):
+            print(f"OG-bilde finnes: {filnavn}")
+        else:
+            print(f"OG-bilde mangler (last opp manuelt): {filnavn}")
+
+    # KPI-rapport-bildet oppdateres alltid med ferske tall
+    slug = MND_SLUG[forrige_mnd.month]
+    rapport_svg = f'''<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgkpi" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d3d22"/>
+      <stop offset="100%" stop-color="#114d2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgkpi)"/>
+  <circle cx="1080" cy="100" r="220" fill="#6ee09e" opacity="0.10"/>
+  <circle cx="80" cy="560" r="180" fill="#0a2e1a" opacity="0.5"/>
+  <line x1="0" y1="210" x2="1200" y2="210" stroke="#6ee09e" stroke-width="1" opacity="0.07"/>
+  <line x1="0" y1="420" x2="1200" y2="420" stroke="#6ee09e" stroke-width="1" opacity="0.07"/>
+  <line x1="400" y1="0" x2="400" y2="630" stroke="#6ee09e" stroke-width="1" opacity="0.07"/>
+  <line x1="800" y1="0" x2="800" y2="630" stroke="#6ee09e" stroke-width="1" opacity="0.07"/>
+  <text x="80" y="78" font-family="system-ui,sans-serif" font-size="17" font-weight="500" fill="rgba(255,255,255,0.38)" letter-spacing="1">inflasjonskalkulator.no</text>
+  <rect x="80" y="98" width="60" height="5" rx="2.5" fill="#6ee09e"/>
+  <text x="80" y="195" font-family="system-ui,sans-serif" font-size="68" font-weight="800" fill="#ffffff" letter-spacing="-2">KPI {mnd_str} {aar}</text>
+  <text x="80" y="277" font-family="system-ui,sans-serif" font-size="68" font-weight="800" fill="#6ee09e" letter-spacing="-2">{fp(kpi)} inflasjon</text>
+  <text x="80" y="328" font-family="system-ui,sans-serif" font-size="25" font-weight="300" fill="rgba(255,255,255,0.52)">Offisielle tall fra SSB – publisert 10. {mnd_str} {aar}</text>
+  <rect x="80" y="390" width="620" height="2" fill="rgba(255,255,255,0.1)"/>
+  <rect x="80" y="420" width="175" height="90" rx="12" fill="rgba(255,255,255,0.07)"/>
+  <text x="167" y="460" font-family="system-ui,sans-serif" font-size="30" font-weight="800" fill="#6ee09e" text-anchor="middle">{fp(mat)}</text>
+  <text x="167" y="488" font-family="system-ui,sans-serif" font-size="14" fill="rgba(255,255,255,0.45)" text-anchor="middle">Matvarer</text>
+  <rect x="275" y="420" width="175" height="90" rx="12" fill="rgba(255,255,255,0.07)"/>
+  <text x="362" y="460" font-family="system-ui,sans-serif" font-size="30" font-weight="800" fill="#6ee09e" text-anchor="middle">{fp(strom)}</text>
+  <text x="362" y="488" font-family="system-ui,sans-serif" font-size="14" fill="rgba(255,255,255,0.45)" text-anchor="middle">Str&#248;m</text>
+  <rect x="470" y="420" width="175" height="90" rx="12" fill="rgba(255,255,255,0.07)"/>
+  <text x="557" y="460" font-family="system-ui,sans-serif" font-size="30" font-weight="800" fill="#6ee09e" text-anchor="middle">{fp(kpi)}</text>
+  <text x="557" y="488" font-family="system-ui,sans-serif" font-size="14" fill="rgba(255,255,255,0.45)" text-anchor="middle">KPI totalt</text>
+  <rect x="80" y="555" width="180" height="36" rx="18" fill="#6ee09e" opacity="0.18"/>
+  <rect x="80" y="555" width="180" height="36" rx="18" fill="none" stroke="#6ee09e" stroke-width="1" opacity="0.45"/>
+  <text x="170" y="578" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#6ee09e" text-anchor="middle" letter-spacing="1">Kilde: SSB / KPI</text>
+</svg>'''
+
+    with open("og-kpi-rapport.svg", "w", encoding="utf-8") as f:
+        f.write(rapport_svg)
+    print(f"OG KPI-rapport-bilde oppdatert: {mnd_str} {aar} – KPI {fp(kpi)}")
+
+
 def main():
     data, mnd_kode, fjor_kode, forrige_mnd = hent_siste_kpi()
     if not data:
@@ -559,6 +660,9 @@ def main():
         kpi_snitt, snitt_aar = hent_aarlig_kpi_snitt()
         if kpi_snitt:
             oppdater_lonnskalkulator(kpi_snitt, snitt_aar)
+
+    # 5. Generer OG-bilder
+    generer_og_bilder(endringer, forrige_mnd)
 
     print("\nAlt ferdig!")
 
