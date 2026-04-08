@@ -296,6 +296,145 @@ def oppdater_sitemap(slug, aar, pub_dato):
         print("Allerede i sitemap.")
 
 
+
+# ── HENT JANUAR KPI FOR HUSLEIEREGULERING ────────────────────────────────────
+
+def hent_januar_kpi():
+    aar = datetime.now().year
+    jan_i_aar = f"{aar}M01"
+    jan_i_fjor = f"{aar-1}M01"
+    query = {
+        "query": [
+            {"code": "Konsumgrp", "selection": {"filter": "item", "values": ["00"]}},
+            {"code": "ContentsCode", "selection": {"filter": "item", "values": ["KpiIndMnd"]}},
+            {"code": "Tid", "selection": {"filter": "item", "values": [jan_i_aar, jan_i_fjor]}}
+        ],
+        "response": {"format": "json-stat2"}
+    }
+    try:
+        r = requests.post(SSB_API_URL, json=query, timeout=30)
+        r.raise_for_status()
+        data = r.json()
+        verdier = data["value"]
+        tid_ids = list(data["dimension"]["Tid"]["category"]["index"].keys())
+        idx_aar = tid_ids.index(jan_i_aar)
+        idx_fjor = tid_ids.index(jan_i_fjor)
+        ny = verdier[idx_aar]
+        gammel = verdier[idx_fjor]
+        if ny and gammel:
+            vekst = round(((ny - gammel) / gammel) * 100, 1)
+            print(f"Januar KPI-vekst {aar}: {vekst}%")
+            return vekst, aar
+    except Exception as e:
+        print(f"Feil ved henting av januar KPI: {e}")
+    return None, None
+
+
+def hent_aarlig_kpi_snitt():
+    aar = datetime.now().year
+    forrige_aar = aar - 1
+    maaneder = [f"{forrige_aar}M{str(m).zfill(2)}" for m in range(1, 13)]
+    query = {
+        "query": [
+            {"code": "Konsumgrp", "selection": {"filter": "item", "values": ["00"]}},
+            {"code": "ContentsCode", "selection": {"filter": "item", "values": ["KpiIndMnd"]}},
+            {"code": "Tid", "selection": {"filter": "item", "values": maaneder}}
+        ],
+        "response": {"format": "json-stat2"}
+    }
+    try:
+        r = requests.post(SSB_API_URL, json=query, timeout=30)
+        r.raise_for_status()
+        data = r.json()
+        verdier = [v for v in data["value"] if v is not None]
+        if len(verdier) == 12:
+            snitt = round(sum(verdier) / 12, 1)
+            print(f"Aarlig KPI-snitt {forrige_aar}: {snitt}")
+            return snitt, forrige_aar
+    except Exception as e:
+        print(f"Feil ved henting av arsgjennomsnitt: {e}")
+    return None, None
+
+
+# ── OPPDATER HUSLEIEKALKULATOR ────────────────────────────────────────────────
+
+def oppdater_husleiekalkulator(jan_vekst, aar):
+    fil = "husleiekalkulator.html"
+    if not os.path.exists(fil):
+        print(f"{fil} ikke funnet, hopper over.")
+        return
+    with open(fil, "r", encoding="utf-8") as f:
+        html = f.read()
+
+    # Oppdater tittel og meta
+    html = re.sub(r"Husleiekalkulator \d{4}", f"Husleiekalkulator {aar}", html)
+    html = re.sub(r"Gyldig for \d{4}", f"Gyldig for {aar}", html)
+
+    # Oppdater highlight-boks
+    html = re.sub(
+        r"Husleieøkning i \d{4} kan maksimalt være <strong>[^<]+</strong>[^.]+\.",
+        f"Husleieøkning i {aar} kan maksimalt v\u00e6re <strong>{jan_vekst} %</strong>, basert p\u00e5 KPI-veksten fra januar {aar-1} til januar {aar} (SSB).",
+        html
+    )
+
+    # Legg til nytt år i kpiVekst hvis ikke finnes
+    if f"{aar}:" not in html:
+        html = html.replace(
+            "const kpiVekst = {",
+            f"const kpiVekst = {{ {aar}: {jan_vekst},"
+        ).replace("= {{ ", "= { ")
+
+    # Legg til nytt år i dropdown hvis ikke finnes
+    ny_option = f'<option value="{aar}">{aar} (KPI jan. {aar-1}\u2013jan. {aar}: +{jan_vekst} %)</option>'
+    if f'value="{aar}"' not in html:
+        html = html.replace(
+            '<select id="reg-ar">',
+            f'<select id="reg-ar">\n          {ny_option}'
+        )
+
+    # Legg til i historikk-listen
+    ny_linje = f"<li><strong>{aar}:</strong> KPI jan. {aar-1}\u2013jan. {aar} = +{jan_vekst} %</li>"
+    if f"<strong>{aar}:</strong>" not in html:
+        forrige = f"<li><strong>{aar-1}:</strong>"
+        if forrige in html:
+            html = html.replace(forrige, ny_linje + "\n        " + forrige)
+
+    with open(fil, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"husleiekalkulator.html oppdatert for {aar}!")
+
+
+# ── OPPDATER LØNNSKALKULATOR ──────────────────────────────────────────────────
+
+def oppdater_lonnskalkulator(kpi_snitt, forrige_aar):
+    fil = "l\u00f8nnskalkulator.html"
+    if not os.path.exists(fil):
+        print(f"{fil} ikke funnet, hopper over.")
+        return
+    with open(fil, "r", encoding="utf-8") as f:
+        html = f.read()
+
+    # Legg til nytt ar i kpiData hvis ikke finnes
+    if f"{forrige_aar}:" not in html:
+        # Finn siste verdi og legg til
+        match = re.search(r"(\d{4}):([\d.]+)\s*\}", html)
+        if match:
+            siste_aar = match.group(1)
+            html = html.replace(
+                f"{siste_aar}:{match.group(2)}",
+                f"{siste_aar}:{match.group(2)},{forrige_aar}:{kpi_snitt}"
+            )
+
+    # Oppdater default arsvalgene
+    aar = forrige_aar + 1
+    html = re.sub(r"fraEl\.value = \d+", f"fraEl.value = {forrige_aar}", html)
+    html = re.sub(r"tilEl\.value = \d+", f"tilEl.value = {aar}", html)
+
+    with open(fil, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"lonnskalkulator.html oppdatert med {forrige_aar} (snitt {kpi_snitt})!")
+
+
 def main():
     data, mnd_kode, fjor_kode, forrige_mnd = hent_siste_kpi()
     if not data:
@@ -317,7 +456,7 @@ def main():
     html = oppdater_highlight_box(html, endringer, forrige_mnd)
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"index.html oppdatert!")
+    print("index.html oppdatert!")
 
     # 2. Generer KPI-rapport
     rapport_html, slug, aar = generer_kpi_rapport(endringer, forrige_mnd, pub_dato)
@@ -328,6 +467,16 @@ def main():
 
     # 3. Oppdater sitemap
     oppdater_sitemap(slug, aar, pub_dato)
+
+    # 4. Oppdater husleie- og lonnskalkulator kun i februar
+    if datetime.now().month == 2:
+        jan_vekst, jan_aar = hent_januar_kpi()
+        if jan_vekst:
+            oppdater_husleiekalkulator(jan_vekst, jan_aar)
+        kpi_snitt, snitt_aar = hent_aarlig_kpi_snitt()
+        if kpi_snitt:
+            oppdater_lonnskalkulator(kpi_snitt, snitt_aar)
+
     print("\nAlt ferdig!")
 
 
