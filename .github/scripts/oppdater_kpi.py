@@ -435,6 +435,86 @@ def oppdater_lonnskalkulator(kpi_snitt, forrige_aar):
     print(f"lonnskalkulator.html oppdatert med {forrige_aar} (snitt {kpi_snitt})!")
 
 
+
+# ── OPPDATER ARTIKLER ─────────────────────────────────────────────────────────
+
+def oppdater_artikler(endringer, forrige_mnd):
+    """Oppdaterer KPI-tall og datoer i alle artikler."""
+    kpi = endringer.get("kpi_total", 0)
+    mat = endringer.get("matvarer", 0)
+    kpijae = endringer.get("kpi_total", 0) - 0.1  # approksimasjon
+
+    mnd_str = MND_LANG[forrige_mnd.month]
+    aar = forrige_mnd.year
+    aar_fjor = aar - 1
+    oppdatert_dato = f"{mnd_str.capitalize()} {aar}"
+
+    artikler = [
+        "artikler/hva-er-inflasjon.html",
+        "artikler/rentehevinger-og-inflasjon.html",
+        "artikler/slik-beskytter-du-sparepengene.html",
+        "artikler/norsk-inflasjon-historisk.html",
+    ]
+
+    for fil in artikler:
+        if not os.path.exists(fil):
+            print(f"{fil} ikke funnet, hopper over.")
+            continue
+
+        with open(fil, "r", encoding="utf-8") as f:
+            html = f.read()
+
+        # 1. Oppdater "Oppdatert [måned] [år]"
+        html = re.sub(
+            r"Oppdatert \w+ \d{4}",
+            f"Oppdatert {oppdatert_dato}",
+            html
+        )
+
+        # 2. Oppdater siste KPI-tall i fact-kort
+        # Pattern: <span class="fact-val">X,X %</span> etterfulgt av KPI-lbl
+        html = re.sub(
+            r'(<span class="fact-val">)\d+,\d+ %(<\/span>\s*<div class="fact-lbl">KPI)',
+            rf'\g<1>{str(kpi).replace(".", ",")} %\g<2>',
+            html
+        )
+
+        # 3. Oppdater matvare-tall i fact-kort
+        html = re.sub(
+            r'(<span class="fact-val">)\d+,\d+ %(<\/span>\s*<div class="fact-lbl">Matvare)',
+            rf'\g<1>{str(mat).replace(".", ",")} %\g<2>',
+            html
+        )
+
+        # 4. Oppdater referanser til siste KPI i løpende tekst
+        # F.eks. "i desember 2025 var KPI 3,2 % og KPI-JAE 3,1 %"
+        html = re.sub(
+            r"i \w+ \d{4} var KPI \d+,\d+ % og KPI-JAE \d+,\d+ %",
+            f"i {mnd_str} {aar} var KPI {str(kpi).replace('.', ',')} % og KPI-JAE {str(round(kpijae, 1)).replace('.', ',')} %",
+            html,
+            flags=re.IGNORECASE
+        )
+
+        # 5. Oppdater "inflasjonen på X % i ÅÅÅÅ"
+        html = re.sub(
+            r"norsk inflasjon på \d+,\d+ % i \d{4}",
+            f"norsk inflasjon på {str(kpi).replace('.', ',')} % i {aar}",
+            html,
+            flags=re.IGNORECASE
+        )
+
+        # 6. Oppdater "I ÅÅÅÅ endte inflasjonen på X %"
+        html = re.sub(
+            r"I \d{4} endte inflasjonen på \d+,\d+ %",
+            f"I {aar} endte inflasjonen på {str(kpi).replace('.', ',')} %",
+            html
+        )
+
+        with open(fil, "w", encoding="utf-8") as f:
+            f.write(html)
+        print(f"{fil} oppdatert!")
+
+
 def main():
     data, mnd_kode, fjor_kode, forrige_mnd = hent_siste_kpi()
     if not data:
@@ -457,6 +537,9 @@ def main():
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html)
     print("index.html oppdatert!")
+
+    # 1b. Oppdater artikler
+    oppdater_artikler(endringer, forrige_mnd)
 
     # 2. Generer KPI-rapport
     rapport_html, slug, aar = generer_kpi_rapport(endringer, forrige_mnd, pub_dato)
