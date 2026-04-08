@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pensjonskalkulator 2026 – Beregn pensjon og inflasjon</title>
+<meta name="description" content="Bruk vår pensjonskalkulator og se hva pensjonen din er verdt etter inflasjon. Beregn fremtidig kjøpekraft med vår gratis pensjonskalkulator for 2026.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/pensjonskalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Pensjonskalkulator 2026",
+  "description": "Beregn hva pensjonen din er verdt etter inflasjon. Gratis pensjonskalkulator basert på SSBs KPI-tall.",
+  "url": "https://inflasjonskalkulator.no/pensjonskalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NOK" },
+  "publisher": { "@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no" }
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #1a7a4a; --green-light: #e8f5ee; --green-mid: #2a9d60;
+  --green-dark: #114d2e; --red: #c0392b; --text: #1a1a1a; --text-muted: #5a6472;
+  --bg: #f7f8f5; --white: #ffffff; --border: #dde3d8;
+  --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --radius: 12px; --radius-sm: 8px;
+}
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.7; }
+nav { background: var(--green-dark); padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+.nav-logo span { color: #6ee09e; }
+nav ul { display: flex; gap: 1.5rem; list-style: none; }
+nav ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
+nav ul a:hover { color: #fff; }
+@media (max-width: 640px) { nav ul { display: none; } }
+
+.hero { background: var(--green-dark); padding: 3.5rem 1.5rem 4.5rem; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+.breadcrumb { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+.breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.breadcrumb span { margin: 0 6px; }
+.hero-tag { display: inline-block; background: rgba(110,224,158,0.15); border: 1px solid rgba(110,224,158,0.3); color: #6ee09e; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 14px; border-radius: 99px; margin-bottom: 1.1rem; }
+.hero h1 { font-family: var(--font-head); font-weight: 800; font-size: clamp(1.9rem, 5vw, 3rem); color: #fff; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 0.75rem; word-break: break-word; }
+.hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 560px; font-weight: 300; }
+
+.kalk-wrap { margin-top: -2rem; position: relative; z-index: 10; }
+.kalk-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.1); padding: 2rem; }
+.kalk-title { font-family: var(--font-head); font-weight: 700; font-size: 1.25rem; color: var(--green-dark); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+.kalk-sub { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 540px) { .grid2 { grid-template-columns: 1fr; } }
+.field { margin-bottom: 1rem; }
+.field label { display: block; font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 5px; }
+.field input, .field select { width: 100%; height: 48px; padding: 0 1rem; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 1rem; color: var(--text); background: var(--bg); outline: none; -moz-appearance: textfield; transition: border-color 0.15s; }
+.field input::-webkit-outer-spin-button, .field input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.field input:focus, .field select:focus { border-color: var(--green-mid); background: #fff; }
+.field-hint { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+
+.kalk-btn { width: 100%; height: 52px; background: var(--green); color: #fff; border: none; border-radius: var(--radius-sm); font-family: var(--font-head); font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.15s; margin-top: 0.5rem; }
+.kalk-btn:hover { background: var(--green-mid); }
+
+.result-box { display: none; margin-top: 1.5rem; border-radius: var(--radius-sm); padding: 1.5rem; }
+.result-box.show { display: block; }
+.result-box.positiv { background: var(--green-light); border: 1.5px solid #b2dfc6; }
+.result-box.negativ { background: #fdf0ee; border: 1.5px solid #f5c4b3; }
+
+.result-main { text-align: center; margin-bottom: 1.25rem; }
+.result-val { font-family: var(--font-head); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; display: block; }
+.result-val.pos { color: var(--green-dark); }
+.result-val.neg { color: var(--red); }
+.result-lbl { font-size: 0.85rem; color: var(--text-muted); }
+
+.result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.08); margin-bottom: 1rem; }
+@media (max-width: 500px) { .result-grid { grid-template-columns: 1fr 1fr; } }
+.result-item { text-align: center; }
+.result-item .val { display: block; font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--green-dark); }
+.result-item .val.neg { color: var(--red); }
+.result-item .lbl { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.result-tekst { font-size: 0.88rem; color: var(--text-muted); border-top: 1px solid rgba(0,0,0,0.08); padding-top: 0.85rem; line-height: 1.6; }
+
+.section { padding: 2.5rem 0; }
+.sec-title { font-family: var(--font-head); font-weight: 700; font-size: 1.35rem; color: var(--green-dark); margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+.prose p { margin-bottom: 1rem; font-size: 0.97rem; }
+.prose h3 { font-family: var(--font-head); font-weight: 600; font-size: 1.05rem; color: var(--green-dark); margin: 1.5rem 0 0.5rem; }
+.prose ul { margin: 0.5rem 0 1rem 1.5rem; font-size: 0.97rem; }
+.prose ul li { margin-bottom: 0.4rem; }
+.highlight-box { background: var(--green-light); border-left: 4px solid var(--green); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 0.95rem; }
+
+.relatert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.relatert-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-decoration: none; color: inherit; transition: box-shadow 0.15s, transform 0.12s; display: block; }
+.relatert-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.relatert-card .rc-title { font-family: var(--font-head); font-weight: 700; font-size: 1rem; color: var(--green-dark); margin-bottom: 0.35rem; }
+.relatert-card .rc-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
+.back-link { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #fff; text-decoration: none; font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; padding: 12px 22px; border-radius: var(--radius-sm); margin-top: 1.5rem; transition: background 0.15s; }
+.back-link:hover { background: var(--green-mid); }
+
+footer { background: var(--green-dark); color: rgba(255,255,255,0.6); padding: 2rem 1.5rem; text-align: center; font-size: 0.88rem; margin-top: 2rem; }
+footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+.footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul>
+    <li><a href="/">Inflasjonskalkulator</a></li>
+    <li><a href="/husleiekalkulator">Husleie</a></li>
+    <li><a href="/lønnskalkulator">Lønn</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Hjem</a><span>›</span> Pensjonskalkulator</div>
+    <div class="hero-tag">Gratis verktøy</div>
+    <h1>Pensjonskalkulator – Beregn pensjon og inflasjon</h1>
+    <p>Se hva pensjonen din er verdt i fremtiden etter inflasjon. Planlegg pensjonisttilværelsen med reelle tall.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn pensjonens kjøpekraft</div>
+      <div class="kalk-sub">Inflasjonskalkulatoren viser hva pensjonen din er verdt i fremtiden basert på historisk og forventet prisvekst.</div>
+
+      <div class="grid2">
+        <div class="field">
+          <label>Månedlig pensjon (kr)</label>
+          <input type="number" id="pensjon" placeholder="25 000" min="0">
+        </div>
+        <div class="field">
+          <label>Antall år frem i tid</label>
+          <input type="number" id="antall-aar" placeholder="20" min="1" max="50" value="20">
+        </div>
+        <div class="field">
+          <label>Forventet årlig inflasjon (%)</label>
+          <select id="inflasjon-valg">
+            <option value="2.0">2,0 % – Norges Banks mål</option>
+            <option value="3.1" selected>3,1 % – Norsk snitt 2024–2025</option>
+            <option value="4.0">4,0 % – Moderat høy inflasjon</option>
+            <option value="6.0">6,0 % – Høy inflasjon (2022-nivå)</option>
+          </select>
+          <div class="field-hint">Velg forventet inflasjon for beregningsperioden.</div>
+        </div>
+        <div class="field">
+          <label>Forventet pensjonsregulering (%)</label>
+          <select id="regulering-valg">
+            <option value="0">0 % – Ingen regulering</option>
+            <option value="2.0">2,0 % – Norges Banks inflasjonsmål</option>
+            <option value="2.5" selected>2,5 % – Historisk snitt (lønn – 0,75 %)</option>
+            <option value="3.1">3,1 % – Full KPI-regulering</option>
+          </select>
+          <div class="field-hint">Alderspensjon reguleres med lønnsvekst minus 0,75 %.</div>
+        </div>
+      </div>
+      <button class="kalk-btn" onclick="beregnPensjon()">Beregn pensjonens kjøpekraft</button>
+
+      <div class="result-box" id="result-box">
+        <div class="result-main">
+          <span class="result-val" id="res-kjopekraft">—</span>
+          <span class="result-lbl" id="res-lbl">Reell kjøpekraft om <span id="res-aar-lbl">20</span> år (i dagens kroner)</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="res-nominell">—</span>
+            <span class="lbl">Nominell pensjon</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-tap">—</span>
+            <span class="lbl">Kjøpekrafttap</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-pst">—</span>
+            <span class="lbl">Verditap i %</span>
+          </div>
+        </div>
+        <div class="result-tekst" id="res-tekst"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">Hvorfor mister pensjonen kjøpekraft?</h2>
+    <div class="prose">
+      <p>Pensjon utbetales i nominelle kroner, men hva du faktisk kan kjøpe for pengene avhenger av prisnivået. Når inflasjonen er 3 % i året, mister du 26 % av kjøpekraften i løpet av 10 år – selv om pensjonsbeløpet ser likt ut på papiret.</p>
+      <div class="highlight-box">
+        <strong>Eksempel:</strong> En pensjon på 25 000 kr/mnd i dag tilsvarer bare 17 400 kr i kjøpekraft om 20 år, forutsatt 2 % årlig inflasjon og ingen regulering. Bruk vår <a href="/" style="color:var(--green);">inflasjonskalkulator</a> for å beregne historisk prisvekst.
+      </div>
+
+      <h3>Slik reguleres alderspensjon i Norge</h3>
+      <p>Alderspensjon fra folketrygden reguleres hvert år med gjennomsnittet av lønns- og prisvekst, fratrukket 0,75 prosentpoeng. Det betyr at pensjonen normalt øker, men litt mindre enn lønnsveksten til de som er i jobb.</p>
+      <ul>
+        <li><strong>Under utbetaling:</strong> Reguleres med lønnsvekst minus 0,75 %</li>
+        <li><strong>Under opptjening:</strong> Reguleres med lønnsvekst fullt ut</li>
+        <li><strong>AFP og tjenestepensjon:</strong> Reguleres ulikt avhengig av avtale</li>
+        <li><strong>Privat pensjonssparing (IPS):</strong> Ingen automatisk regulering</li>
+      </ul>
+
+      <h3>Hva kan du gjøre?</h3>
+      <p>Det beste du kan gjøre er å spare ekstra til pensjon og plassere pengene i produkter som gir avkastning over inflasjonen. Se vår <a href="/artikler/slik-beskytter-du-sparepengene" style="color:var(--green);">guide til å beskytte sparepengene mot inflasjon</a>.</p>
+      <ul>
+        <li>Spare i IPS (Individuell Pensjonssparing) – gir skattefordel</li>
+        <li>Aksjefond via ASK for langsiktig vekst</li>
+        <li>Sjekk pensjonsavtalen din på norskpensjon.no</li>
+        <li>Vurder å jobbe lenger – hvert år gir høyere pensjon</li>
+      </ul>
+
+      <h3>Slik bruker du pensjonskalkulatoren</h3>
+      <p>Skriv inn månedlig pensjon, antall år frem i tid og forventet inflasjonsnivå. Pensjonskalkulatoren beregner hva pensjonen din er verdt i dagens kjøpekraft etter at inflasjonen har spist av verdien. Du kan også justere for forventet pensjonsregulering.</p>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <h2 class="sec-title">Andre kalkulatorer</h2>
+    <div class="relatert-grid">
+      <a href="/" class="relatert-card">
+        <div class="rc-title">Inflasjonskalkulator</div>
+        <div class="rc-desc">Beregn hva et beløp er verdt etter prisvekst. Historiske KPI-tall tilbake til 1960.</div>
+      </a>
+      <a href="/husleiekalkulator" class="relatert-card">
+        <div class="rc-title">Husleiekalkulator</div>
+        <div class="rc-desc">Beregn lovlig husleieøkning basert på KPI. Gyldig for 2026.</div>
+      </a>
+      <a href="/lønnskalkulator" class="relatert-card">
+        <div class="rc-title">Lønnskalkulator</div>
+        <div class="rc-desc">Finn ut om du har fått reell lønnsvekst eller kjøpekrafttap etter inflasjon.</div>
+      </a>
+    </div>
+  </div>
+
+  <a href="/" class="back-link">← Tilbake til inflasjonskalkulator.no</a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="/">Hjem</a>
+      <a href="/#kalkulator">Inflasjonskalkulator</a>
+      <a href="/husleiekalkulator">Husleiekalkulator</a>
+      <a href="/lønnskalkulator">Lønnskalkulator</a>
+      <a href="/pensjonskalkulator">Pensjonskalkulator</a>
+      <a href="/ressurser">Ressurser</a>
+    </div>
+    <p>Tall basert på <a href="https://www.ssb.no" target="_blank" rel="noopener">SSBs Konsumprisindeks</a>. Informasjonen er kun veiledende.</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 inflasjonskalkulator.no</p>
+  </div>
+</footer>
+
+<script>
+function beregnPensjon() {
+  const pensjon = parseFloat(document.getElementById('pensjon').value);
+  const aar = parseInt(document.getElementById('antall-aar').value);
+  const inflasjon = parseFloat(document.getElementById('inflasjon-valg').value) / 100;
+  const regulering = parseFloat(document.getElementById('regulering-valg').value) / 100;
+
+  if (!pensjon || isNaN(pensjon) || !aar || isNaN(aar)) {
+    document.getElementById('result-box').classList.remove('show', 'positiv', 'negativ');
+    return;
+  }
+
+  // Netto realvekst per år
+  const nettoVekst = regulering - inflasjon;
+  // Realverdi om N år (i dagens kjøpekraft)
+  const realFaktor = Math.pow(1 + nettoVekst, aar);
+  const realVerdi = pensjon * realFaktor;
+  // Nominell pensjon om N år (med regulering)
+  const nominellFaktor = Math.pow(1 + regulering, aar);
+  const nominell = pensjon * nominellFaktor;
+  // Tap i kjøpekraft
+  const tap = pensjon - realVerdi;
+  const tapPst = ((1 - realFaktor) * 100);
+
+  const fmt = n => Math.round(Math.abs(n)).toLocaleString('nb-NO') + ' kr';
+  const fmtP = n => (n >= 0 ? '+' : '') + n.toFixed(1) + ' %';
+
+  const positiv = realVerdi >= pensjon;
+  const box = document.getElementById('result-box');
+  box.className = 'result-box show ' + (positiv ? 'positiv' : 'negativ');
+
+  const valEl = document.getElementById('res-kjopekraft');
+  valEl.textContent = fmt(realVerdi) + '/mnd';
+  valEl.className = 'result-val ' + (positiv ? 'pos' : 'neg');
+
+  document.getElementById('res-lbl').innerHTML = `Reell kjøpekraft om <span id="res-aar-lbl">${aar}</span> år (i dagens kroner)`;
+  document.getElementById('res-nominell').textContent = fmt(nominell) + '/mnd';
+  document.getElementById('res-tap').textContent = (positiv ? '+' : '-') + fmt(tap) + '/mnd';
+  document.getElementById('res-tap').className = 'val ' + (positiv ? '' : 'neg');
+  document.getElementById('res-pst').textContent = fmtP(tapPst);
+  document.getElementById('res-pst').className = 'val ' + (positiv ? '' : 'neg');
+
+  const infPst = (inflasjon * 100).toFixed(1).replace('.', ',');
+  const regPst = (regulering * 100).toFixed(1).replace('.', ',');
+
+  document.getElementById('res-tekst').textContent =
+    `Med ${infPst} % årlig inflasjon og ${regPst} % pensjonsregulering vil ${fmt(pensjon)}/mnd i dag ha en reell kjøpekraft på ${fmt(realVerdi)}/mnd om ${aar} år. ` +
+    (positiv
+      ? `Pensjonen din øker i reell verdi fordi reguleringen er høyere enn inflasjonen.`
+      : `Det tilsvarer et kjøpekrafttap på ${fmt(tap)} per måned – eller ${fmt(tap * 12)} per år.`);
+}
+
+document.getElementById('pensjon').addEventListener('keydown', e => { if (e.key === 'Enter') beregnPensjon(); });
+</script>
+</body>
+</html>
