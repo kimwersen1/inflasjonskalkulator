@@ -1,0 +1,35 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d3d22"/>
+      <stop offset="100%" stop-color="#114d2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle geometric accent -->
+  <rect x="0" y="0" width="6" height="630" fill="#6ee09e" opacity="0.6"/>
+  <rect x="0" y="0" width="1200" height="5" fill="#6ee09e" opacity="0.15"/>
+
+  <!-- Site name -->
+  <text x="80" y="72" font-family="system-ui,sans-serif" font-size="16" font-weight="500" fill="rgba(255,255,255,0.35)" letter-spacing="2">INFLASJONSKALKULATOR.NO</text>
+
+  <!-- Title -->
+  <text x="80" y="190" font-family="system-ui,sans-serif" font-size="66" font-weight="800" fill="#ffffff" letter-spacing="-2">Hva er</text>
+  <text x="80" y="270" font-family="system-ui,sans-serif" font-size="66" font-weight="800" fill="#ffffff" letter-spacing="-2">inflasjon?</text>
+
+  <!-- Undertittel -->
+  <text x="80" y="366" font-family="system-ui,sans-serif" font-size="24" font-weight="300" fill="rgba(255,255,255,0.5)">Enkel forklaring med eksempler</text>
+
+  <!-- Graf -->
+  <path d="M 780,380 L 780,380 L 856,283 L 932,180 L 1008,194 L 1084,300 L 1160,300 L 1160,380 Z" fill="#6ee09e" opacity="0.12"/>
+  <path d="M 780,380 L 856,283 L 932,180 L 1008,194 L 1084,300 L 1160,300" fill="none" stroke="#6ee09e" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="780" cy="380" r="5" fill="#6ee09e"/>
+  <circle cx="856" cy="283" r="5" fill="#6ee09e"/>
+  <circle cx="932" cy="180" r="5" fill="#6ee09e"/>
+  <circle cx="1008" cy="194" r="5" fill="#6ee09e"/>
+  <circle cx="1084" cy="300" r="5" fill="#6ee09e"/>
+  <circle cx="1160" cy="300" r="5" fill="#6ee09e"/>
+  <line x1="780" y1="380" x2="1160" y2="380" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+
+</svg>

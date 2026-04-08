@@ -1,0 +1,42 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d3d22"/>
+      <stop offset="100%" stop-color="#114d2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle geometric accent -->
+  <rect x="0" y="0" width="6" height="630" fill="#6ee09e" opacity="0.6"/>
+  <rect x="0" y="0" width="1200" height="5" fill="#6ee09e" opacity="0.15"/>
+
+  <!-- Site name -->
+  <text x="80" y="72" font-family="system-ui,sans-serif" font-size="16" font-weight="500" fill="rgba(255,255,255,0.35)" letter-spacing="2">INFLASJONSKALKULATOR.NO</text>
+
+  <!-- Title -->
+  <text x="80" y="190" font-family="system-ui,sans-serif" font-size="66" font-weight="800" fill="#ffffff" letter-spacing="-2">Inflasjons-</text>
+  <text x="80" y="270" font-family="system-ui,sans-serif" font-size="66" font-weight="800" fill="#ffffff" letter-spacing="-2">kalkulator.no</text>
+
+  <!-- Undertittel -->
+  <text x="80" y="366" font-family="system-ui,sans-serif" font-size="24" font-weight="300" fill="rgba(255,255,255,0.5)">Beregn kjøpekraft og prisvekst fra 1960</text>
+
+  <!-- Graf -->
+  <rect x="788" y="240" width="52" height="260" rx="6" fill="#6ee09e" opacity="0.85"/>
+  <text x="814" y="230" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#6ee09e" text-anchor="middle">+3.8%</text>
+  <text x="814" y="518" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)" text-anchor="middle">Mat</text>
+  <rect x="858" y="357" width="52" height="143" rx="6" fill="#e07070" opacity="0.85"/>
+  <text x="884" y="347" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#e07070" text-anchor="middle">-2.1%</text>
+  <text x="884" y="518" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)" text-anchor="middle">Strøm</text>
+  <rect x="928" y="261" width="52" height="239" rx="6" fill="#6ee09e" opacity="0.85"/>
+  <text x="954" y="251" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#6ee09e" text-anchor="middle">+3.5%</text>
+  <text x="954" y="518" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)" text-anchor="middle">Huslei</text>
+  <rect x="998" y="418" width="52" height="82" rx="6" fill="#6ee09e" opacity="0.85"/>
+  <text x="1024" y="408" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#6ee09e" text-anchor="middle">+1.2%</text>
+  <text x="1024" y="518" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)" text-anchor="middle">Drivst</text>
+  <rect x="1068" y="316" width="52" height="184" rx="6" fill="#6ee09e" opacity="0.85"/>
+  <text x="1094" y="306" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#6ee09e" text-anchor="middle">+2.7%</text>
+  <text x="1094" y="518" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)" text-anchor="middle">KPI</text>
+  <line x1="778" y1="500" x2="1130" y2="500" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+
+</svg>

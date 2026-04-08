@@ -1,0 +1,42 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d3d22"/>
+      <stop offset="100%" stop-color="#114d2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle geometric accent -->
+  <rect x="0" y="0" width="6" height="630" fill="#6ee09e" opacity="0.6"/>
+  <rect x="0" y="0" width="1200" height="5" fill="#6ee09e" opacity="0.15"/>
+
+  <!-- Site name -->
+  <text x="80" y="72" font-family="system-ui,sans-serif" font-size="16" font-weight="500" fill="rgba(255,255,255,0.35)" letter-spacing="2">INFLASJONSKALKULATOR.NO</text>
+
+  <!-- Title -->
+  <text x="80" y="190" font-family="system-ui,sans-serif" font-size="66" font-weight="800" fill="#ffffff" letter-spacing="-2">Husleie-</text>
+  <text x="80" y="270" font-family="system-ui,sans-serif" font-size="66" font-weight="800" fill="#ffffff" letter-spacing="-2">kalkulator 2026</text>
+
+  <!-- Undertittel -->
+  <text x="80" y="366" font-family="system-ui,sans-serif" font-size="24" font-weight="300" fill="rgba(255,255,255,0.5)">Finn lovlig husleieøkning basert på KPI</text>
+
+  <!-- Graf -->
+  <rect x="788" y="368" width="52" height="132" rx="6" fill="#6ee09e" opacity="0.85"/>
+  <text x="814" y="358" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#6ee09e" text-anchor="middle">+3.2%</text>
+  <text x="814" y="518" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)" text-anchor="middle">2022</text>
+  <rect x="858" y="240" width="52" height="260" rx="6" fill="#6ee09e" opacity="0.85"/>
+  <text x="884" y="230" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#6ee09e" text-anchor="middle">+6.3%</text>
+  <text x="884" y="518" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)" text-anchor="middle">2023</text>
+  <rect x="928" y="302" width="52" height="198" rx="6" fill="#6ee09e" opacity="0.85"/>
+  <text x="954" y="292" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#6ee09e" text-anchor="middle">+4.8%</text>
+  <text x="954" y="518" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)" text-anchor="middle">2024</text>
+  <rect x="998" y="368" width="52" height="132" rx="6" fill="#6ee09e" opacity="0.85"/>
+  <text x="1024" y="358" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#6ee09e" text-anchor="middle">+3.2%</text>
+  <text x="1024" y="518" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)" text-anchor="middle">2025</text>
+  <rect x="1068" y="352" width="52" height="148" rx="6" fill="#6ee09e" opacity="0.85"/>
+  <text x="1094" y="342" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#6ee09e" text-anchor="middle">+3.6%</text>
+  <text x="1094" y="518" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)" text-anchor="middle">2026</text>
+  <line x1="778" y1="500" x2="1130" y2="500" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+
+</svg>
