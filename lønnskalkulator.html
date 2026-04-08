@@ -81,6 +81,51 @@ footer { background: var(--green-dark); color: rgba(255,255,255,0.6); padding: 2
 footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
 .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Lønnskalkulator – Beregn reallønn og kjøpekraft",
+  "description": "Beregn din reelle lønnsvekst etter inflasjon. Finn ut om du har fått reallønnsvekst eller reallønnsfall.",
+  "url": "https://inflasjonskalkulator.no/lønnskalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NOK" },
+  "publisher": { "@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er reallønn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reallønn er hva lønnen din faktisk er verdt – altså kjøpekraften. Hvis lønnen øker med 3 % men inflasjonen er 4 %, har du fått en reallønnsreduksjon på 1 % selv om du tjener mer kroner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvordan beregnes reallønnsvekst?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reallønnsvekst beregnes ved å trekke inflasjonen (KPI) fra den nominelle lønnsveksten. Formelen er: Reallønnsvekst = Nominell lønnsvekst − KPI-vekst."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva var reallønnsveksten i Norge i 2025?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I 2025 var den gjennomsnittlige lønnsveksten i Norge ca. 5,0 % mens KPI-veksten var 3,1 %. Det gir en reallønnsvekst på ca. 1,9 % i 2025."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
