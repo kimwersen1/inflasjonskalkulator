@@ -32,6 +32,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add index.html sitemap.xml kpi-rapport/
+          git add index.html sitemap.xml kpi-rapport/ artikler/ husleiekalkulator.html lønnskalkulator.html
           git diff --staged --quiet || git commit -m "Automatisk oppdatering av KPI-tall fra SSB $(date +'%Y-%m-%d')"
           git push
