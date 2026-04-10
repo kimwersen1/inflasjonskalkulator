@@ -14,18 +14,108 @@ from datetime import datetime, timedelta
 
 SSB_API_URL = "https://data.ssb.no/api/v0/no/table/14700"
 
+# Konsumgruppe-koder etter ny COICOP 2018 klassifisering (gjeldende fra jan. 2026)
+# Kilde: SSB tabell 14700
 GRUPPER = {
-    "00":  "kpi_total",
-    "011": "matvarer",
-    "045": "elektrisitet",
-    "041": "husleie",
-    "072": "drivstoff",
-    "083": "teletjenester",
+    "TOT":  "kpi_total",      # KPI totalt
+    "CP01": "matvarer",       # Matvarer og alkoholfrie drikkevarer
+    "CP045": "elektrisitet",  # Elektrisitet inkl. nettleie
+    "CP041": "husleie",       # Husleie
+    "CP072": "drivstoff",     # Drivstoff og smøremidler
+    "CP081": "teletjenester", # Teletjenester
 }
+AKTIVE_KODER = {}  # Fylles ut dynamisk ved API-kall
 
 MND_LANG = {1:"januar",2:"februar",3:"mars",4:"april",5:"mai",6:"juni",7:"juli",8:"august",9:"september",10:"oktober",11:"november",12:"desember"}
 MND_KORT = {1:"jan.",2:"feb.",3:"mars",4:"apr.",5:"mai",6:"juni",7:"juli",8:"aug.",9:"sep.",10:"okt.",11:"nov.",12:"des."}
 MND_SLUG = {1:"januar",2:"februar",3:"mars",4:"april",5:"mai",6:"juni",7:"juli",8:"august",9:"september",10:"oktober",11:"november",12:"desember"}
+
+
+def hent_metadata():
+    """Henter metadata fra SSB for å finne gyldige koder dynamisk."""
+    try:
+        response = requests.get(SSB_API_URL, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+        
+        koder = {}
+        for var in data.get("variables", []):
+            koder[var["code"]] = {
+                "values": var["values"],
+                "valueTexts": var["valueTexts"]
+            }
+        print(f"Metadata hentet. Variabler: {list(koder.keys())}")
+        return koder
+    except Exception as e:
+        print(f"Feil ved henting av metadata: {e}")
+        return None
+
+
+def finn_konsumgruppe_koder(metadata):
+    """Finner riktige konsumgruppe-koder basert på metadata."""
+    if not metadata:
+        return None, None
+    
+    # Finn variabelnavn for konsumgruppe
+    konsumgrp_var = None
+    for key in metadata:
+        if "konsum" in key.lower() or "grp" in key.lower() or "coicop" in key.lower():
+            konsumgrp_var = key
+            break
+    
+    if not konsumgrp_var:
+        # Prøv første ikke-tid variabel
+        for key in metadata:
+            if "tid" not in key.lower() and "content" not in key.lower():
+                konsumgrp_var = key
+                break
+    
+    if not konsumgrp_var:
+        print("Fant ikke konsumgruppe-variabel!")
+        return None, None
+
+    values = metadata[konsumgrp_var]["values"]
+    texts = metadata[konsumgrp_var]["valueTexts"]
+    
+    print(f"Konsumgruppe-variabel: {konsumgrp_var}")
+    print(f"Tilgjengelige koder (første 15): {values[:15]}")
+    
+    # Finn koder for kategoriene vi trenger
+    soek = {
+        "kpi_total": ["total", "tot", "alle", "00", "kpi i alt", "konsumprisindeks i alt"],
+        "matvarer": ["matvare", "mat og", "food", "cp01", "01"],
+        "elektrisitet": ["elektrisitet", "electricity", "strøm", "cp045", "045"],
+        "husleie": ["husleie", "rent", "cp041", "041"],
+        "drivstoff": ["drivstoff", "fuel", "bensin", "cp072", "072"],
+        "teletjenester": ["teletjeneste", "telecom", "telefon", "cp081", "081", "083"],
+    }
+    
+    funnet = {}
+    for kategori, nokkelord in soek.items():
+        for i, (val, tekst) in enumerate(zip(values, texts)):
+            tekst_lower = tekst.lower()
+            val_lower = val.lower()
+            for nok in nokkelord:
+                if nok in tekst_lower or nok in val_lower:
+                    funnet[kategori] = val
+                    print(f"  {kategori}: {val} ({tekst})")
+                    break
+            if kategori in funnet:
+                break
+    
+    # Finn ContentsCode
+    contents_var = None
+    contents_code = None
+    for key in metadata:
+        if "content" in key.lower():
+            contents_var = key
+            if metadata[key]["values"]:
+                contents_code = metadata[key]["values"][0]
+            break
+    
+    print(f"ContentsCode variabel: {contents_var}, kode: {contents_code}")
+    
+    return funnet, konsumgrp_var, contents_var, contents_code
 
 
 def hent_siste_kpi():
@@ -35,10 +125,28 @@ def hent_siste_kpi():
     mnd_kode = forrige_mnd.strftime("%YM%m")
     fjor_kode = samme_mnd_i_fjor.strftime("%YM%m")
     print(f"Henter KPI for {mnd_kode} og {fjor_kode}...")
+
+    # Hent metadata for å finne riktige koder
+    metadata = hent_metadata()
+    resultat = finn_konsumgruppe_koder(metadata)
+    
+    if resultat and len(resultat) == 4:
+        koder, konsumgrp_var, contents_var, contents_code = resultat
+    else:
+        print("Bruker standard koder som fallback...")
+        koder = GRUPPER
+        konsumgrp_var = "Konsumgrp"
+        contents_var = "ContentsCode"
+        contents_code = "KpiIndMnd"
+
+    if not koder:
+        print("Ingen gyldige koder funnet. Avbryter.")
+        return None, None, None, None
+
     query = {
         "query": [
-            {"code": "Konsumgrp", "selection": {"filter": "item", "values": list(GRUPPER.keys())}},
-            {"code": "ContentsCode", "selection": {"filter": "item", "values": ["KpiIndMnd"]}},
+            {"code": konsumgrp_var, "selection": {"filter": "item", "values": list(koder.values())}},
+            {"code": contents_var, "selection": {"filter": "item", "values": [contents_code]}},
             {"code": "Tid", "selection": {"filter": "item", "values": [mnd_kode, fjor_kode]}}
         ],
         "response": {"format": "json-stat2"}
@@ -47,9 +155,14 @@ def hent_siste_kpi():
         response = requests.post(SSB_API_URL, json=query, timeout=30)
         response.raise_for_status()
         print("SSB API svar mottatt!")
+        # Lagre kategorinavnene for bruk i beregning
+        global AKTIVE_KODER
+        AKTIVE_KODER = {v: k for k, v in koder.items()}
         return response.json(), mnd_kode, fjor_kode, forrige_mnd
     except Exception as e:
         print(f"Feil ved API-kall: {e}")
+        if hasattr(e, 'response') and e.response:
+            print(f"Response: {e.response.text[:500]}")
         return None, None, None, None
 
 
@@ -69,7 +182,7 @@ def beregn_endringer(data, mnd_kode, fjor_kode):
         return None
     endringer = {}
     for i, grp_kode in enumerate(konsumgrp_ids):
-        navn = GRUPPER.get(grp_kode)
+        navn = AKTIVE_KODER.get(grp_kode) or GRUPPER.get(grp_kode)
         if not navn:
             continue
         ny_v = verdier[i * n_tid + idx_ny]
