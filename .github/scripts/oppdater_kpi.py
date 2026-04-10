@@ -738,6 +738,84 @@ def generer_og_bilder(endringer, forrige_mnd):
     print(f"OG KPI-rapport-bilde oppdatert: {mnd_str} {aar} – KPI {fp(kpi)}")
 
 
+
+# ── OPPDATER KPI-RAPPORT OVERSIKTSSIDE ───────────────────────────────────────
+
+def oppdater_kpi_oversikt(endringer, forrige_mnd, pub_dato):
+    """Oppdaterer kpi-rapport/index.html med siste rapport øverst."""
+    oversikt_fil = "kpi-rapport/index.html"
+    if not os.path.exists(oversikt_fil):
+        print(f"{oversikt_fil} ikke funnet, hopper over.")
+        return
+
+    kpi = endringer.get("kpi_total", 0)
+    mnd_str = MND_LANG[forrige_mnd.month]
+    slug = MND_SLUG[forrige_mnd.month]
+    aar = forrige_mnd.year
+    pub_mnd = MND_LANG[datetime.now().month]
+    pub_dag = datetime.now().day
+    fp_val = f"+{kpi:.1f} %" if kpi >= 0 else f"{kpi:.1f} %"
+    hoy_klasse = "hoy" if kpi >= 3.0 else ""
+
+    with open(oversikt_fil, "r", encoding="utf-8") as f:
+        html = f.read()
+
+    # Oppdater siste rapport-boksen
+    html = re.sub(
+        r'<strong>Siste rapport: KPI [^<]+</strong>',
+        f'<strong>Siste rapport: KPI {mnd_str} {aar}</strong>',
+        html
+    )
+    html = re.sub(
+        r'Publisert \d+\. \w+ \d+ &nbsp;·&nbsp; Kilde: SSB',
+        f'Publisert {pub_dag}. {pub_mnd} {aar} &nbsp;·&nbsp; Kilde: SSB',
+        html
+    )
+    html = re.sub(
+        r'(<div class="siste-tall">)[^<]+(</div>)',
+        f'\g<1>{fp_val}\g<2>',
+        html
+    )
+    html = re.sub(
+        r'(<a href="/kpi-rapport/)[^"]+(" class="les-btn">)',
+        f'\g<1>{slug}-{aar}\g<2>',
+        html
+    )
+
+    # Legg til nytt rapport-kort øverst i riktig år-seksjon
+    ny_rapport_html = f'''      <a href="/kpi-rapport/{slug}-{aar}" class="rapport-card siste">
+        <span class="rapport-badge">Siste</span>
+        <div class="rapport-mnd">{mnd_str.capitalize()} {aar}</div>
+        <div class="rapport-kpi {hoy_klasse}">{fp_val}</div>
+        <div class="rapport-dato">Publisert {pub_dag}. {pub_mnd} {aar}</div>
+      </a>'''
+
+    # Fjern "siste" badge fra forrige kort
+    html = html.replace('<span class="rapport-badge">Siste</span>\n        ', '')
+    html = html.replace(' siste">', '">', 1)  # Fjern siste-klasse fra forrige
+
+    # Legg til nytt kort øverst i år-seksjonen
+    aar_id = f"rapporter-{aar}"
+    if aar_id in html:
+        html = html.replace(
+            f'<div class="rapport-grid" id="{aar_id}">',
+            f'<div class="rapport-grid" id="{aar_id}">\n{ny_rapport_html}'
+        )
+    else:
+        # Nytt år – legg til ny seksjon
+        ny_aar_seksjon = f'''
+    <!-- {aar} -->
+    <div class="year-title">{aar}</div>
+    <div class="rapport-grid" id="{aar_id}">
+{ny_rapport_html}
+    </div>'''
+        html = html.replace('    <!-- 2025 -->', ny_aar_seksjon + '\n\n    <!-- 2025 -->')
+
+    with open(oversikt_fil, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"kpi-rapport/index.html oppdatert med {mnd_str} {aar}!")
+
+
 def main():
     data, mnd_kode, fjor_kode, forrige_mnd = hent_siste_kpi()
     if not data:
@@ -770,6 +848,9 @@ def main():
     with open(f"kpi-rapport/{slug}-{aar}.html", "w", encoding="utf-8") as f:
         f.write(rapport_html)
     print(f"KPI-rapport generert: kpi-rapport/{slug}-{aar}.html")
+
+    # 2b. Oppdater oversiktsside
+    oppdater_kpi_oversikt(endringer, forrige_mnd, pub_dato)
 
     # 3. Oppdater sitemap
     oppdater_sitemap(slug, aar, pub_dato)
