@@ -2,7 +2,8 @@ name: Oppdater KPI-tall fra SSB
 
 on:
   schedule:
-    - cron: '0 9 10 * *'
+    - cron: '0 9 10 * *'   # Den 10. hver måned kl. 09:00 UTC (11:00 norsk tid)
+    - cron: '0 8 1 * *'    # Den 1. hver måned kl. 08:00 UTC – holder repoen aktiv
   workflow_dispatch:
 
 jobs:
@@ -32,6 +33,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add index.html sitemap.xml kpi-rapport/ artikler/ husleiekalkulator.html lønnskalkulator.html
+          git add index.html sitemap.xml kpi-rapport/ artikler/ husleiekalkulator.html lønnskalkulator.html og-*.svg
           git diff --staged --quiet || git commit -m "Automatisk oppdatering av KPI-tall fra SSB $(date +'%Y-%m-%d')"
           git push
