@@ -14,15 +14,15 @@ from datetime import datetime, timedelta
 
 SSB_API_URL = "https://data.ssb.no/api/v0/no/table/14700"
 
-# Konsumgruppe-koder etter ny COICOP 2018 klassifisering (gjeldende fra jan. 2026)
-# Kilde: SSB tabell 14700
+# Konsumgruppe-koder i SSBs nye tabell 14700 (VareTjenesteGrp)
+# Bekreftet fra metadata 10. april 2026
 GRUPPER = {
-    "TOT":  "kpi_total",      # KPI totalt
-    "CP01": "matvarer",       # Matvarer og alkoholfrie drikkevarer
-    "CP045": "elektrisitet",  # Elektrisitet inkl. nettleie
-    "CP041": "husleie",       # Husleie
-    "CP072": "drivstoff",     # Drivstoff og smøremidler
-    "CP081": "teletjenester", # Teletjenester
+    "00":    "kpi_total",     # I alt
+    "01":    "matvarer",      # Matvarer og alkoholfrie drikkevarer
+    "04.5":  "elektrisitet",  # Elektrisitet inkl. nettleie
+    "04.1":  "husleie",       # Betalt husleie
+    "07.2.2":"drivstoff",     # Drivstoff og smøremidler
+    "08.1":  "teletjenester", # Teletjenester
 }
 AKTIVE_KODER = {}  # Fylles ut dynamisk ved API-kall
 
@@ -59,7 +59,7 @@ def finn_konsumgruppe_koder(metadata):
     # Finn variabelnavn for konsumgruppe
     konsumgrp_var = None
     for key in metadata:
-        if "konsum" in key.lower() or "grp" in key.lower() or "coicop" in key.lower():
+        if "vare" in key.lower() or "konsum" in key.lower() or "grp" in key.lower() or "coicop" in key.lower():
             konsumgrp_var = key
             break
     
@@ -135,7 +135,7 @@ def hent_siste_kpi():
     else:
         print("Bruker standard koder som fallback...")
         koder = GRUPPER
-        konsumgrp_var = "Konsumgrp"
+        konsumgrp_var = "VareTjenesteGrp"
         contents_var = "ContentsCode"
         contents_code = "KpiIndMnd"
 
@@ -171,7 +171,16 @@ def beregn_endringer(data, mnd_kode, fjor_kode):
         return None
     verdier = data.get("value", [])
     dims = data.get("dimension", {})
-    konsumgrp_ids = list(dims["Konsumgrp"]["category"]["index"].keys())
+    # Finn riktig dimensjonsnavn dynamisk
+    grp_dim = None
+    for key in dims:
+        if "tid" not in key.lower() and "content" not in key.lower():
+            grp_dim = key
+            break
+    if not grp_dim:
+        print("Fant ikke gruppdimensjon i data!")
+        return None
+    konsumgrp_ids = list(dims[grp_dim]["category"]["index"].keys())
     tid_ids = list(dims["Tid"]["category"]["index"].keys())
     n_tid = len(tid_ids)
     try:
