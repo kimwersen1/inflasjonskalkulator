@@ -218,9 +218,9 @@ def oppdater_kpi_bar(html, e, mnd_label):
     mat = e.get("matvarer", 0)
     strom = e.get("elektrisitet", 0)
     ny_bar = f'''  <div class="kpi-bar">
-    <div class="kpi-bar-item">KPI {mnd_label}: <strong>{fp(kpi)}</strong> <span class="arrow">{chr(8593) if kpi >= 0 else chr(8595)}</span></div>
-    <div class="kpi-bar-item">Matvarer: <strong>{fp(mat)}</strong> <span class="arrow">{chr(8593) if mat >= 0 else chr(8595)}</span></div>
-    <div class="kpi-bar-item">Str&#248;m: <strong>{fp(strom)}</strong> <span class="arrow">{chr(8593) if strom >= 0 else chr(8595)}</span></div>
+    <div class="kpi-bar-item">KPI {mnd_label}: <strong>{fp(kpi)}</strong> <span class="arrow {"up" if kpi >= 0 else "down"}">{chr(8593) if kpi >= 0 else chr(8595)}</span></div>
+    <div class="kpi-bar-item">Matvarer: <strong>{fp(mat)}</strong> <span class="arrow {"up" if mat >= 0 else "down"}">{chr(8593) if mat >= 0 else chr(8595)}</span></div>
+    <div class="kpi-bar-item">Str&#248;m: <strong>{fp(strom)}</strong> <span class="arrow {"up" if strom >= 0 else "down"}">{chr(8593) if strom >= 0 else chr(8595)}</span></div>
     <div class="kpi-bar-item hide-mobile">Kilde: <strong>SSB</strong></div>
   </div>'''
     return re.sub(r'<div class="kpi-bar">.*?</div>\s*</div>', ny_bar, html, flags=re.DOTALL, count=1)
