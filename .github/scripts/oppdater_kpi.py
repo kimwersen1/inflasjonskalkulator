@@ -253,7 +253,7 @@ def oppdater_highlight_box(html, e, forrige_mnd):
     mat = e.get("matvarer", 0)
     mnd_str = MND_LANG[forrige_mnd.month]
     aar = forrige_mnd.year
-    tekst = f'I {mnd_str} {aar} var den norske inflasjonen p\xe5 <strong>{kpi:.1f} %</strong> sammenlignet med {mnd_str} {aar-1}. Matvarer steg med hele {mat:.1f} % i samme periode.'
+    tekst = f'I {mnd_str} {aar} var den norske inflasjonen p\xe5 <strong>{f"{kpi:.1f}".replace(".", ",")} %</strong> sammenlignet med {mnd_str} {aar-1}. Matvarer steg med hele {f"{mat:.1f}".replace(".", ",")} % i samme periode.'
     return re.sub(
         r'(<div class="highlight-box">\s*)(.*?)(\s*</div>)',
         lambda m: m.group(1) + tekst + m.group(3),
