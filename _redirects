@@ -1,0 +1,8 @@
+/kpi-rapport /kpi-rapport/index.html 200
+/kpi-rapport/ /kpi-rapport/index.html 200
+/kpi-rapport/:month /kpi-rapport/:month.html 200
+/artikler/:article /artikler/:article.html 200
+/husleiekalkulator /husleiekalkulator.html 200
+/lønnskalkulator /lønnskalkulator.html 200
+/pensjonskalkulator /pensjonskalkulator.html 200
+/ressurser /ressurser.html 200
