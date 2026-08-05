@@ -867,6 +867,31 @@ def main():
     # 5. Generer OG-bilder
     generer_og_bilder(endringer, forrige_mnd)
 
+
+
+# ── PING GOOGLE MED OPPDATERT SITEMAP ────────────────────────────────────────
+
+def ping_google():
+    """Pinger Google og Bing om oppdatert sitemap."""
+    sitemap_url = "https://inflasjonskalkulator.no/sitemap.xml"
+    
+    # Ping Google
+    try:
+        r = requests.get(f"https://www.google.com/ping?sitemap={sitemap_url}", timeout=10)
+        print(f"Google ping: {r.status_code}")
+    except Exception as e:
+        print(f"Google ping feilet: {e}")
+    
+    # Ping Bing
+    try:
+        r = requests.get(f"https://www.bing.com/ping?sitemap={sitemap_url}", timeout=10)
+        print(f"Bing ping: {r.status_code}")
+    except Exception as e:
+        print(f"Bing ping feilet: {e}")
+
+    # Ping Google om ny sitemap
+    ping_google()
+
     print("\nAlt ferdig!")
 
 
