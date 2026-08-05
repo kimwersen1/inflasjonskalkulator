@@ -849,7 +849,10 @@ def main():
         f.write(rapport_html)
     print(f"KPI-rapport generert: kpi-rapport/{slug}-{aar}.html")
 
-    # 2b. Oppdater oversiktsside
+    # 2b. Send til Google Indexing API
+    google_indexing(slug, aar)
+
+    # 2c. Oppdater oversiktsside
     oppdater_kpi_oversikt(endringer, forrige_mnd, pub_dato)
 
     # 3. Oppdater sitemap
@@ -875,19 +878,57 @@ def ping_google():
     """Pinger Google og Bing om oppdatert sitemap."""
     sitemap_url = "https://inflasjonskalkulator.no/sitemap.xml"
     
-    # Ping Google
-    try:
-        r = requests.get(f"https://www.google.com/ping?sitemap={sitemap_url}", timeout=10)
-        print(f"Google ping: {r.status_code}")
-    except Exception as e:
-        print(f"Google ping feilet: {e}")
-    
     # Ping Bing
     try:
         r = requests.get(f"https://www.bing.com/ping?sitemap={sitemap_url}", timeout=10)
         print(f"Bing ping: {r.status_code}")
     except Exception as e:
         print(f"Bing ping feilet: {e}")
+
+
+def google_indexing(slug, aar):
+    """Sender ny KPI-rapport URL til Google Indexing API."""
+    import os, json
+    
+    sa_json = os.environ.get("GOOGLE_INDEXING_SA")
+    if not sa_json:
+        print("GOOGLE_INDEXING_SA ikke satt, hopper over.")
+        return
+
+    try:
+        from google.oauth2 import service_account
+        from google.auth.transport.requests import Request as GRequest
+
+        creds = service_account.Credentials.from_service_account_info(
+            json.loads(sa_json),
+            scopes=["https://www.googleapis.com/auth/indexing"]
+        )
+        creds.refresh(GRequest())
+        token = creds.token
+
+        urls = [
+            f"https://inflasjonskalkulator.no/kpi-rapport/{slug}-{aar}",
+            "https://inflasjonskalkulator.no/kpi-rapport",
+            "https://inflasjonskalkulator.no/",
+        ]
+
+        headers = {
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json"
+        }
+
+        for url in urls:
+            r = requests.post(
+                "https://indexing.googleapis.com/v3/urlNotifications:publish",
+                headers=headers,
+                json={"url": url, "type": "URL_UPDATED"}
+            )
+            if r.status_code == 200:
+                print(f"✅ Google indeksering: {url}")
+            else:
+                print(f"❌ Google indeksering feilet {url}: {r.status_code} {r.text[:100]}")
+    except Exception as e:
+        print(f"Google indeksering feilet: {e}")
 
     # Ping Google om ny sitemap
     ping_google()
