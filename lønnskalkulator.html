@@ -73,12 +73,13 @@ nav ul a:hover { color: #fff; }
 
 .result-main { text-align: center; margin-bottom: 1.25rem; }
 .result-val { font-family: var(--font-head); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; display: block; }
-.result-val.pos { color: var(--green-dark); }
+.result-val.pos { color: var(--green); }
 .result-val.neg { color: var(--red); }
 .result-lbl { font-size: 0.85rem; color: var(--text-muted); }
 .result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.08); }
 .result-item { text-align: center; }
-.result-item .val { display: block; font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--green-dark); }
+.result-item .val { display: block; font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--green); }
+  .result-item .val.neg { color: var(--red); }
 .result-item .val.neg { color: var(--red); }
 .result-item .lbl { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
 .result-tekst { margin-top: 1rem; font-size: 0.88rem; color: var(--text-muted); border-top: 1px solid rgba(0,0,0,0.08); padding-top: 0.85rem; line-height: 1.6; }
@@ -314,7 +315,7 @@ function beregnLonn() {
   document.getElementById('res-kpi').textContent = fmtP(kpiPst);
   const krEl = document.getElementById('res-kr');
   krEl.textContent = (reellKr >= 0 ? '+' : '-') + fmt(reellKr);
-  krEl.className = 'val ' + (reellKr >= 0 ? '' : 'neg');
+  krEl.className = 'val pos ' + (reellKr >= 0 ? '' : 'neg');
 
   document.getElementById('res-tekst').textContent =
     `Lønnen økte nominelt med ${fmtP(nominellPst)}, mens inflasjonen var ${fmtP(kpiPst)} fra ${fra} til ${til}. `
