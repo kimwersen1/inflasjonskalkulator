@@ -24,9 +24,11 @@ jobs:
           python-version: '3.11'
 
       - name: Installer avhengigheter
-        run: pip install requests
+        run: pip install requests google-auth google-auth-httplib2
 
       - name: Hent KPI-tall fra SSB og oppdater index.html
+        env:
+          GOOGLE_INDEXING_SA: ${{ secrets.GOOGLE_INDEXING_SA }}
         run: python3 .github/scripts/oppdater_kpi.py
 
       - name: Commit og push endringer
