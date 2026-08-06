@@ -269,19 +269,13 @@ function beregnRentersRente() {
   const tbody = document.getElementById('tabell-body');
   tbody.innerHTML = '';
 
-  const milestones = new Set([1, 5, 10, 15, 20, 25, 30, 40, 50].filter(x => x <= aar));
-  milestones.add(aar);
-
   for (let y = 1; y <= aar; y++) {
     verdi = verdi * (1 + r) + mndSparing * 12;
     innbetalt += mndSparing * 12;
     const reell = verdi / Math.pow(1 + inf, y);
-
-    if (milestones.has(y)) {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `<td>${y}</td><td>${fmt(verdi)}</td><td>${fmt(reell)}</td><td>${fmt(verdi - innbetalt)}</td>`;
-      tbody.appendChild(tr);
-    }
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${y}</td><td>${fmt(verdi)}</td><td>${fmt(reell)}</td><td>${fmt(verdi - innbetalt)}</td>`;
+    tbody.appendChild(tr);
   }
 
   const reellSlutt = verdi / Math.pow(1 + inf, aar);
