@@ -1,0 +1,9 @@
+<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MVA-kalkulator 2026">
+  <rect width="600" height="200" rx="12" fill="#114d2e"/>
+  <text x="30" y="65" font-family="sans-serif" font-size="48">🧾</text>
+  <text x="100" y="55" font-family="sans-serif" font-size="22" font-weight="800" fill="#ffffff">MVA-kalkulator 2026</text>
+  <text x="100" y="85" font-family="sans-serif" font-size="14" fill="rgba(255,255,255,0.6)">Legg til eller trekk fra MVA enkelt – alle norske satser</text>
+  <text x="30" y="170" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.4)">inflasjonskalkulator.no · Gratis verktøy</text>
+  <rect x="30" y="110" width="540" height="2" fill="rgba(255,255,255,0.1)"/>
+  <text x="30" y="140" font-family="sans-serif" font-size="13" fill="rgba(110,224,158,0.8)">✓ Oppdatert med SSB-tall  ✓ Gratis  ✓ Ingen registrering</text>
+</svg>
