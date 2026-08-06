@@ -907,9 +907,26 @@ def google_indexing(slug, aar):
         token = creds.token
 
         urls = [
+            # Ny KPI-rapport
             f"https://inflasjonskalkulator.no/kpi-rapport/{slug}-{aar}",
             "https://inflasjonskalkulator.no/kpi-rapport",
             "https://inflasjonskalkulator.no/",
+            # Kalkulatorer
+            "https://inflasjonskalkulator.no/husleiekalkulator",
+            "https://inflasjonskalkulator.no/lønnskalkulator",
+            "https://inflasjonskalkulator.no/pensjonskalkulator",
+            "https://inflasjonskalkulator.no/feriepengekalkulator",
+            "https://inflasjonskalkulator.no/renters-rente-kalkulator",
+            "https://inflasjonskalkulator.no/mva-kalkulator",
+            # Artikler
+            "https://inflasjonskalkulator.no/artikler/hva-er-inflasjon",
+            "https://inflasjonskalkulator.no/artikler/husleieoekning-2026",
+            "https://inflasjonskalkulator.no/artikler/konsumprisindeksen-2026",
+            "https://inflasjonskalkulator.no/artikler/reallonnsvekst-2026",
+            "https://inflasjonskalkulator.no/artikler/kroneverdi-historisk",
+            "https://inflasjonskalkulator.no/artikler/indeksregulering-husleie",
+            "https://inflasjonskalkulator.no/artikler/feriepenger-prosent",
+            "https://inflasjonskalkulator.no/artikler/nominell-rente",
         ]
 
         headers = {
