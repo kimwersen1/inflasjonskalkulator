@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MVA-kalkulator – Beregn merverdiavgift enkelt og gratis</title>
+<meta name="description" content="Bruk vår gratis MVA-kalkulator og beregn merverdiavgift raskt. Legg til eller trekk fra MVA på 25 %, 15 % eller 12 %. Enkel MVA-kalkulator for næringsdrivende og privatpersoner.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/mva-kalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MVA-kalkulator – Beregn merverdiavgift enkelt og gratis">
+<meta property="og:description" content="Legg til eller trekk fra MVA enkelt. Gratis MVA-kalkulator for 25 %, 15 % og 12 %.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/mva-kalkulator">
+<meta property="og:image" content="https://inflasjonskalkulator.no/og-index.svg">
+<meta property="og:locale" content="nb_NO">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MVA-kalkulator",
+  "description": "Beregn merverdiavgift raskt og enkelt. Legg til eller trekk fra MVA.",
+  "url": "https://inflasjonskalkulator.no/mva-kalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "NOK"},
+  "publisher": {"@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er MVA-satsen i Norge?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Norge har tre MVA-satser: 25 % (normalsat, de fleste varer og tjenester), 15 % (matvarer) og 12 % (persontransport, overnatting, kino og enkelte andre tjenester)."}
+    },
+    {
+      "@type": "Question",
+      "name": "Hvordan regner jeg ut MVA?",
+      "acceptedAnswer": {"@type": "Answer", "text": "For å legge til MVA: Pris eks. MVA × 1,25 (for 25 %). For å trekke fra MVA: Pris inkl. MVA / 1,25 × 0,25. Bruk vår MVA-kalkulator for rask beregning."}
+    },
+    {
+      "@type": "Question",
+      "name": "Hva betyr MVA?",
+      "acceptedAnswer": {"@type": "Answer", "text": "MVA står for merverdiavgift, også kjent som moms. Det er en forbruksskatt som legges til prisen på varer og tjenester. I Norge er den generelle MVA-satsen 25 %."}
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:var(--fh);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{color:#6ee09e}
+nav ul{display:flex;gap:1.5rem;list-style:none}
+nav ul a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.9rem}
+@media(max-width:640px){nav ul{display:none}}
+.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
+.wrap{max-width:800px;margin:0 auto;padding:0 1.5rem}
+.bc{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
+.bc a{color:rgba(255,255,255,0.6);text-decoration:none}
+.bc span{margin:0 6px}
+.hero-tag{display:inline-block;background:rgba(110,224,158,0.15);border:1px solid rgba(110,224,158,0.3);color:#6ee09e;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;margin-bottom:1.1rem}
+h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.9rem,5vw,3rem);color:#fff;letter-spacing:-0.03em;line-height:1.1;margin-bottom:0.75rem;word-break:break-word}
+.hero p{color:rgba(255,255,255,0.65);font-size:1rem;max-width:560px;font-weight:300}
+.kalk-wrap{margin-top:-2rem;position:relative;z-index:10}
+.kalk-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.1);padding:2rem}
+.kalk-title{font-family:var(--fh);font-weight:700;font-size:1.25rem;color:var(--green-dark);margin-bottom:1.5rem}
+.tabs{display:flex;gap:0.5rem;margin-bottom:1.5rem}
+.tab{flex:1;padding:0.6rem;border:1.5px solid var(--border);border-radius:var(--rs);font-family:var(--fh);font-weight:700;font-size:0.88rem;cursor:pointer;background:var(--bg);color:var(--text-muted);transition:all 0.15s;text-align:center}
+.tab.active{background:var(--green-dark);color:#fff;border-color:var(--green-dark)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:540px){.grid2{grid-template-columns:1fr}}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:5px}
+.field input,.field select{width:100%;height:48px;padding:0 1rem;border:1.5px solid var(--border);border-radius:var(--rs);font-family:var(--fb);font-size:1rem;color:var(--text);background:var(--bg);outline:none;-moz-appearance:textfield;transition:border-color 0.15s}
+.field input::-webkit-outer-spin-button,.field input::-webkit-inner-spin-button{-webkit-appearance:none}
+.field input:focus,.field select:focus{border-color:var(--green-mid);background:#fff}
+.kalk-btn{width:100%;height:52px;background:var(--green);color:#fff;border:none;border-radius:var(--rs);font-family:var(--fh);font-weight:700;font-size:1rem;cursor:pointer;transition:background 0.15s;margin-top:0.5rem}
+.kalk-btn:hover{background:var(--green-mid)}
+.result-box{display:none;margin-top:1.5rem;background:var(--green-light);border:1.5px solid #b2dfc6;border-radius:var(--rs);padding:1.5rem}
+.result-box.show{display:block}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:500px){.result-grid{grid-template-columns:1fr 1fr}}
+.result-item{text-align:center}
+.result-item .val{display:block;font-family:var(--fh);font-size:1.4rem;font-weight:800;color:var(--green-dark)}
+.result-item .lbl{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-top:4px}
+.section{padding:2.5rem 0}
+.sec-title{font-family:var(--fh);font-weight:700;font-size:1.35rem;color:var(--green-dark);margin-bottom:0.75rem}
+.prose p{margin-bottom:1rem;font-size:0.97rem}
+.prose h3{font-family:var(--fh);font-weight:600;font-size:1.05rem;color:var(--green-dark);margin:1.5rem 0 0.5rem}
+.mva-tabell{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.93rem}
+.mva-tabell th{background:var(--green-dark);color:#fff;padding:0.75rem 1rem;text-align:left;font-family:var(--fh);font-size:0.85rem}
+.mva-tabell td{padding:0.7rem 1rem;border-bottom:1px solid var(--border)}
+.mva-tabell tr:nth-child(even){background:var(--green-light)}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:0.75rem}
+.faq-q{font-family:var(--fh);font-weight:700;font-size:0.95rem;color:var(--green-dark);padding:1.1rem 1.25rem}
+.faq-a{padding:0 1.25rem 1.1rem;font-size:0.93rem;color:var(--text-muted);line-height:1.6}
+.relatert{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 2rem;margin:2rem 0}
+.relatert h2{font-family:var(--fh);font-weight:700;font-size:1.1rem;color:var(--green-dark);margin-bottom:1rem}
+.rl{display:flex;flex-wrap:wrap;gap:0.75rem}
+.rl a{background:var(--green-light);color:var(--green-dark);text-decoration:none;font-weight:500;font-size:0.88rem;padding:8px 16px;border-radius:99px;border:1px solid #b2dfc6;white-space:nowrap}
+footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:0.88rem;margin-top:2rem}
+footer a{color:rgba(255,255,255,0.8);text-decoration:none}
+.fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul>
+    <li><a href="/">Inflasjonskalkulator</a></li>
+    <li><a href="/husleiekalkulator">Husleie</a></li>
+    <li><a href="/lønnskalkulator">Lønn</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="bc"><a href="/">Hjem</a><span>›</span>MVA-kalkulator</div>
+    <div class="hero-tag">Gratis verktøy</div>
+    <h1>MVA-kalkulator 2026</h1>
+    <p>Legg til eller trekk fra merverdiavgift (MVA/moms) enkelt og raskt. Alle norske MVA-satser.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn MVA</div>
+      <div class="tabs">
+        <div class="tab active" onclick="setModus('legg-til')">Legg til MVA</div>
+        <div class="tab" onclick="setModus('trekk-fra')">Trekk fra MVA</div>
+      </div>
+      <div class="grid2">
+        <div class="field">
+          <label id="belop-label">Beløp eks. MVA (kr)</label>
+          <input type="number" id="belop" placeholder="10 000" min="0">
+        </div>
+        <div class="field">
+          <label>MVA-sats</label>
+          <select id="sats">
+            <option value="25">25 % – Standard (de fleste varer/tjenester)</option>
+            <option value="15">15 % – Matvarer</option>
+            <option value="12">12 % – Transport, overnatting, kino</option>
+          </select>
+        </div>
+      </div>
+      <button class="kalk-btn" onclick="beregnMVA()">Beregn MVA</button>
+
+      <div class="result-box" id="result-box">
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="res-eks">—</span>
+            <span class="lbl">Eks. MVA</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-mva">—</span>
+            <span class="lbl">MVA-beløp</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-inkl">—</span>
+            <span class="lbl">Inkl. MVA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">MVA-satser i Norge 2026</h2>
+    <table class="mva-tabell">
+      <thead><tr><th>Sats</th><th>Gjelder for</th></tr></thead>
+      <tbody>
+        <tr><td><strong>25 %</strong></td><td>Generell sats – de fleste varer og tjenester</td></tr>
+        <tr><td><strong>15 %</strong></td><td>Matvarer (ikke alkohol)</td></tr>
+        <tr><td><strong>12 %</strong></td><td>Persontransport, overnatting, kino, idrettsarrangementer</td></tr>
+        <tr><td><strong>0 %</strong></td><td>Aviser, bøker, tidsskrifter, eksport, helsetjenester</td></tr>
+      </tbody>
+    </table>
+    <div class="prose">
+      <h3>Hvordan beregne MVA manuelt?</h3>
+      <p><strong>Legge til MVA:</strong> Pris eks. MVA × (1 + MVA-sats) = Pris inkl. MVA<br>Eksempel: 1 000 kr × 1,25 = 1 250 kr inkl. MVA</p>
+      <p><strong>Trekke fra MVA:</strong> Pris inkl. MVA / (1 + MVA-sats) = Pris eks. MVA<br>Eksempel: 1 250 kr / 1,25 = 1 000 kr eks. MVA</p>
+      <p>MVA er en skatt på forbruk som legges til prisen på varer og tjenester. Næringsdrivende som er MVA-registrerte kan trekke fra MVA på innkjøp (inngående MVA) mot MVA de fakturerer (utgående MVA).</p>
+    </div>
+  </div>
+
+  <div class="faq-item"><div class="faq-q">Hva er MVA-satsen i Norge?</div><div class="faq-a">Norge har tre satser: 25 % (generell), 15 % (matvarer) og 12 % (transport, overnatting, kino). Noen tjenester er fritatt for MVA, som helsetjenester og aviser.</div></div>
+  <div class="faq-item"><div class="faq-q">Hva betyr MVA?</div><div class="faq-a">MVA står for merverdiavgift, også kalt moms. Det er en forbruksskatt som legges til prisen på varer og tjenester. Den generelle satsen i Norge er 25 %.</div></div>
+  <div class="faq-item"><div class="faq-q">Når må jeg registrere meg for MVA?</div><div class="faq-a">Næringsdrivende må registrere seg for MVA når omsetningen overstiger 50 000 kr i løpet av 12 måneder. Frivillig registrering er mulig for visse næringer.</div></div>
+
+  <div class="relatert">
+    <h2>Relaterte verktøy</h2>
+    <div class="rl">
+      <a href="/">📊 Inflasjonskalkulator</a>
+      <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+      <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+      <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+      <a href="/ressurser">🔗 Ressurser</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="/">Hjem</a>
+      <a href="/mva-kalkulator">MVA-kalkulator</a>
+      <a href="/feriepengekalkulator">Feriepenger</a>
+      <a href="/lønnskalkulator">Lønn</a>
+      <a href="/ressurser">Ressurser</a>
+    </div>
+    <p>Informasjonen er kun veiledende. Se skatteetaten.no for offisielle MVA-regler.</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 inflasjonskalkulator.no</p>
+  </div>
+</footer>
+
+<script>
+let modus = 'legg-til';
+
+function setModus(m) {
+  modus = m;
+  document.querySelectorAll('.tab').forEach((t, i) => {
+    t.classList.toggle('active', (i === 0 && m === 'legg-til') || (i === 1 && m === 'trekk-fra'));
+  });
+  document.getElementById('belop-label').textContent = m === 'legg-til' ? 'Beløp eks. MVA (kr)' : 'Beløp inkl. MVA (kr)';
+  document.getElementById('result-box').classList.remove('show');
+}
+
+function beregnMVA() {
+  const belop = parseFloat(document.getElementById('belop').value);
+  const sats = parseFloat(document.getElementById('sats').value) / 100;
+
+  if (!belop || isNaN(belop)) {
+    document.getElementById('result-box').classList.remove('show');
+    return;
+  }
+
+  let eks, mvaAmt, inkl;
+  if (modus === 'legg-til') {
+    eks = belop;
+    mvaAmt = belop * sats;
+    inkl = belop + mvaAmt;
+  } else {
+    inkl = belop;
+    eks = belop / (1 + sats);
+    mvaAmt = inkl - eks;
+  }
+
+  const fmt = n => Math.round(n).toLocaleString('nb-NO') + ' kr';
+  document.getElementById('res-eks').textContent = fmt(eks);
+  document.getElementById('res-mva').textContent = fmt(mvaAmt);
+  document.getElementById('res-inkl').textContent = fmt(inkl);
+  document.getElementById('result-box').classList.add('show');
+}
+
+document.getElementById('belop').addEventListener('keydown', e => { if (e.key === 'Enter') beregnMVA(); });
+</script>
+</body>
+</html>
