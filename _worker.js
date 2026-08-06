@@ -9,22 +9,33 @@ export default {
     }
 
     // Prøv å hente filen direkte
-    let response = await env.ASSETS.fetch(new Request(url.toString(), request));
-    
-    // Hvis 404, prøv med .html
-    if (response.status === 404) {
-      const htmlUrl = new URL(url.toString());
-      htmlUrl.pathname = path + '.html';
-      response = await env.ASSETS.fetch(new Request(htmlUrl.toString(), request));
+    const directUrl = new URL(url.toString());
+    directUrl.pathname = path;
+    let response = await env.ASSETS.fetch(new Request(directUrl.toString(), request));
+    if (response.status !== 404) return response;
+
+    // Prøv med .html
+    const htmlUrl = new URL(url.toString());
+    htmlUrl.pathname = path + '.html';
+    response = await env.ASSETS.fetch(new Request(htmlUrl.toString(), request));
+    if (response.status !== 404) return response;
+
+    // Prøv index.html i mappen
+    const indexUrl = new URL(url.toString());
+    indexUrl.pathname = path + '/index.html';
+    response = await env.ASSETS.fetch(new Request(indexUrl.toString(), request));
+    if (response.status !== 404) return response;
+
+    // Prøv uten leading slash + .html (for undermapper som artikler/)
+    const parts = path.split('/');
+    if (parts.length >= 3) {
+      const altUrl = new URL(url.toString());
+      altUrl.pathname = parts.join('/') + '.html';
+      response = await env.ASSETS.fetch(new Request(altUrl.toString(), request));
+      if (response.status !== 404) return response;
     }
 
-    // Hvis fortsatt 404, prøv index.html i mappen
-    if (response.status === 404) {
-      const indexUrl = new URL(url.toString());
-      indexUrl.pathname = path + '/index.html';
-      response = await env.ASSETS.fetch(new Request(indexUrl.toString(), request));
-    }
-
+    // Fallback til 404
     return response;
   }
 }
