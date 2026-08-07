@@ -69,13 +69,30 @@ footer a{color:rgba(255,255,255,0.8);text-decoration:none}
 <body>
 <nav>
   <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
-  <ul>
+  <ul class="nav-links">
     <li><a href="/">Inflasjonskalkulator</a></li>
     <li><a href="/husleiekalkulator">Husleie</a></li>
     <li><a href="/lønnskalkulator">Lønn</a></li>
-    <li><a href="/kpi-rapport">KPI-rapporter</a></li>
+    <li><a href="/feriepengekalkulator">Feriepenger</a></li>
+    <li><a href="/mva-kalkulator">MVA</a></li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
   </ul>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Meny">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/kpi-rapport">📋 KPI-rapporter</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
 <div class="hero">
   <div class="wrap">
     <div class="bc"><a href="/">Hjem</a><span>›</span><a href="/kpi-rapport">KPI-rapporter</a><span>›</span>April 2026</div>
