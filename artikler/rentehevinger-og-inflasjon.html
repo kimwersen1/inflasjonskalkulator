@@ -41,7 +41,7 @@ nav { background: var(--green-dark); padding: 0 1.5rem; display: flex; align-ite
 nav ul { display: flex; gap: 1.5rem; list-style: none; }
 nav ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
 nav ul a:hover { color: #fff; }
-@media (max-width: 640px) { nav ul { display: none; } }
+
 .article-hero { background: var(--green-dark); padding: 3.5rem 1.5rem 4rem; }
 .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
 .breadcrumb { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
@@ -98,7 +98,7 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
 .nav-mobile a:hover{background:rgba(255,255,255,0.06)}
 .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
-@media(max-width:768px){.nav-links{display:none!important}.nav-burger{display:flex}}
+
 </style>
 </head>
 <body>
@@ -129,6 +129,7 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
   <a href="/kpi-rapport">📋 KPI-rapporter</a>
   <a href="/ressurser">🔗 Ressurser</a>
 </div>
+
 
 <div class="article-hero">
   <div class="container">
@@ -292,6 +293,17 @@ document.querySelectorAll('.faq-q').forEach(q => {
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!wasOpen) item.classList.add('open');
   });
+});
+</script>
+<script>
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  if(m) m.classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  if(m&&m.classList.contains('open')&&!e.target.closest('nav')&&!e.target.closest('.nav-mobile'))
+    m.classList.remove('open');
 });
 </script>
 </body>
