@@ -51,7 +51,7 @@ nav { background: var(--green-dark); padding: 0 1.5rem; display: flex; align-ite
 nav ul { display: flex; gap: 1.5rem; list-style: none; }
 nav ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
 nav ul a:hover { color: #fff; }
-@media (max-width: 640px) { nav ul { display: none; } }
+
 
 .hero { background: var(--green-dark); padding: 3.5rem 1.5rem 4rem; }
 .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
@@ -104,7 +104,7 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
 .nav-mobile a:hover{background:rgba(255,255,255,0.06)}
 .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
-@media(max-width:768px){.nav-links{display:none!important}.nav-burger{display:flex}}
+
 </style>
 </head>
 <body>
@@ -135,6 +135,7 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
   <a href="/kpi-rapport">📋 KPI-rapporter</a>
   <a href="/ressurser">🔗 Ressurser</a>
 </div>
+
 
 <div class="hero">
   <div class="container">
@@ -327,5 +328,16 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
   </div>
 </footer>
 
+<script>
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  if(m) m.classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  if(m&&m.classList.contains('open')&&!e.target.closest('nav')&&!e.target.closest('.nav-mobile'))
+    m.classList.remove('open');
+});
+</script>
 </body>
 </html>
