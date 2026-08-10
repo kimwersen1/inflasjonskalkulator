@@ -324,7 +324,7 @@ h1{{font-family:var(--fh);font-weight:800;font-size:clamp(1.8rem,5vw,2.8rem);col
 .kn{{font-weight:500;font-size:0.85rem;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
 .ks{{font-size:0.68rem;color:var(--text-muted)}}
 .kp{{font-family:var(--fh);font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;flex-shrink:0;white-space:nowrap}}
-.kp.pos{{color:var(--red)}}.kp.neg{{color:var(--green)}}
+.kp.pos{{color:var(--green)}}.kp.neg{{color:var(--red)}}
 .cta{{background:var(--green-dark);border-radius:var(--r);padding:1.75rem 2rem;margin:2rem 0;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}}
 .cta p{{color:rgba(255,255,255,0.8);font-size:0.95rem;margin:0}}
 .cta strong{{color:#fff;display:block;font-family:var(--fh);font-size:1.1rem;margin-bottom:4px}}
