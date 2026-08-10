@@ -276,6 +276,8 @@ def generer_kpi_rapport(e, forrige_mnd, pub_dato):
     tele = e.get("teletjenester", 0)
     pris_10k = int(10000 * (1 + kpi/100))
 
+    def fg(v): return "neg" if v < 0 else ""
+
     html = f"""<!DOCTYPE html>
 <html lang="no">
 <head>
@@ -287,80 +289,95 @@ def generer_kpi_rapport(e, forrige_mnd, pub_dato):
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KPI {mnd_str} {aar} – Norsk inflasjon {fp(kpi)}">
+<meta property="og:description" content="Norsk inflasjon i {mnd_str} {aar}: KPI {fp(kpi)}. Se alle tall fra SSB.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/kpi-rapport/{slug}-{aar}">
+<meta property="og:image" content="https://inflasjonskalkulator.no/og-kpi-rapport.svg">
+<meta property="og:locale" content="nb_NO">
 <script type="application/ld+json">
 {{"@context":"https://schema.org","@type":"NewsArticle","headline":"KPI {mnd_str} {aar} – Norsk inflasjon","datePublished":"{pub_dato}","dateModified":"{pub_dato}","publisher":{{"@type":"Organization","name":"inflasjonskalkulator.no","url":"https://inflasjonskalkulator.no"}}}}
 </script>
 <style>
 *,*::before,*::after{{box-sizing:border-box;margin:0;padding:0}}
-:root{{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--red:#c0392b;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}}
+:root{{--green:#1a7a4a;--green-light:#e8f5ee;--green-dark:#114d2e;--red:#c0392b;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}}
 body{{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}}
-nav{{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}}
-.nav-logo{{font-family:var(--fh);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em}}
+nav{{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}}
+.nav-logo{{font-family:var(--fh);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}}
 .nav-logo span{{color:#6ee09e}}
-nav ul{{display:flex;gap:1.5rem;list-style:none}}
-nav ul a{{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.9rem}}
-@media(max-width:640px){{nav ul{{display:none}}}}
+.nav-links{{display:flex;gap:1.25rem;list-style:none;align-items:center;margin:0;padding:0}}
+.nav-links a{{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap}}
+.nav-links a:hover{{color:#fff}}
+.nav-burger{{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}}
+.nav-burger span{{display:block;width:22px;height:2px;background:#fff;border-radius:2px}}
+.nav-mobile{{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}}
+.nav-mobile.open{{display:block}}
+.nav-mobile a{{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}}
+@media(max-width:900px){{.nav-links{{display:none!important}}.nav-burger{{display:flex}}}}
 .hero{{background:var(--green-dark);padding:3rem 1.5rem 3.5rem}}
 .wrap{{max-width:760px;margin:0 auto;padding:0 1.5rem}}
 .bc{{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}}
 .bc a{{color:rgba(255,255,255,0.6);text-decoration:none}}
 .bc span{{margin:0 6px}}
 .tag{{display:inline-block;background:rgba(110,224,158,0.15);border:1px solid rgba(110,224,158,0.3);color:#6ee09e;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;margin-bottom:1rem}}
-h1{{font-family:var(--fh);font-weight:800;font-size:clamp(1.8rem,5vw,2.8rem);color:#fff;letter-spacing:-0.03em;line-height:1.1;margin-bottom:0.75rem}}
+h1{{font-family:var(--fh);font-weight:800;font-size:clamp(1.6rem,4vw,2.6rem);color:#fff;letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.75rem;word-break:break-word}}
 .meta{{color:rgba(255,255,255,0.5);font-size:0.85rem}}
 .sg{{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin:2rem 0}}
 .sc{{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;text-align:center}}
-.sv{{font-family:var(--fh);font-weight:800;font-size:2rem;color:var(--green-dark);letter-spacing:-0.03em;display:block}}
-.sv.r{{color:var(--red)}}
-.sl{{font-size:0.78rem;color:var(--text-muted);margin-top:4px}}
+.sv{{font-family:var(--fh);font-weight:800;font-size:1.9rem;color:var(--green-dark);letter-spacing:-0.02em;display:block;line-height:1.2}}
+.sl{{font-size:0.78rem;color:var(--text-muted);margin-top:6px}}
 .ab{{padding:2rem 0 3rem}}
-.ab h2{{font-family:var(--fh);font-weight:700;font-size:1.35rem;color:var(--green-dark);margin:2rem 0 0.75rem;letter-spacing:-0.02em}}
+.ab h2{{font-family:var(--fh);font-weight:700;font-size:1.35rem;color:var(--green-dark);margin:2rem 0 0.75rem}}
 .ab p{{margin-bottom:1.1rem;font-size:0.97rem}}
-.hb{{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 var(--rs) var(--rs) 0;padding:1rem 1.25rem;margin:1.5rem 0;font-size:0.95rem}}
-.kg{{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.75rem;margin:1.25rem 0}}
+.hb{{background:var(--green-light);border-left:4px solid var(--green-dark);border-radius:0 var(--rs) var(--rs) 0;padding:1rem 1.25rem;margin:1.5rem 0;font-size:0.95rem}}
+.kg{{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.75rem;margin:1.25rem 0}}
 .kc{{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:0.9rem 1rem;display:flex;align-items:center;gap:0.75rem}}
-.ki{{font-size:1.35rem;flex-shrink:0;width:26px;text-align:center}}
+.ki{{font-size:1.35rem;flex-shrink:0}}
 .kinfo{{flex:1;min-width:0}}
-.kn{{font-weight:500;font-size:0.85rem;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+.kn{{font-weight:500;font-size:0.85rem;color:var(--text)}}
 .ks{{font-size:0.68rem;color:var(--text-muted)}}
-.kp{{font-family:var(--fh);font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;flex-shrink:0;white-space:nowrap}}
-.kp.pos{{color:var(--green)}}.kp.neg{{color:var(--red)}}
+.kp{{font-family:var(--fh);font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;flex-shrink:0;white-space:nowrap;color:var(--green-dark)}}
+.kp.neg{{color:var(--red)}}
 .cta{{background:var(--green-dark);border-radius:var(--r);padding:1.75rem 2rem;margin:2rem 0;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}}
 .cta p{{color:rgba(255,255,255,0.8);font-size:0.95rem;margin:0}}
 .cta strong{{color:#fff;display:block;font-family:var(--fh);font-size:1.1rem;margin-bottom:4px}}
 .cta-btn{{background:#6ee09e;color:var(--green-dark);text-decoration:none;font-family:var(--fh);font-weight:800;font-size:0.95rem;padding:10px 20px;border-radius:var(--rs);white-space:nowrap;flex-shrink:0}}
-.back{{display:inline-flex;align-items:center;gap:8px;color:var(--green);text-decoration:none;font-weight:500;font-size:0.95rem;margin-top:1rem}}
-footer{{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:0.88rem}}
+.relatert{{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 2rem;margin:2rem 0}}
+.relatert h2{{font-family:var(--fh);font-weight:700;font-size:1.1rem;color:var(--green-dark);margin-bottom:1rem}}
+.rl{{display:flex;flex-wrap:wrap;gap:0.75rem}}
+.rl a{{background:var(--green-light);color:var(--green-dark);text-decoration:none;font-weight:500;font-size:0.88rem;padding:8px 16px;border-radius:99px;border:1px solid #b2dfc6;white-space:nowrap}}
+.back{{display:inline-flex;align-items:center;gap:8px;color:var(--green-dark);text-decoration:none;font-weight:500;font-size:0.95rem;margin-top:1rem}}
+footer{{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:0.88rem;margin-top:2rem}}
 footer a{{color:rgba(255,255,255,0.8);text-decoration:none}}
 .fl{{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}}
 </style>
 </head>
 <body>
 <nav>
-  <a class=\"nav-logo\" href=\"/\">inflasjonskalkulator<span>.no</span></a>
-  <ul class=\"nav-links\">
-    <li><a href=\"/\">Inflasjonskalkulator</a></li>
-    <li><a href=\"/husleiekalkulator\">Husleie</a></li>
-    <li><a href=\"/lønnskalkulator\">Lønn</a></li>
-    <li><a href=\"/feriepengekalkulator\">Feriepenger</a></li>
-    <li><a href=\"/mva-kalkulator\">MVA</a></li>
-    <li><a href=\"/kpi-rapport\">KPI-rapport</a></li>
-    <li><a href=\"/ressurser\">Ressurser</a></li>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Inflasjonskalkulator</a></li>
+    <li><a href="/husleiekalkulator">Husleie</a></li>
+    <li><a href="/lønnskalkulator">Lønn</a></li>
+    <li><a href="/feriepengekalkulator">Feriepenger</a></li>
+    <li><a href="/mva-kalkulator">MVA</a></li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
   </ul>
-  <button class=\"nav-burger\" onclick=\"toggleMenu()\" aria-label=\"Meny\">
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Meny">
     <span></span><span></span><span></span>
   </button>
 </nav>
-<div class=\"nav-mobile\" id=\"nav-mobile\">
-  <a href=\"/\">📊 Inflasjonskalkulator</a>
-  <a href=\"/husleiekalkulator\">🏠 Husleiekalkulator</a>
-  <a href=\"/lønnskalkulator\">💼 Lønnskalkulator</a>
-  <a href=\"/feriepengekalkulator\">🏖️ Feriepengekalkulator</a>
-  <a href=\"/renters-rente-kalkulator\">📈 Renters rente</a>
-  <a href=\"/mva-kalkulator\">🧾 MVA-kalkulator</a>
-  <a href=\"/pensjonskalkulator\">🏦 Pensjonskalkulator</a>
-  <a href=\"/kpi-rapport\">📋 KPI-rapporter</a>
-  <a href=\"/ressurser\">🔗 Ressurser</a>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/kpi-rapport">📋 KPI-rapporter</a>
+  <a href="/ressurser">🔗 Ressurser</a>
 </div>
 <div class="hero">
   <div class="wrap">
@@ -372,37 +389,47 @@ footer a{{color:rgba(255,255,255,0.8);text-decoration:none}}
 </div>
 <div class="wrap">
   <div class="sg">
-    <div class="sc"><span class="sv r">{fp(kpi)}</span><div class="sl">KPI totalt (12 mnd.)</div></div>
-    <div class="sc"><span class="sv r">{fp(mat)}</span><div class="sl">Matvarer</div></div>
+    <div class="sc"><span class="sv">{fp(kpi)}</span><div class="sl">KPI totalt (12 mnd.)</div></div>
+    <div class="sc"><span class="sv">{fp(mat)}</span><div class="sl">Matvarer</div></div>
     <div class="sc"><span class="sv">{fp(strom)}</span><div class="sl">Strøm</div></div>
     <div class="sc"><span class="sv">{fp(husleie)}</span><div class="sl">Husleie</div></div>
   </div>
   <div class="ab">
-    <p>Konsumprisindeksen (KPI) steg <strong>{kpi:.1f} prosent</strong> fra {mnd_str} {aar_fjor} til {mnd_str} {aar}, viser nye tall fra SSB. Matvarer steg {mat:.1f} %, mens strømprisene endret seg med {strom:.1f} %.</p>
-    <div class="hb"><strong>Kort oppsummert:</strong> Norsk inflasjon var {fp(kpi)} i {mnd_str} {aar}. Det som kostet 10 000 kr i {mnd_str} {aar_fjor} koster nå {pris_10k} kr.</div>
+    <p>Konsumprisindeksen (KPI) steg <strong>{kpi:.1f} prosent</strong> fra {mnd_str} {aar_fjor} til {mnd_str} {aar}, viser tall fra SSB. Matvarer steg {mat:.1f} %, mens strømprisene endret seg med {strom:.1f} %.</p>
+    <div class="hb"><strong>Kort oppsummert:</strong> Norsk inflasjon var {fp(kpi)} i {mnd_str} {aar}. Det som kostet 10 000 kr i {mnd_str} {aar_fjor} koster {pris_10k} kr i {mnd_str} {aar}.</div>
     <h2>Inflasjon per kategori – {mnd_str} {aar}</h2>
     <div class="kg">
-      <div class="kc"><div class="ki">🛒</div><div class="kinfo"><div class="kn">Matvarer</div><div class="ks">SSB KPI, {mnd_kort} {aar}</div></div><div class="kp {farge(mat)}">{fp(mat)}</div></div>
-      <div class="kc"><div class="ki">⚡</div><div class="kinfo"><div class="kn">Elektrisitet</div><div class="ks">SSB KPI, {mnd_kort} {aar}</div></div><div class="kp {farge(strom)}">{fp(strom)}</div></div>
-      <div class="kc"><div class="ki">🏠</div><div class="kinfo"><div class="kn">Husleie</div><div class="ks">SSB KPI, {mnd_kort} {aar}</div></div><div class="kp {farge(husleie)}">{fp(husleie)}</div></div>
-      <div class="kc"><div class="ki">⛽</div><div class="kinfo"><div class="kn">Drivstoff</div><div class="ks">SSB KPI, {mnd_kort} {aar}</div></div><div class="kp {farge(drivstoff)}">{fp(drivstoff)}</div></div>
-      <div class="kc"><div class="ki">📱</div><div class="kinfo"><div class="kn">Teletjenester</div><div class="ks">SSB KPI, {mnd_kort} {aar}</div></div><div class="kp {farge(tele)}">{fp(tele)}</div></div>
-      <div class="kc"><div class="ki">📊</div><div class="kinfo"><div class="kn">KPI totalt</div><div class="ks">SSB KPI, {mnd_kort} {aar}</div></div><div class="kp {farge(kpi)}">{fp(kpi)}</div></div>
+      <div class="kc"><div class="ki">🛒</div><div class="kinfo"><div class="kn">Matvarer</div><div class="ks">SSB KPI, {mnd_kort} {aar}</div></div><div class="kp {fg(mat)}">{fp(mat)}</div></div>
+      <div class="kc"><div class="ki">⚡</div><div class="kinfo"><div class="kn">Elektrisitet</div><div class="ks">SSB KPI, {mnd_kort} {aar}</div></div><div class="kp {fg(strom)}">{fp(strom)}</div></div>
+      <div class="kc"><div class="ki">🏠</div><div class="kinfo"><div class="kn">Husleie</div><div class="ks">SSB KPI, {mnd_kort} {aar}</div></div><div class="kp {fg(husleie)}">{fp(husleie)}</div></div>
+      <div class="kc"><div class="ki">⛽</div><div class="kinfo"><div class="kn">Drivstoff</div><div class="ks">SSB KPI, {mnd_kort} {aar}</div></div><div class="kp {fg(drivstoff)}">{fp(drivstoff)}</div></div>
+      <div class="kc"><div class="ki">📱</div><div class="kinfo"><div class="kn">Teletjenester</div><div class="ks">SSB KPI, {mnd_kort} {aar}</div></div><div class="kp {fg(tele)}">{fp(tele)}</div></div>
+      <div class="kc"><div class="ki">📊</div><div class="kinfo"><div class="kn">KPI totalt</div><div class="ks">SSB KPI, {mnd_kort} {aar}</div></div><div class="kp {fg(kpi)}">{fp(kpi)}</div></div>
     </div>
     <h2>Hva betyr dette for deg?</h2>
-    <p>En inflasjon på {kpi:.1f} % betyr at det som kostet 10 000 kr i {mnd_str} {aar_fjor} nå koster {pris_10k} kr. Bruk vår <a href="/" style="color:var(--green);">inflasjonskalkulator</a> for å beregne hva dine konkrete beløp er verdt etter prisvekst.</p>
-    <p>Skal du regulere husleie? Bruk <a href="/husleiekalkulator" style="color:var(--green);">husleiekalkulatoren</a>. Vil du vite om du har fått realLønnsvekst? Sjekk <a href="/lønnskalkulator" style="color:var(--green);">lønnskalkulatoren</a>.</p>
+    <p>En inflasjon på {kpi:.1f} % betyr at det som kostet 10 000 kr i {mnd_str} {aar_fjor} koster {pris_10k} kr i {mnd_str} {aar}. Bruk vår <a href="/" style="color:var(--green-dark);">inflasjonskalkulator</a> for å beregne hva dine konkrete beløp er verdt etter prisvekst.</p>
     <div class="cta">
-      <div><strong>Beregn din kjøpekraft</strong><p>Se hva pengene dine er verdt etter {kpi:.1f} % prisvekst.</p></div>
+      <div><strong>Beregn din kjøpekraft</strong><p>Se hva pengene dine er verdt etter {kpi:.1f} % prisvekst.</p></div>
       <a href="/" class="cta-btn">Åpne inflasjonskalkulator →</a>
     </div>
-    <a href="/" class="back">← Tilbake til inflasjonskalkulator.no</a>
+    <div class="relatert">
+      <h2>Relaterte verktøy og artikler</h2>
+      <div class="rl">
+        <a href="/kpi-rapport">📋 Alle KPI-rapporter</a>
+        <a href="/">📊 Inflasjonskalkulator</a>
+        <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+        <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+        <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+      </div>
+    </div>
+    <a href="/kpi-rapport" class="back">← Tilbake til alle KPI-rapporter</a>
   </div>
 </div>
 <footer>
   <div class="wrap">
     <div class="fl">
-      <a href="/">Hjem</a><a href="/#kalkulator">Inflasjonskalkulator</a>
+      <a href="/">Hjem</a>
+      <a href="/kpi-rapport">KPI-rapporter</a>
       <a href="/husleiekalkulator">Husleiekalkulator</a>
       <a href="/lønnskalkulator">Lønnskalkulator</a>
       <a href="/ressurser">Ressurser</a>
@@ -411,10 +438,13 @@ footer a{{color:rgba(255,255,255,0.8);text-decoration:none}}
     <p style="margin-top:0.5rem;">&copy; {aar} inflasjonskalkulator.no</p>
   </div>
 </footer>
+<script>
+function toggleMenu(){{const m=document.getElementById('nav-mobile');if(m)m.classList.toggle('open')}}
+document.addEventListener('click',function(e){{const m=document.getElementById('nav-mobile');if(m&&m.classList.contains('open')&&!e.target.closest('nav')&&!e.target.closest('.nav-mobile'))m.classList.remove('open')}});
+</script>
 </body>
 </html>"""
-
-    return html, slug, aar
+    return html
 
 
 def oppdater_sitemap(slug, aar, pub_dato):
