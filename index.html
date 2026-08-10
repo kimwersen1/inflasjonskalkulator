@@ -555,7 +555,7 @@
 .nav-mobile a:hover{background:rgba(255,255,255,0.06)}
 .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
-@media(max-width:768px){.nav-links{display:none!important}.nav-burger{display:flex}}
+
 </style>
 
 <script type="application/ld+json">
@@ -658,6 +658,7 @@
   <a href="/kpi-rapport">📋 KPI-rapporter</a>
   <a href="/ressurser">🔗 Ressurser</a>
 </div>
+
 
 <!-- HOME PAGE -->
 
@@ -1241,6 +1242,17 @@ function scrollToId(id) {
 
 document.getElementById('belop').addEventListener('keydown', e => {
   if (e.key === 'Enter') beregn();
+});
+</script>
+<script>
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  if(m) m.classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  if(m&&m.classList.contains('open')&&!e.target.closest('nav')&&!e.target.closest('.nav-mobile'))
+    m.classList.remove('open');
 });
 </script>
 </body>
