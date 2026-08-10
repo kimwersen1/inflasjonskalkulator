@@ -92,6 +92,14 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
 .faq-item.open .faq-q::after{transform:rotate(45deg)}
 .faq-a{padding:0 1.25rem;font-size:0.93rem;color:var(--text-muted);line-height:1.6;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease}
 .faq-item.open .faq-a{max-height:400px;padding:0 1.25rem 1.1rem}
+
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+@media(max-width:768px){.nav-links{display:none!important}.nav-burger{display:flex}}
 </style>
 </head>
 <body>
