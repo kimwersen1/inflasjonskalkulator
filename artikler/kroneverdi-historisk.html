@@ -60,7 +60,6 @@ nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:cente
 .nav-links a:hover{color:#fff}
 .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
 .nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.2s}
-.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
 .nav-mobile.open{display:block}
 .nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
 .nav-mobile a:hover{background:rgba(255,255,255,0.06)}
@@ -126,18 +125,20 @@ footer a{color:rgba(255,255,255,0.8);text-decoration:none}
     <li><a href="/kpi-rapport">KPI-rapport</a></li>
     <li><a href="/ressurser">Ressurser</a></li>
   </ul>
-  <button class="nav-burger" onclick="toggleMenu()" aria-label="Meny">
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Meny" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="nav-mobile" id="nav-mobile" style="display:none">
+  <div class="nav-section">Kalkulatorer</div>
   <a href="/">📊 Inflasjonskalkulator</a>
   <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
   <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
   <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
-  <a href="/renters-rente-kalkulator">📈 Renters rente</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
   <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
   <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <div class="nav-section">Innhold</div>
   <a href="/kpi-rapport">📋 KPI-rapporter</a>
   <a href="/ressurser">🔗 Ressurser</a>
 </div>
@@ -249,15 +250,23 @@ document.querySelectorAll('.faq-q').forEach(q => {
   });
 });
 </script>
+
 <script>
 function toggleMenu(){
   const m=document.getElementById('nav-mobile');
-  if(m) m.classList.toggle('open');
+  const b=document.getElementById('nav-burger');
+  const open=m.style.display==='none'||m.style.display==='';
+  m.style.display=open?'block':'none';
+  b.classList.toggle('open',open);
+  b.setAttribute('aria-expanded',open);
 }
-document.addEventListener('click',function(e){
-  const m=document.getElementById('nav-mobile');
-  if(m&&m.classList.contains('open')&&!e.target.closest('nav')&&!e.target.closest('.nav-mobile'))
-    m.classList.remove('open');
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    const m=document.getElementById('nav-mobile');
+    const b=document.getElementById('nav-burger');
+    m.style.display='none';
+    b.classList.remove('open');
+  }
 });
 </script>
 </body>
