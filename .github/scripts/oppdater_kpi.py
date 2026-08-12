@@ -444,7 +444,7 @@ document.addEventListener('click',function(e){{const m=document.getElementById('
 </script>
 </body>
 </html>"""
-    return html
+    return html, slug, aar
 
 
 def oppdater_sitemap(slug, aar, pub_dato):
