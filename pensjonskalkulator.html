@@ -40,6 +40,24 @@
 }
 </script>
 <style>
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:var(--fh,'Syne',sans-serif);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{color:#6ee09e}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
+.nav-links a:hover{color:#fff}
+.nav-burger{background:none;border:none;cursor:pointer;padding:6px;display:flex;flex-direction:column;gap:5px;flex-shrink:0}
+.nav-burger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all 0.25s}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--green-dark);z-index:199;overflow-y:auto}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:flex;align-items:center;gap:0.75rem;color:rgba(255,255,255,0.85);text-decoration:none;padding:1rem 1.5rem;font-size:1.05rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+.nav-section{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:1rem 1.5rem 0.25rem}
+@media(max-width:900px){.nav-links{display:none}}
+@media(min-width:901px){.nav-burger{display:none}}
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --green: #1a7a4a; --green-light: #e8f5ee; --green-mid: #2a9d60;
@@ -49,12 +67,7 @@
   --radius: 12px; --radius-sm: 8px;
 }
 body { font-family: var(--font-body); background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.7; }
-nav { background: var(--green-dark); padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
-.nav-logo { font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
 .nav-logo span { color: #6ee09e; }
-nav ul { display: flex; gap: 1.5rem; list-style: none; }
-nav ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
-nav ul a:hover { color: #fff; }
 
 
 .hero { background: var(--green-dark); padding: 3.5rem 1.5rem 4.5rem; }
@@ -129,12 +142,6 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
   .relatert-lenker { display: flex; flex-wrap: wrap; gap: 0.75rem; }
   .relatert-lenke { background: var(--green-light); color: var(--green-dark); text-decoration: none; font-weight: 500; font-size: 0.88rem; padding: 8px 16px; border-radius: 99px; border: 1px solid #b2dfc6; transition: background 0.15s; white-space: nowrap; }
   .relatert-lenke:hover { background: #c8ecd8; }
-
-.nav-mobile.open{display:block}
-.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
-.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
-.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
 
 </style>
 </head>
