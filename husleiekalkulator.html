@@ -335,11 +335,13 @@ function beregnHusleie() {
 document.getElementById('husleie').addEventListener('keydown', e => { if (e.key === 'Enter') beregnHusleie(); });
 </script>
 
+
 <script>
 function toggleMenu(){
   const m=document.getElementById('nav-mobile');
   const b=document.getElementById('nav-burger');
-  const open=m.style.display==='none'||m.style.display==='';
+  const open=!m.classList.contains('open');
+  m.classList.toggle('open',open);
   m.style.display=open?'block':'none';
   b.classList.toggle('open',open);
   b.setAttribute('aria-expanded',open);
@@ -348,6 +350,7 @@ document.addEventListener('keydown',function(e){
   if(e.key==='Escape'){
     const m=document.getElementById('nav-mobile');
     const b=document.getElementById('nav-burger');
+    m.classList.remove('open');
     m.style.display='none';
     b.classList.remove('open');
   }
