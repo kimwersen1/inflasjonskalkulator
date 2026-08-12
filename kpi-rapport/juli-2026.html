@@ -69,18 +69,20 @@ footer a{color:rgba(255,255,255,0.8);text-decoration:none}
     <li><a href="/kpi-rapport">KPI-rapport</a></li>
     <li><a href="/ressurser">Ressurser</a></li>
   </ul>
-  <button class="nav-burger" onclick="toggleMenu()" aria-label="Meny">
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Meny" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="nav-mobile" id="nav-mobile" style="display:none">
+  <div class="nav-section">Kalkulatorer</div>
   <a href="/">📊 Inflasjonskalkulator</a>
   <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
   <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
   <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
-  <a href="/renters-rente-kalkulator">📈 Renters rente</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
   <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
   <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <div class="nav-section">Innhold</div>
   <a href="/kpi-rapport">📋 KPI-rapporter</a>
   <a href="/ressurser">🔗 Ressurser</a>
 </div>
@@ -133,5 +135,23 @@ footer a{color:rgba(255,255,255,0.8);text-decoration:none}
     <p style="margin-top:0.5rem;">&copy; 2026 inflasjonskalkulator.no</p>
   </div>
 </footer>
+<script>
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  const open=m.style.display==='none'||m.style.display==='';
+  m.style.display=open?'block':'none';
+  b.classList.toggle('open',open);
+  b.setAttribute('aria-expanded',open);
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    const m=document.getElementById('nav-mobile');
+    const b=document.getElementById('nav-burger');
+    m.style.display='none';
+    b.classList.remove('open');
+  }
+});
+</script>
 </body>
 </html>
