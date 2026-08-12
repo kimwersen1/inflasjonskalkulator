@@ -644,14 +644,14 @@ def oppdater_artikler(endringer, forrige_mnd):
         # Pattern: <span class="fact-val">X,X %</span> etterfulgt av KPI-lbl
         html = re.sub(
             r'(<span class="fact-val">)\d+,\d+ %(<\/span>\s*<div class="fact-lbl">KPI)',
-            rf'\g<1>{str(kpi).replace(".", ",")} %\g<2>',
+            '\\g<1>' + str(kpi).replace('.', ',') + ' %\\g<2>',
             html
         )
 
         # 3. Oppdater matvare-tall i fact-kort
         html = re.sub(
             r'(<span class="fact-val">)\d+,\d+ %(<\/span>\s*<div class="fact-lbl">Matvare)',
-            rf'\g<1>{str(mat).replace(".", ",")} %\g<2>',
+            '\\g<1>' + str(mat).replace('.', ',') + ' %\\g<2>',
             html
         )
 
