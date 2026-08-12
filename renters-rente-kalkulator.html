@@ -52,20 +52,28 @@
 }
 </script>
 <style>
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:var(--fh,'Syne',sans-serif);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{color:#6ee09e}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
+.nav-links a:hover{color:#fff}
+.nav-burger{background:none;border:none;cursor:pointer;padding:6px;display:flex;flex-direction:column;gap:5px;flex-shrink:0}
+.nav-burger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all 0.25s}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--green-dark);z-index:199;overflow-y:auto}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:flex;align-items:center;gap:0.75rem;color:rgba(255,255,255,0.85);text-decoration:none;padding:1rem 1.5rem;font-size:1.05rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+.nav-section{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:1rem 1.5rem 0.25rem}
+@media(max-width:900px){.nav-links{display:none}}
+@media(min-width:901px){.nav-burger{display:none}}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
 body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
-nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
-.nav-logo{font-family:var(--fh, 'Syne', sans-serif);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
 .nav-logo span{color:#6ee09e}
-.nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center;margin:0;padding:0}
-.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
-.nav-links a:hover{color:#fff}
-.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
-.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.2s}
-.nav-mobile.open{display:block}
-.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
-.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
 
 .hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
 .wrap{max-width:800px;margin:0 auto;padding:0 1.5rem}
@@ -118,13 +126,6 @@ h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.35rem,3.2vw,2.3rem);c
 footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:0.88rem;margin-top:2rem}
 footer a{color:rgba(255,255,255,0.8);text-decoration:none}
 .fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
-
-
-.nav-mobile.open{display:block}
-.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
-.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
-.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
 
 </style>
 </head>
