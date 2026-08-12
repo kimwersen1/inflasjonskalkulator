@@ -1001,4 +1001,11 @@ def google_indexing(slug, aar):
 
 
 if __name__ == "__main__":
-    main()
+    import traceback
+    try:
+        main()
+    except Exception as e:
+        print(f"KRITISK FEIL: {e}")
+        traceback.print_exc()
+        import sys
+        sys.exit(1)
