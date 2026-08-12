@@ -820,12 +820,12 @@ def oppdater_kpi_oversikt(endringer, forrige_mnd, pub_dato):
     )
     html = re.sub(
         r'(<div class="siste-tall">)[^<]+(</div>)',
-        f'\g<1>{fp_val}\g<2>',
+        r'\g<1>' + fp_val + r'\g<2>',
         html
     )
     html = re.sub(
         r'(<a href="/kpi-rapport/)[^"]+(" class="les-btn">)',
-        f'\g<1>{slug}-{aar}\g<2>',
+        r'\g<1>' + f'{slug}-{aar}' + r'\g<2>',
         html
     )
 
