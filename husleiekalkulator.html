@@ -1,24 +1,77 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Husleiekalkulator 2026 – Beregn husleieøkning med KPI</title>
+<meta name="description" content="Bruk vår husleiekalkulator og finn lovlig husleieøkning basert på KPI. Gratis husleiekalkulator med offisielle SSB-tall – oppdatert med KPI for 2026.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Husleiekalkulator 2026 – Beregn husleieøkning med KPI">
+  <meta property="og:description" content="Bruk vår husleiekalkulator og finn lovlig husleieøkning basert på KPI. Gratis husleiekalkulator med offisielle SSB-tall – oppdatert med KPI for 2026.">
+  <meta property="og:url" content="https://inflasjonskalkulator.no/husleiekalkulator">
+  <meta property="og:image" content="https://inflasjonskalkulator.no/og-husleie.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="inflasjonskalkulator.no">
+  <meta property="og:locale" content="nb_NO">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Husleiekalkulator 2026 – Beregn husleieøkning med KPI">
+  <meta name="twitter:description" content="Bruk vår husleiekalkulator og finn lovlig husleieøkning basert på KPI. Gratis husleiekalkulator med offisielle SSB-tall – oppdatert med KPI for 2026.">
+  <meta name="twitter:image" content="https://inflasjonskalkulator.no/og-husleie.svg">
+  <link rel="canonical" href="https://inflasjonskalkulator.no/husleiekalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Husleiekalkulator 2026",
+  "description": "Beregn lovlig husleieøkning basert på KPI. Gratis husleiekalkulator med offisielle SSB-tall.",
+  "url": "https://inflasjonskalkulator.no/husleiekalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NOK" },
+  "publisher": { "@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvor mye kan husleien økes i 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Husleien kan maksimalt økes med 3,6 % i 2026, basert på KPI-veksten fra januar 2025 til januar 2026. Dette er hjemlet i husleieloven § 4-2."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Når kan utleier øke husleien?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Utleier kan regulere husleien én gang i året, tidligst 1 år etter inngåelse av leiekontrakt eller siste regulering. Utleier må varsle skriftlig med minst 1 måneds varsel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvilken KPI brukes for husleieregulering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Husleieregulering baseres på KPI totalt (alle varer), målt som 12-månedersendring til og med januar det aktuelle året. Noen kontrakter bruker KPI-JAE – sjekk din kontrakt."
+      }
+    }
+  ]
+}
+</script>
 <style>
-nav{background:#114d2e;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em}
-.nav-logo span{color:#6ee09e}
-.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;margin:0;padding:0}
-.nav-links>li>a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.88rem;white-space:nowrap;display:flex;align-items:center;gap:3px;padding:4px 0}
-.nav-links>li>a:hover{color:#fff}
-.nav-dropdown{position:relative}
-.nav-drop{display:none;position:absolute;top:calc(100% + 8px);left:-8px;background:#0c3520;border-radius:10px;padding:6px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.35);z-index:300;border:1px solid rgba(255,255,255,0.08)}
-.nav-dropdown:hover .nav-drop{display:block}
-.nav-drop a{display:block;padding:9px 16px;color:rgba(255,255,255,0.82);text-decoration:none;font-size:0.85rem;white-space:nowrap}
-.nav-drop a:hover{background:rgba(255,255,255,0.07);color:#fff}
-.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
-.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
-.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:#114d2e;z-index:199;overflow-y:auto}
-.nav-mobile.open{display:block}
-.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:14px 20px;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.07)}
-.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
-.nav-section{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:14px 20px 6px}
-@media(max-width:900px){.nav-links{display:none}}
-@media(min-width:901px){.nav-burger{display:none}}
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --green: #1a7a4a; --green-light: #e8f5ee; --green-mid: #2a9d60;
@@ -27,7 +80,16 @@ nav{background:#114d2e;padding:0 1.5rem;display:flex;align-items:center;justify-
   --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
   --radius: 12px; --radius-sm: 8px;
 }
-body { font-family: var(--font-body); background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.7; }.hero { background: var(--green-dark); padding: 3.5rem 1.5rem 4.5rem; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.7; }
+nav { background: var(--green-dark); padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+.nav-logo span { color: #6ee09e; }
+nav ul { display: flex; gap: 1.5rem; list-style: none; }
+nav ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
+nav ul a:hover { color: #fff; }
+
+
+.hero { background: var(--green-dark); padding: 3.5rem 1.5rem 4.5rem; }
 .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
 .breadcrumb { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
 .breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
@@ -84,4 +146,197 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
   .relatert-lenke { background: var(--green-light); color: var(--green-dark); text-decoration: none; font-weight: 500; font-size: 0.88rem; padding: 8px 16px; border-radius: 99px; border: 1px solid #b2dfc6; transition: background 0.15s; white-space: nowrap; }
   .relatert-lenke:hover { background: #c8ecd8; }
 
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+
 </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Inflasjonskalkulator</a></li>
+    <li><a href="/husleiekalkulator">Husleie</a></li>
+    <li><a href="/lønnskalkulator">Lønn</a></li>
+    <li><a href="/feriepengekalkulator">Feriepenger</a></li>
+    <li><a href="/mva-kalkulator">MVA</a></li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile" style="display:none">
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/kpi-rapport">📋 KPI-rapporter</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+
+<div class="hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Hjem</a><span>›</span> Husleiekalkulator</div>
+    <div class="hero-tag">Gratis verktøy</div>
+    <h1>Husleiekalkulator 2026</h1>
+    <p>Beregn lovlig husleieøkning basert på SSBs offisielle KPI-tall. Gyldig for utleiere og leieboere i Norge.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn lovlig husleieøkning per år</div>
+      <div class="field">
+        <label>Nåværende månedlig husleie (kr)</label>
+        <input type="number" id="husleie" placeholder="12 000" min="0">
+      </div>
+      <div class="field">
+        <label>Reguleringsår</label>
+        <select id="reg-ar">
+          <option value="2026">2026 (KPI jan. 2025 – jan. 2026: +3,6 %)</option>
+          <option value="2025">2025 (KPI jan. 2024 – jan. 2025: +3,2 %)</option>
+          <option value="2024">2024 (KPI jan. 2023 – jan. 2024: +4,8 %)</option>
+          <option value="2023">2023 (KPI jan. 2022 – jan. 2023: +6,3 %)</option>
+        </select>
+        <div class="field-hint">Husleieøkning baseres på KPI-vekst siste 12 måneder frem til januar det aktuelle året.</div>
+      </div>
+      <button class="kalk-btn" onclick="beregnHusleie()">Beregn husleieøkning</button>
+
+      <div class="result-box" id="result-box">
+        <div class="result-main">
+          <span class="result-val" id="res-ny">—</span>
+          <span class="result-lbl">Maks økning per år</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="res-gammel">—</span>
+            <span class="lbl">Nåværende årsleie</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-okning">—</span>
+            <span class="lbl">Økning per år</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-pst">—</span>
+            <span class="lbl">KPI-vekst</span>
+          </div>
+        </div>
+        <div class="result-tekst" id="res-tekst"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="info-box">
+      <h2>Reglene for husleieøkning i Norge</h2>
+      <p>Husleieloven § 4-2 gir utleier rett til å regulere husleien én gang i året i samsvar med endringen i konsumprisindeksen (KPI) de siste 12 månedene. Dette kalles KPI-regulering.</p>
+      <ul>
+        <li>Utleier kan <strong>maksimalt</strong> øke husleien med KPI-veksten – ikke mer.</li>
+        <li>Regulering kan tidligst skje 1 år etter inngåelse av leiekontrakt, eller 1 år etter siste regulering.</li>
+        <li>Utleier må varsle leieboer skriftlig med minst <strong>1 måneds varsel</strong>.</li>
+        <li>Utleier er ikke forpliktet til å øke husleien – det er en rett, ikke en plikt.</li>
+        <li>Noen kontrakter bruker KPI-JAE i stedet for KPI totalt – sjekk kontrakten din.</li>
+      </ul>
+      <div class="highlight-box">
+        Husleieøkning i 2026 kan maksimalt være <strong>3,6 %</strong>, basert på KPI-veksten fra januar 2025 til januar 2026 (SSB).
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h2>Historisk KPI for husleieregulering</h2>
+      <p>SSB publiserer KPI-veksten for januar hvert år, og denne brukes som grunnlag for husleieregulering det påfølgende året:</p>
+      <ul>
+        <li><strong>2026:</strong> KPI jan. 2025–jan. 2026 = +3,6 %</li>
+        <li><strong>2025:</strong> KPI jan. 2024–jan. 2025 = +3,2 %</li>
+        <li><strong>2024:</strong> KPI jan. 2023–jan. 2024 = +4,8 %</li>
+        <li><strong>2023:</strong> KPI jan. 2022–jan. 2023 = +6,3 %</li>
+        <li><strong>2022:</strong> KPI jan. 2021–jan. 2022 = +3,2 %</li>
+      </ul>
+      <p>Vil du beregne generell prisvekst over flere år? Bruk vår <a href="/" style="color:var(--green);">inflasjonskalkulator</a>.</p>
+    </div>
+  </div>
+
+  
+  <div class="relatert-seksjon">
+    <h2>Relaterte verktøy og artikler</h2>
+    <div class="relatert-lenker">
+      <a href="/" class="relatert-lenke">📊 Inflasjonskalkulator</a>
+      <a href="/lønnskalkulator" class="relatert-lenke">💼 Lønnskalkulator</a>
+      <a href="/pensjonskalkulator" class="relatert-lenke">🏦 Pensjonskalkulator</a>
+      <a href="/artikler/hva-er-inflasjon" class="relatert-lenke">📖 Hva er inflasjon?</a>
+      <a href="/artikler/slik-beskytter-du-sparepengene" class="relatert-lenke">💰 Beskytt sparepengene</a>
+      <a href="/artikler/norsk-inflasjon-historisk" class="relatert-lenke">📈 Historisk inflasjon</a>
+      <a href="/ressurser" class="relatert-lenke">🔗 Ressurser</a>
+    </div>
+  </div>
+  <a href="/" class="back-link">← Tilbake til inflasjonskalkulator.no</a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="/">Hjem</a>
+      <a href="/#kalkulator">Inflasjonskalkulator</a>
+      <a href="/husleiekalkulator">Husleiekalkulator</a>
+      <a href="/lønnskalkulator">Lønnskalkulator</a>
+      <a href="/ressurser">Ressurser</a>
+    </div>
+    <p>Tall basert på <a href="https://www.ssb.no" target="_blank" rel="noopener">SSBs Konsumprisindeks</a>. Informasjonen er kun veiledende.</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 inflasjonskalkulator.no</p>
+  </div>
+</footer>
+
+<script>
+const kpiVekst = { 2026: 3.6, 2025: 3.2, 2024: 4.8, 2023: 6.3 };
+
+function beregnHusleie() {
+  const husleie = parseFloat(document.getElementById('husleie').value);
+  const ar = parseInt(document.getElementById('reg-ar').value);
+  if (!husleie || isNaN(husleie)) { document.getElementById('result-box').classList.remove('show'); return; }
+
+  const pst = kpiVekst[ar];
+  const okning = husleie * (pst / 100);
+  const ny = husleie + okning;
+  const fmt = n => Math.round(n).toLocaleString('nb-NO') + ' kr';
+
+  const husleieAar = husleie * 12;
+  const okningAar = okning * 12;
+  const nyAar = ny * 12;
+  document.getElementById('res-ny').textContent = fmt(okningAar) + '/år';
+  document.getElementById('res-gammel').textContent = fmt(husleieAar) + '/år';
+  document.getElementById('res-okning').textContent = '+' + fmt(okningAar) + '/år';
+  document.getElementById('res-pst').textContent = '+' + pst.toFixed(1) + ' %';
+  document.getElementById('res-tekst').textContent =
+    `Med en KPI-vekst på ${pst.toFixed(1)} % kan husleien økes med maksimalt ${fmt(okningAar)} per år i ${ar}. `
+    + `Det tilsvarer ${fmt(okning)} per måned. Fra ${fmt(husleie)}/mnd til maksimalt ${fmt(ny)}/mnd. `
+    + `Husk at utleier må varsle skriftlig med minst 1 måneds varsel.`;
+  document.getElementById('result-box').classList.add('show');
+}
+
+document.getElementById('husleie').addEventListener('keydown', e => { if (e.key === 'Enter') beregnHusleie(); });
+</script>
+<script>
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  if(m) m.classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  if(m&&m.classList.contains('open')&&!e.target.closest('nav')&&!e.target.closest('.nav-mobile'))
+    m.classList.remove('open');
+});
+</script>
+</body>
+</html>
