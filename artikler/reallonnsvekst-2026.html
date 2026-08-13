@@ -1,27 +1,71 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reallønnsvekst 2026 – Har du fått høyere kjøpekraft?</title>
+<meta name="description" content="Hva er reallønnsvekst og fikk du det i 2026? Forstå forskjellen mellom nominell og reell lønnsvekst, og beregn din faktiske kjøpekraft etter inflasjon og KPI.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/artikler/reallonnsvekst-2026">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reallønnsvekst 2026 – Har du fått høyere kjøpekraft?">
+<meta property="og:description" content="Forstå reallønnsvekst og beregn din faktiske kjøpekraft etter inflasjon i 2026.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/artikler/reallonnsvekst-2026">
+<meta property="og:image" content="https://inflasjonskalkulator.no/og-lonn.svg">
+<meta property="og:locale" content="nb_NO">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Reallønnsvekst 2026 – Har du fått høyere kjøpekraft?",
+  "datePublished": "2026-08-05",
+  "dateModified": "2026-08-05",
+  "publisher": {"@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er reallønnsvekst?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Reallønnsvekst er lønnsvekst justert for inflasjon. Hvis lønnen din øker med 5 % men inflasjonen er 3 %, har du en reallønnsvekst på ca. 2 %. Det er reallønnsveksten som viser om du faktisk har fått mer kjøpekraft."}
+    },
+    {
+      "@type": "Question",
+      "name": "Hva var reallønnsveksten i Norge i 2025?",
+      "acceptedAnswer": {"@type": "Answer", "text": "I 2025 var gjennomsnittlig lønnsvekst i Norge ca. 5,0 % mens KPI-veksten var 3,1 %. Det gir en reallønnsvekst på ca. 1,9 %, ifølge SSB."}
+    },
+    {
+      "@type": "Question",
+      "name": "Hvordan beregner jeg min reallønnsvekst?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Reallønnsvekst = Nominell lønnsvekst minus inflasjon (KPI). Bruk vår lønnskalkulator på inflasjonskalkulator.no/lønnskalkulator for å beregne din personlige reallønnsvekst."}
+    }
+  ]
+}
+</script>
 <style>
-nav{background:#114d2e;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em}
-.nav-logo span{color:#6ee09e}
-.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;margin:0;padding:0}
-.nav-links>li>a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.88rem;white-space:nowrap;display:flex;align-items:center;gap:3px;padding:4px 0}
-.nav-links>li>a:hover{color:#fff}
-.nav-dropdown{position:relative}
-.nav-drop{display:none;position:absolute;top:calc(100% + 8px);left:-8px;background:#0c3520;border-radius:10px;padding:6px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.35);z-index:300;border:1px solid rgba(255,255,255,0.08)}
-.nav-dropdown:hover .nav-drop{display:block}
-.nav-drop a{display:block;padding:9px 16px;color:rgba(255,255,255,0.82);text-decoration:none;font-size:0.85rem;white-space:nowrap}
-.nav-drop a:hover{background:rgba(255,255,255,0.07);color:#fff}
-.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
-.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
-.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:#114d2e;z-index:199;overflow-y:auto}
-.nav-mobile.open{display:block}
-.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:14px 20px;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.07)}
-.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
-.nav-section{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:14px 20px 6px}
-@media(max-width:900px){.nav-links{display:none}}
-@media(min-width:901px){.nav-burger{display:none}}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--green:#1a7a4a;--green-light:#e8f5ee;--green-dark:#114d2e;--red:#c0392b;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
-body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.8}.hero{background:var(--green-dark);padding:3rem 1.5rem 3.5rem}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.8}
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:var(--fh, 'Syne', sans-serif);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
+.nav-logo span{color:#6ee09e}
+.nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
+.nav-links a:hover{color:#fff}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.2s}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+
+.hero{background:var(--green-dark);padding:3rem 1.5rem 3.5rem}
 .wrap{max-width:760px;margin:0 auto;padding:0 1.5rem}
 .bc{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
 .bc a{color:rgba(255,255,255,0.6);text-decoration:none}
@@ -61,4 +105,154 @@ footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5
 footer a{color:rgba(255,255,255,0.8);text-decoration:none}
 .fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
 
+
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+
 </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Inflasjonskalkulator</a></li>
+    <li><a href="/husleiekalkulator">Husleie</a></li>
+    <li><a href="/lønnskalkulator">Lønn</a></li>
+    <li><a href="/feriepengekalkulator">Feriepenger</a></li>
+    <li><a href="/mva-kalkulator">MVA</a></li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile" style="display:none">
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/kpi-rapport">📋 KPI-rapporter</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+
+<div class="hero">
+  <div class="wrap">
+    <div class="bc"><a href="/">Hjem</a><span>›</span><a href="/artikler">Artikler</a><span>›</span>Reallønnsvekst 2026</div>
+    <div class="tag">Artikkel · Oppdatert august 2026</div>
+    <h1>Reallønnsvekst 2026 – har du fått høyere kjøpekraft?</h1>
+    <div class="meta">Basert på SSBs lønns- og KPI-statistikk &nbsp;·&nbsp; inflasjonskalkulator.no</div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="article-body">
+
+    <p>Mange nordmenn fokuserer på nominell lønnsvekst – kronebeløpet på lønnsslippen. Men det som virkelig betyr noe er <strong>reallønnsveksten</strong>: Har du faktisk fått mer å rutte med etter at inflasjonen er trukket fra? I 2025 fikk gjennomsnittlig norsk arbeidstaker en reallønnsvekst på ca. 1,9 %, men det varierer mye mellom bransjer og enkeltpersoner.</p>
+
+    <div class="fact-box">
+      <div class="fact-item"><span class="fact-val">5,0 %</span><div class="fact-lbl">Snitt lønnsvekst 2025</div></div>
+      <div class="fact-item"><span class="fact-val">3,1 %</span><div class="fact-lbl">KPI-vekst 2025</div></div>
+      <div class="fact-item"><span class="fact-val">1,9 %</span><div class="fact-lbl">Reallønnsvekst 2025</div></div>
+    </div>
+
+    <div class="cta-box">
+      <div><strong>Beregn din reallønnsvekst</strong><p>Skriv inn lønn for to år og se om du har fått reell kjøpekraftvekst.</p></div>
+      <a href="/lønnskalkulator" class="cta-btn">Åpne lønnskalkulator →</a>
+    </div>
+
+    <h2>Hva er reallønnsvekst?</h2>
+    <p>Reallønnsvekst er lønnsvekst justert for inflasjon. Formelen er enkel:</p>
+    <div class="hb"><strong>Reallønnsvekst ≈ Nominell lønnsvekst − KPI-vekst</strong><br>Eksempel: 5,0 % lønnsvekst − 3,1 % inflasjon = 1,9 % reallønnsvekst</div>
+    <p>Hvis lønnen din øker med 4 % men inflasjonen er 5 %, har du i praksis fått en reallønnsreduksjon på 1 % – selv om du tjener mer kroner enn før.</p>
+
+    <h2>Norsk lønnsvekst og inflasjon – historisk</h2>
+    <p>De siste årene har forholdet mellom lønnsvekst og inflasjon variert mye:</p>
+    <ul>
+      <li><strong>2022:</strong> Lønnsvekst 4,3 % – KPI 5,8 % → Reallønnsfall på ca. 1,5 %</li>
+      <li><strong>2023:</strong> Lønnsvekst 5,5 % – KPI 5,5 % → Tilnærmet null reallønnsvekst</li>
+      <li><strong>2024:</strong> Lønnsvekst 5,2 % – KPI 3,1 % → Reallønnsvekst ca. 2,0 %</li>
+      <li><strong>2025:</strong> Lønnsvekst 5,0 % – KPI 3,1 % → Reallønnsvekst ca. 1,9 %</li>
+    </ul>
+
+    <h2>Hvorfor varierer reallønnsveksten mellom bransjer?</h2>
+    <p>Gjennomsnittlig reallønnsvekst forteller ikke hele historien. En industriarbeider i et stramt arbeidsmarked kan ha fått 7 % lønnsvekst og dermed en reallønnsvekst på nesten 4 %, mens en offentlig ansatt med 4,2 % lønnsoppgjør fikk et reallønnsfall.</p>
+    <p>Bruk vår <a href="/lønnskalkulator" style="color:var(--green);">lønnskalkulator</a> for å beregne din personlige situasjon basert på din faktiske lønn og SSBs KPI-tall.</p>
+
+    <h2>Slik bruker du reallønn i lønnsforhandlinger</h2>
+    <p>Kjennskap til reallønnsvekst er et kraftig argument i lønnsforhandlinger:</p>
+    <ul>
+      <li>Vis at du har hatt reallønnsfall de siste årene og krever kompensasjon</li>
+      <li>Bruk KPI som minimum – «Inflasjonen var X %, så jeg forventer minst X % for å beholde kjøpekraften»</li>
+      <li>Sammenlign med bransjegjennomsnittet fra SSBs lønnsstatistikk</li>
+      <li>Inkluder produktivitetsvekst – har bedriften levert bedre resultater?</li>
+    </ul>
+
+    <h2>Reallønn vs. kjøpekraft over tid</h2>
+    <p>Selv med positiv reallønnsvekst hvert år kan kjøpekraften falle over tid hvis prisene på det du faktisk kjøper stiger mer enn gjennomsnittet. Bor du i Oslo og betaler høy husleie? Da er din faktiske kjøpekraft sannsynligvis dårligere enn KPI-gjennomsnittet tilsier.</p>
+    <p>Se hva pengene dine er verdt over tid med vår <a href="/" style="color:var(--green);">inflasjonskalkulator</a>.</p>
+
+    <div class="faq-item"><div class="faq-q">Hva er reallønnsvekst?</div><div class="faq-a">Reallønnsvekst er lønnsvekst justert for inflasjon. Den viser om du faktisk har fått mer kjøpekraft, ikke bare høyere kronebeløp.</div></div>
+    <div class="faq-item"><div class="faq-q">Hva var reallønnsveksten i Norge i 2025?</div><div class="faq-a">Gjennomsnittlig reallønnsvekst i Norge var ca. 1,9 % i 2025, basert på 5,0 % lønnsvekst og 3,1 % KPI-vekst (SSB).</div></div>
+    <div class="faq-item"><div class="faq-q">Hvordan beregner jeg min reallønnsvekst?</div><div class="faq-a">Trekk KPI-veksten fra din nominelle lønnsvekst. Bruk vår lønnskalkulator på inflasjonskalkulator.no/lønnskalkulator for nøyaktig beregning.</div></div>
+    <div class="faq-item"><div class="faq-q">Hva gjør jeg hvis jeg har hatt reallønnsfall?</div><div class="faq-a">Dokumenter reallønnsnedsettelsen og bruk det som argument i neste lønnsforhandling. Du kan kreve kompensasjon for kjøpekrafttapet.</div></div>
+
+    <div class="relatert">
+      <h2>Relaterte verktøy og artikler</h2>
+      <div class="rl">
+        <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+        <a href="/">📊 Inflasjonskalkulator</a>
+        <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+        <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+        <a href="/kpi-rapport">📋 KPI-rapporter</a>
+        <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="/">Hjem</a>
+      <a href="/lønnskalkulator">Lønnskalkulator</a>
+      <a href="/husleiekalkulator">Husleiekalkulator</a>
+      <a href="/kpi-rapport">KPI-rapporter</a>
+      <a href="/ressurser">Ressurser</a>
+    </div>
+    <p>Tall basert på <a href="https://www.ssb.no" target="_blank" rel="noopener">SSBs statistikk</a>. Informasjonen er kun veiledende.</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 inflasjonskalkulator.no</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+<script>
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  if(m) m.classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  if(m&&m.classList.contains('open')&&!e.target.closest('nav')&&!e.target.closest('.nav-mobile'))
+    m.classList.remove('open');
+});
+</script>
+</body>
+</html>
