@@ -1,27 +1,38 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KPI-rapporter – Månedlig norsk inflasjon 2025–2026</title>
+<meta name="description" content="Se alle månedlige KPI-rapporter for norsk inflasjon. Offisielle tall fra SSB oppdatert den 10. hver måned. Følg prisutviklingen i Norge måned for måned.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/kpi-rapport">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KPI-rapporter – Månedlig norsk inflasjon 2025–2026">
+<meta property="og:description" content="Alle månedlige KPI-rapporter for norsk inflasjon. Offisielle tall fra SSB.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/kpi-rapport">
+<meta property="og:image" content="https://inflasjonskalkulator.no/og-kpi-rapport.svg">
+<meta property="og:locale" content="nb_NO">
 <style>
-nav{background:#114d2e;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em}
-.nav-logo span{color:#6ee09e}
-.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;margin:0;padding:0}
-.nav-links>li>a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.88rem;white-space:nowrap;display:flex;align-items:center;gap:3px;padding:4px 0}
-.nav-links>li>a:hover{color:#fff}
-.nav-dropdown{position:relative}
-.nav-drop{display:none;position:absolute;top:calc(100% + 8px);left:-8px;background:#0c3520;border-radius:10px;padding:6px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.35);z-index:300;border:1px solid rgba(255,255,255,0.08)}
-.nav-dropdown:hover .nav-drop{display:block}
-.nav-drop a{display:block;padding:9px 16px;color:rgba(255,255,255,0.82);text-decoration:none;font-size:0.85rem;white-space:nowrap}
-.nav-drop a:hover{background:rgba(255,255,255,0.07);color:#fff}
-.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
-.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
-.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:#114d2e;z-index:199;overflow-y:auto}
-.nav-mobile.open{display:block}
-.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:14px 20px;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.07)}
-.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
-.nav-section{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:14px 20px 6px}
-@media(max-width:900px){.nav-links{display:none}}
-@media(min-width:901px){.nav-burger{display:none}}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--green:#1a7a4a;--green-light:#e8f5ee;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
-body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4rem}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:var(--fh, 'Syne', sans-serif);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
+.nav-logo span{color:#6ee09e}
+.nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
+.nav-links a:hover{color:#fff}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.2s}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+
+.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4rem}
 .wrap{max-width:860px;margin:0 auto;padding:0 1.5rem}
 .bc{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
 .bc a{color:rgba(255,255,255,0.6);text-decoration:none}
@@ -53,4 +64,170 @@ footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5
 footer a{color:rgba(255,255,255,0.8);text-decoration:none}
 .fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
 
+
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+
 </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Inflasjonskalkulator</a></li>
+    <li><a href="/husleiekalkulator">Husleie</a></li>
+    <li><a href="/lønnskalkulator">Lønn</a></li>
+    <li><a href="/feriepengekalkulator">Feriepenger</a></li>
+    <li><a href="/mva-kalkulator">MVA</a></li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile" style="display:none">
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/kpi-rapport">📋 KPI-rapporter</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+<div class="hero">
+  <div class="wrap">
+    <div class="bc"><a href="/">Hjem</a><span>›</span> KPI-rapporter</div>
+    <h1>Månedlige KPI-rapporter</h1>
+    <p>Offisielle inflasjonsstall fra SSB – oppdatert den 10. hver måned. Følg prisutviklingen i Norge over tid.</p>
+  </div>
+</div>
+<div class="main">
+  <div class="wrap">
+    <div class="siste">
+      <div class="info">
+        <strong>Siste rapport: KPI juli 2026</strong>
+        <p>Publisert 10. august 2026 &nbsp;·&nbsp; Kilde: SSB</p>
+      </div>
+      <div class="siste-tall">+3.0 %</div>
+      <a href="/kpi-rapport/juli-2026" class="les-btn">Les rapporten →</a>
+    </div>
+
+    <div class="year-title">2026</div>
+    <div class="rg" id="rapporter-2026">
+      <a href="/kpi-rapport/juli-2026" class="rc siste-kort">
+        <span class="badge">Siste</span>
+        <div class="rc-mnd">Juli 2026</div>
+        <div class="rc-kpi">+3,0 %</div>
+        <div class="rc-dato">Publisert 10. august 2026</div>
+      </a>
+      <a href="/kpi-rapport/juni-2026" class="rc">
+        <div class="rc-mnd">Juni 2026</div>
+        <div class="rc-kpi">+2,7 %</div>
+        <div class="rc-dato">Publisert 10. juli 2026</div>
+      </a>
+      <a href="/kpi-rapport/mai-2026" class="rc">
+        <div class="rc-mnd">Mai 2026</div>
+        <div class="rc-kpi">+3,1 %</div>
+        <div class="rc-dato">Publisert 10. juni 2026</div>
+      </a>
+      <a href="/kpi-rapport/april-2026" class="rc">
+        <div class="rc-mnd">April 2026</div>
+        <div class="rc-kpi">+3,4 %</div>
+        <div class="rc-dato">Publisert 11. mai 2026</div>
+      </a>
+      <a href="/kpi-rapport/mars-2026" class="rc">
+        <div class="rc-mnd">Mars 2026</div>
+        <div class="rc-kpi">+3,6 %</div>
+        <div class="rc-dato">Publisert 10. april 2026</div>
+      </a>
+      <a href="/kpi-rapport/februar-2026" class="rc">
+        <div class="rc-mnd">Februar 2026</div>
+        <div class="rc-kpi">+2,7 %</div>
+        <div class="rc-dato">Publisert 10. mars 2026</div>
+      </a>
+      <a href="/kpi-rapport/januar-2026" class="rc">
+        <div class="rc-mnd">Januar 2026</div>
+        <div class="rc-kpi">+3,6 %</div>
+        <div class="rc-dato">Publisert 10. februar 2026</div>
+      </a>
+    </div>
+
+    <div class="year-title">2025</div>
+    <div class="rg" id="rapporter-2025">
+      <a href="/kpi-rapport/desember-2025" class="rc">
+        <div class="rc-mnd">Desember 2025</div>
+        <div class="rc-kpi">+3,2 %</div>
+        <div class="rc-dato">Publisert 9. januar 2026</div>
+      </a>
+      <a href="/kpi-rapport/november-2025" class="rc">
+        <div class="rc-mnd">November 2025</div>
+        <div class="rc-kpi">+3,0 %</div>
+        <div class="rc-dato">Publisert 10. desember 2025</div>
+      </a>
+      <a href="/kpi-rapport/oktober-2025" class="rc">
+        <div class="rc-mnd">Oktober 2025</div>
+        <div class="rc-kpi">+3,1 %</div>
+        <div class="rc-dato">Publisert 10. november 2025</div>
+      </a>
+      <a href="/kpi-rapport/september-2025" class="rc">
+        <div class="rc-mnd">September 2025</div>
+        <div class="rc-kpi">+3,4 %</div>
+        <div class="rc-dato">Publisert 10. oktober 2025</div>
+      </a>
+      <a href="/kpi-rapport/august-2025" class="rc">
+        <div class="rc-mnd">August 2025</div>
+        <div class="rc-kpi">+3,2 %</div>
+        <div class="rc-dato">Publisert 10. september 2025</div>
+      </a>
+      <a href="/kpi-rapport/juli-2025" class="rc">
+        <div class="rc-mnd">Juli 2025</div>
+        <div class="rc-kpi">+3,3 %</div>
+        <div class="rc-dato">Publisert 10. august 2025</div>
+      </a>
+    </div>
+
+    <div class="info-box">
+      <h2>Om KPI-rapportene</h2>
+      <p>Hver måned publiserer SSB nye KPI-tall den 10. Vi oppdaterer automatisk med ferske tall og genererer en ny rapport. KPI måler prisutviklingen på varer og tjenester norske husholdninger kjøper.</p>
+      <p>Vil du beregne hva konkrete beløp er verdt etter inflasjon? Bruk våre kalkulatorer:</p>
+      <div class="kl">
+        <a href="/">📊 Inflasjonskalkulator</a>
+        <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+        <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+        <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="/">Hjem</a>
+      <a href="/kpi-rapport">KPI-rapporter</a>
+      <a href="/husleiekalkulator">Husleiekalkulator</a>
+      <a href="/lønnskalkulator">Lønnskalkulator</a>
+      <a href="/ressurser">Ressurser</a>
+    </div>
+    <p>Tall basert på <a href="https://www.ssb.no" target="_blank" rel="noopener">SSBs Konsumprisindeks</a>. Informasjonen er kun veiledende.</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 inflasjonskalkulator.no</p>
+  </div>
+</footer>
+<script>
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  if(m) m.classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  if(m&&m.classList.contains('open')&&!e.target.closest('nav')&&!e.target.closest('.nav-mobile'))
+    m.classList.remove('open');
+});
+</script>
+</body>
+</html>
