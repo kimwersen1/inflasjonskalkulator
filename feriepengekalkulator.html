@@ -1,27 +1,79 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feriepengekalkulator 2026 – Beregn feriepenger enkelt og gratis</title>
+<meta name="description" content="Bruk vår gratis feriepengekalkulator og finn ut hva du får utbetalt i feriepenger. Beregn feriepenger basert på lønn, feriepengeprosent og antall feriedager for 2026.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/feriepengekalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Feriepengekalkulator 2026 – Beregn feriepenger enkelt og gratis">
+<meta property="og:description" content="Finn ut hva du får i feriepenger i 2026. Gratis feriepengekalkulator basert på lønn og feriepengeprosent.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/feriepengekalkulator">
+<meta property="og:image" content="https://inflasjonskalkulator.no/og-index.svg">
+<meta property="og:locale" content="nb_NO">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Feriepengekalkulator 2026",
+  "description": "Beregn feriepenger basert på lønn og feriepengeprosent. Gratis og enkel kalkulator.",
+  "url": "https://inflasjonskalkulator.no/feriepengekalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "NOK"},
+  "publisher": {"@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er feriepengeprosenten i 2026?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Standard feriepengeprosent i Norge er 10,2 % for arbeidstakere med 4 uker og 1 dag ferie. For arbeidstakere over 60 år er prosenten 12,5 %. Noen tariffavtaler gir høyere prosent, typisk 12 % for 5 uker ferie."}
+    },
+    {
+      "@type": "Question",
+      "name": "Når utbetales feriepenger?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Feriepenger utbetales normalt i juni, vanligvis siste fredag i mai eller første fredag i juni. Tidspunktet varierer mellom arbeidsgivere, men feriepenger skal utbetales senest siste vanlige lønningsdag før ferien."}
+    },
+    {
+      "@type": "Question",
+      "name": "Betales det skatt av feriepenger?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Feriepenger er skattepliktige, men det trekkes ikke skatt av feriepengene i utbetalingsmåneden (vanligvis juni). I stedet trekkes det halv skatt. Mange opplever derfor høyere nettoutbetaling i juni enn andre måneder."}
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er feriepengegrunnlaget?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Feriepengegrunnlaget er summen av all lønn du tjente hos arbeidsgiveren i fjor, inkludert overtid og variable tillegg. Feriepenger beregnes som en prosentsats av dette grunnlaget."}
+    }
+  ]
+}
+</script>
 <style>
-nav{background:#114d2e;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em}
-.nav-logo span{color:#6ee09e}
-.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;margin:0;padding:0}
-.nav-links>li>a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.88rem;white-space:nowrap;display:flex;align-items:center;gap:3px;padding:4px 0}
-.nav-links>li>a:hover{color:#fff}
-.nav-dropdown{position:relative}
-.nav-drop{display:none;position:absolute;top:calc(100% + 8px);left:-8px;background:#0c3520;border-radius:10px;padding:6px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.35);z-index:300;border:1px solid rgba(255,255,255,0.08)}
-.nav-dropdown:hover .nav-drop{display:block}
-.nav-drop a{display:block;padding:9px 16px;color:rgba(255,255,255,0.82);text-decoration:none;font-size:0.85rem;white-space:nowrap}
-.nav-drop a:hover{background:rgba(255,255,255,0.07);color:#fff}
-.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
-.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
-.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:#114d2e;z-index:199;overflow-y:auto}
-.nav-mobile.open{display:block}
-.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:14px 20px;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.07)}
-.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
-.nav-section{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:14px 20px 6px}
-@media(max-width:900px){.nav-links{display:none}}
-@media(min-width:901px){.nav-burger{display:none}}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
-body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:var(--fh, 'Syne', sans-serif);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
+.nav-logo span{color:#6ee09e}
+.nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
+.nav-links a:hover{color:#fff}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.2s}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+
+.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
 .wrap{max-width:800px;margin:0 auto;padding:0 1.5rem}
 .bc{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
 .bc a{color:rgba(255,255,255,0.6);text-decoration:none}
@@ -71,4 +123,238 @@ footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5
 footer a{color:rgba(255,255,255,0.8);text-decoration:none}
 .fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
 
+
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+
 </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Inflasjonskalkulator</a></li>
+    <li><a href="/husleiekalkulator">Husleie</a></li>
+    <li><a href="/lønnskalkulator">Lønn</a></li>
+    <li><a href="/feriepengekalkulator">Feriepenger</a></li>
+    <li><a href="/mva-kalkulator">MVA</a></li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile" style="display:none">
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/kpi-rapport">📋 KPI-rapporter</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+
+<div class="hero">
+  <div class="wrap">
+    <div class="bc"><a href="/">Hjem</a><span>›</span>Feriepengekalkulator</div>
+    <div class="hero-tag">Gratis verktøy</div>
+    <h1>Feriepengekalkulator 2026 – beregn hva du får</h1>
+    <p>Beregn hva du får utbetalt i feriepenger. Enkel og gratis kalkulator basert på gjeldende ferielovgiving.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn dine feriepenger</div>
+      <div class="grid2">
+        <div class="field">
+          <label>Årslønn (kr)</label>
+          <input type="number" id="arslonn" placeholder="600 000" min="0">
+          <div class="field-hint">Din totale lønn forrige kalenderår</div>
+        </div>
+        <div class="field">
+          <label>Feriepengeprosent</label>
+          <select id="prosent">
+            <option value="10.2">10,2 % – Standard (4 uker + 1 dag)</option>
+            <option value="12.0">12,0 % – Tariff (5 uker)</option>
+            <option value="12.5">12,5 % – Over 60 år</option>
+            <option value="14.3">14,3 % – Over 60 år + tariff</option>
+          </select>
+          <div class="field-hint">Sjekk din arbeidskontrakt eller tariffavtale</div>
+        </div>
+        <div class="field">
+          <label>Trekk for feriemåned</label>
+          <select id="trekk">
+            <option value="ja">Ja – trekkes lønn i ferien</option>
+            <option value="nei">Nei – beholder full lønn</option>
+          </select>
+          <div class="field-hint">De fleste får trukket lønn i juni og erstattet med feriepenger</div>
+        </div>
+        <div class="field">
+          <label>Månedlig lønn (kr)</label>
+          <input type="number" id="mndlonn" placeholder="50 000" min="0">
+          <div class="field-hint">Brukes til å beregne nettoutbetaling i juni</div>
+        </div>
+      </div>
+      <button class="kalk-btn" onclick="beregnFeriepenger()">Beregn feriepenger</button>
+
+      <div class="result-box" id="result-box">
+        <div class="result-main">
+          <span class="result-val" id="res-total">—</span>
+          <span class="result-lbl">Totale feriepenger (brutto)</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="res-dag">—</span>
+            <span class="lbl">Per feriedag</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-uke">—</span>
+            <span class="lbl">Per ferieuke</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-netto">—</span>
+            <span class="lbl">Netto i juni</span>
+          </div>
+        </div>
+        <div class="result-tekst" id="res-tekst"></div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div style="margin:2rem 0">
+    <img src="/og-feriepenger.svg" alt="Feriepengekalkulator 2026 – beregn feriepenger basert på årslønn" style="width:100%;border-radius:12px;display:block">
+  </div>
+  <div class="section">
+    <h2 class="sec-title">Slik fungerer feriepenger i Norge</h2>
+    <div class="prose">
+      <p>Feriepenger er ikke ekstra lønn – det er lønn du har tjent opp tidligere år, som utbetales når du tar ferie. Ferieloven sikrer at alle arbeidstakere i Norge har rett til feriepenger.</p>
+
+      <div class="hb">
+        <strong>Hovedregel:</strong> Feriepenger = Feriepengegrunnlag × Feriepengeprosent<br>
+        Eksempel: 600 000 kr × 10,2 % = <strong>61 200 kr</strong> i feriepenger
+      </div>
+
+      <h3>Feriepengeprosenter i 2026</h3>
+      <ul>
+        <li><strong>10,2 %</strong> – Standard. Gjelder arbeidstakere med 4 uker og 1 dag ferie (ferielovens minimum)</li>
+        <li><strong>12,0 %</strong> – Tariffavtale med 5 uker ferie. Gjelder mange i privat og offentlig sektor</li>
+        <li><strong>12,5 %</strong> – Over 60 år. Ekstra ferieuke gir høyere prosent</li>
+        <li><strong>14,3 %</strong> – Over 60 år med tariffavtale og 5 uker ferie</li>
+      </ul>
+
+      <h3>Hva inngår i feriepengegrunnlaget?</h3>
+      <ul>
+        <li>Fast grunnlønn</li>
+        <li>Overtidsbetaling</li>
+        <li>Variable tillegg (vakt, natt, helg)</li>
+        <li>Provisjon og bonus (i noen tilfeller)</li>
+      </ul>
+      <p>Feriepengene beregnes av lønn tjent <strong>forrige kalenderår</strong> – ikke inneværende år. Bytter du jobb i 2026, tar du med deg opptjente feriepenger fra 2025 til ny arbeidsgiver.</p>
+
+      <h3>Skatt på feriepenger</h3>
+      <p>Feriepenger er skattepliktige, men i utbetalingsmåneden (vanligvis juni) trekkes det halv skatt. Du beholder altså mer netto i juni enn en vanlig lønnsutbetaling, selv om bruttosummen er lavere enn vanlig månedslønn pluss feriepenger.</p>
+
+      <p>Vil du vite hva feriepengene er verdt etter inflasjon? Bruk vår <a href="/" style="color:var(--green);">inflasjonskalkulator</a> for å beregne kjøpekraften.</p>
+    </div>
+  </div>
+
+  <div class="faq-item"><div class="faq-q">Hva er feriepengeprosenten i 2026?</div><div class="faq-a">Standard feriepengeprosent er 10,2 % for 4 uker + 1 dag ferie. Med tariffavtale og 5 uker ferie er prosenten 12 %. Over 60 år får du 12,5 % (eller 14,3 % med tariff).</div></div>
+  <div class="faq-item"><div class="faq-q">Når utbetales feriepenger i 2026?</div><div class="faq-a">Feriepenger utbetales normalt siste fredag i mai eller første fredag i juni. Sjekk med din arbeidsgiver for eksakt dato.</div></div>
+  <div class="faq-item"><div class="faq-q">Betales det skatt av feriepenger?</div><div class="faq-a">Ja, feriepenger er skattepliktige. Men i utbetalingsmåneden trekkes det kun halv skatt, så du får mer netto enn normalt.</div></div>
+  <div class="faq-item"><div class="faq-q">Hva er feriepengegrunnlaget?</div><div class="faq-a">Feriepengegrunnlaget er all lønn du tjente hos arbeidsgiveren forrige kalenderår, inkludert overtid og variable tillegg. Det er dette beløpet feriepengeprosenten regnes av.</div></div>
+
+  <div class="relatert">
+    <h2>Relaterte verktøy</h2>
+    <div class="rl">
+      <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+      <a href="/">📊 Inflasjonskalkulator</a>
+      <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+      <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+      <a href="/artikler/reallonnsvekst-2026">📈 Reallønnsvekst 2026</a>
+      <a href="/ressurser">🔗 Ressurser</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="/">Hjem</a>
+      <a href="/feriepengekalkulator">Feriepenger</a>
+      <a href="/lønnskalkulator">Lønn</a>
+      <a href="/husleiekalkulator">Husleie</a>
+      <a href="/ressurser">Ressurser</a>
+    </div>
+    <p>Informasjonen er basert på ferieloven og er kun veiledende. Sjekk med din arbeidsgiver for eksakte tall.</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 inflasjonskalkulator.no</p>
+  </div>
+</footer>
+
+<script>
+function beregnFeriepenger() {
+  const arslonn = parseFloat(document.getElementById('arslonn').value);
+  const prosent = parseFloat(document.getElementById('prosent').value);
+  const trekk = document.getElementById('trekk').value;
+  const mndlonn = parseFloat(document.getElementById('mndlonn').value) || 0;
+
+  if (!arslonn || isNaN(arslonn)) {
+    document.getElementById('result-box').classList.remove('show');
+    return;
+  }
+
+  const feriepenger = arslonn * (prosent / 100);
+  const antallDager = prosent <= 10.2 ? 21 : prosent <= 12.0 ? 25 : prosent <= 12.5 ? 26 : 30;
+  const perDag = feriepenger / antallDager;
+  const perUke = perDag * 5;
+
+  // Nettoutbetaling i juni (halvt skattetrekk, ca 22%)
+  const halvSkatt = 0.22;
+  let netto = feriepenger * (1 - halvSkatt);
+  if (trekk === 'ja' && mndlonn > 0) {
+    netto = netto - mndlonn; // trekker bort månedslønnen som ikke utbetales
+  }
+
+  const fmt = n => Math.round(Math.abs(n)).toLocaleString('nb-NO') + ' kr';
+
+  document.getElementById('res-total').textContent = fmt(feriepenger);
+  document.getElementById('res-dag').textContent = fmt(perDag);
+  document.getElementById('res-uke').textContent = fmt(perUke);
+  document.getElementById('res-netto').textContent = (netto >= 0 ? '' : '-') + fmt(netto);
+
+  const prosentStr = prosent.toFixed(1).replace('.', ',');
+  document.getElementById('res-tekst').textContent =
+    `Med en årslønn på ${fmt(arslonn)} og feriepengeprosent på ${prosentStr} % får du totalt ${fmt(feriepenger)} i feriepenger (brutto). ` +
+    `Det tilsvarer ${fmt(perDag)} per feriedag og ${fmt(perUke)} per ferieuke. ` +
+    (trekk === 'ja' && mndlonn > 0
+      ? `Etter halvt skattetrekk og trekk for lønn i ferien er nettoutbetalingen i juni ca. ${(netto >= 0 ? '' : '-') + fmt(netto)}.`
+      : `Etter halvt skattetrekk er nettoutbetalingen ca. ${fmt(netto)}.`);
+
+  document.getElementById('result-box').classList.add('show');
+}
+
+document.getElementById('arslonn').addEventListener('keydown', e => { if (e.key === 'Enter') beregnFeriepenger(); });
+document.getElementById('mndlonn').addEventListener('keydown', e => { if (e.key === 'Enter') beregnFeriepenger(); });
+</script>
+<script>
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  if(m) m.classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  if(m&&m.classList.contains('open')&&!e.target.closest('nav')&&!e.target.closest('.nav-mobile'))
+    m.classList.remove('open');
+});
+</script>
+</body>
+</html>
