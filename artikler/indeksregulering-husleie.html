@@ -1,80 +1,24 @@
-<!DOCTYPE html>
-<html lang="no">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Indeksregulering husleie 2026 – slik gjøres det riktig</title>
-<meta name="description" content="Alt om indeksregulering av husleie i 2026. Forstå hvordan KPI brukes til å regulere husleien, hvilke regler som gjelder og hvordan du beregner lovlig husleieøkning.">
-<link rel="canonical" href="https://inflasjonskalkulator.no/artikler/indeksregulering-husleie">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Indeksregulering husleie 2026 – slik gjøres det riktig">
-<meta property="og:description" content="Forstå indeksregulering av husleie og beregn lovlig økning med KPI fra SSB.">
-<meta property="og:url" content="https://inflasjonskalkulator.no/artikler/indeksregulering-husleie">
-<meta property="og:image" content="https://inflasjonskalkulator.no/og-husleie.svg">
-<meta property="og:locale" content="nb_NO">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Indeksregulering husleie 2026 – slik gjøres det riktig",
-  "datePublished": "2026-08-06",
-  "dateModified": "2026-08-06",
-  "publisher": {"@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no"}
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Hva er indeksregulering av husleie?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Indeksregulering av husleie betyr at husleien justeres i takt med konsumprisindeksen (KPI). Husleieloven § 4-2 gir utleier rett til å regulere husleien én gang i året med KPI-veksten."}
-    },
-    {
-      "@type": "Question",
-      "name": "Hvilken KPI brukes til indeksregulering av husleie?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Husleieregulering baseres normalt på KPI totalt (alle varer), målt som 12-månedersendring til og med januar det aktuelle reguleringsåret. For 2026 var KPI-veksten 3,6 % (januar 2025 til januar 2026)."}
-    },
-    {
-      "@type": "Question",
-      "name": "Kan utleier indeksregulere mer enn KPI?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Nei. Husleieloven setter KPI-veksten som maksimal økning. Utleier kan ikke kreve mer enn dette. En økning utover KPI er ugyldig."}
-    }
-  ]
-}
-</script>
 <style>
-nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+nav{background:#114d2e;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{color:#6ee09e}
 .nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;margin:0;padding:0}
-.nav-logo{font-family:var(--fh,'Syne',sans-serif);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em}
-.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
-.nav-links a:hover{color:#fff}
-.nav-burger{background:none;border:none;cursor:pointer;padding:6px;display:flex;flex-direction:column;gap:5px;flex-shrink:0}
-.nav-burger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all 0.25s}
-.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.nav-burger.open span:nth-child(2){opacity:0}
-.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.nav-mobile{display:none!important;visibility:hidden;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--green-dark);z-index:199;overflow-y:auto}
-.nav-mobile.open{display:block!important;visibility:visible}
-.nav-mobile a{display:flex;align-items:center;gap:0.75rem;color:rgba(255,255,255,0.85);text-decoration:none;padding:1rem 1.5rem;font-size:1.05rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-links>li>a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.88rem;white-space:nowrap;display:flex;align-items:center;gap:3px;padding:4px 0}
+.nav-links>li>a:hover{color:#fff}
+.nav-dropdown{position:relative}
+.nav-drop{display:none;position:absolute;top:calc(100% + 8px);left:-8px;background:#0c3520;border-radius:10px;padding:6px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.35);z-index:300;border:1px solid rgba(255,255,255,0.08)}
+.nav-dropdown:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:9px 16px;color:rgba(255,255,255,0.82);text-decoration:none;font-size:0.85rem;white-space:nowrap}
+.nav-drop a:hover{background:rgba(255,255,255,0.07);color:#fff}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:#114d2e;z-index:199;overflow-y:auto}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:14px 20px;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.07)}
 .nav-mobile a:hover{background:rgba(255,255,255,0.06)}
-.nav-section{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:1rem 1.5rem 0.25rem}
+.nav-section{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:14px 20px 6px}
 @media(max-width:900px){.nav-links{display:none}}
 @media(min-width:901px){.nav-burger{display:none}}
-.nav-dropdown{position:relative}
-.nav-parent{display:flex;align-items:center;gap:4px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap}
-.nav-parent:hover{color:#fff}
-.nav-arrow{font-size:0.65rem;transition:transform 0.2s;opacity:0.7}
-.nav-drop{display:none;position:absolute;top:calc(100% + 10px);left:-12px;background:#0d3d22;border-radius:10px;padding:0.5rem 0;min-width:230px;box-shadow:0 8px 32px rgba(0,0,0,0.4);z-index:300;border:1px solid rgba(255,255,255,0.08)}
-.nav-dropdown:hover .nav-drop{display:block}
-.nav-dropdown:hover .nav-arrow{transform:rotate(180deg)}
-.nav-drop a{display:flex;align-items:center;gap:0.6rem;padding:0.6rem 1.1rem;color:rgba(255,255,255,0.82);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:background 0.15s}
-.nav-drop a:hover{background:rgba(255,255,255,0.07);color:#fff}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--green:#1a7a4a;--green-light:#e8f5ee;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
 body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.8}.hero{background:var(--green-dark);padding:3rem 1.5rem 3.5rem}
@@ -114,192 +58,3 @@ footer a{color:rgba(255,255,255,0.8);text-decoration:none}
 .fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
 
 </style>
-</head>
-<body>
-<nav>
-  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
-  <ul class="nav-links">
-    <li class="nav-dropdown">
-      <a href="/" class="nav-parent">Kalkulatorer <span class="nav-arrow">▾</span></a>
-      <div class="nav-drop">
-        <a href="/">📊 Inflasjonskalkulator</a>
-        <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
-        <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
-        <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
-        <a href="/renters-rente-kalkulator">📈 Renters rente</a>
-        <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
-        <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
-      </div>
-    </li>
-    <li class="nav-dropdown">
-      <a href="/artikler/hva-er-inflasjon" class="nav-parent">Artikler <span class="nav-arrow">▾</span></a>
-      <div class="nav-drop">
-        <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
-        <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
-        <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
-        <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
-        <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
-        <a href="/artikler/feriepenger-prosent">🏖️ Feriepenger prosent</a>
-        <a href="/artikler/indeksregulering-husleie">🏠 Indeksregulering husleie</a>
-      </div>
-    </li>
-    <li><a href="/kpi-rapport">KPI-rapport</a></li>
-    <li><a href="/ressurser">Ressurser</a></li>
-  </ul>
-  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Meny">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="nav-mobile" id="nav-mobile" style="display:none">
-  <div class="nav-section">Kalkulatorer</div>
-  <a href="/">📊 Inflasjonskalkulator</a>
-  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
-  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
-  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
-  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
-  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
-  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
-  <div class="nav-section">Artikler</div>
-  <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
-  <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
-  <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
-  <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
-  <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
-  <div class="nav-section">KPI og ressurser</div>
-  <a href="/kpi-rapport">📋 KPI-rapporter</a>
-  <a href="/ressurser">🔗 Ressurser</a>
-</div>
-  <a href="/">📊 Inflasjonskalkulator</a>
-  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
-  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
-  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
-  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
-  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
-  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
-  <div class="nav-section">Artikler</div>
-  <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
-  <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
-  <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
-  <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
-  <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
-  <div class="nav-section">KPI og ressurser</div>
-  <a href="/kpi-rapport">📋 KPI-rapporter</a>
-  <a href="/ressurser">🔗 Ressurser</a>
-</div>
-
-<div class="hero">
-  <div class="wrap">
-    <div class="bc"><a href="/">Hjem</a><span>›</span><a href="/artikler">Artikler</a><span>›</span>Indeksregulering husleie</div>
-    <div class="tag">Artikkel · Oppdatert august 2026</div>
-    <h1>Indeksregulering av husleie – slik gjøres det riktig i 2026</h1>
-    <div class="meta">Basert på husleieloven og SSBs KPI-tall · inflasjonskalkulator.no</div>
-  </div>
-</div>
-<div class="wrap">
-  <div class="ab">
-
-  <div style="margin:0 0 2rem 0">
-    <img src="/og-artikkel-indeksreg.svg" alt="Indeksregulering husleie 2026" style="width:100%;border-radius:12px;display:block">
-  </div>
-    <p>Indeksregulering av husleie er den lovlige måten å øke husleien på i et løpende leieforhold. I 2026 betyr det at husleien kan økes med maksimalt <strong>3,6 %</strong>, basert på konsumprisindeksen (KPI) fra januar 2025 til januar 2026. Her forklarer vi hvordan indeksreguleringen fungerer, hvilke regler som gjelder og hva du må passe på som utleier eller leietaker.</p>
-
-    <div class="hb"><strong>Kort oppsummert:</strong> Indeksregulering = husleien justeres med KPI. Maks økning i 2026 er 3,6 %. Varsling må skje skriftlig med minst 1 måneds frist.</div>
-
-    <div class="cta-box">
-      <div><strong>Beregn indeksreguleringen din</strong><p>Finn nøyaktig hva husleien kan økes til i 2026.</p></div>
-      <a href="/husleiekalkulator" class="cta-btn">Åpne husleiekalkulator →</a>
-    </div>
-
-    <h2>Hva er indeksregulering av husleie?</h2>
-    <p>Indeksregulering betyr at husleien justeres i takt med en prisindeks – i dette tilfellet SSBs konsumprisindeks (KPI). Husleieloven § 4-2 gir utleier rett til å regulere husleien én gang per år med KPI-veksten. Dette er den eneste lovlige måten å øke husleien på i en løpende leiekontrakt.</p>
-
-    <h2>Slik beregnes indeksreguleringen</h2>
-    <p>SSB publiserer KPI-tallene for januar hvert år. Disse brukes som grunnlag for husleieregulering. For 2026 er beregningen:</p>
-    <ul>
-      <li>KPI januar 2025: 145,2 (indeks, 2015=100)</li>
-      <li>KPI januar 2026: 150,4 (indeks, 2015=100)</li>
-      <li>Vekst: (150,4 − 145,2) / 145,2 × 100 = <strong>3,6 %</strong></li>
-    </ul>
-    <p>Bruk vår <a href="/husleiekalkulator" style="color:var(--green);">husleiekalkulator</a> for å beregne nøyaktig hva husleien kan økes til.</p>
-
-    <h2>Regler for indeksregulering</h2>
-    <ul>
-      <li>Kan kun skje <strong>én gang per år</strong></li>
-      <li>Tidligst <strong>1 år</strong> etter kontraktsinngåelse eller siste regulering</li>
-      <li>Krever <strong>skriftlig varsel</strong> med minst 1 måneds frist</li>
-      <li>Kan <strong>ikke overstige KPI-veksten</strong></li>
-      <li>Er en rett for utleier, ikke en plikt</li>
-    </ul>
-
-    <h2>Hvilken KPI brukes?</h2>
-    <p>De fleste leiekontrakter bruker <strong>KPI totalt</strong> (alle varer og tjenester). Noen kontrakter – særlig næringsleie – bruker KPI-JAE (justert for avgifter og uten energivarer). Sjekk alltid kontrakten din.</p>
-
-    <h2>Historiske indeksreguleringer</h2>
-    <ul>
-      <li><strong>2026:</strong> +3,6 % (KPI jan. 2025–jan. 2026)</li>
-      <li><strong>2025:</strong> +3,2 % (KPI jan. 2024–jan. 2025)</li>
-      <li><strong>2024:</strong> +4,8 % (KPI jan. 2023–jan. 2024)</li>
-      <li><strong>2023:</strong> +6,3 % (KPI jan. 2022–jan. 2023)</li>
-    </ul>
-
-    <div class="faq-item"><div class="faq-q">Hva er indeksregulering av husleie?</div><div class="faq-a">Indeksregulering betyr at husleien justeres med KPI-veksten. Utleier kan øke husleien én gang per år med inntil KPI-veksten, etter skriftlig varsel med minst 1 måneds frist.</div></div>
-    <div class="faq-item"><div class="faq-q">Hvilken KPI brukes til indeksregulering?</div><div class="faq-a">Normalt KPI totalt (alle varer), målt fra januar til januar. For 2026 var veksten 3,6 %. Sjekk din kontrakt – noen bruker KPI-JAE.</div></div>
-    <div class="faq-item"><div class="faq-q">Kan utleier indeksregulere mer enn KPI?</div><div class="faq-a">Nei. KPI-veksten er maksimal økning etter husleieloven. En høyere økning er ugyldig og kan klages inn til Husleietvistutvalget.</div></div>
-
-    <div class="relatert">
-      <h2>Relaterte verktøy og artikler</h2>
-      <div class="rl">
-        <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
-        <a href="/artikler/husleieoekning-2026">📋 Husleieøkning 2026</a>
-        <a href="/">📊 Inflasjonskalkulator</a>
-        <a href="/kpi-rapport">📋 KPI-rapporter</a>
-        <a href="/ressurser">🔗 Ressurser</a>
-      </div>
-    </div>
-  </div>
-</div>
-<footer>
-  <div class="wrap">
-    <div class="fl">
-      <a href="/">Hjem</a><a href="/husleiekalkulator">Husleiekalkulator</a>
-      <a href="/kpi-rapport">KPI-rapporter</a><a href="/ressurser">Ressurser</a>
-    </div>
-    <p>Basert på husleieloven og SSBs KPI-tall. Kun veiledende.</p>
-    <p style="margin-top:0.5rem;">&copy; 2026 inflasjonskalkulator.no</p>
-  </div>
-</footer>
-
-<script>
-document.querySelectorAll('.faq-q').forEach(q => {
-  q.addEventListener('click', () => {
-    const item = q.parentElement;
-    const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!wasOpen) item.classList.add('open');
-  });
-});
-</script>
-
-
-<script>
-function toggleMenu(){
-  const m=document.getElementById('nav-mobile');
-  const b=document.getElementById('nav-burger');
-  const open=!m.classList.contains('open');
-  m.classList.toggle('open',open);
-  m.style.display=open?'block':'none';
-  b.classList.toggle('open',open);
-  b.setAttribute('aria-expanded',open);
-}
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){
-    const m=document.getElementById('nav-mobile');
-    const b=document.getElementById('nav-burger');
-    m.classList.remove('open');
-    m.style.display='none';
-    b.classList.remove('open');
-  }
-});
-</script>
-</body>
-</html>
