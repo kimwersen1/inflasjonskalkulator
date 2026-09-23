@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nav test</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--green-dark:#114d2e;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif}
+body{font-family:var(--fb);margin:0;padding:0;background:#f7f8f5}
+
+/* NAV */
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:var(--fh);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{color:#6ee09e}
+
+/* Desktop lenker */
+.nav-links{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.88rem;white-space:nowrap}
+.nav-links a:hover{color:#fff}
+
+/* Hamburger */
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;width:40px;height:40px}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform 0.25s, opacity 0.25s}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobil meny */
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--green-dark);z-index:199;overflow-y:auto;padding-bottom:2rem}
+.nav-mobile.open{display:block}
+.nav-section{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);padding:1.25rem 1.5rem 0.5rem}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.85rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06);color:#fff}
+
+/* Skjul/vis basert på skjermstørrelse */
+@media(max-width:860px){
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+}
+@media(min-width:861px){
+  .nav-mobile{display:none!important}
+  .nav-burger{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Inflasjonskalkulator</a></li>
+    <li><a href="/husleiekalkulator">Husleie</a></li>
+    <li><a href="/lønnskalkulator">Lønn</a></li>
+    <li><a href="/feriepengekalkulator">Feriepenger</a></li>
+    <li><a href="/mva-kalkulator">MVA</a></li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <div class="nav-section">Kalkulatorer</div>
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <div class="nav-section">Artikler</div>
+  <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
+  <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
+  <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
+  <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
+  <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
+  <div class="nav-section">Mer</div>
+  <a href="/kpi-rapport">📋 KPI-rapporter</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+<div style="padding:2rem">
+  <h1>Test-side for nav</h1>
+  <p>Sjekk at hamburger-menyen fungerer på mobil, og at desktop viser lenker.</p>
+</div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('nav-mobile');
+  const burger = document.getElementById('nav-burger');
+  const isOpen = menu.classList.contains('open');
+  menu.classList.toggle('open', !isOpen);
+  burger.classList.toggle('open', !isOpen);
+  burger.setAttribute('aria-expanded', !isOpen);
+}
+// Lukk ved klikk utenfor
+document.addEventListener('click', function(e) {
+  const menu = document.getElementById('nav-mobile');
+  const burger = document.getElementById('nav-burger');
+  if (menu.classList.contains('open') && !menu.contains(e.target) && !burger.contains(e.target)) {
+    menu.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+  }
+});
+// Lukk ved ESC
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.getElementById('nav-mobile').classList.remove('open');
+    document.getElementById('nav-burger').classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
