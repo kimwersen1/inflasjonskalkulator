@@ -561,57 +561,27 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Hva er KPI – og hva bruker inflasjonskalkulatoren?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Konsumprisindeksen (KPI) er den offisielle målestokken for prisutviklingen i Norge, beregnet av SSB. Vår inflasjonskalkulator bruker SSBs historiske KPI-tall for å beregne hva et beløp er verdt i dag. KPI brukes også til lønnsforhandlinger og prisjusteringer i kontrakter."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hvor nøyaktig er inflasjonskalkulatoren?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Inflasjonskalkulatoren bruker SSBs historiske KPI-tall og er like nøyaktig som SSBs egne tall. Merk at KPI måler gjennomsnittlig prisvekst for norske husholdninger – din personlige prisvekst kan avvike, avhengig av hva du bruker pengene dine på."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hva er forskjellen på KPI og KPI-JAE?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "KPI-JAE er KPI justert for avgiftsendringer og uten energivarer. Denne indikatoren brukes mye av Norges Bank fordi den gir et bedre bilde av den underliggende prisveksten, uten svingninger i strømpris og drivstoff."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Kan jeg bruke inflasjonskalkulatoren til å justere kontrakt eller lønn?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, inflasjonskalkulatoren er nyttig for å finne ut hvilken KPI-vekst som bør legges til grunn for indeksregulering av husleie, kontrakter eller lønn. Husk at noen kontrakter bruker spesifikke KPI-tall (f.eks. KPI for husleie = KPI totalt), mens andre bruker KPI-JAE. Sjekk kontrakten din."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hva er reell kjøpekraft?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Reell kjøpekraft er hva pengene dine faktisk kan kjøpe, justert for prisvekst. Hvis du tjente 500 000 kr i 2015 og tjener det samme i 2025, har du i realiteten fått en lønnsnedgang fordi prisene har steget og du kan kjøpe færre varer for de samme pengene."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Oppdateres inflasjonskalkulatoren?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Vi oppdaterer inflasjonskalkulatoren automatisk den 10. i hver måned etter at SSB publiserer nye KPI-tall. Alle historiske tall er basert på SSBs offisielle statistikk."
-      }
-    }
-  ]
+  "@type": "SoftwareApplication",
+  "name": "Inflasjonskalkulator",
+  "description": "Gratis norsk inflasjonskalkulator basert på SSBs offisielle KPI-tall. Beregn hva pengene er verdt i dag eller hva en historisk sum tilsvarer nå. Fra 1960 til 2026.",
+  "url": "https://inflasjonskalkulator.no",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "nb-NO",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "NOK"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "inflasjonskalkulator.no",
+    "url": "https://inflasjonskalkulator.no"
+  },
+  "featureList": [
+    "Beregn kjøpekraft basert på norsk inflasjon",
+    "KPI-data fra SSB fra 1960 til 2026",
+    "Husleiekalkulator med KPI-regulering",
+    "Lønnskalkulator med reallønnsvekst",
+    "Månedlige KPI-rapporter"
+  ],
+  "keywords": "inflasjonskalkulator, norsk inflasjon, KPI kalkulator, prisvekst Norge, SSB KPI, kjøpekraft kalkulator"
 }
 </script>
 
