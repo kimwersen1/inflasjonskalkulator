@@ -1,0 +1,180 @@
+/* =====================
+   inflasjonskalkulator.no – nav.css
+   Ekstern nav-stil som overstyrer inline nav-CSS
+   ===================== */
+
+nav {
+  background: #114d2e !important;
+  padding: 0 1.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 60px !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 200 !important;
+}
+
+.nav-logo {
+  font-family: 'Syne', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.2rem !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  letter-spacing: -0.02em !important;
+  flex-shrink: 0 !important;
+}
+
+.nav-logo span { color: #6ee09e !important; }
+
+/* Desktop lenker */
+.nav-links {
+  display: flex !important;
+  gap: 0.25rem !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: center !important;
+}
+
+.nav-links > li > a {
+  color: rgba(255,255,255,0.75) !important;
+  text-decoration: none !important;
+  font-size: 0.88rem !important;
+  white-space: nowrap !important;
+  padding: 0.4rem 0.75rem !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  transition: background 0.15s, color 0.15s !important;
+}
+
+.nav-links > li > a:hover {
+  color: #fff !important;
+  background: rgba(255,255,255,0.08) !important;
+}
+
+/* Dropdown */
+.nav-dd { position: relative !important; }
+
+.nav-dd > a .arr {
+  font-size: 0.6rem !important;
+  transition: transform 0.2s !important;
+  opacity: 0.6 !important;
+}
+
+.nav-dd:hover > a .arr { transform: rotate(180deg) !important; }
+
+.nav-drop {
+  display: none !important;
+  position: absolute !important;
+  top: calc(100% + 6px) !important;
+  left: 0 !important;
+  background: #0d3d22 !important;
+  border-radius: 10px !important;
+  padding: 6px 0 !important;
+  min-width: 230px !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.35) !important;
+  z-index: 300 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+.nav-dd:hover .nav-drop { display: block !important; }
+
+.nav-drop a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 9px 16px !important;
+  color: rgba(255,255,255,0.82) !important;
+  text-decoration: none !important;
+  font-size: 0.85rem !important;
+  white-space: nowrap !important;
+  transition: background 0.15s !important;
+  background: none !important;
+}
+
+.nav-drop a:hover {
+  background: rgba(255,255,255,0.07) !important;
+  color: #fff !important;
+}
+
+/* Hamburger-knapp */
+.nav-burger {
+  display: none !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 8px !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.nav-burger span {
+  display: block !important;
+  width: 22px !important;
+  height: 2px !important;
+  background: #fff !important;
+  border-radius: 2px !important;
+  transition: transform 0.25s, opacity 0.25s !important;
+}
+
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg) !important; }
+.nav-burger.open span:nth-child(2) { opacity: 0 !important; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg) !important; }
+
+/* Mobil meny */
+.nav-mobile {
+  display: none !important;
+  position: fixed !important;
+  top: 60px !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: #114d2e !important;
+  z-index: 199 !important;
+  overflow-y: auto !important;
+  padding-bottom: 2rem !important;
+}
+
+.nav-mobile.open { display: block !important; }
+
+.nav-section {
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.4) !important;
+  padding: 1.25rem 1.5rem 0.5rem !important;
+}
+
+.nav-mobile a {
+  display: block !important;
+  color: rgba(255,255,255,0.85) !important;
+  text-decoration: none !important;
+  padding: 0.85rem 1.5rem !important;
+  font-size: 1rem !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+  background: none !important;
+}
+
+.nav-mobile a:hover {
+  background: rgba(255,255,255,0.06) !important;
+  color: #fff !important;
+}
+
+/* Responsiv */
+@media (max-width: 860px) {
+  .nav-links { display: none !important; }
+  .nav-burger { display: flex !important; }
+}
+
+@media (min-width: 861px) {
+  .nav-mobile { display: none !important; }
+  .nav-mobile.open { display: none !important; }
+  .nav-burger { display: none !important; }
+}
