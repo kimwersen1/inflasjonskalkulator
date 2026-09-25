@@ -3,56 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nav test</title>
+<title>Nav test – inflasjonskalkulator.no</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-:root{--green-dark:#114d2e;--green-drop:#0d3d22;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif}
-body{font-family:var(--fb);margin:0;padding:0;background:#f7f8f5}
-
-/* NAV */
-nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
-.nav-logo{font-family:var(--fh);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em}
-.nav-logo span{color:#6ee09e}
-
-/* Desktop lenker */
-.nav-links{display:flex;gap:0.25rem;list-style:none;margin:0;padding:0;align-items:center}
-.nav-links>li>a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.88rem;white-space:nowrap;padding:0.4rem 0.75rem;border-radius:6px;display:flex;align-items:center;gap:4px;transition:background 0.15s,color 0.15s}
-.nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,0.08)}
-
-/* Dropdown desktop */
-.nav-dd{position:relative}
-.nav-dd>a .arr{font-size:0.6rem;transition:transform 0.2s;opacity:0.6}
-.nav-dd:hover>a .arr{transform:rotate(180deg)}
-.nav-drop{display:none;position:absolute;top:calc(100% + 6px);left:0;background:var(--green-drop);border-radius:10px;padding:6px 0;min-width:230px;box-shadow:0 8px 28px rgba(0,0,0,0.35);z-index:300;border:1px solid rgba(255,255,255,0.08)}
-.nav-dd:hover .nav-drop{display:block}
-.nav-drop a{display:flex;align-items:center;gap:8px;padding:9px 16px;color:rgba(255,255,255,0.82);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:background 0.15s}
-.nav-drop a:hover{background:rgba(255,255,255,0.07);color:#fff}
-
-/* Hamburger */
-.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;width:40px;height:40px}
-.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform 0.25s,opacity 0.25s}
-.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.nav-burger.open span:nth-child(2){opacity:0}
-.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-/* Mobil meny */
-.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--green-dark);z-index:199;overflow-y:auto;padding-bottom:2rem}
-.nav-mobile.open{display:block}
-.nav-section{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);padding:1.25rem 1.5rem 0.5rem}
-.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.85rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
-.nav-mobile a:hover{background:rgba(255,255,255,0.06);color:#fff}
-
-@media(max-width:860px){
-  .nav-links{display:none}
-  .nav-burger{display:flex}
-}
-@media(min-width:861px){
-  .nav-mobile{display:none!important}
-  .nav-burger{display:none}
-}
-</style>
+<link rel="stylesheet" href="/nav.css">
 </head>
-<body>
+<body style="margin:0;background:#f7f8f5;font-family:'DM Sans',sans-serif">
 
 <nav>
   <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
@@ -88,7 +43,6 @@ nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:cente
     <span></span><span></span><span></span>
   </button>
 </nav>
-
 <div class="nav-mobile" id="nav-mobile">
   <div class="nav-section">Kalkulatorer</div>
   <a href="/">📊 Inflasjonskalkulator</a>
@@ -109,32 +63,30 @@ nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:cente
   <a href="/ressurser">🔗 Ressurser</a>
 </div>
 
-<div style="padding:2rem">
-  <h1>Nav test – med dropdown</h1>
-  <p>Desktop: hover over «Kalkulatorer» og «Artikler» for dropdown.<br>
+<div style="padding:2rem;max-width:800px;margin:0 auto">
+  <h2 style="font-family:'Syne',sans-serif;color:#114d2e">Nav test</h2>
+  <p>Desktop: hover over «Kalkulatorer ▾» og «Artikler ▾».<br>
   Mobil: klikk hamburger-ikonet øverst til høyre.</p>
 </div>
 
 <script>
-function toggleMenu() {
-  const menu = document.getElementById('nav-mobile');
-  const burger = document.getElementById('nav-burger');
-  const isOpen = menu.classList.contains('open');
-  menu.classList.toggle('open', !isOpen);
-  burger.classList.toggle('open', !isOpen);
-  burger.setAttribute('aria-expanded', !isOpen);
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  const open=!m.classList.contains('open');
+  m.classList.toggle('open',open);
+  b.classList.toggle('open',open);
+  b.setAttribute('aria-expanded',open);
 }
-document.addEventListener('click', function(e) {
-  const menu = document.getElementById('nav-mobile');
-  const burger = document.getElementById('nav-burger');
-  if (menu.classList.contains('open') && !menu.contains(e.target) && !burger.contains(e.target)) {
-    menu.classList.remove('open');
-    burger.classList.remove('open');
-    burger.setAttribute('aria-expanded', false);
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){
+    m.classList.remove('open');b.classList.remove('open');
   }
 });
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
     document.getElementById('nav-mobile').classList.remove('open');
     document.getElementById('nav-burger').classList.remove('open');
   }
