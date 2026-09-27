@@ -134,24 +134,63 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
 .nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
 
 </style>
+<link rel="stylesheet" href="/nav.css">
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
   <ul class="nav-links">
-    <li><a href="/">Inflasjonskalkulator</a></li>
-    <li><a href="/husleiekalkulator">Husleie</a></li>
-    <li><a href="/lønnskalkulator">Lønn</a></li>
-    <li><a href="/feriepengekalkulator">Feriepenger</a></li>
-    <li><a href="/mva-kalkulator">MVA</a></li>
+    <li class="nav-dd">
+      <a href="#">Kalkulatorer <span class="arr">▾</span></a>
+      <div class="nav-drop">
+        <a href="/">📊 Inflasjonskalkulator</a>
+        <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+        <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+        <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+        <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+        <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+        <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+      </div>
+    </li>
+    <li class="nav-dd">
+      <a href="#">Artikler <span class="arr">▾</span></a>
+      <div class="nav-drop">
+        <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
+        <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
+        <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
+        <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
+        <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
+        <a href="/artikler/feriepenger-prosent">🏖️ Feriepenger prosent</a>
+        <a href="/artikler/indeksregulering-husleie">🏠 Indeksregulering husleie</a>
+      </div>
+    </li>
     <li><a href="/kpi-rapport">KPI-rapport</a></li>
     <li><a href="/ressurser">Ressurser</a></li>
   </ul>
-  <button class="nav-burger" onclick="toggleMenu()" aria-label="Meny">
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
+<div class="nav-mobile" id="nav-mobile">
+  <div class="nav-section">Kalkulatorer</div>
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <div class="nav-section">Artikler</div>
+  <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
+  <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
+  <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
+  <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
+  <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
+  <div class="nav-section">Mer</div>
+  <a href="/kpi-rapport">📋 KPI-rapporter</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
 <div class="nav-mobile" id="nav-mobile" style="display:none">
   <a href="/">📊 Inflasjonskalkulator</a>
   <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
