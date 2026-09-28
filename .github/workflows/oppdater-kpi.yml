@@ -8,20 +8,18 @@ on:
 
 jobs:
   oppdater-kpi:
-    runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    runs-on: ubuntu-26.04
     permissions:
       contents: write
 
     steps:
       - name: Hent kode
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
 
       - name: Sett opp Python
-        uses: actions/setup-python@v5.4.0
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Installer avhengigheter
         run: pip install requests google-auth google-auth-httplib2
