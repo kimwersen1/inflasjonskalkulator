@@ -96,6 +96,8 @@ footer a{color:rgba(255,255,255,0.8);text-decoration:none}
         <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
         <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
         <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+        <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+        <a href="/barnebidrag-kalkulator">👶 Barnebidrag-kalkulator</a>
       </div>
     </li>
     <li class="nav-dd">
@@ -117,6 +119,27 @@ footer a{color:rgba(255,255,255,0.8);text-decoration:none}
     <span></span><span></span><span></span>
   </button>
 </nav>
+<div class="nav-mobile" id="nav-mobile">
+  <div class="nav-section">Kalkulatorer</div>
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+  <a href="/barnebidrag-kalkulator">👶 Barnebidrag-kalkulator</a>
+  <div class="nav-section">Artikler</div>
+  <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
+  <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
+  <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
+  <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
+  <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
+  <div class="nav-section">Mer</div>
+  <a href="/kpi-rapport">📋 KPI-rapporter</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
 <div class="nav-mobile" id="nav-mobile">
   <div class="nav-section">Kalkulatorer</div>
   <a href="/">📊 Inflasjonskalkulator</a>
@@ -213,12 +236,24 @@ footer a{color:rgba(255,255,255,0.8);text-decoration:none}
 <script>
 function toggleMenu(){
   const m=document.getElementById('nav-mobile');
-  if(m) m.classList.toggle('open');
+  const b=document.getElementById('nav-burger');
+  const open=!m.classList.contains('open');
+  m.classList.toggle('open',open);
+  b.classList.toggle('open',open);
+  b.setAttribute('aria-expanded',open);
 }
 document.addEventListener('click',function(e){
   const m=document.getElementById('nav-mobile');
-  if(m&&m.classList.contains('open')&&!e.target.closest('nav')&&!e.target.closest('.nav-mobile'))
-    m.classList.remove('open');
+  const b=document.getElementById('nav-burger');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){
+    m.classList.remove('open');b.classList.remove('open');
+  }
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    document.getElementById('nav-mobile').classList.remove('open');
+    document.getElementById('nav-burger').classList.remove('open');
+  }
 });
 </script>
 </body>
