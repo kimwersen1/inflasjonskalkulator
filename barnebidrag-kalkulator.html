@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barnebidrag-kalkulator 2026 – Beregn barnebidrag enkelt</title>
+<meta name="description" content="Bruk vår gratis barnebidrag-kalkulator og finn ut hva barnebidrag skal være i 2026. Basert på NAVs offisielle regler for inntekt, samvær og antall barn.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/barnebidrag-kalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nav.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Barnebidrag-kalkulator 2026 – Beregn barnebidrag enkelt">
+<meta property="og:description" content="Finn ut hva barnebidrag skal være i 2026. Gratis kalkulator basert på NAVs regler.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/barnebidrag-kalkulator">
+<meta property="og:locale" content="nb_NO">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Barnebidrag-kalkulator 2026",
+  "description": "Beregn barnebidrag basert på inntekt, samvær og antall barn etter NAVs regler.",
+  "url": "https://inflasjonskalkulator.no/barnebidrag-kalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "NOK"},
+  "publisher": {"@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvordan beregnes barnebidrag?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Barnebidrag beregnes ut fra underholdskostnaden for barnet, begge foreldrenes inntekt og samværsfradraget. NAV har en standardisert beregningsmodell. Bidraget justeres etter foreldrenes inntektsforhold og antall netter samvær per måned."}
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er underholdskostnadene for barn i 2026?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Underholdskostnadene varierer etter barnets alder. For barn 0–5 år er satsen ca. 4 500 kr/mnd, for 6–10 år ca. 5 200 kr/mnd, og for 11–18 år ca. 6 300 kr/mnd. Disse justeres årlig av NAV."}
+    },
+    {
+      "@type": "Question",
+      "name": "Kan barnebidrag endres?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja. Barnebidrag kan endres ved vesentlig endring i inntekt, samvær eller barnets behov. Du kan be NAV om ny beregning, eller foreldrene kan avtale endring privat."}
+    },
+    {
+      "@type": "Question",
+      "name": "Er barnebidrag skattepliktig?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nei. Barnebidrag er ikke skattepliktig inntekt for mottaker, og bidragsyter får ikke fradrag for utbetalt barnebidrag."}
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
+.wrap{max-width:800px;margin:0 auto;padding:0 1.5rem}
+.bc{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
+.bc a{color:rgba(255,255,255,0.6);text-decoration:none}
+.bc span{margin:0 6px}
+.hero-tag{display:inline-block;background:rgba(110,224,158,0.15);border:1px solid rgba(110,224,158,0.3);color:#6ee09e;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;margin-bottom:1.1rem}
+h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.6rem,3.5vw,2.4rem);color:#fff;letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.75rem;word-break:break-word}
+.hero p{color:rgba(255,255,255,0.65);font-size:1rem;max-width:560px}
+.kalk-wrap{margin-top:-2rem;position:relative;z-index:10}
+.kalk-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.1);padding:2rem}
+.kalk-title{font-family:var(--fh);font-weight:700;font-size:1.2rem;color:var(--green-dark);margin-bottom:1.5rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:540px){.grid2{grid-template-columns:1fr}}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:5px}
+.field input,.field select{width:100%;height:48px;padding:0 1rem;border:1.5px solid var(--border);border-radius:var(--rs);font-family:var(--fb);font-size:1rem;color:var(--text);background:var(--bg);outline:none;-moz-appearance:textfield;transition:border-color 0.15s}
+.field input::-webkit-outer-spin-button,.field input::-webkit-inner-spin-button{-webkit-appearance:none}
+.field input:focus,.field select:focus{border-color:var(--green-mid);background:#fff}
+.field-hint{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
+.kalk-btn{width:100%;height:52px;background:var(--green);color:#fff;border:none;border-radius:var(--rs);font-family:var(--fh);font-weight:700;font-size:1rem;cursor:pointer;transition:background 0.15s;margin-top:0.5rem}
+.kalk-btn:hover{background:var(--green-mid)}
+.result-box{display:none;margin-top:1.5rem;background:var(--green-light);border:1.5px solid #b2dfc6;border-radius:var(--rs);padding:1.5rem}
+.result-box.show{display:block}
+.result-main{text-align:center;margin-bottom:1.25rem}
+.result-val{font-family:var(--fh);font-size:2.5rem;font-weight:800;color:var(--green-dark);letter-spacing:-0.03em;display:block}
+.result-lbl{font-size:0.85rem;color:var(--text-muted)}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;padding-top:1rem;border-top:1px solid #b2dfc6}
+@media(max-width:500px){.result-grid{grid-template-columns:1fr 1fr}}
+.result-item{text-align:center}
+.result-item .val{display:block;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--green-dark)}
+.result-item .lbl{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+.result-tekst{margin-top:1rem;font-size:0.88rem;color:var(--text-muted);border-top:1px solid #b2dfc6;padding-top:0.85rem;line-height:1.6}
+.section{padding:2.5rem 0}
+.sec-title{font-family:var(--fh);font-weight:700;font-size:1.35rem;color:var(--green-dark);margin-bottom:0.75rem}
+.prose p{margin-bottom:1rem;font-size:0.97rem}
+.prose h3{font-family:var(--fh);font-weight:600;font-size:1.05rem;color:var(--green-dark);margin:1.5rem 0 0.5rem}
+.prose ul{margin:0.5rem 0 1rem 1.5rem;font-size:0.97rem}
+.prose ul li{margin-bottom:0.35rem}
+.hb{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 var(--rs) var(--rs) 0;padding:1rem 1.25rem;margin:1.25rem 0;font-size:0.95rem}
+.sats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin:1.5rem 0}
+.sats-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;text-align:center}
+.sats-val{font-family:var(--fh);font-size:1.5rem;font-weight:800;color:var(--green-dark);display:block}
+.sats-lbl{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:0.75rem;overflow:hidden}
+.faq-q{font-family:var(--fh);font-weight:700;font-size:0.95rem;color:var(--green-dark);padding:1.1rem 1.25rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
+.faq-q::after{content:"+";font-size:1.4rem;color:var(--green);transition:transform 0.2s;flex-shrink:0}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 1.25rem;font-size:0.93rem;color:var(--text-muted);line-height:1.6;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease}
+.faq-item.open .faq-a{max-height:400px;padding:0 1.25rem 1.1rem}
+.relatert{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 2rem;margin:2rem 0}
+.relatert h2{font-family:var(--fh);font-weight:700;font-size:1.1rem;color:var(--green-dark);margin-bottom:1rem}
+.rl{display:flex;flex-wrap:wrap;gap:0.75rem}
+.rl a{background:var(--green-light);color:var(--green-dark);text-decoration:none;font-weight:500;font-size:0.88rem;padding:8px 16px;border-radius:99px;border:1px solid #b2dfc6;white-space:nowrap}
+footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:0.88rem;margin-top:2rem}
+footer a{color:rgba(255,255,255,0.8);text-decoration:none}
+.fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li class="nav-dd">
+      <a href="#">Kalkulatorer <span class="arr">▾</span></a>
+      <div class="nav-drop">
+        <a href="/">📊 Inflasjonskalkulator</a>
+        <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+        <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+        <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+        <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+        <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+        <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+        <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+        <a href="/barnebidrag-kalkulator">👶 Barnebidrag-kalkulator</a>
+      </div>
+    </li>
+    <li class="nav-dd">
+      <a href="#">Artikler <span class="arr">▾</span></a>
+      <div class="nav-drop">
+        <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
+        <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
+        <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
+        <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
+        <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
+      </div>
+    </li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <div class="nav-section">Kalkulatorer</div>
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+  <a href="/barnebidrag-kalkulator">👶 Barnebidrag-kalkulator</a>
+  <div class="nav-section">Artikler</div>
+  <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
+  <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
+  <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
+  <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
+  <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
+  <div class="nav-section">Mer</div>
+  <a href="/kpi-rapport">📋 KPI-rapporter</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="bc"><a href="/">Hjem</a><span>›</span>Barnebidrag-kalkulator</div>
+    <div class="hero-tag">Gratis verktøy</div>
+    <h1>Barnebidrag-kalkulator 2026</h1>
+    <p>Beregn estimert barnebidrag basert på inntekt, samvær og antall barn etter NAVs regler.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn barnebidrag 2026</div>
+      <div class="grid2">
+        <div class="field">
+          <label>Bidragsyters inntekt (kr/år)</label>
+          <input type="number" id="inntekt-yter" placeholder="600 000" min="0">
+          <div class="field-hint">Samlet personinntekt</div>
+        </div>
+        <div class="field">
+          <label>Bidragsmottakers inntekt (kr/år)</label>
+          <input type="number" id="inntekt-mottaker" placeholder="500 000" min="0">
+          <div class="field-hint">Samlet personinntekt</div>
+        </div>
+        <div class="field">
+          <label>Barnets alder</label>
+          <select id="alder">
+            <option value="4500">0–5 år</option>
+            <option value="5200">6–10 år</option>
+            <option value="6300">11–18 år</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Samvær (netter per måned)</label>
+          <select id="samsvar">
+            <option value="0">0–3 netter (klasse 0)</option>
+            <option value="464">4–8 netter (klasse 1)</option>
+            <option value="928">9–12 netter (klasse 2)</option>
+            <option value="1391">13–15 netter (klasse 3)</option>
+            <option value="1855">Over 15 netter (klasse 4)</option>
+          </select>
+          <div class="field-hint">Bidragsyters samvær med barnet</div>
+        </div>
+      </div>
+      <button class="kalk-btn" onclick="beregnBarnebidrag()">Beregn barnebidrag</button>
+
+      <div class="result-box" id="result-box">
+        <div class="result-main">
+          <span class="result-val" id="res-bidrag">—</span>
+          <span class="result-lbl">Estimert barnebidrag per måned</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="res-underholdskostnad">—</span>
+            <span class="lbl">Underholdskostnad</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-andel">—</span>
+            <span class="lbl">Bidragsyters andel</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-aar">—</span>
+            <span class="lbl">Per år</span>
+          </div>
+        </div>
+        <div class="result-tekst" id="res-tekst"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">Slik beregnes barnebidrag</h2>
+    <div class="prose">
+      <p>NAV beregner barnebidrag ut fra tre faktorer: underholdskostnaden for barnet, foreldrenes inntektsandel og samværsfradraget til bidragsyter.</p>
+
+      <div class="hb"><strong>Formel:</strong> Barnebidrag = Underholdskostnad × Bidragsyters inntektsandel − Samværsfradrag</div>
+
+      <h3>Underholdskostnader 2026</h3>
+      <div class="sats-grid">
+        <div class="sats-card"><span class="sats-val">4 500 kr</span><div class="sats-lbl">0–5 år per måned</div></div>
+        <div class="sats-card"><span class="sats-val">5 200 kr</span><div class="sats-lbl">6–10 år per måned</div></div>
+        <div class="sats-card"><span class="sats-val">6 300 kr</span><div class="sats-lbl">11–18 år per måned</div></div>
+      </div>
+
+      <h3>Samværsfradrag</h3>
+      <ul>
+        <li>0–3 netter/mnd: 0 kr</li>
+        <li>4–8 netter/mnd: 464 kr</li>
+        <li>9–12 netter/mnd: 928 kr</li>
+        <li>13–15 netter/mnd: 1 391 kr</li>
+        <li>Over 15 netter/mnd: 1 855 kr</li>
+      </ul>
+
+      <p>Kalkulatoren gir et estimat. NAV gjør en individuell vurdering. Bruk <a href="https://www.nav.no/barnebidrag" target="_blank" rel="noopener" style="color:var(--green);">NAVs offisielle kalkulator</a> for eksakt beregning.</p>
+    </div>
+  </div>
+
+  <div class="faq-item"><div class="faq-q">Hvordan beregnes barnebidrag?</div><div class="faq-a">Barnebidrag beregnes ut fra underholdskostnaden for barnet, begge foreldrenes inntekt og samværsfradraget. Bidragsyters andel beregnes som deres inntektsandel av samlet inntekt.</div></div>
+  <div class="faq-item"><div class="faq-q">Hva er underholdskostnadene for barn i 2026?</div><div class="faq-a">Ca. 4 500 kr/mnd for 0–5 år, 5 200 kr/mnd for 6–10 år og 6 300 kr/mnd for 11–18 år. Disse justeres årlig av NAV.</div></div>
+  <div class="faq-item"><div class="faq-q">Kan barnebidrag endres?</div><div class="faq-a">Ja, ved vesentlig endring i inntekt, samvær eller barnets behov kan du be NAV om ny beregning.</div></div>
+  <div class="faq-item"><div class="faq-q">Er barnebidrag skattepliktig?</div><div class="faq-a">Nei. Barnebidrag er ikke skattepliktig for mottaker, og bidragsyter får ikke skattefradrag.</div></div>
+
+  <div class="relatert">
+    <h2>Relaterte verktøy</h2>
+    <div class="rl">
+      <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+      <a href="/formuesskatt-kalkulator">💰 Formuesskatt</a>
+      <a href="/">📊 Inflasjonskalkulator</a>
+      <a href="/feriepengekalkulator">🏖️ Feriepenger</a>
+      <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="/">Hjem</a>
+      <a href="/barnebidrag-kalkulator">Barnebidrag</a>
+      <a href="/formuesskatt-kalkulator">Formuesskatt</a>
+      <a href="/ressurser">Ressurser</a>
+    </div>
+    <p>Kalkulatoren er kun veiledende. Se <a href="https://www.nav.no/barnebidrag" target="_blank" rel="noopener">NAV.no</a> for offisiell beregning.</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 inflasjonskalkulator.no</p>
+  </div>
+</footer>
+
+<script>
+function beregnBarnebidrag() {
+  const inntektYter = parseFloat(document.getElementById('inntekt-yter').value) || 0;
+  const inntektMottaker = parseFloat(document.getElementById('inntekt-mottaker').value) || 0;
+  const underholdskostnad = parseFloat(document.getElementById('alder').value);
+  const samsvarFradrag = parseFloat(document.getElementById('samsvar').value);
+
+  if (!inntektYter || !inntektMottaker) {
+    document.getElementById('result-box').classList.remove('show');
+    return;
+  }
+
+  const totalInntekt = inntektYter + inntektMottaker;
+  const andel = inntektYter / totalInntekt;
+  const bidragFørFradrag = underholdskostnad * andel;
+  const bidrag = Math.max(0, bidragFørFradrag - samsvarFradrag);
+
+  const fmt = n => Math.round(n).toLocaleString('nb-NO') + ' kr';
+  const pct = (andel * 100).toFixed(0);
+
+  document.getElementById('res-bidrag').textContent = fmt(bidrag);
+  document.getElementById('res-underholdskostnad').textContent = fmt(underholdskostnad);
+  document.getElementById('res-andel').textContent = pct + ' %';
+  document.getElementById('res-aar').textContent = fmt(bidrag * 12);
+  document.getElementById('res-tekst').textContent =
+    `Bidragsyters inntektsandel er ${pct} % av samlet inntekt på ${fmt(totalInntekt / 12)}/mnd. ` +
+    `Underholdskostnad ${fmt(underholdskostnad)} × ${pct} % = ${fmt(bidragFørFradrag)}, ` +
+    `minus samværsfradrag ${fmt(samsvarFradrag)} = estimert barnebidrag ${fmt(bidrag)}/mnd. ` +
+    `Dette er et estimat – NAV gjør en individuell vurdering.`;
+  document.getElementById('result-box').classList.add('show');
+}
+
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+<script>
+function toggleMenu(){const m=document.getElementById('nav-mobile');const b=document.getElementById('nav-burger');const open=!m.classList.contains('open');m.classList.toggle('open',open);b.classList.toggle('open',open);b.setAttribute('aria-expanded',open);}
+document.addEventListener('click',function(e){const m=document.getElementById('nav-mobile');const b=document.getElementById('nav-burger');if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){m.classList.remove('open');b.classList.remove('open');}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.getElementById('nav-mobile').classList.remove('open');document.getElementById('nav-burger').classList.remove('open');}});
+</script>
+</body>
+</html>
