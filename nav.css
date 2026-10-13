@@ -69,11 +69,11 @@ nav {
 .nav-drop {
   display: none !important;
   position: absolute !important;
-  top: calc(100% + 6px) !important;
+  top: 100% !important;
   left: 0 !important;
   background: #0d3d22 !important;
   border-radius: 10px !important;
-  padding: 6px 0 !important;
+  padding: 14px 0 6px !important;
   min-width: 230px !important;
   box-shadow: 0 8px 28px rgba(0,0,0,0.35) !important;
   z-index: 300 !important;
