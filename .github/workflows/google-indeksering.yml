@@ -1,0 +1,75 @@
+name: Send URL-er til Google Indexing API
+
+on:
+  workflow_dispatch:
+
+jobs:
+  indekser:
+    runs-on: ubuntu-26.04
+
+    steps:
+      - name: Hent kode
+        uses: actions/checkout@v4
+
+      - name: Sett opp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installer avhengigheter
+        run: pip install --break-system-packages requests google-auth google-auth-httplib2
+
+      - name: Send URL-er til Google Indexing API
+        env:
+          GOOGLE_INDEXING_SA: ${{ secrets.GOOGLE_INDEXING_SA }}
+        run: |
+          python3 - <<'EOF'
+          import os, json, requests
+
+          sa_json = os.environ.get("GOOGLE_INDEXING_SA")
+          if not sa_json:
+              print("GOOGLE_INDEXING_SA ikke satt – avbryter.")
+              exit(1)
+
+          from google.oauth2 import service_account
+          from google.auth.transport.requests import Request as GRequest
+
+          creds = service_account.Credentials.from_service_account_info(
+              json.loads(sa_json),
+              scopes=["https://www.googleapis.com/auth/indexing"]
+          )
+          creds.refresh(GRequest())
+          token = creds.token
+
+          urls = [
+              "https://inflasjonskalkulator.no/",
+              "https://inflasjonskalkulator.no/kpi-rapport",
+              "https://inflasjonskalkulator.no/kpi-rapport/august-2026",
+              "https://inflasjonskalkulator.no/kpi-rapport/september-2026",
+              "https://inflasjonskalkulator.no/artikler",
+              "https://inflasjonskalkulator.no/artikler/feriepenger-prosent",
+              "https://inflasjonskalkulator.no/artikler/kroneverdi-historisk",
+              "https://inflasjonskalkulator.no/artikler/rentehevinger-og-inflasjon",
+              "https://inflasjonskalkulator.no/formuesskatt-kalkulator",
+              "https://inflasjonskalkulator.no/mva-kalkulator",
+              "https://inflasjonskalkulator.no/renters-rente-kalkulator",
+              "https://inflasjonskalkulator.no/barnebidrag-kalkulator",
+          ]
+
+          headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+          ok, feil = 0, 0
+          for url in urls:
+              r = requests.post(
+                  "https://indexing.googleapis.com/v3/urlNotifications:publish",
+                  headers=headers,
+                  json={"url": url, "type": "URL_UPDATED"}
+              )
+              if r.status_code == 200:
+                  print(f"✓ {url}")
+                  ok += 1
+              else:
+                  print(f"✗ {url} → {r.status_code} {r.text[:80]}")
+                  feil += 1
+
+          print(f"\nResultat: {ok} OK, {feil} feil")
+          EOF
