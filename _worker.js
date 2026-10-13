@@ -8,6 +8,15 @@ export default {
       path = path.slice(0, -1);
     }
 
+    // Redirects for gamle/feil URL-er
+    const redirects = {
+      '/mnd': '/kpi-rapport',
+      '/år': '/kpi-rapport',
+    };
+    if (redirects[path]) {
+      return Response.redirect(url.origin + redirects[path], 301);
+    }
+
     // Prøv å hente filen direkte
     const directUrl = new URL(url.toString());
     directUrl.pathname = path;
