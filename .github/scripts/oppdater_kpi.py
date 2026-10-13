@@ -830,33 +830,32 @@ def oppdater_kpi_oversikt(endringer, forrige_mnd, pub_dato):
     )
 
     # Legg til nytt rapport-kort øverst i riktig år-seksjon
-    ny_rapport_html = f'''      <a href="/kpi-rapport/{slug}-{aar}" class="rapport-card siste">
-        <span class="rapport-badge">Siste</span>
-        <div class="rapport-mnd">{mnd_str.capitalize()} {aar}</div>
-        <div class="rapport-kpi {hoy_klasse}">{fp_val}</div>
-        <div class="rapport-dato">Publisert {pub_dag}. {pub_mnd} {aar}</div>
+    ny_rapport_html = f'''      <a href="/kpi-rapport/{slug}-{aar}" class="rc siste-kort">
+        <span class="badge">Siste</span>
+        <div class="rc-mnd">{mnd_str.capitalize()} {aar}</div>
+        <div class="rc-kpi">{fp_val}</div>
+        <div class="rc-dato">Publisert {pub_dag}. {pub_mnd} {aar}</div>
       </a>'''
 
-    # Fjern "siste" badge fra forrige kort
-    html = html.replace('<span class="rapport-badge">Siste</span>\n        ', '')
-    html = html.replace(' siste">', '">', 1)  # Fjern siste-klasse fra forrige
+    # Fjern "siste-kort" badge og klasse fra forrige kort
+    html = re.sub(r'<span class="badge">Siste</span>\s*\n\s*', '', html)
+    html = re.sub(r' class="rc siste-kort"', ' class="rc"', html)
 
     # Legg til nytt kort øverst i år-seksjonen
     aar_id = f"rapporter-{aar}"
     if aar_id in html:
         html = html.replace(
-            f'<div class="rapport-grid" id="{aar_id}">',
-            f'<div class="rapport-grid" id="{aar_id}">\n{ny_rapport_html}'
+            f'<div class="rg" id="{aar_id}">',
+            f'<div class="rg" id="{aar_id}">\n{ny_rapport_html}'
         )
     else:
         # Nytt år – legg til ny seksjon
         ny_aar_seksjon = f'''
-    <!-- {aar} -->
     <div class="year-title">{aar}</div>
-    <div class="rapport-grid" id="{aar_id}">
+    <div class="rg" id="{aar_id}">
 {ny_rapport_html}
     </div>'''
-        html = html.replace('    <!-- 2025 -->', ny_aar_seksjon + '\n\n    <!-- 2025 -->')
+        html = html.replace('    <div class="year-title">2025</div>', ny_aar_seksjon + '\n\n    <div class="year-title">2025</div>')
 
     with open(oversikt_fil, "w", encoding="utf-8") as f:
         f.write(html)
