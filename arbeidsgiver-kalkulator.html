@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arbeidsgiver-kalkulator 2026 – Hva koster en ansatt egentlig?</title>
+<meta name="description" content="Beregn den totale arbeidsgiverskosten for en ansatt i 2026. Lønn + feriepenger + pensjon + arbeidsgiveravgift. Gratis kalkulator for norske arbeidsgivere.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/arbeidsgiver-kalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nav.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arbeidsgiver-kalkulator 2026 – Hva koster en ansatt?">
+<meta property="og:description" content="Beregn total arbeidsgiverskost: lønn + feriepenger + pensjon + arbeidsgiveravgift. Gratis kalkulator for 2026.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/arbeidsgiver-kalkulator">
+<meta property="og:image" content="https://inflasjonskalkulator.no/og-arbeidsgiver.svg">
+<meta property="og:locale" content="nb_NO">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Arbeidsgiver-kalkulator 2026",
+  "description": "Beregn total arbeidsgiverskost for en ansatt i 2026, inkludert lønn, feriepenger, pensjon og arbeidsgiveravgift.",
+  "url": "https://inflasjonskalkulator.no/arbeidsgiver-kalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "NOK"},
+  "publisher": {"@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er arbeidsgiveravgift i 2026?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Arbeidsgiveravgiften varierer etter sone. I sone I (Oslo og de fleste byer) er satsen 14,1 %. I sone II er den 10,6 %, sone III 6,4 %, sone IV 5,1 % og sone V 0 %. Satsen beregnes av brutto lønn inkludert feriepenger."}
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er lovpålagt feriepenger?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Lovpålagt feriepenge er 10,2 % av feriepengegrunnlaget for ansatte med 4 ukers ferie. De fleste norske arbeidsgivere gir 5 ukers ferie, noe som tilsvarer 12 % feriepenger."}
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er minimum pensjon (OTP)?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Obligatorisk tjenestepensjon (OTP) er minimum 2 % av lønn mellom 1 G og 12 G. G er per 1. mai 2026 satt til 136 549 kr. Mange arbeidsgivere betaler mer enn minimumet."}
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er total arbeidsgiverskost?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Total arbeidsgiverskost er summen av bruttolønn, feriepenger, pensjon og arbeidsgiveravgift. For en ansatt med 600 000 kr i årslønn i sone I vil total kostnad typisk ligge rundt 750 000–780 000 kr per år."}
+    },
+    {
+      "@type": "Question",
+      "name": "Beregnes arbeidsgiveravgift av feriepenger?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja, arbeidsgiveravgift beregnes av feriepengegrunnlaget, men selve feriepengene utbetales vanligvis i juni og er da del av arbeidsgiveravgiftsgrunnlaget det året de utbetales. I kalkulatoren beregner vi arbeidsgiveravgift av lønn og feriepenger samlet for å gi et helhetlig årsbildet."}
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
+.wrap{max-width:800px;margin:0 auto;padding:0 1.5rem}
+.bc{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
+.bc a{color:rgba(255,255,255,0.6);text-decoration:none}
+.bc span{margin:0 6px}
+.hero-tag{display:inline-block;background:rgba(110,224,158,0.15);border:1px solid rgba(110,224,158,0.3);color:#6ee09e;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;margin-bottom:1.1rem}
+h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.6rem,3.5vw,2.4rem);color:#fff;letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.75rem;word-break:break-word}
+.hero p{color:rgba(255,255,255,0.65);font-size:1rem;max-width:560px}
+.kalk-wrap{margin-top:-2rem;position:relative;z-index:10}
+.kalk-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.1);padding:2rem}
+.kalk-title{font-family:var(--fh);font-weight:700;font-size:1.2rem;color:var(--green-dark);margin-bottom:1.5rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:540px){.grid2{grid-template-columns:1fr}}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:5px}
+.field input,.field select{width:100%;height:48px;padding:0 1rem;border:1.5px solid var(--border);border-radius:var(--rs);font-family:var(--fb);font-size:1rem;color:var(--text);background:var(--bg);outline:none;-moz-appearance:textfield;transition:border-color 0.15s}
+.field input::-webkit-outer-spin-button,.field input::-webkit-inner-spin-button{-webkit-appearance:none}
+.field input:focus,.field select:focus{border-color:var(--green-mid);background:#fff}
+.field-hint{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
+.kalk-btn{width:100%;height:52px;background:var(--green);color:#fff;border:none;border-radius:var(--rs);font-family:var(--fh);font-weight:700;font-size:1rem;cursor:pointer;transition:background 0.15s;margin-top:0.5rem}
+.kalk-btn:hover{background:var(--green-mid)}
+.result-box{display:none;margin-top:1.5rem;background:var(--green-light);border:1.5px solid #b2dfc6;border-radius:var(--rs);padding:1.5rem}
+.result-box.show{display:block}
+.result-main{text-align:center;margin-bottom:1.25rem}
+.result-val{font-family:var(--fh);font-size:2.5rem;font-weight:800;color:var(--green-dark);letter-spacing:-0.03em;display:block}
+.result-lbl{font-size:0.85rem;color:var(--text-muted)}
+.result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;padding-top:1rem;border-top:1px solid #b2dfc6}
+@media(max-width:600px){.result-grid{grid-template-columns:1fr 1fr}}
+.result-item{text-align:center}
+.result-item .val{display:block;font-family:var(--fh);font-size:1rem;font-weight:700;color:var(--green-dark)}
+.result-item .lbl{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+.result-bar{margin-top:1.25rem;border-top:1px solid #b2dfc6;padding-top:1rem}
+.bar-title{font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:0.6rem}
+.bar-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;font-size:0.85rem}
+.bar-label{width:140px;flex-shrink:0;color:var(--text-muted)}
+.bar-track{flex:1;height:10px;background:rgba(0,0,0,0.06);border-radius:99px;overflow:hidden}
+.bar-fill{height:100%;border-radius:99px;background:var(--green);transition:width 0.4s ease}
+.bar-pct{width:38px;text-align:right;font-weight:500;color:var(--green-dark);flex-shrink:0}
+.result-tekst{margin-top:1rem;font-size:0.88rem;color:var(--text-muted);border-top:1px solid #b2dfc6;padding-top:0.85rem;line-height:1.6}
+.section{padding:2.5rem 0}
+.sec-title{font-family:var(--fh);font-weight:700;font-size:1.35rem;color:var(--green-dark);margin-bottom:0.75rem}
+.prose p{margin-bottom:1rem;font-size:0.97rem}
+.prose h3{font-family:var(--fh);font-weight:600;font-size:1.05rem;color:var(--green-dark);margin:1.5rem 0 0.5rem}
+.prose ul{margin:0.5rem 0 1rem 1.5rem;font-size:0.97rem}
+.prose ul li{margin-bottom:0.35rem}
+.hb{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 var(--rs) var(--rs) 0;padding:1rem 1.25rem;margin:1.25rem 0;font-size:0.95rem}
+.sats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin:1.5rem 0}
+.sats-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;text-align:center}
+.sats-val{font-family:var(--fh);font-size:1.8rem;font-weight:800;color:var(--green-dark);display:block}
+.sats-lbl{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:0.75rem;overflow:hidden}
+.faq-q{font-family:var(--fh);font-weight:700;font-size:0.95rem;color:var(--green-dark);padding:1.1rem 1.25rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
+.faq-q::after{content:"+";font-size:1.4rem;color:var(--green);transition:transform 0.2s;flex-shrink:0}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 1.25rem;font-size:0.93rem;color:var(--text-muted);line-height:1.6;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease}
+.faq-item.open .faq-a{max-height:400px;padding:0 1.25rem 1.1rem}
+.relatert{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 2rem;margin:2rem 0}
+.relatert h2{font-family:var(--fh);font-weight:700;font-size:1.1rem;color:var(--green-dark);margin-bottom:1rem}
+.rl{display:flex;flex-wrap:wrap;gap:0.75rem}
+.rl a{background:var(--green-light);color:var(--green-dark);text-decoration:none;font-weight:500;font-size:0.88rem;padding:8px 16px;border-radius:99px;border:1px solid #b2dfc6;white-space:nowrap}
+footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:0.88rem;margin-top:2rem}
+footer a{color:rgba(255,255,255,0.8);text-decoration:none}
+.fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li class="nav-dd">
+      <a href="#">Kalkulatorer <span class="arr">▾</span></a>
+      <div class="nav-drop">
+        <a href="/">📊 Inflasjonskalkulator</a>
+        <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+        <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+        <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+        <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+        <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+        <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+        <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+        <a href="/barnebidrag-kalkulator">👶 Barnebidrag-kalkulator</a>
+        <a href="/arbeidsgiver-kalkulator">🏢 Arbeidsgiver-kalkulator</a>
+      </div>
+    </li>
+    <li class="nav-dd">
+      <a href="#">Artikler <span class="arr">▾</span></a>
+      <div class="nav-drop">
+        <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
+        <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
+        <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
+        <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
+        <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
+      </div>
+    </li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <div class="nav-section">Kalkulatorer</div>
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+  <a href="/barnebidrag-kalkulator">👶 Barnebidrag-kalkulator</a>
+  <a href="/arbeidsgiver-kalkulator">🏢 Arbeidsgiver-kalkulator</a>
+  <div class="nav-section">Artikler</div>
+  <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
+  <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
+  <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
+  <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
+  <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
+  <div class="nav-section">Mer</div>
+  <a href="/kpi-rapport">📋 KPI-rapporter</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="bc"><a href="/">Hjem</a><span>›</span>Arbeidsgiver-kalkulator</div>
+    <div class="hero-tag">Gratis verktøy</div>
+    <h1>Arbeidsgiver-kalkulator 2026</h1>
+    <p>Hva koster en ansatt egentlig? Beregn total arbeidsgiverskost med lønn, feriepenger, pensjon og arbeidsgiveravgift.</p>
+  </div>
+</div>
+
+<div class="kalk-wrap">
+  <div class="wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn total arbeidsgiverskost</div>
+      <div class="grid2">
+        <div class="field">
+          <label for="lonn">Årslønn (kr)</label>
+          <input type="number" id="lonn" placeholder="600 000" min="0">
+        </div>
+        <div class="field">
+          <label for="sone">Arbeidsgiveravgift-sone</label>
+          <select id="sone">
+            <option value="14.1">Sone I – 14,1 % (Oslo, de fleste byer)</option>
+            <option value="10.6">Sone II – 10,6 %</option>
+            <option value="6.4">Sone III – 6,4 %</option>
+            <option value="5.1">Sone IV – 5,1 %</option>
+            <option value="7.9">Sone IVa – 7,9 %</option>
+            <option value="0">Sone V – 0 % (Nord-Troms og Finnmark)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="ferie">Feriepenger</label>
+          <select id="ferie">
+            <option value="12">12 % – 5 ukers ferie (vanligst)</option>
+            <option value="10.2">10,2 % – lovens minimum (4 uker)</option>
+            <option value="14.3">14,3 % – 6 uker (60 år+)</option>
+          </select>
+          <div class="field-hint">Beregnes av brutto årslønn</div>
+        </div>
+        <div class="field">
+          <label for="pensjon">Pensjon (OTP) %</label>
+          <input type="number" id="pensjon" placeholder="2" value="2" min="2" max="25" step="0.5">
+          <div class="field-hint">Minimum 2 % av lønn opp til 12 G</div>
+        </div>
+      </div>
+      <button class="kalk-btn" onclick="beregn()">Beregn arbeidsgiverskost</button>
+
+      <div class="result-box" id="result">
+        <div class="result-main">
+          <span class="result-val" id="res-total">–</span>
+          <span class="result-lbl">Total arbeidsgiverskost per år</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="res-lonn">–</span>
+            <span class="lbl">Bruttolønn</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-ferie">–</span>
+            <span class="lbl">Feriepenger</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-pensjon">–</span>
+            <span class="lbl">Pensjon (OTP)</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-aga">–</span>
+            <span class="lbl">Arbeidsgiveravgift</span>
+          </div>
+        </div>
+        <div class="result-bar">
+          <div class="bar-title">Kostnadsfordeling</div>
+          <div class="bar-row">
+            <span class="bar-label">Bruttolønn</span>
+            <div class="bar-track"><div class="bar-fill" id="bar-lonn" style="width:0%"></div></div>
+            <span class="bar-pct" id="pct-lonn">–</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Feriepenger</span>
+            <div class="bar-track"><div class="bar-fill" id="bar-ferie" style="width:0%;background:#2a9d60"></div></div>
+            <span class="bar-pct" id="pct-ferie">–</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Pensjon</span>
+            <div class="bar-track"><div class="bar-fill" id="bar-pensjon" style="width:0%;background:#3cb878"></div></div>
+            <span class="bar-pct" id="pct-pensjon">–</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Arbeidsgiveravgift</span>
+            <div class="bar-track"><div class="bar-fill" id="bar-aga" style="width:0%;background:#6ee09e"></div></div>
+            <span class="bar-pct" id="pct-aga">–</span>
+          </div>
+        </div>
+        <div class="result-tekst" id="res-tekst"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="section">
+    <div class="sec-title">Satser 2026</div>
+    <div class="sats-grid">
+      <div class="sats-card">
+        <span class="sats-val">14,1 %</span>
+        <div class="sats-lbl">Arbeidsgiveravgift sone I</div>
+      </div>
+      <div class="sats-card">
+        <span class="sats-val">12 %</span>
+        <div class="sats-lbl">Feriepenger (5 uker)</div>
+      </div>
+      <div class="sats-card">
+        <span class="sats-val">2 %</span>
+        <div class="sats-lbl">Min. pensjon (OTP)</div>
+      </div>
+      <div class="sats-card">
+        <span class="sats-val">~130 %</span>
+        <div class="sats-lbl">Tommelfingerregel (av lønn)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Hva inngår i arbeidsgiverskosten?</div>
+    <div class="prose">
+      <p>Når du ansetter noen, er lønnen bare en del av det du betaler. Den totale arbeidsgiverskosten består av fire hovedelementer:</p>
+
+      <h3>1. Bruttolønn</h3>
+      <p>Den avtalte årslønnen før skatt. Dette er utgangspunktet for alle beregningene.</p>
+
+      <h3>2. Feriepenger</h3>
+      <p>Du plikter å betale feriepenger til alle ansatte. Satsene er:</p>
+      <ul>
+        <li><strong>10,2 %</strong> – lovens minimum, tilsvarer 4 ukers ferie (ferieloven)</li>
+        <li><strong>12 %</strong> – det vanligste, tilsvarer 5 ukers ferie</li>
+        <li><strong>14,3 %</strong> – for ansatte over 60 år som har rett til 6 ukers ferie</li>
+      </ul>
+      <p>Feriepengene utbetales typisk i juni og er ikke skattepliktig inntekt på vanlig måte.</p>
+
+      <h3>3. Obligatorisk tjenestepensjon (OTP)</h3>
+      <p>Alle arbeidsgivere plikter å ha pensjonsordning for sine ansatte. Minimumet er 2 % av lønn mellom 1 G og 12 G. G er per 1. mai 2026 satt til 136 549 kr. Mange arbeidsgivere betaler 3–5 % for å tiltrekke seg gode kandidater.</p>
+
+      <h3>4. Arbeidsgiveravgift</h3>
+      <p>Arbeidsgiveravgiften betales til staten og varierer etter hvilken sone virksomheten er lokalisert i. Avgiften beregnes av brutto lønn og feriepenger.</p>
+
+      <div class="hb">
+        <strong>Tommelfingerregel:</strong> En ansatt koster arbeidsgiveren omtrent <strong>125–135 % av bruttolønnen</strong> i sone I. For en ansatt med 600 000 kr i årslønn betyr det en total kostnad på rundt 750 000–810 000 kr per år.
+      </div>
+
+      <p>Merk at kalkulatoren ikke inkluderer indirekte kostnader som kontorplass, utstyr, kurs, rekruttering og administrasjon. Den reelle totalkostnaden er ofte høyere.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Arbeidsgiveravgift-soner 2026</div>
+    <div class="prose">
+      <p>Satsen for arbeidsgiveravgift avhenger av hvor virksomheten er registrert:</p>
+      <ul>
+        <li><strong>Sone I – 14,1 %:</strong> Oslo, Bergen, Stavanger og de fleste kommuner i sørlige Norge</li>
+        <li><strong>Sone II – 10,6 %:</strong> Deler av Nord-Norge og noen andre kommuner</li>
+        <li><strong>Sone III – 6,4 %:</strong> Utvalgte kommuner i distriktene</li>
+        <li><strong>Sone IV – 5,1 %:</strong> Ytterligere distriktskommuner</li>
+        <li><strong>Sone IVa – 7,9 %:</strong> Visse kommuner med særregler</li>
+        <li><strong>Sone V – 0 %:</strong> Nord-Troms og Finnmark</li>
+      </ul>
+      <p>Er du usikker på hvilken sone du tilhører, finner du svar på Skatteetatens sider eller i Altinn.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Ofte stilte spørsmål</div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Hva er arbeidsgiveravgift i 2026?</div>
+      <div class="faq-a">Arbeidsgiveravgiften varierer etter sone. I sone I (Oslo og de fleste byer) er satsen 14,1 %. I sone II er den 10,6 %, sone III 6,4 %, sone IV 5,1 % og sone V 0 %. Satsen beregnes av brutto lønn inkludert feriepenger.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Hva er lovpålagt feriepenger?</div>
+      <div class="faq-a">Lovpålagt feriepenge er 10,2 % av feriepengegrunnlaget for ansatte med 4 ukers ferie. De fleste norske arbeidsgivere gir 5 ukers ferie, noe som tilsvarer 12 % feriepenger.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Hva er minimum pensjon (OTP)?</div>
+      <div class="faq-a">Obligatorisk tjenestepensjon (OTP) er minimum 2 % av lønn mellom 1 G og 12 G. G er per 1. mai 2026 satt til 136 549 kr. Mange arbeidsgivere betaler mer enn minimumet.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Beregnes arbeidsgiveravgift av feriepenger?</div>
+      <div class="faq-a">Ja, arbeidsgiveravgift beregnes av feriepengegrunnlaget, men selve feriepengene utbetales vanligvis i juni og er da del av arbeidsgiveravgiftsgrunnlaget det året de utbetales. I kalkulatoren beregner vi arbeidsgiveravgift av lønn og feriepenger samlet for å gi et helhetlig årsbildet.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Inkluderer kalkulatoren alle kostnader?</div>
+      <div class="faq-a">Nei. Kalkulatoren viser de direkte lønnskostnadene: lønn, feriepenger, pensjon og arbeidsgiveravgift. Indirekte kostnader som kontorplass, utstyr, rekruttering, opplæring og administrasjon kommer i tillegg og kan utgjøre betydelige beløp.</div>
+    </div>
+  </div>
+
+  <div class="relatert">
+    <h2>Relaterte kalkulatorer</h2>
+    <div class="rl">
+      <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+      <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+      <a href="/barnebidrag-kalkulator">👶 Barnebidrag-kalkulator</a>
+      <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+      <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fl">
+    <a href="/">Hjem</a>
+    <a href="/kpi-rapport">KPI-rapport</a>
+    <a href="/artikler">Artikler</a>
+    <a href="/ressurser">Ressurser</a>
+  </div>
+  <div>© 2026 inflasjonskalkulator.no · Tall basert på gjeldende regler fra Skatteetaten og NAV</div>
+</footer>
+
+<script>
+function fmt(n){return Math.round(n).toLocaleString('nb-NO')+' kr'}
+function fmtPct(n){return n.toFixed(1)+' %'}
+
+function beregn(){
+  const lonn = parseFloat(document.getElementById('lonn').value)||0;
+  if(lonn<=0){alert('Skriv inn en årslønn for å beregne.');return;}
+
+  const sonePct = parseFloat(document.getElementById('sone').value)/100;
+  const feriePct = parseFloat(document.getElementById('ferie').value)/100;
+  const pensjonPct = parseFloat(document.getElementById('pensjon').value)/100;
+
+  // G-verdi per mai 2026
+  const G = 136549;
+  const pensjonMax = 12*G;
+
+  const ferie = lonn * feriePct;
+  // Pensjon beregnes av lønn mellom 1G og 12G
+  const pensjonGrunnlag = Math.max(0, Math.min(lonn, pensjonMax) - G);
+  const pensjon = pensjonGrunnlag * pensjonPct;
+  // Arbeidsgiveravgift beregnes av lønn + feriepenger
+  const aga = (lonn + ferie) * sonePct;
+  const total = lonn + ferie + pensjon + aga;
+
+  document.getElementById('res-total').textContent = fmt(total);
+  document.getElementById('res-lonn').textContent = fmt(lonn);
+  document.getElementById('res-ferie').textContent = fmt(ferie);
+  document.getElementById('res-pensjon').textContent = fmt(pensjon);
+  document.getElementById('res-aga').textContent = fmt(aga);
+
+  // Prosentfordeling
+  const pLonn = lonn/total*100;
+  const pFerie = ferie/total*100;
+  const pPensjon = pensjon/total*100;
+  const pAga = aga/total*100;
+
+  document.getElementById('bar-lonn').style.width = pLonn+'%';
+  document.getElementById('bar-ferie').style.width = pFerie+'%';
+  document.getElementById('bar-pensjon').style.width = pPensjon+'%';
+  document.getElementById('bar-aga').style.width = pAga+'%';
+  document.getElementById('pct-lonn').textContent = fmtPct(pLonn);
+  document.getElementById('pct-ferie').textContent = fmtPct(pFerie);
+  document.getElementById('pct-pensjon').textContent = fmtPct(pPensjon);
+  document.getElementById('pct-aga').textContent = fmtPct(pAga);
+
+  const mndKost = total/12;
+  const overhead = ((total/lonn)-1)*100;
+  document.getElementById('res-tekst').innerHTML =
+    `Månedlig kostnad: <strong>${fmt(mndKost)}</strong> &nbsp;·&nbsp; `+
+    `Overhead utover lønn: <strong>+${overhead.toFixed(1)} %</strong> &nbsp;·&nbsp; `+
+    `Kr per krone i lønn: <strong>${(total/lonn).toFixed(2)}</strong>`;
+
+  document.getElementById('result').classList.add('show');
+}
+
+function toggleFaq(el){
+  el.parentElement.classList.toggle('open');
+}
+
+function toggleMenu(){
+  const burger=document.getElementById('nav-burger');
+  const menu=document.getElementById('nav-mobile');
+  const open=menu.classList.toggle('open');
+  burger.classList.toggle('open',open);
+  burger.setAttribute('aria-expanded',open);
+}
+
+document.getElementById('lonn').addEventListener('keydown',function(e){
+  if(e.key==='Enter') beregn();
+});
+</script>
+</body>
+</html>
