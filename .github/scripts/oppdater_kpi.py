@@ -685,6 +685,90 @@ def oppdater_artikler(endringer, forrige_mnd):
 
 
 
+# ── OPPDATER KONSUMPRISINDEKSEN-ARTIKKEL ──────────────────────────────────────
+
+def oppdater_konsumprisindeksen_artikkel(endringer, forrige_mnd, pub_dato):
+    """Oppdaterer konsumprisindeksen-2026.html med nye KPI-tall og ny tabellrad."""
+    fil = "artikler/konsumprisindeksen-2026.html"
+    if not os.path.exists(fil):
+        print(f"{fil} ikke funnet, hopper over.")
+        return
+
+    kpi = endringer.get("kpi_total", 0)
+    kpi_str = str(kpi).replace(".", ",")
+    mnd_str = MND_LANG[forrige_mnd.month].capitalize()
+    aar = forrige_mnd.year
+    pub_dato_str = pub_dato.strftime("%-d. %B %Y").lower()  # f.eks. "10. oktober 2026"
+    pub_dato_str = pub_dato_str[0].upper() + pub_dato_str[1:]
+
+    # Beregn neste publiseringsdato (10. neste måned)
+    if forrige_mnd.month == 12:
+        neste_pub = f"10. januar {aar + 1}"
+    else:
+        neste_mnd = MND_LANG[forrige_mnd.month + 1]
+        neste_pub = f"10. {neste_mnd} {aar}"
+
+    with open(fil, "r", encoding="utf-8") as f:
+        html = f.read()
+
+    # 1. Oppdater dateModified i schema.org
+    html = re.sub(
+        r'"dateModified": "\d{4}-\d{2}-\d{2}"',
+        f'"dateModified": "{datetime.now().strftime("%Y-%m-%d")}"',
+        html
+    )
+
+    # 2. Oppdater "Siste tall"-boksen
+    html = re.sub(
+        r'<strong>Siste tall:</strong> KPI for \w+ \d{4} var <strong>\+[\d,]+ %</strong> \(12-månedersvekst\)\. Neste publisering fra SSB er [\w\. ]+\.',
+        f'<strong>Siste tall:</strong> KPI for {mnd_str.lower()} {aar} var <strong>+{kpi_str} %</strong> (12-månedersvekst). Neste publisering fra SSB er {neste_pub}.',
+        html
+    )
+
+    # 3. Legg til ny tabellrad øverst i tabellen (unngå duplikater)
+    ny_rad = f'        <tr><td>{mnd_str} {aar}</td><td>+{kpi_str} %</td><td>{pub_dato_str}</td></tr>'
+    if f'<td>{mnd_str} {aar}</td>' not in html:
+        html = html.replace(
+            '<thead><tr><th>Måned</th><th>KPI (12 mnd)</th><th>Publisert</th></tr></thead>\n',
+            f'<thead><tr><th>Måned</th><th>KPI (12 mnd)</th><th>Publisert</th></tr></thead>\n      <tbody>\n{ny_rad}\n'
+        )
+        # Lukk tbody om den ikke finnes
+        if '<tbody>' in html and '</tbody>' not in html:
+            html = html.replace('</table>', '      </tbody>\n    </table>')
+
+    # 4. Oppdater FAQ-svar med siste tall
+    html = re.sub(
+        r'I \w+ \d{4} var KPI [\d,]+ %\.',
+        f'I {mnd_str.lower()} {aar} var KPI {kpi_str} %.',
+        html
+    )
+
+    # 5. Oppdater "Oppdatert [måned] [år]"-tag
+    html = re.sub(
+        r'Artikkel · Oppdatert \w+ \d{4}',
+        f'Artikkel · Oppdatert {mnd_str.lower()} {aar}',
+        html
+    )
+
+    # 6. Oppdater ingress
+    html = re.sub(
+        r'Siste publiserte tall er \w+ \d{4} med [\d,]+ %',
+        f'Siste publiserte tall er {mnd_str.lower()} {aar} med {kpi_str} %',
+        html
+    )
+
+    # 7. Oppdater schema.org FAQ
+    html = re.sub(
+        r'"I \w+ \d{4} var KPI [\d,]+ %, ifølge SSB\.',
+        f'"I {mnd_str.lower()} {aar} var KPI {kpi_str} %, ifølge SSB.',
+        html
+    )
+
+    with open(fil, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"{fil} oppdatert med KPI {kpi_str} % for {mnd_str.lower()} {aar}!")
+
+
 # ── GENERER OG-BILDER ─────────────────────────────────────────────────────────
 
 def generer_og_bilder(endringer, forrige_mnd):
@@ -887,6 +971,7 @@ def main():
 
     # 1b. Oppdater artikler
     oppdater_artikler(endringer, forrige_mnd)
+    oppdater_konsumprisindeksen_artikkel(endringer, forrige_mnd, pub_dato)
 
     # 2. Generer KPI-rapport
     rapport_html, slug, aar = generer_kpi_rapport(endringer, forrige_mnd, pub_dato)
