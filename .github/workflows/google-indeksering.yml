@@ -54,6 +54,7 @@ jobs:
               "https://inflasjonskalkulator.no/mva-kalkulator",
               "https://inflasjonskalkulator.no/renters-rente-kalkulator",
               "https://inflasjonskalkulator.no/barnebidrag-kalkulator",
+              "https://inflasjonskalkulator.no/arbeidsgiver-kalkulator",
           ]
 
           headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
