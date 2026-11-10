@@ -222,4 +222,10 @@
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://inflasjonskalkulator.no/kpi-rapport/oktober-2026</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
