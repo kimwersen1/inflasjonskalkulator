@@ -698,7 +698,13 @@ def oppdater_konsumprisindeksen_artikkel(endringer, forrige_mnd, pub_dato):
     kpi_str = str(kpi).replace(".", ",")
     mnd_str = MND_LANG[forrige_mnd.month].capitalize()
     aar = forrige_mnd.year
-    pub_dato_str = pub_dato.strftime("%-d. %B %Y").lower()  # f.eks. "10. oktober 2026"
+    # pub_dato kan være str ("2026-11-10") eller datetime — håndter begge
+    if isinstance(pub_dato, str):
+        from datetime import datetime as _dt
+        pub_dato_dt = _dt.strptime(pub_dato[:10], "%Y-%m-%d")
+    else:
+        pub_dato_dt = pub_dato
+    pub_dato_str = f"{pub_dato_dt.day}. {MND_LANG[pub_dato_dt.month]} {pub_dato_dt.year}"
     pub_dato_str = pub_dato_str[0].upper() + pub_dato_str[1:]
 
     # Beregn neste publiseringsdato (10. neste måned)
