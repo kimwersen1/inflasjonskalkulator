@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personlig finans – sammenlign og spar penger</title>
+<meta name="description" content="Sammenlign sparekonto, forbrukslån, BSU og kredittkort. Uavhengige vurderinger og kalkulatorer som hjelper deg ta bedre økonomiske valg.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/finans">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Personlig finans – sammenlign og spar penger">
+<meta property="og:description" content="Sammenlign sparekonto, forbrukslån, BSU og kredittkort. Uavhengige vurderinger og kalkulatorer som hjelper deg ta bedre økonomiske valg.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/finans">
+<meta property="og:image" content="https://inflasjonskalkulator.no/og-finans.svg">
+<meta property="og:locale" content="nb_NO">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nav.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #1a7a4a; --green-light: #e8f5ee; --green-mid: #2a9d60;
+  --green-dark: #114d2e; --text: #1a1a1a; --text-muted: #5a6472;
+  --bg: #f7f8f5; --white: #ffffff; --border: #dde3d8;
+  --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --radius: 12px; --radius-sm: 8px;
+}
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.7; }
+nav { background: var(--green-dark); padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 200; }
+.nav-logo { font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; color: #fff; text-decoration: none; letter-spacing: -0.02em; flex-shrink: 0; }
+.nav-logo span { color: #6ee09e; }
+.nav-links { display: flex; gap: 1.25rem; list-style: none; align-items: center; margin: 0; padding: 0; }
+.nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.85rem; white-space: nowrap; transition: color 0.15s; }
+.nav-links a:hover { color: #fff; }
+.nav-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; flex-shrink: 0; }
+.nav-burger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.2s; }
+.nav-mobile { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--green-dark); z-index: 199; padding: 0.5rem 0; border-top: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+
+/* Hero */
+.hero { background: var(--green-dark); padding: 4rem 1.5rem 5rem; text-align: center; }
+.hero-inner { max-width: 760px; margin: 0 auto; }
+.hero-eyebrow { display: inline-block; background: rgba(110,224,158,0.15); border: 1px solid rgba(110,224,158,0.3); color: #6ee09e; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 16px; border-radius: 99px; margin-bottom: 1.5rem; }
+.hero h1 { font-family: var(--font-head); font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.5rem); color: #fff; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.25rem; }
+.hero p { color: rgba(255,255,255,0.72); font-size: 1.15rem; max-width: 580px; margin: 0 auto 2.5rem; line-height: 1.6; }
+.hero-stats { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-top: 2rem; }
+.hero-stat { text-align: center; }
+.hero-stat .num { font-family: var(--font-head); font-weight: 800; font-size: 1.8rem; color: #6ee09e; letter-spacing: -0.02em; display: block; }
+.hero-stat .label { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
+
+/* USP bar */
+.usp-bar { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; }
+.usp-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.usp-item { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: var(--text-muted); }
+.usp-item strong { color: var(--text); }
+.usp-icon { font-size: 1rem; }
+
+/* Main content */
+.main { max-width: 900px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+.section-label { font-family: var(--font-head); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 0.6rem; }
+.section-title { font-family: var(--font-head); font-weight: 800; font-size: 1.8rem; color: var(--green-dark); letter-spacing: -0.02em; margin-bottom: 0.6rem; }
+.section-desc { color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; max-width: 580px; }
+
+/* Category cards */
+.cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; margin-bottom: 4rem; }
+.cat-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 1.75rem; text-decoration: none; color: var(--text); display: block; transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s; position: relative; overflow: hidden; }
+.cat-card:hover { border-color: var(--green); box-shadow: 0 6px 20px rgba(26,122,74,0.1); transform: translateY(-2px); }
+.cat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--green); transform: scaleX(0); transition: transform 0.2s; transform-origin: left; }
+.cat-card:hover::before { transform: scaleX(1); }
+.cat-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+.cat-tag { display: inline-block; background: var(--green-light); color: var(--green); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 10px; border-radius: 99px; margin-bottom: 0.75rem; }
+.cat-card h2 { font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; color: var(--green-dark); margin-bottom: 0.5rem; line-height: 1.3; }
+.cat-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem; }
+.cat-link { font-family: var(--font-head); font-weight: 700; font-size: 0.85rem; color: var(--green); display: inline-flex; align-items: center; gap: 5px; }
+.cat-link::after { content: '→'; }
+
+/* Quick picks */
+.picks-section { margin-bottom: 4rem; }
+.picks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+.pick-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.25rem; }
+.pick-card .bank { font-family: var(--font-head); font-weight: 700; font-size: 1rem; color: var(--green-dark); margin-bottom: 2px; }
+.pick-card .product { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+.pick-card .rente { font-family: var(--font-head); font-weight: 800; font-size: 1.5rem; color: var(--green); letter-spacing: -0.02em; }
+.pick-card .rente-label { font-size: 0.78rem; color: var(--text-muted); }
+.pick-card .cta { display: inline-block; background: var(--green-light); color: var(--green); font-weight: 600; font-size: 0.82rem; padding: 7px 14px; border-radius: 99px; margin-top: 0.75rem; text-decoration: none; transition: background 0.15s; }
+.pick-card .cta:hover { background: #c8ecd8; }
+
+/* Info section */
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 4rem; }
+.info-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; }
+.info-card h3 { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; color: var(--green-dark); margin-bottom: 0.75rem; }
+.info-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+/* Disclaimer */
+.disclaimer { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.25rem 1.5rem; font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+.disclaimer strong { color: var(--text); }
+
+footer { background: var(--green-dark); color: rgba(255,255,255,0.6); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; margin-top: 0; }
+footer a { color: #6ee09e; text-decoration: none; }
+
+@media (max-width: 640px) {
+  .info-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 1.5rem; }
+  .usp-inner { gap: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li class="nav-dd">
+      <a href="#">Kalkulatorer <span class="arr">▾</span></a>
+      <div class="nav-drop">
+        <a href="/">📊 Inflasjonskalkulator</a>
+        <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+        <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+        <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+        <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+        <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+        <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+        <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+        <a href="/barnebidrag-kalkulator">👶 Barnebidrag-kalkulator</a>
+      </div>
+    </li>
+    <li class="nav-dd">
+      <a href="#">Artikler <span class="arr">▾</span></a>
+      <div class="nav-drop">
+        <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
+        <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
+        <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
+        <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
+        <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
+        <a href="/artikler/feriepenger-prosent">🏖️ Feriepenger prosent</a>
+        <a href="/artikler/indeksregulering-husleie">🏠 Indeksregulering husleie</a>
+      </div>
+    </li>
+    <li><a href="/finans" style="color:#fff;font-weight:600">Finans</a></li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <div class="nav-section">Kalkulatorer</div>
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+  <a href="/barnebidrag-kalkulator">👶 Barnebidrag-kalkulator</a>
+  <div class="nav-section">Artikler</div>
+  <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
+  <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
+  <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
+  <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
+  <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
+  <a href="/artikler/feriepenger-prosent">🏖️ Feriepenger prosent</a>
+  <a href="/artikler/indeksregulering-husleie">🏠 Indeksregulering husleie</a>
+  <div class="nav-section">Mer</div>
+  <a href="/finans">💶 Personlig finans</a>
+  <a href="/kpi-rapport">📋 KPI-rapporter</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Personlig økonomi</span>
+    <h1>Sammenlign og finn det beste finansproduktet</h1>
+    <p>Uavhengige sammenligninger av sparekonto, lån, BSU og kredittkort – med kalkulatorer som viser deg hva valgene faktisk koster eller gir.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="num">5+</span>
+        <span class="label">Sammenligninger</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">10+</span>
+        <span class="label">Banker vurdert</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">100%</span>
+        <span class="label">Uavhengig redaksjon</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- USP bar -->
+<div class="usp-bar">
+  <div class="usp-inner">
+    <div class="usp-item"><span class="usp-icon">✓</span> <strong>Oppdaterte renter</strong> – sist sjekket november 2026</div>
+    <div class="usp-item"><span class="usp-icon">✓</span> <strong>Ingen betalt plassering</strong> – rangert på pris og vilkår</div>
+    <div class="usp-item"><span class="usp-icon">✓</span> <strong>Gratis kalkulatorer</strong> – se hva du faktisk sparer</div>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+  <!-- Produktkategorier -->
+  <div class="section-label">Alle kategorier</div>
+  <div class="section-title">Hva leter du etter?</div>
+  <p class="section-desc">Velg kategori for å se detaljert sammenligning med aktuelle renter og vilkår.</p>
+
+  <div class="cat-grid">
+    <a href="/artikler/beste-sparekonto-2026" class="cat-card">
+      <span class="cat-icon">💰</span>
+      <span class="cat-tag">Sparing</span>
+      <h2>Beste sparekonto 2026</h2>
+      <p>Finn høyrentekontoene som slår inflasjonen. Sammenligning av Bank Norwegian, Santander, Instabank og flere.</p>
+      <span class="cat-link">Se sammenligning</span>
+    </a>
+    <a href="/artikler/bsu-2026" class="cat-card">
+      <span class="cat-icon">🏠</span>
+      <span class="cat-tag">BSU</span>
+      <h2>BSU-konto 2026</h2>
+      <p>Boligsparing for ungdom med gunstig rente og skattefradrag. Se hvilken bank som gir best BSU-rente.</p>
+      <span class="cat-link">Se sammenligning</span>
+    </a>
+    <a href="/artikler/beste-kredittkort-2026" class="cat-card">
+      <span class="cat-icon">💳</span>
+      <span class="cat-tag">Kredittkort</span>
+      <h2>Beste kredittkort 2026</h2>
+      <p>Cashback, bonuspoeng eller rentefritt kredittkort? Se hvilke kort som gir mest igjen for pengene dine.</p>
+      <span class="cat-link">Se sammenligning</span>
+    </a>
+    <a href="/artikler/beste-forbrukslan-2026" class="cat-card">
+      <span class="cat-icon">📋</span>
+      <span class="cat-tag">Forbrukslån</span>
+      <h2>Beste forbrukslån 2026</h2>
+      <p>Sammenlign renter fra 7,9 % til over 20 %. Hva er forskjellen egentlig, og hva bør du velge?</p>
+      <span class="cat-link">Se sammenligning</span>
+    </a>
+    <a href="/artikler/refinansiering-av-gjeld" class="cat-card">
+      <span class="cat-icon">🔄</span>
+      <span class="cat-tag">Refinansiering</span>
+      <h2>Refinansiering av gjeld</h2>
+      <p>Spar tusener ved å samle kredittkortgjeld og forbrukslån i ett billigere lån. Komplett guide med kalkulator.</p>
+      <span class="cat-link">Les guide</span>
+    </a>
+    <a href="/artikler/nominell-rente" class="cat-card">
+      <span class="cat-icon">📊</span>
+      <span class="cat-tag">Renter</span>
+      <h2>Nominell vs. effektiv rente</h2>
+      <p>Forstå hva rentebegrepene faktisk betyr og hvilken rente du bør sammenligne når du velger lån eller konto.</p>
+      <span class="cat-link">Les forklaring</span>
+    </a>
+  </div>
+
+  <!-- Toppliste denne måneden -->
+  <div class="picks-section">
+    <div class="section-label">November 2026</div>
+    <div class="section-title">Vinnere denne måneden</div>
+    <p class="section-desc">De beste tilbudene akkurat nå – oppdatert månedlig.</p>
+    <div class="picks-grid">
+      <div class="pick-card">
+        <div class="bank">Bank Norwegian</div>
+        <div class="product">Sparekonto – høyest rente</div>
+        <div class="rente">4,75 %</div>
+        <div class="rente-label">nominell rente p.a.</div>
+        <a href="/artikler/beste-sparekonto-2026" class="cta">Se mer →</a>
+      </div>
+      <div class="pick-card">
+        <div class="bank">Lendo</div>
+        <div class="product">Forbrukslån – lavest fra</div>
+        <div class="rente">7,9 %</div>
+        <div class="rente-label">effektiv rente fra</div>
+        <a href="/artikler/beste-forbrukslan-2026" class="cta">Se mer →</a>
+      </div>
+      <div class="pick-card">
+        <div class="bank">Sparebanken Vest</div>
+        <div class="product">BSU – høyest rente</div>
+        <div class="rente">5,10 %</div>
+        <div class="rente-label">nominell rente p.a.</div>
+        <a href="/artikler/bsu-2026" class="cta">Se mer →</a>
+      </div>
+      <div class="pick-card">
+        <div class="bank">Norwegian Reward</div>
+        <div class="product">Kredittkort – best cashback</div>
+        <div class="rente">1,0 %</div>
+        <div class="rente-label">cashback på alle kjøp</div>
+        <a href="/artikler/beste-kredittkort-2026" class="cta">Se mer →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hvorfor bruke oss -->
+  <div class="section-label">Om oss</div>
+  <div class="section-title">Slik jobber vi</div>
+  <p class="section-desc">Vi er en uavhengig redaksjon som hjelper norske forbrukere finne de beste finansproduktene.</p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>🔍 Uavhengig sammenligning</h3>
+      <p>Vi sammenligner produkter på pris og vilkår – ikke hvem som betaler mest for plassering. Vår redaksjon rangerer alltid det billigste alternativet øverst.</p>
+    </div>
+    <div class="info-card">
+      <h3>🗓️ Månedlige oppdateringer</h3>
+      <p>Renter og vilkår endrer seg jevnlig. Vi oppdaterer alle sammenligninger månedlig slik at du alltid ser de faktiske prisene.</p>
+    </div>
+    <div class="info-card">
+      <h3>🧮 Egne kalkulatorer</h3>
+      <p>Tallene fra sammenligningene er koblet til interaktive kalkulatorer. Se konkret hva et rentepunkt betyr for <em>din</em> økonomi.</p>
+    </div>
+    <div class="info-card">
+      <h3>📐 Basert på offentlige tall</h3>
+      <p>Der vi kan, bruker vi tall fra Norges Bank, Finanstilsynet og bankenes egne prislister. Vi lenker alltid til primærkilden.</p>
+    </div>
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer">
+    <strong>Redaksjonell uavhengighet:</strong> inflasjonskalkulator.no kan motta provisjon når du klikker på lenker til banker og finansinstitusjoner. Dette påvirker ikke rangeringen – alle produkter vurderes objektivt på pris og vilkår. Les alltid bankens egne vilkår før du søker om et finansprodukt.
+  </div>
+
+</div>
+
+<footer>
+  <div style="max-width:900px;margin:0 auto">
+    <p>© 2026 inflasjonskalkulator.no · Data fra <a href="https://ssb.no">SSB</a> og bankenes egne prislister</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  const open=!m.classList.contains('open');
+  m.classList.toggle('open',open);
+  b.classList.toggle('open',open);
+  b.setAttribute('aria-expanded',open);
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  if(m&&b&&!m.contains(e.target)&&!b.contains(e.target)){
+    m.classList.remove('open');
+    b.classList.remove('open');
+    b.setAttribute('aria-expanded',false);
+  }
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    const m=document.getElementById('nav-mobile');
+    const b=document.getElementById('nav-burger');
+    if(m){m.classList.remove('open');}
+    if(b){b.classList.remove('open');b.setAttribute('aria-expanded',false);}
+  }
+});
+</script>
+</body>
+</html>
