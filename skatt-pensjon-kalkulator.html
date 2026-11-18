@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skatt på pensjon kalkulator 2026 – Beregn pensjonsskatt</title>
+<meta name="description" content="Bruk vår gratis kalkulator og finn ut hvor mye skatt du betaler på pensjonen din i 2026. Beregn nettoutbetaling etter skatt på alderspensjon og AFP.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/skatt-pensjon-kalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Skatt på pensjon kalkulator 2026 – Beregn pensjonsskatt">
+<meta property="og:description" content="Finn ut nøyaktig hvor mye skatt du betaler på pensjonen din i 2026. Gratis kalkulator for alderspensjon og AFP.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/skatt-pensjon-kalkulator">
+<meta property="og:locale" content="nb_NO">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Skatt på pensjon kalkulator 2026",
+  "description": "Beregn skatt på pensjon (alderspensjon og AFP) for 2026. Finn nettoutbetaling etter skatt.",
+  "url": "https://inflasjonskalkulator.no/skatt-pensjon-kalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "NOK"},
+  "publisher": {"@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Betaler pensjonister skatt i Norge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, pensjonister betaler skatt i Norge, men de fleste pensjonister betaler mindre skatt enn lønnsmottakere med tilsvarende inntekt. Pensjonister har rett til særfradrag for alder (skattefradrag) og trygdeavgiften er lavere (5,1 % for pensjonister vs. 7,8 % for lønnsmottakere)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er skattefradraget for pensjonister i 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Skattefradraget for pensjonister i 2026 er inntil 34 400 kr per år. Fradraget trappes ned ved høyere pensjonsinntekt og faller bort ved pensjonsinntekt over ca. 578 000 kr."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er minstepensjon i 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Minstepensjonen (garantipensjon) i 2026 er omtrent 230 000 kr per år for enslige, og ca. 212 000 kr for gifte/samboende. Dette er under grensen for å betale inntektsskatt takket være skattefradraget."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Er trygdeavgiften lavere for pensjonister?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, pensjonister betaler 5,1 % trygdeavgift, mens lønnsmottakere betaler 7,8 %. Lavere trygdeavgift er en av grunnene til at pensjonister betaler mindre skatt enn lønnsmottakere med tilsvarende inntekt."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:var(--fh);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
+.nav-logo span{color:#6ee09e}
+.nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
+.nav-links a:hover{color:#fff}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
+.wrap{max-width:800px;margin:0 auto;padding:0 1.5rem}
+.bc{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
+.bc a{color:rgba(255,255,255,0.6);text-decoration:none}
+.bc span{margin:0 6px}
+.hero-tag{display:inline-block;background:rgba(110,224,158,0.15);border:1px solid rgba(110,224,158,0.3);color:#6ee09e;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;margin-bottom:1.1rem}
+h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.35rem,3.2vw,2.3rem);color:#fff;letter-spacing:-0.02em;line-height:1.15;margin-bottom:0.75rem}
+.hero p{color:rgba(255,255,255,0.65);font-size:1rem;max-width:560px;font-weight:300}
+.kalk-wrap{margin-top:-2rem;position:relative;z-index:10}
+.kalk-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.1);padding:2rem}
+.kalk-title{font-family:var(--fh);font-weight:700;font-size:1.25rem;color:var(--green-dark);margin-bottom:1.5rem;letter-spacing:-0.02em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:540px){.grid2{grid-template-columns:1fr}}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:5px}
+.field input,.field select{width:100%;height:48px;padding:0 1rem;border:1.5px solid var(--border);border-radius:var(--rs);font-family:var(--fb);font-size:1rem;color:var(--text);background:var(--bg);outline:none;-moz-appearance:textfield;transition:border-color 0.15s}
+.field input::-webkit-outer-spin-button,.field input::-webkit-inner-spin-button{-webkit-appearance:none}
+.field input:focus,.field select:focus{border-color:var(--green-mid);background:#fff}
+.field-hint{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
+.kalk-btn{width:100%;height:52px;background:var(--green);color:#fff;border:none;border-radius:var(--rs);font-family:var(--fh);font-weight:700;font-size:1rem;cursor:pointer;transition:background 0.15s;margin-top:0.5rem}
+.kalk-btn:hover{background:var(--green-mid)}
+.result-box{display:none;margin-top:1.5rem;background:var(--green-light);border:1.5px solid #b2dfc6;border-radius:var(--rs);padding:1.5rem}
+.result-box.show{display:block}
+.result-main{text-align:center;margin-bottom:1.25rem}
+.result-val{font-family:var(--fh);font-size:2.5rem;font-weight:800;color:var(--green-dark);letter-spacing:-0.03em;display:block}
+.result-lbl{font-size:0.85rem;color:var(--text-muted)}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;padding-top:1rem;border-top:1px solid #b2dfc6}
+@media(max-width:500px){.result-grid{grid-template-columns:1fr 1fr}}
+.result-item{text-align:center}
+.result-item .val{display:block;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--green-dark)}
+.result-item .lbl{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+.result-tekst{margin-top:1rem;font-size:0.88rem;color:var(--text-muted);border-top:1px solid #b2dfc6;padding-top:0.85rem;line-height:1.6}
+.section{padding:2.5rem 0}
+.sec-title{font-family:var(--fh);font-weight:700;font-size:1.35rem;color:var(--green-dark);margin-bottom:0.75rem;letter-spacing:-0.02em}
+.prose p{margin-bottom:1rem;font-size:0.97rem}
+.prose h3{font-family:var(--fh);font-weight:600;font-size:1.05rem;color:var(--green-dark);margin:1.5rem 0 0.5rem}
+.prose ul{margin:0.5rem 0 1rem 1.5rem;font-size:0.97rem}
+.prose ul li{margin-bottom:0.35rem}
+.prose a{color:var(--green)}
+.hb{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 var(--rs) var(--rs) 0;padding:1rem 1.25rem;margin:1.25rem 0;font-size:0.95rem}
+.skattetabell{width:100%;border-collapse:collapse;font-size:0.9rem;margin:1rem 0}
+.skattetabell th{background:var(--green-dark);color:#fff;padding:0.6rem 1rem;text-align:left;font-family:var(--fh)}
+.skattetabell td{padding:0.6rem 1rem;border-bottom:1px solid var(--border)}
+.skattetabell tr:nth-child(even) td{background:#f0f4ee}
+.skattetabell tr:last-child td{border-bottom:none}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:0.75rem}
+.faq-q{font-family:var(--fh);font-weight:700;font-size:0.95rem;color:var(--green-dark);padding:1.1rem 1.25rem}
+.faq-a{padding:0 1.25rem 1.1rem;font-size:0.93rem;color:var(--text-muted);line-height:1.6}
+.relatert{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 2rem;margin:2rem 0}
+.relatert h2{font-family:var(--fh);font-weight:700;font-size:1.1rem;color:var(--green-dark);margin-bottom:1rem}
+.rl{display:flex;flex-wrap:wrap;gap:0.75rem}
+.rl a{background:var(--green-light);color:var(--green-dark);text-decoration:none;font-weight:500;font-size:0.88rem;padding:8px 16px;border-radius:99px;border:1px solid #b2dfc6;white-space:nowrap}
+footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:0.88rem;margin-top:2rem}
+footer a{color:rgba(255,255,255,0.8);text-decoration:none}
+.fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
+</style>
+<link rel="stylesheet" href="/nav.css">
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li class="nav-dd">
+      <a href="#">Kalkulatorer <span class="arr">▾</span></a>
+      <div class="nav-drop">
+        <a href="/">📊 Inflasjonskalkulator</a>
+        <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+        <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+        <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+        <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+        <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+        <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+        <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+        <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+        <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+        <a href="/barnebidrag-kalkulator">👶 Barnebidrag-kalkulator</a>
+      </div>
+    </li>
+    <li class="nav-dd">
+      <a href="#">Artikler <span class="arr">▾</span></a>
+      <div class="nav-drop">
+        <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
+        <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
+        <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
+        <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
+        <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
+      </div>
+    </li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+  <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+  <a href="/barnebidrag-kalkulator">👶 Barnebidrag-kalkulator</a>
+  <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
+  <a href="/kpi-rapport">📋 KPI-rapport</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="bc"><a href="/">Hjem</a><span>›</span> Skatt på pensjon kalkulator</div>
+    <div class="hero-tag">Gratis verktøy</div>
+    <h1>Skatt på pensjon kalkulator 2026 – beregn pensjonsskatt</h1>
+    <p>Finn ut nøyaktig hvor mye skatt du betaler på pensjonen din i 2026. Gratis kalkulator for alderspensjon, AFP og tjenestepensjon.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn skatt på pensjon 2026</div>
+      <div class="grid2">
+        <div class="field">
+          <label>Årlig pensjonsinntekt (kr)</label>
+          <input type="number" id="pensjon" placeholder="300 000" min="0">
+          <div class="field-hint">Totalt fra NAV, AFP og tjenestepensjon</div>
+        </div>
+        <div class="field">
+          <label>Pensjontype</label>
+          <select id="pensjontype">
+            <option value="alderspensjon">Alderspensjon (NAV)</option>
+            <option value="afp">AFP / tidligpensjon</option>
+            <option value="tjenestepensjon">Tjenestepensjon (privat)</option>
+            <option value="ufor">Uføretrygd</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Sivil status</label>
+          <select id="sivil">
+            <option value="enslig">Enslig</option>
+            <option value="gift">Gift / samboende</option>
+          </select>
+          <div class="field-hint">Påvirker skattefradraget</div>
+        </div>
+        <div class="field">
+          <label>Andre inntekter (kr/år)</label>
+          <input type="number" id="annet" placeholder="0" min="0">
+          <div class="field-hint">Kapitalinntekt, deltidsjobb osv.</div>
+        </div>
+      </div>
+      <button class="kalk-btn" onclick="beregnPensjonSkatt()">Beregn pensjonsskatt</button>
+
+      <div class="result-box" id="result-box">
+        <div class="result-main">
+          <span class="result-val" id="res-netto">—</span>
+          <span class="result-lbl">Netto pensjon per år etter skatt</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="res-skatt">—</span>
+            <span class="lbl">Årsoskatt</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-pst">—</span>
+            <span class="lbl">Effektiv %</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-mnd">—</span>
+            <span class="lbl">Per måned netto</span>
+          </div>
+        </div>
+        <div class="result-tekst" id="res-tekst"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">Skatteregler for pensjonister 2026</h2>
+    <div class="prose">
+      <p>Pensjonister i Norge har gunstigere skatteregler enn lønnsmottakere. De viktigste fordelene er lavere trygdeavgift og et eget skattefradrag for pensjonsinntekt.</p>
+
+      <div class="hb">
+        <strong>Nøkkeltall for pensjonsskatt 2026:</strong><br>
+        Trygdeavgift pensjon: <strong>5,1 %</strong> (lønn: 7,8 %) &nbsp;·&nbsp; Skattefradrag: <strong>inntil 34 400 kr</strong><br>
+        Personfradrag: <strong>88 250 kr</strong> &nbsp;·&nbsp; Skatt alminnelig inntekt: <strong>22 %</strong>
+      </div>
+
+      <h3>Skattefradrag for pensjonsinntekt</h3>
+      <p>Pensjonister har rett til et eget skattefradrag på inntil <strong>34 400 kr</strong> per år. Fradraget trappes ned ved høyere pensjonsinntekt:</p>
+      <table class="skattetabell">
+        <tr><th>Pensjonsinntekt</th><th>Skattefradrag</th></tr>
+        <tr><td>Under 230 950 kr</td><td>Fullt fradrag: 34 400 kr</td></tr>
+        <tr><td>230 950 – 320 900 kr</td><td>Avtrapping med 15,3 %</td></tr>
+        <tr><td>320 900 – 578 850 kr</td><td>Avtrapping med 6,0 %</td></tr>
+        <tr><td>Over 578 850 kr</td><td>Ingen skattefradrag</td></tr>
+      </table>
+
+      <h3>Trinnskatt for pensjonister 2026</h3>
+      <p>Pensjonister betaler samme trinnskatt som lønnsmottakere. For de fleste pensjonister er inntekten under 306 050 kr, noe som betyr trinnskatt på 0–1,7 %.</p>
+
+      <h3>Minstepensjon og skattefrihet</h3>
+      <p>Minstepensjon (garantipensjon) for enslige er ca. <strong>230 000 kr</strong> per år i 2026. Takket være skattefradraget betaler minstepensjonister lite eller ingen inntektsskatt – kun trygdeavgift på 5,1 %.</p>
+    </div>
+  </div>
+
+  <div class="faq-item"><div class="faq-q">Betaler pensjonister skatt i Norge?</div><div class="faq-a">Ja, pensjonister betaler skatt, men har gunstigere regler enn lønnsmottakere. Lavere trygdeavgift (5,1 % vs. 7,8 %) og et eget skattefradrag på inntil 34 400 kr gjør at pensjonister beholder mer av inntekten.</div></div>
+  <div class="faq-item"><div class="faq-q">Hva er skattefradraget for pensjonister i 2026?</div><div class="faq-a">Skattefradraget for pensjonister er inntil 34 400 kr per år i 2026. Det trappes ned ved pensjonsinntekt over ca. 230 950 kr og faller bort ved inntekt over ca. 578 850 kr.</div></div>
+  <div class="faq-item"><div class="faq-q">Betaler minstepensjonister skatt?</div><div class="faq-a">Minstepensjonister betaler svært lite skatt. Med minstepensjon på ca. 230 000 kr og fullt skattefradrag er inntektsskatten nær null. De betaler trygdeavgift på 5,1 % av pensjonen.</div></div>
+  <div class="faq-item"><div class="faq-q">Er skatt på AFP annerledes enn alderspensjon?</div><div class="faq-a">AFP fra privat sektor behandles skattemessig likt som lønn – med trygdeavgift på 7,8 %. AFP fra offentlig sektor behandles som pensjon med 5,1 % trygdeavgift. Sjekk din AFP-avtale for detaljer.</div></div>
+
+  <div class="relatert">
+    <h2>Relaterte kalkulatorer</h2>
+    <div class="rl">
+      <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+      <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+      <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+      <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+      <a href="/">📊 Inflasjonskalkulator</a>
+      <a href="/kpi-rapport">📋 KPI-kalkulator og tall</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="/">Hjem</a>
+      <a href="/skatt-pensjon-kalkulator">Pensjonsskatt</a>
+      <a href="/tabelltrekk-kalkulator">Tabelltrekk</a>
+      <a href="/pensjonskalkulator">Pensjonskalkulator</a>
+      <a href="/kpi-rapport">KPI-rapport</a>
+    </div>
+    <p>Beregningene er veiledende. Kontakt Skatteetaten eller NAV for nøyaktige tall.</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 inflasjonskalkulator.no</p>
+  </div>
+</footer>
+<script>
+function fmt(n){return new Intl.NumberFormat('nb-NO',{maximumFractionDigits:0}).format(n)+' kr'}
+function fmtPst(n){return n.toFixed(1).replace('.',',')+' %'}
+
+function beregnPensjonSkatt(){
+  const pensjon=parseFloat(document.getElementById('pensjon').value)||0;
+  const type=document.getElementById('pensjontype').value;
+  const sivil=document.getElementById('sivil').value;
+  const annet=parseFloat(document.getElementById('annet').value)||0;
+
+  if(!pensjon||pensjon<1000){alert('Fyll inn pensjonsinntekt.');return;}
+
+  const totalInntekt=pensjon+annet;
+
+  // Trygdeavgift
+  const trygdePst=type==='ufor'?0.078:(type==='afp'?0.078:0.051);
+  const trygdeavgift=pensjon*trygdePst+(annet*0.078);
+
+  // Skattefradrag for pensjonsinntekt (kun alderspensjon/tjenestepensjon/AFP off)
+  let skattefradrag=0;
+  if(type!=='ufor'){
+    const fraMax=34400;
+    const terskel1=230950;
+    const terskel2=320900;
+    const terskel3=578850;
+    if(pensjon<=terskel1){
+      skattefradrag=fraMax;
+    } else if(pensjon<=terskel2){
+      skattefradrag=Math.max(0,fraMax-(pensjon-terskel1)*0.153);
+    } else if(pensjon<=terskel3){
+      skattefradrag=Math.max(0,fraMax-(terskel2-terskel1)*0.153-(pensjon-terskel2)*0.06);
+    } else {
+      skattefradrag=0;
+    }
+  }
+
+  // Minstefradrag (40 % av pensjon, 83 000 max for pensjon)
+  const minstefradragPensjon=Math.min(83000,Math.max(31800,pensjon*0.26));
+
+  // Personfradrag
+  const personfradrag=88250;
+
+  // Skatt på alminnelig inntekt
+  const alminneligInntekt=Math.max(0,totalInntekt-minstefradragPensjon-personfradrag);
+  const skattAlminnelig=alminneligInntekt*0.22;
+
+  // Trinnskatt
+  let trinnskatt=0;
+  const trinn=[
+    {fra:217400,til:306050,pst:0.017},
+    {fra:306050,til:697150,pst:0.04},
+    {fra:697150,til:942400,pst:0.135},
+    {fra:942400,til:Infinity,pst:0.165}
+  ];
+  for(const t of trinn){
+    if(totalInntekt>t.fra) trinnskatt+=(Math.min(totalInntekt,t.til)-t.fra)*t.pst;
+  }
+
+  // Total skatt minus skattefradrag
+  let totalSkatt=Math.max(0,skattAlminnelig+trinnskatt+trygdeavgift-skattefradrag);
+
+  const netto=totalInntekt-totalSkatt;
+  const effPst=totalSkatt/totalInntekt*100;
+
+  document.getElementById('res-netto').textContent=fmt(netto);
+  document.getElementById('res-skatt').textContent=fmt(totalSkatt);
+  document.getElementById('res-pst').textContent=fmtPst(effPst);
+  document.getElementById('res-mnd').textContent=fmt(netto/12);
+
+  let tekst=`Bruttopensjon: ${fmt(totalInntekt)} · Trygdeavgift: ${fmt(Math.round(trygdeavgift))} (${(trygdePst*100).toFixed(1)} %)`;
+  tekst+=` · Skattefradrag pensjon: ${fmt(Math.round(skattefradrag))}`;
+  document.getElementById('res-tekst').textContent=tekst;
+
+  document.getElementById('result-box').classList.add('show');
+}
+
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  m.classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){
+    m.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
