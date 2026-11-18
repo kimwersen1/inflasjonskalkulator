@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timelønn kalkulator 2026 – Beregn timelønn fra årslønn</title>
+<meta name="description" content="Gratis timelønn kalkulator 2026. Beregn timelønn fra årslønn eller månedlønn, og finn årslønn fra timelønn. Inkluderer feriepenger og skatt.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/timelønnskalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Timelønn kalkulator 2026 – Beregn timelønn fra årslønn">
+<meta property="og:description" content="Beregn timelønn fra årslønn eller månedlønn. Gratis kalkulator for 2026.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/timelønnskalkulator">
+<meta property="og:locale" content="nb_NO">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Timelønn kalkulator 2026",
+  "description": "Beregn timelønn fra årslønn eller månedlønn, og omvendt.",
+  "url": "https://inflasjonskalkulator.no/timelønnskalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "NOK"},
+  "publisher": {"@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvor mange timer er det i ett arbeidsår i Norge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Et normalarbeidår i Norge er 1 950 timer (37,5 timer per uke × 52 uker). Fratrukket 5 uker ferie blir det 1 687,5 faktiske arbeidstimer. For å beregne timelønn fra årslønn deler de fleste på 1 950 timer (inkludert feriepenger i lønnen)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er gjennomsnittlig timelønn i Norge 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gjennomsnittlig årslønn i Norge er ca. 700 000 kr i 2026 (SSB). Det tilsvarer en timelønn på ca. 359 kr/time basert på 1 950 arbeidstimer per år."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Skal feriepenger regnes med i timelønnen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Det avhenger av hvordan lønnen er satt. Mange arbeidskontrakter angir årslønn eksklusiv feriepenger – da legges 12 % (eller 10,2 % for ansatte med 4 uker ferie) til på toppen. Er du usikker, se kontrakten din eller spør arbeidsgiver."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er minstelønnen i Norge 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Norge har ikke generell minstelønn, men det finnes allmenngjorte tariffavtaler i mange bransjer. I 2026 er minstelønn f.eks. ca. 230 kr/time for renholdsbransjen og ca. 250 kr/time for byggebransjen."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:var(--fh);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
+.nav-logo span{color:#6ee09e}
+.nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
+.nav-links a:hover{color:#fff}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
+.wrap{max-width:800px;margin:0 auto;padding:0 1.5rem}
+.bc{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
+.bc a{color:rgba(255,255,255,0.6);text-decoration:none}
+.bc span{margin:0 6px}
+.hero-tag{display:inline-block;background:rgba(110,224,158,0.15);border:1px solid rgba(110,224,158,0.3);color:#6ee09e;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;margin-bottom:1.1rem}
+h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.35rem,3.2vw,2.3rem);color:#fff;letter-spacing:-0.02em;line-height:1.15;margin-bottom:0.75rem}
+.hero p{color:rgba(255,255,255,0.65);font-size:1rem;max-width:560px;font-weight:300}
+.kalk-wrap{margin-top:-2rem;position:relative;z-index:10}
+.kalk-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.1);padding:2rem}
+.kalk-title{font-family:var(--fh);font-weight:700;font-size:1.25rem;color:var(--green-dark);margin-bottom:1.5rem;letter-spacing:-0.02em}
+.tabs{display:flex;gap:0.5rem;margin-bottom:1.5rem;border-bottom:2px solid var(--border);padding-bottom:0}
+.tab{background:none;border:none;padding:0.6rem 1.2rem;font-family:var(--fb);font-size:0.9rem;font-weight:500;color:var(--text-muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.15s}
+.tab.active{color:var(--green);border-bottom-color:var(--green);font-weight:700}
+.tab-panel{display:none}.tab-panel.active{display:block}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:540px){.grid2{grid-template-columns:1fr}}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:5px}
+.field input,.field select{width:100%;height:48px;padding:0 1rem;border:1.5px solid var(--border);border-radius:var(--rs);font-family:var(--fb);font-size:1rem;color:var(--text);background:var(--bg);outline:none;-moz-appearance:textfield;transition:border-color 0.15s}
+.field input::-webkit-outer-spin-button,.field input::-webkit-inner-spin-button{-webkit-appearance:none}
+.field input:focus,.field select:focus{border-color:var(--green-mid);background:#fff}
+.field-hint{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
+.kalk-btn{width:100%;height:52px;background:var(--green);color:#fff;border:none;border-radius:var(--rs);font-family:var(--fh);font-weight:700;font-size:1rem;cursor:pointer;transition:background 0.15s;margin-top:0.5rem}
+.kalk-btn:hover{background:var(--green-mid)}
+.result-box{display:none;margin-top:1.5rem;background:var(--green-light);border:1.5px solid #b2dfc6;border-radius:var(--rs);padding:1.5rem}
+.result-box.show{display:block}
+.result-main{text-align:center;margin-bottom:1.25rem}
+.result-val{font-family:var(--fh);font-size:2.5rem;font-weight:800;color:var(--green-dark);letter-spacing:-0.03em;display:block}
+.result-lbl{font-size:0.85rem;color:var(--text-muted)}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;padding-top:1rem;border-top:1px solid #b2dfc6}
+@media(max-width:500px){.result-grid{grid-template-columns:1fr 1fr}}
+.result-item{text-align:center}
+.result-item .val{display:block;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--green-dark)}
+.result-item .lbl{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+.result-tekst{margin-top:1rem;font-size:0.88rem;color:var(--text-muted);border-top:1px solid #b2dfc6;padding-top:0.85rem;line-height:1.6}
+.section{padding:2.5rem 0}
+.sec-title{font-family:var(--fh);font-weight:700;font-size:1.35rem;color:var(--green-dark);margin-bottom:0.75rem;letter-spacing:-0.02em}
+.prose p{margin-bottom:1rem;font-size:0.97rem}
+.prose h3{font-family:var(--fh);font-weight:600;font-size:1.05rem;color:var(--green-dark);margin:1.5rem 0 0.5rem}
+.prose a{color:var(--green)}
+.hb{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 var(--rs) var(--rs) 0;padding:1rem 1.25rem;margin:1.25rem 0;font-size:0.95rem}
+.lontabell{width:100%;border-collapse:collapse;font-size:0.9rem;margin:1rem 0}
+.lontabell th{background:var(--green-dark);color:#fff;padding:0.6rem 1rem;text-align:left;font-family:var(--fh)}
+.lontabell td{padding:0.6rem 1rem;border-bottom:1px solid var(--border)}
+.lontabell tr:nth-child(even) td{background:#f0f4ee}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:0.75rem}
+.faq-q{font-family:var(--fh);font-weight:700;font-size:0.95rem;color:var(--green-dark);padding:1.1rem 1.25rem}
+.faq-a{padding:0 1.25rem 1.1rem;font-size:0.93rem;color:var(--text-muted);line-height:1.6}
+.relatert{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 2rem;margin:2rem 0}
+.relatert h2{font-family:var(--fh);font-weight:700;font-size:1.1rem;color:var(--green-dark);margin-bottom:1rem}
+.rl{display:flex;flex-wrap:wrap;gap:0.75rem}
+.rl a{background:var(--green-light);color:var(--green-dark);text-decoration:none;font-weight:500;font-size:0.88rem;padding:8px 16px;border-radius:99px;border:1px solid #b2dfc6;white-space:nowrap}
+footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:0.88rem;margin-top:2rem}
+footer a{color:rgba(255,255,255,0.8);text-decoration:none}
+.fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
+@media(max-width:600px){.nav-links{display:none}.nav-burger{display:flex}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/">📊 Inflasjon</a></li>
+    <li><a href="/lønnskalkulator">💼 Lønn</a></li>
+    <li><a href="/tabelltrekk-kalkulator">💳 Tabelltrekk</a></li>
+    <li><a href="/feriepengekalkulator">🏖️ Feriepenger</a></li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+  <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
+  <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+  <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
+  <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/kpi-rapport">📋 KPI-rapport</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="bc"><a href="/">Hjem</a><span>›</span> Timelønn kalkulator</div>
+    <div class="hero-tag">Gratis verktøy</div>
+    <h1>Timelønn kalkulator 2026 – beregn timelønn fra årslønn</h1>
+    <p>Konverter mellom timelønn, månedlønn og årslønn. Inkluderer feriepenger, arbeidstimer og skatt.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Timelønn kalkulator 2026</div>
+
+      <div class="tabs">
+        <button class="tab active" onclick="switchTab('arslonn')">Årslønn → Timelønn</button>
+        <button class="tab" onclick="switchTab('timelonn')">Timelønn → Årslønn</button>
+      </div>
+
+      <!-- Panel 1: Årslønn til timelønn -->
+      <div class="tab-panel active" id="panel-arslonn">
+        <div class="grid2">
+          <div class="field">
+            <label>Årslønn (kr)</label>
+            <input type="number" id="arslonn-input" placeholder="600 000" min="0">
+          </div>
+          <div class="field">
+            <label>Arbeidstimer per uke</label>
+            <select id="timer-uke">
+              <option value="37.5">37,5 timer (standard)</option>
+              <option value="40">40 timer</option>
+              <option value="35">35 timer</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Ferieordning</label>
+            <select id="ferie-uker">
+              <option value="5">5 uker (standard)</option>
+              <option value="4">4 uker</option>
+              <option value="6">6 uker</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Feriepenger inkl. i lønn?</label>
+            <select id="fp-inkl">
+              <option value="nei">Nei (vanligst)</option>
+              <option value="ja">Ja</option>
+            </select>
+          </div>
+        </div>
+        <button class="kalk-btn" onclick="beregnFraArslonn()">Beregn timelønn</button>
+        <div class="result-box" id="result-arslonn">
+          <div class="result-main">
+            <span class="result-val" id="res-time">—</span>
+            <span class="result-lbl">Timelønn (brutto)</span>
+          </div>
+          <div class="result-grid">
+            <div class="result-item">
+              <span class="val" id="res-mnd">—</span>
+              <span class="lbl">Per måned</span>
+            </div>
+            <div class="result-item">
+              <span class="val" id="res-dag">—</span>
+              <span class="lbl">Per dag (7,5t)</span>
+            </div>
+            <div class="result-item">
+              <span class="val" id="res-timer-ar">—</span>
+              <span class="lbl">Timer/år</span>
+            </div>
+          </div>
+          <div class="result-tekst" id="res-arslonn-tekst"></div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Timelønn til årslønn -->
+      <div class="tab-panel" id="panel-timelonn">
+        <div class="grid2">
+          <div class="field">
+            <label>Timelønn (kr)</label>
+            <input type="number" id="timelonn-input" placeholder="300" min="0">
+          </div>
+          <div class="field">
+            <label>Arbeidstimer per uke</label>
+            <select id="timer-uke2">
+              <option value="37.5">37,5 timer (standard)</option>
+              <option value="40">40 timer</option>
+              <option value="35">35 timer</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Ferieordning</label>
+            <select id="ferie-uker2">
+              <option value="5">5 uker (standard)</option>
+              <option value="4">4 uker</option>
+              <option value="6">6 uker</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Inkluder feriepenger (12%)?</label>
+            <select id="fp-add">
+              <option value="ja">Ja, legg til feriepenger</option>
+              <option value="nei">Nei</option>
+            </select>
+          </div>
+        </div>
+        <button class="kalk-btn" onclick="beregnFraTimelonn()">Beregn årslønn</button>
+        <div class="result-box" id="result-timelonn">
+          <div class="result-main">
+            <span class="result-val" id="res-ars">—</span>
+            <span class="result-lbl">Årslønn (brutto)</span>
+          </div>
+          <div class="result-grid">
+            <div class="result-item">
+              <span class="val" id="res-mnd2">—</span>
+              <span class="lbl">Per måned</span>
+            </div>
+            <div class="result-item">
+              <span class="val" id="res-fp">—</span>
+              <span class="lbl">Feriepenger</span>
+            </div>
+            <div class="result-item">
+              <span class="val" id="res-timer2">—</span>
+              <span class="lbl">Timer/år</span>
+            </div>
+          </div>
+          <div class="result-tekst" id="res-timelonn-tekst"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">Timelønn i Norge 2026 – hva er normalt?</h2>
+    <div class="prose">
+      <p>Timelønnen varierer mye etter bransje, utdanning og erfaring. Under er et overblikk over typiske timelønner i vanlige yrker i 2026, basert på SSBs lønnsstatistikk.</p>
+      <div class="hb">
+        <strong>Rask beregning:</strong> Årslønn ÷ 1 950 = timelønn &nbsp;·&nbsp; Timelønn × 1 950 = årslønn<br>
+        (1 950 = 37,5 t/uke × 52 uker – dette er standard arbeidsår i Norge)
+      </div>
+      <table class="lontabell">
+        <tr><th>Yrke</th><th>Årslønn ca.</th><th>Timelønn ca.</th></tr>
+        <tr><td>Sykepleier</td><td>620 000 kr</td><td>318 kr/t</td></tr>
+        <tr><td>Lærer</td><td>600 000 kr</td><td>308 kr/t</td></tr>
+        <tr><td>Ingeniør</td><td>750 000 kr</td><td>385 kr/t</td></tr>
+        <tr><td>Butikkmedarbeider</td><td>420 000 kr</td><td>215 kr/t</td></tr>
+        <tr><td>Byggarbeider</td><td>580 000 kr</td><td>297 kr/t</td></tr>
+        <tr><td>IT-konsulent</td><td>900 000 kr</td><td>462 kr/t</td></tr>
+        <tr><td>Gjennomsnitt (alle)</td><td>700 000 kr</td><td>359 kr/t</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="faq-item"><div class="faq-q">Hvor mange timer er det i ett arbeidsår?</div><div class="faq-a">Et normalarbeidsår i Norge er 1 950 timer (37,5 t/uke × 52 uker). Fratrukket 5 uker ferie er det 1 687,5 faktiske arbeidstimer. Til å beregne timelønn brukes vanligvis 1 950 (inkl. ferietid).</div></div>
+  <div class="faq-item"><div class="faq-q">Hva er gjennomsnittlig timelønn i Norge 2026?</div><div class="faq-a">Basert på SSBs tall er gjennomsnittlig årslønn ca. 700 000 kr i 2026, som tilsvarer ca. 359 kr/time for 37,5 t/uke. Timelønnen varierer mye fra bransje til bransje.</div></div>
+  <div class="faq-item"><div class="faq-q">Skal feriepenger regnes med?</div><div class="faq-a">De fleste fastansatte får feriepenger på toppen av lønnen (12 % av feriepengegrunnlaget). Er lønnen oppgitt uten feriepenger, bør du legge til 12 % for å få total kompensasjon.</div></div>
+  <div class="faq-item"><div class="faq-q">Hva er minstelønn i Norge 2026?</div><div class="faq-a">Norge har ingen generell lovfestet minstelønn, men det finnes bransjeavtaler. Eksempler: renholdsbransjen ca. 230 kr/t, byggebransjen ca. 250 kr/t, uteliv/catering ca. 190 kr/t.</div></div>
+
+  <div class="relatert">
+    <h2>Relaterte kalkulatorer</h2>
+    <div class="rl">
+      <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+      <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+      <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+      <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+      <a href="/arbeidsgiver-kalkulator">🏢 Arbeidsgiver-kalkulator</a>
+      <a href="/">📊 Inflasjonskalkulator</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="/">Hjem</a>
+      <a href="/timelønnskalkulator">Timelønn</a>
+      <a href="/lønnskalkulator">Lønn</a>
+      <a href="/tabelltrekk-kalkulator">Tabelltrekk</a>
+      <a href="/kpi-rapport">KPI-rapport</a>
+    </div>
+    <p>Beregningene er veiledende. Se <a href="https://www.ssb.no" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.8)">ssb.no</a> for offisiell lønnsstatistikk.</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 inflasjonskalkulator.no</p>
+  </div>
+</footer>
+<script>
+function fmt(n){return new Intl.NumberFormat('nb-NO',{maximumFractionDigits:0}).format(n)+' kr'}
+function fmtT(n){return new Intl.NumberFormat('nb-NO',{maximumFractionDigits:0}).format(n)+' kr/t'}
+
+function switchTab(tab){
+  document.querySelectorAll('.tab').forEach((t,i)=>{
+    t.classList.toggle('active', (i===0&&tab==='arslonn')||(i===1&&tab==='timelonn'));
+  });
+  document.getElementById('panel-arslonn').classList.toggle('active', tab==='arslonn');
+  document.getElementById('panel-timelonn').classList.toggle('active', tab==='timelonn');
+}
+
+function beregnFraArslonn(){
+  const arslonn=parseFloat(document.getElementById('arslonn-input').value)||0;
+  const timerUke=parseFloat(document.getElementById('timer-uke').value);
+  const ferieUker=parseFloat(document.getElementById('ferie-uker').value);
+  const fpInkl=document.getElementById('fp-inkl').value;
+  if(!arslonn){alert('Fyll inn årslønn.');return;}
+
+  const timerAr=timerUke*52;
+  const faktiskeTimer=timerUke*(52-ferieUker);
+  // Timelønn basert på totalt arbeidsår (inkl. ferietid i grunnlag)
+  const timelonn=arslonn/timerAr;
+  const mndlonn=arslonn/12;
+  const daglonn=arslonn/timerAr*7.5;
+
+  document.getElementById('res-time').textContent=fmtT(timelonn);
+  document.getElementById('res-mnd').textContent=fmt(mndlonn);
+  document.getElementById('res-dag').textContent=fmt(daglonn);
+  document.getElementById('res-timer-ar').textContent=Math.round(timerAr)+' t';
+
+  let tekst=`Årslønn: ${fmt(arslonn)} · ${timerUke} t/uke · ${ferieUker} uker ferie · ${Math.round(timerAr)} timer/år`;
+  if(fpInkl==='nei') tekst+=` · Feriepenger (12 %) kommer i tillegg: ${fmt(arslonn*0.12)}`;
+  document.getElementById('res-arslonn-tekst').textContent=tekst;
+  document.getElementById('result-arslonn').classList.add('show');
+}
+
+function beregnFraTimelonn(){
+  const timelonn=parseFloat(document.getElementById('timelonn-input').value)||0;
+  const timerUke=parseFloat(document.getElementById('timer-uke2').value);
+  const ferieUker=parseFloat(document.getElementById('ferie-uker2').value);
+  const fpAdd=document.getElementById('fp-add').value;
+  if(!timelonn){alert('Fyll inn timelønn.');return;}
+
+  const timerAr=timerUke*52;
+  let arslonn=timelonn*timerAr;
+  const feriepenger=fpAdd==='ja'?arslonn*0.12:0;
+  const totalAr=arslonn+feriepenger;
+  const mndlonn=arslonn/12;
+
+  document.getElementById('res-ars').textContent=fmt(totalAr);
+  document.getElementById('res-mnd2').textContent=fmt(mndlonn);
+  document.getElementById('res-fp').textContent=fmt(feriepenger);
+  document.getElementById('res-timer2').textContent=Math.round(timerAr)+' t';
+
+  let tekst=`Timelønn: ${timelonn} kr/t · ${timerUke} t/uke · ${Math.round(timerAr)} timer/år`;
+  if(fpAdd==='ja') tekst+=` · Inkl. feriepenger 12 %`;
+  document.getElementById('res-timelonn-tekst').textContent=tekst;
+  document.getElementById('result-timelonn').classList.add('show');
+}
+
+function toggleMenu(){
+  document.getElementById('nav-mobile').classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){
+    m.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uføretrygd kalkulator 2026 – Beregn uføretrygd fra NAV</title>
+<meta name="description" content="Gratis uføretrygd kalkulator 2026. Beregn hva du får i uføretrygd fra NAV basert på inntekt og uføregrad. Inkluderer skatt og barnetillegg.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/uforetrygd-kalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Uføretrygd kalkulator 2026 – Beregn uføretrygd fra NAV">
+<meta property="og:description" content="Beregn uføretrygd for 2026. Basert på NAV-regler med uføregrad, inntekt og barnetillegg.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/uforetrygd-kalkulator">
+<meta property="og:locale" content="nb_NO">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Uføretrygd kalkulator 2026",
+  "description": "Beregn uføretrygd fra NAV for 2026 basert på inntekt, uføregrad og sivilstatus.",
+  "url": "https://inflasjonskalkulator.no/uforetrygd-kalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "NOK"},
+  "publisher": {"@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er uføretrygd i Norge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uføretrygd er en ytelse fra NAV til personer som har fått sin inntektsevne varig nedsatt med minst 50 % på grunn av sykdom eller skade. Uføretrygden beregnes som 66 % av gjennomsnittlig inntekt de 3 beste av de 5 siste årene, maksimalt 6G (744 168 kr i 2026)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er minstesatsen for uføretrygd i 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Minstesatsen for uføretrygd ved 100 % uføregrad er 2,91G for enslige (ca. 361 122 kr per år) og 2,66G for gifte/samboende (ca. 329 915 kr per år) i 2026, basert på G = 124 028 kr."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan man jobbe ved siden av uføretrygd?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, du kan jobbe ved siden av uføretrygd. Du har et fribeløp på 0,4G (ca. 49 611 kr i 2026) som ikke påvirker uføretrygden. Overstiger du fribeløpet, reduseres uføretrygden forholdsmessig."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er barnetillegget for uføretrygd i 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Barnetillegget for uføretrygd er 0,4G per barn per år (ca. 49 611 kr), men det er inntektsprøvet. Tillegget reduseres dersom samlet inntekt inkludert uføretrygd overstiger visse grenser."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:var(--fh);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
+.nav-logo span{color:#6ee09e}
+.nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
+.nav-links a:hover{color:#fff}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
+.wrap{max-width:800px;margin:0 auto;padding:0 1.5rem}
+.bc{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
+.bc a{color:rgba(255,255,255,0.6);text-decoration:none}
+.bc span{margin:0 6px}
+.hero-tag{display:inline-block;background:rgba(110,224,158,0.15);border:1px solid rgba(110,224,158,0.3);color:#6ee09e;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;margin-bottom:1.1rem}
+h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.35rem,3.2vw,2.3rem);color:#fff;letter-spacing:-0.02em;line-height:1.15;margin-bottom:0.75rem}
+.hero p{color:rgba(255,255,255,0.65);font-size:1rem;max-width:560px;font-weight:300}
+.kalk-wrap{margin-top:-2rem;position:relative;z-index:10}
+.kalk-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.1);padding:2rem}
+.kalk-title{font-family:var(--fh);font-weight:700;font-size:1.25rem;color:var(--green-dark);margin-bottom:1.5rem;letter-spacing:-0.02em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:540px){.grid2{grid-template-columns:1fr}}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:5px}
+.field input,.field select{width:100%;height:48px;padding:0 1rem;border:1.5px solid var(--border);border-radius:var(--rs);font-family:var(--fb);font-size:1rem;color:var(--text);background:var(--bg);outline:none;-moz-appearance:textfield;transition:border-color 0.15s}
+.field input::-webkit-outer-spin-button,.field input::-webkit-inner-spin-button{-webkit-appearance:none}
+.field input:focus,.field select:focus{border-color:var(--green-mid);background:#fff}
+.field-hint{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
+.kalk-btn{width:100%;height:52px;background:var(--green);color:#fff;border:none;border-radius:var(--rs);font-family:var(--fh);font-weight:700;font-size:1rem;cursor:pointer;transition:background 0.15s;margin-top:0.5rem}
+.kalk-btn:hover{background:var(--green-mid)}
+.result-box{display:none;margin-top:1.5rem;background:var(--green-light);border:1.5px solid #b2dfc6;border-radius:var(--rs);padding:1.5rem}
+.result-box.show{display:block}
+.result-main{text-align:center;margin-bottom:1.25rem}
+.result-val{font-family:var(--fh);font-size:2.5rem;font-weight:800;color:var(--green-dark);letter-spacing:-0.03em;display:block}
+.result-lbl{font-size:0.85rem;color:var(--text-muted)}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;padding-top:1rem;border-top:1px solid #b2dfc6}
+@media(max-width:500px){.result-grid{grid-template-columns:1fr 1fr}}
+.result-item{text-align:center}
+.result-item .val{display:block;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--green-dark)}
+.result-item .lbl{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+.result-tekst{margin-top:1rem;font-size:0.88rem;color:var(--text-muted);border-top:1px solid #b2dfc6;padding-top:0.85rem;line-height:1.6}
+.section{padding:2.5rem 0}
+.sec-title{font-family:var(--fh);font-weight:700;font-size:1.35rem;color:var(--green-dark);margin-bottom:0.75rem;letter-spacing:-0.02em}
+.prose p{margin-bottom:1rem;font-size:0.97rem}
+.prose h3{font-family:var(--fh);font-weight:600;font-size:1.05rem;color:var(--green-dark);margin:1.5rem 0 0.5rem}
+.prose a{color:var(--green)}
+.hb{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 var(--rs) var(--rs) 0;padding:1rem 1.25rem;margin:1.25rem 0;font-size:0.95rem}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:0.75rem}
+.faq-q{font-family:var(--fh);font-weight:700;font-size:0.95rem;color:var(--green-dark);padding:1.1rem 1.25rem}
+.faq-a{padding:0 1.25rem 1.1rem;font-size:0.93rem;color:var(--text-muted);line-height:1.6}
+.relatert{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 2rem;margin:2rem 0}
+.relatert h2{font-family:var(--fh);font-weight:700;font-size:1.1rem;color:var(--green-dark);margin-bottom:1rem}
+.rl{display:flex;flex-wrap:wrap;gap:0.75rem}
+.rl a{background:var(--green-light);color:var(--green-dark);text-decoration:none;font-weight:500;font-size:0.88rem;padding:8px 16px;border-radius:99px;border:1px solid #b2dfc6;white-space:nowrap}
+.nav-note{background:#fff8e1;border:1px solid #ffe082;border-radius:var(--rs);padding:1rem 1.25rem;font-size:0.88rem;color:#5d4037;margin-top:1rem}
+footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:0.88rem;margin-top:2rem}
+footer a{color:rgba(255,255,255,0.8);text-decoration:none}
+.fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
+@media(max-width:600px){.nav-links{display:none}.nav-burger{display:flex}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/">📊 Inflasjon</a></li>
+    <li><a href="/pensjonskalkulator">🏦 Pensjon</a></li>
+    <li><a href="/skatt-pensjon-kalkulator">Skatt på pensjon</a></li>
+    <li><a href="/tabelltrekk-kalkulator">💳 Tabelltrekk</a></li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+  <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
+  <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+  <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
+  <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/kpi-rapport">📋 KPI-rapport</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="bc"><a href="/">Hjem</a><span>›</span> Uføretrygd kalkulator</div>
+    <div class="hero-tag">Gratis verktøy</div>
+    <h1>Uføretrygd kalkulator 2026 – beregn uføretrygd fra NAV</h1>
+    <p>Estimer hva du kan få i uføretrygd basert på tidligere inntekt, uføregrad og antall barn. Basert på NAV-reglene for 2026.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn uføretrygd 2026</div>
+      <div class="grid2">
+        <div class="field">
+          <label>Gjennomsnittlig inntekt (kr/år)</label>
+          <input type="number" id="inntekt" placeholder="550 000" min="0">
+          <div class="field-hint">Beste 3 av siste 5 år før uførhet</div>
+        </div>
+        <div class="field">
+          <label>Uføregrad</label>
+          <select id="ufgrad">
+            <option value="100">100 %</option>
+            <option value="80">80 %</option>
+            <option value="60">60 %</option>
+            <option value="50">50 % (minimum)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Sivilstatus</label>
+          <select id="sivil">
+            <option value="enslig">Enslig</option>
+            <option value="gift">Gift / samboende</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Antall barn under 18</label>
+          <select id="barn">
+            <option value="0">Ingen barn</option>
+            <option value="1">1 barn</option>
+            <option value="2">2 barn</option>
+            <option value="3">3+ barn</option>
+          </select>
+        </div>
+      </div>
+      <button class="kalk-btn" onclick="beregnUforetrygd()">Beregn uføretrygd</button>
+
+      <div class="result-box" id="result-box">
+        <div class="result-main">
+          <span class="result-val" id="res-mnd">—</span>
+          <span class="result-lbl">Uføretrygd per måned (brutto)</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="res-ar">—</span>
+            <span class="lbl">Per år</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-pst">—</span>
+            <span class="lbl">Av inntekt</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-barnetillegg">—</span>
+            <span class="lbl">Barnetillegg/år</span>
+          </div>
+        </div>
+        <div class="result-tekst" id="res-tekst"></div>
+      </div>
+      <div class="nav-note">⚠️ Kalkulatoren gir et estimat. NAV beregner individuelt. Se <a href="https://www.nav.no/uforetrygd" target="_blank" rel="noopener">nav.no/uforetrygd</a> for presise regler.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">Uføretrygd i Norge 2026 – slik beregnes den</h2>
+    <div class="prose">
+      <p>Uføretrygd er en inntektssikring fra NAV til deg som har fått varig nedsatt arbeidsevne på grunn av sykdom eller skade. Trygden beregnes som <strong>66 % av pensjonsgivende inntekt</strong>, maks 6G.</p>
+
+      <div class="hb">
+        <strong>Nøkkeltall for uføretrygd 2026:</strong><br>
+        G (grunnbeløp): <strong>124 028 kr</strong> &nbsp;·&nbsp; 6G (maks grunnlag): <strong>744 168 kr</strong><br>
+        Minstesats enslig (2,91G): <strong>361 122 kr/år</strong> &nbsp;·&nbsp; Minstesats gift (2,66G): <strong>329 915 kr/år</strong><br>
+        Fribeløp (kan jobbe inntil): <strong>49 611 kr/år (0,4G)</strong>
+      </div>
+
+      <h3>Hvem har rett til uføretrygd?</h3>
+      <p>For å ha rett til uføretrygd må du oppfylle disse kravene:</p>
+      <ul style="margin:0.5rem 0 1rem 1.5rem;font-size:0.97rem">
+        <li>Mellom 18 og 67 år</li>
+        <li>Inntektsevnen er varig nedsatt med minst 50 % (40 % ved yrkesskade)</li>
+        <li>Hensiktsmessig behandling og arbeidsrettede tiltak er prøvd eller vurdert</li>
+        <li>Ha vært medlem av folketrygden i minst 3 år rett før uførheten oppstod</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq-item"><div class="faq-q">Hva er uføretrygd i Norge?</div><div class="faq-a">Uføretrygd er en inntektssikring fra NAV til personer med varig nedsatt inntektsevne (minst 50 %). Den beregnes som 66 % av gjennomsnittlig inntekt de 3 beste av siste 5 år, maks 6G (744 168 kr). Uføretrygd er skattepliktig som lønn.</div></div>
+  <div class="faq-item"><div class="faq-q">Hva er minstesatsen for uføretrygd 2026?</div><div class="faq-a">Minstesatsen ved 100 % uføregrad er 2,91G for enslige (361 122 kr/år) og 2,66G for gifte/samboende (329 915 kr/år) i 2026. Dersom 66 % av din inntekt er lavere, får du minstesatsen.</div></div>
+  <div class="faq-item"><div class="faq-q">Kan man jobbe ved siden av uføretrygd?</div><div class="faq-a">Ja, du har et fribeløp på 0,4G (ca. 49 611 kr i 2026) du kan tjene uten at uføretrygden reduseres. Over fribeløpet reduseres uføretrygden forholdsmessig ut fra uføregraden din.</div></div>
+  <div class="faq-item"><div class="faq-q">Hva skjer med uføretrygd ved 67 år?</div><div class="faq-a">Ved 67 år konverteres uføretrygd automatisk til alderspensjon. Alderspensjonen beregnes basert på pensjonsopptjening, men de som har vært uføre over lengre tid er sikret en minstesats.</div></div>
+
+  <div class="relatert">
+    <h2>Relaterte kalkulatorer</h2>
+    <div class="rl">
+      <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+      <a href="/skatt-pensjon-kalkulator">💰 Skatt på pensjon</a>
+      <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+      <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger</a>
+      <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+      <a href="/">📊 Inflasjonskalkulator</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="/">Hjem</a>
+      <a href="/uforetrygd-kalkulator">Uføretrygd</a>
+      <a href="/pensjonskalkulator">Pensjon</a>
+      <a href="/tabelltrekk-kalkulator">Tabelltrekk</a>
+      <a href="/kpi-rapport">KPI-rapport</a>
+    </div>
+    <p>Kalkulatoren er veiledende. Se <a href="https://www.nav.no" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.8)">nav.no</a> for presise beregninger og søknad.</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 inflasjonskalkulator.no</p>
+  </div>
+</footer>
+<script>
+function fmt(n){return new Intl.NumberFormat('nb-NO',{maximumFractionDigits:0}).format(n)+' kr'}
+
+function beregnUforetrygd(){
+  const inntekt=parseFloat(document.getElementById('inntekt').value)||0;
+  const ufgrad=parseFloat(document.getElementById('ufgrad').value)/100;
+  const sivil=document.getElementById('sivil').value;
+  const barn=parseInt(document.getElementById('barn').value);
+
+  if(!inntekt||inntekt<10000){alert('Fyll inn gjennomsnittlig inntekt.');return;}
+
+  const G=124028;
+  const sekG=G*6;
+
+  // Grunnlag (maks 6G)
+  const grunnlag=Math.min(inntekt,sekG);
+
+  // Beregnet uføretrygd = 66% av grunnlag × uføregrad
+  const beregnet=grunnlag*0.66*ufgrad;
+
+  // Minstesats
+  const minEnslig=G*2.91*ufgrad;
+  const minGift=G*2.66*ufgrad;
+  const minstesats=sivil==='enslig'?minEnslig:minGift;
+
+  // Faktisk uføretrygd (høyest av beregnet og minstesats)
+  const ufTrygd=Math.max(beregnet,minstesats);
+
+  // Barnetillegg: 0,4G per barn (inntektsprøvet, forenklet her)
+  const barnetilleggAr=barn*G*0.4*ufgrad;
+
+  const totalAr=ufTrygd+barnetilleggAr;
+  const mndUtbetalt=totalAr/12;
+
+  const prosentAvInntekt=(ufTrygd/inntekt*100).toFixed(1);
+
+  document.getElementById('res-mnd').textContent=fmt(mndUtbetalt);
+  document.getElementById('res-ar').textContent=fmt(totalAr);
+  document.getElementById('res-pst').textContent=prosentAvInntekt+' %';
+  document.getElementById('res-barnetillegg').textContent=barn>0?fmt(barnetilleggAr):'0 kr';
+
+  let tekst=`Grunnlag: ${fmt(grunnlag)} (${inntekt>sekG?'begrenset til 6G':'din inntekt'}) · Uføregrad: ${ufgrad*100} %`;
+  if(ufTrygd===minstesats) tekst+=` · Minstesats brukt (beregnet var lavere)`;
+  if(inntekt>sekG) tekst+=` · Inntekt over 6G er ikke med i grunnlaget`;
+  document.getElementById('res-tekst').textContent=tekst;
+
+  document.getElementById('result-box').classList.add('show');
+}
+
+function toggleMenu(){
+  document.getElementById('nav-mobile').classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){
+    m.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
