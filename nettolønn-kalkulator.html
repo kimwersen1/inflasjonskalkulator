@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nettolønnskalkulator 2026 – Beregn nettolønn etter skatt</title>
+<meta name="description" content="Gratis nettolønnskalkulator 2026. Beregn nettolønn etter skatt, trygdeavgift og trinnskatt. Se hva du faktisk får utbetalt av bruttolønnen din.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/nettolønn-kalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nettolønnskalkulator 2026 – Beregn nettolønn etter skatt">
+<meta property="og:description" content="Beregn hva du får utbetalt etter skatt i 2026. Inkluderer trinnskatt, trygdeavgift og personfradrag.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/nettolønn-kalkulator">
+<meta property="og:locale" content="nb_NO">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Nettolønnskalkulator 2026",
+  "description": "Beregn nettolønn etter skatt for 2026. Inkluderer trinnskatt, trygdeavgift og personfradrag.",
+  "url": "https://inflasjonskalkulator.no/nettolønn-kalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "NOK"},
+  "publisher": {"@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er nettolønn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nettolønn er det beløpet du faktisk får utbetalt etter at skatt er trukket fra bruttolønnen din. Bruttolønnen er lønnen du har avtalt med arbeidsgiveren, mens nettolønnen er det som faktisk havner på kontoen din."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva trekkes fra bruttolønnen i skatt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fra bruttolønnen trekkes: (1) Trygdeavgift på 7,8% av lønnsinntekt, (2) Trinnskatt (0–17,6% avhengig av inntekt), og (3) Skatt på alminnelig inntekt 22%. Personfradraget på 109 950 kr reduserer skattepliktig inntekt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er trinnskatt i 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trinnskatt 2026: Trinn 1: 1,7% (208 051–292 850 kr), Trinn 2: 4,0% (292 851–670 000 kr), Trinn 3: 13,6% (670 001–937 900 kr), Trinn 4: 16,6% (937 901–1 350 000 kr), Trinn 5: 17,6% (over 1 350 000 kr)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er minstefradraget i 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Minstefradraget i 2026 er 46% av lønnsinntekten, begrenset oppad til 104 450 kr og nedre grense 32 000 kr. Minstefradraget reduserer den alminnelige inntekten som skattlegges med 22%."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:var(--fh);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
+.nav-logo span{color:#6ee09e}
+.nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
+.nav-links a:hover{color:#fff}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
+.wrap{max-width:800px;margin:0 auto;padding:0 1.5rem}
+.bc{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
+.bc a{color:rgba(255,255,255,0.6);text-decoration:none}
+.bc span{margin:0 6px}
+.hero-tag{display:inline-block;background:rgba(110,224,158,0.15);border:1px solid rgba(110,224,158,0.3);color:#6ee09e;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;margin-bottom:1.1rem}
+h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.35rem,3.2vw,2.3rem);color:#fff;letter-spacing:-0.02em;line-height:1.15;margin-bottom:0.75rem}
+.hero p{color:rgba(255,255,255,0.65);font-size:1rem;max-width:560px;font-weight:300}
+.kalk-wrap{margin-top:-2rem;position:relative;z-index:10}
+.kalk-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.1);padding:2rem}
+.kalk-title{font-family:var(--fh);font-weight:700;font-size:1.25rem;color:var(--green-dark);margin-bottom:1.5rem;letter-spacing:-0.02em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:540px){.grid2{grid-template-columns:1fr}}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:5px}
+.field input,.field select{width:100%;height:48px;padding:0 1rem;border:1.5px solid var(--border);border-radius:var(--rs);font-family:var(--fb);font-size:1rem;color:var(--text);background:var(--bg);outline:none;-moz-appearance:textfield;transition:border-color 0.15s}
+.field input::-webkit-outer-spin-button,.field input::-webkit-inner-spin-button{-webkit-appearance:none}
+.field input:focus,.field select:focus{border-color:var(--green-mid);background:#fff}
+.field-hint{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
+.kalk-btn{width:100%;height:52px;background:var(--green);color:#fff;border:none;border-radius:var(--rs);font-family:var(--fh);font-weight:700;font-size:1rem;cursor:pointer;transition:background 0.15s;margin-top:0.5rem}
+.kalk-btn:hover{background:var(--green-mid)}
+.result-box{display:none;margin-top:1.5rem;background:var(--green-light);border:1.5px solid #b2dfc6;border-radius:var(--rs);padding:1.5rem}
+.result-box.show{display:block}
+.result-main{text-align:center;margin-bottom:1.25rem}
+.result-val{font-family:var(--fh);font-size:2.5rem;font-weight:800;color:var(--green-dark);letter-spacing:-0.03em;display:block}
+.result-lbl{font-size:0.85rem;color:var(--text-muted)}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;padding-top:1rem;border-top:1px solid #b2dfc6}
+@media(max-width:500px){.result-grid{grid-template-columns:1fr 1fr}}
+.result-item{text-align:center}
+.result-item .val{display:block;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--green-dark)}
+.result-item .lbl{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+.result-tekst{margin-top:1rem;font-size:0.88rem;color:var(--text-muted);border-top:1px solid #b2dfc6;padding-top:0.85rem;line-height:1.6}
+.breakdown{margin-top:1rem;border:1px solid #b2dfc6;border-radius:var(--rs);overflow:hidden}
+.breakdown table{width:100%;border-collapse:collapse;font-size:0.88rem}
+.breakdown th{background:var(--green-dark);color:#fff;font-family:var(--fh);font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;padding:0.6rem 1rem;text-align:left}
+.breakdown td{padding:0.6rem 1rem;border-bottom:1px solid #d0ebdb}
+.breakdown tr:last-child td{border-bottom:none;font-weight:600;background:#d4edd9}
+.breakdown tr:nth-child(even) td{background:#f0f9f4}
+.section{padding:2.5rem 0}
+.sec-title{font-family:var(--fh);font-weight:700;font-size:1.35rem;color:var(--green-dark);margin-bottom:0.75rem;letter-spacing:-0.02em}
+.prose p{margin-bottom:1rem;font-size:0.97rem}
+.prose h3{font-family:var(--fh);font-weight:600;font-size:1.05rem;color:var(--green-dark);margin:1.5rem 0 0.5rem}
+.hb{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 var(--rs) var(--rs) 0;padding:1rem 1.25rem;margin:1.25rem 0;font-size:0.95rem}
+.trinn-tabell{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:1.5rem 0}
+.trinn-tabell table{width:100%;border-collapse:collapse}
+.trinn-tabell th{background:var(--green-dark);color:#fff;font-family:var(--fh);font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;padding:0.75rem 1rem;text-align:left}
+.trinn-tabell td{padding:0.75rem 1rem;font-size:0.93rem;border-bottom:1px solid var(--border)}
+.trinn-tabell tr:last-child td{border-bottom:none}
+.trinn-tabell tr:nth-child(even) td{background:#f9faf7}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:0.75rem}
+.faq-q{font-family:var(--fh);font-weight:700;font-size:0.95rem;color:var(--green-dark);padding:1.1rem 1.25rem}
+.faq-a{padding:0 1.25rem 1.1rem;font-size:0.93rem;color:var(--text-muted);line-height:1.6}
+.relatert{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 2rem;margin:2rem 0}
+.relatert h2{font-family:var(--fh);font-weight:700;font-size:1.1rem;color:var(--green-dark);margin-bottom:1rem}
+.rl{display:flex;flex-wrap:wrap;gap:0.75rem}
+.rl a{background:var(--green-light);color:var(--green-dark);text-decoration:none;font-weight:500;font-size:0.88rem;padding:8px 16px;border-radius:99px;border:1px solid #b2dfc6;white-space:nowrap}
+footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:0.88rem;margin-top:2rem}
+footer a{color:rgba(255,255,255,0.8);text-decoration:none}
+.fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
+@media(max-width:600px){.nav-links{display:none}.nav-burger{display:flex}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/">📊 Inflasjon</a></li>
+    <li><a href="/lønnskalkulator">💼 Lønn</a></li>
+    <li><a href="/tabelltrekk-kalkulator">💳 Tabelltrekk</a></li>
+    <li><a href="/timelønnskalkulator">⏱️ Timelønn</a></li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/nettolønn-kalkulator">💰 Nettolønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+  <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
+  <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+  <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
+  <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
+  <a href="/kjøregodtgjørelse-kalkulator">🚗 Kjøregodtgjørelse</a>
+  <a href="/sykepenger-kalkulator">🏥 Sykepengekalkulator</a>
+  <a href="/arveavgift-kalkulator">📜 Arveavgift kalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/kpi-rapport">📋 KPI-rapport</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="bc"><a href="/">Hjem</a><span>›</span> Nettolønnskalkulator</div>
+    <div class="hero-tag">Gratis verktøy</div>
+    <h1>Nettolønnskalkulator 2026 – beregn nettolønn etter skatt</h1>
+    <p>Se hva du faktisk får utbetalt. Kalkulatoren beregner nettolønn etter trinnskatt, trygdeavgift og personfradrag – basert på Skatteetatens satser for 2026.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn nettolønn 2026</div>
+      <div class="grid2">
+        <div class="field">
+          <label>Årslønn (brutto)</label>
+          <input type="number" id="bruttolonn" placeholder="600 000" min="0">
+          <div class="field-hint">Din avtalte årslønn før skatt</div>
+        </div>
+        <div class="field">
+          <label>Skatteklasse</label>
+          <select id="skatteklasse">
+            <option value="1">Klasse 1 (standard)</option>
+            <option value="2">Klasse 2 (forsørger)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Fagforeningskontingent (kr/år)</label>
+          <input type="number" id="fagforbund" placeholder="0" min="0">
+          <div class="field-hint">Maks fradrag 8 000 kr/år</div>
+        </div>
+        <div class="field">
+          <label>Periode</label>
+          <select id="periode">
+            <option value="ar">Per år</option>
+            <option value="maned">Per måned</option>
+          </select>
+        </div>
+      </div>
+      <button class="kalk-btn" onclick="beregnNettolonn()">Beregn nettolønn</button>
+
+      <div class="result-box" id="result-box">
+        <div class="result-main">
+          <span class="result-val" id="res-netto">—</span>
+          <span class="result-lbl" id="res-lbl">Nettolønn per år</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="res-trygd">—</span>
+            <span class="lbl">Trygdeavgift</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-trinn">—</span>
+            <span class="lbl">Trinnskatt</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-alminnelig">—</span>
+            <span class="lbl">Inntektsskatt</span>
+          </div>
+        </div>
+        <div class="breakdown" id="breakdown-table"></div>
+        <div class="result-tekst" id="res-tekst"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">Trinnskatt 2026 – satser og grenser</h2>
+    <div class="trinn-tabell">
+      <table>
+        <thead>
+          <tr>
+            <th>Trinn</th>
+            <th>Inntektsgrense</th>
+            <th>Sats</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Trinn 1</td><td>208 051 – 292 850 kr</td><td>1,7 %</td></tr>
+          <tr><td>Trinn 2</td><td>292 851 – 670 000 kr</td><td>4,0 %</td></tr>
+          <tr><td>Trinn 3</td><td>670 001 – 937 900 kr</td><td>13,6 %</td></tr>
+          <tr><td>Trinn 4</td><td>937 901 – 1 350 000 kr</td><td>16,6 %</td></tr>
+          <tr><td>Trinn 5</td><td>Over 1 350 000 kr</td><td>17,6 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">Slik beregnes nettolønn</h2>
+    <div class="prose">
+      <p>Nettolønn beregnes ved å trekke tre skattekomponenter fra bruttolønnen: trygdeavgift, trinnskatt og skatt på alminnelig inntekt.</p>
+      <div class="hb">
+        <strong>Skattesatser 2026:</strong><br>
+        Trygdeavgift: 7,8 % av lønn · Alminnelig inntekt: 22 % · Personfradrag: 109 950 kr · Minstefradrag: 46 % (maks 104 450 kr)
+      </div>
+      <h3>Trygdeavgift</h3>
+      <p>Trygdeavgiften er 7,8 % av bruttolønnen og går til finansiering av Folketrygden – sykepenger, uføretrygd, alderspensjon og mer.</p>
+      <h3>Skatt på alminnelig inntekt</h3>
+      <p>Alminnelig inntekt = bruttolønn − minstefradrag − personfradrag. Denne inntekten skattlegges med 22 %. Minstefradraget er 46 % av lønn, maksimalt 104 450 kr og minimum 32 000 kr.</p>
+      <h3>Trinnskatt</h3>
+      <p>Trinnskatt er en progressiv ekstraskatt som beregnes direkte av bruttolønnen – uten fradrag. Jo høyere lønn, desto høyere trinnskatt. Trinnskatten er kumulativ: du betaler bare den aktuelle satsen på den delen av inntekten som faller innenfor hvert trinn.</p>
+    </div>
+  </div>
+
+  <div class="faq-item"><div class="faq-q">Hva er nettolønn?</div><div class="faq-a">Nettolønn er det du faktisk får utbetalt etter at alle skatter er trukket fra bruttolønnen. Skattene som trekkes er trygdeavgift (7,8%), trinnskatt og skatt på alminnelig inntekt (22%).</div></div>
+  <div class="faq-item"><div class="faq-q">Hva er skatteklasse 2?</div><div class="faq-a">Skatteklasse 2 gir dobbelt personfradrag (219 900 kr mot 109 950 kr). Den gjelder ektefeller der den ene har lav eller ingen inntekt, eller enslige forsørgere i visse tilfeller. Klasse 2 gir lavere skatt totalt for husholdningen.</div></div>
+  <div class="faq-item"><div class="faq-q">Hva er minstefradraget?</div><div class="faq-a">Minstefradraget er et standardisert fradrag som reduserer alminnelig inntekt. I 2026 er det 46% av lønnsinntekten, med et maksimum på 104 450 kr og et minimum på 32 000 kr. Du trenger ikke dokumentere utgifter for å få minstefradraget.</div></div>
+  <div class="faq-item"><div class="faq-q">Er fagforeningskontingent fradragsberettiget?</div><div class="faq-a">Ja, fagforeningskontingent er fradragsberettiget med inntil 8 000 kr per år. Fradraget reduserer alminnelig inntekt og gir dermed lavere skatt på 22% av fradraget, altså inntil 1 760 kr i skattebesparelse.</div></div>
+
+  <div class="relatert">
+    <h2>Relaterte kalkulatorer</h2>
+    <div class="rl">
+      <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+      <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+      <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
+      <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+      <a href="/kjøregodtgjørelse-kalkulator">🚗 Kjøregodtgjørelse</a>
+      <a href="/">📊 Inflasjonskalkulator</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="/">Hjem</a>
+      <a href="/nettolønn-kalkulator">Nettolønn</a>
+      <a href="/lønnskalkulator">Lønn</a>
+      <a href="/tabelltrekk-kalkulator">Tabelltrekk</a>
+      <a href="/kpi-rapport">KPI-rapport</a>
+    </div>
+    <p>Basert på Skatteetatens satser for 2026. Kalkulatoren er veiledende – faktisk skatt fastsettes av Skatteetaten.</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 inflasjonskalkulator.no</p>
+  </div>
+</footer>
+<script>
+function fmt(n){return new Intl.NumberFormat('nb-NO',{maximumFractionDigits:0}).format(n)+' kr'}
+function fmtPct(n){return n.toFixed(1).replace('.',',')+' %'}
+
+function beregnNettolonn(){
+  const bruttoAr = parseFloat(document.getElementById('bruttolonn').value)||0;
+  const skatteklasse = parseInt(document.getElementById('skatteklasse').value);
+  const fagRaw = parseFloat(document.getElementById('fagforbund').value)||0;
+  const fagforbund = Math.min(fagRaw, 8000);
+  const periode = document.getElementById('periode').value;
+
+  if(!bruttoAr||bruttoAr<=0){alert('Fyll inn årslønn.');return;}
+
+  // === SKATTEREGLER 2026 ===
+  // Personfradrag
+  const personfradrag = skatteklasse===2 ? 219900 : 109950;
+
+  // Minstefradrag (46%, min 32000, maks 104450)
+  const minstefradragRaw = bruttoAr * 0.46;
+  const minstefradrag = Math.max(32000, Math.min(104450, minstefradragRaw));
+
+  // Alminnelig inntekt
+  const alminneligInntekt = Math.max(0, bruttoAr - minstefradrag - personfradrag - fagforbund);
+
+  // Skatt alminnelig inntekt (22%)
+  const skattAlm = alminneligInntekt * 0.22;
+
+  // Trygdeavgift (7,8%)
+  const trygdeavgift = bruttoAr * 0.078;
+
+  // Trinnskatt (beregnes av bruttoinntekt, uten fradrag)
+  const trinngrenser = [
+    {fra:208051, til:292850, sats:0.017},
+    {fra:292851, til:670000, sats:0.040},
+    {fra:670001, til:937900, sats:0.136},
+    {fra:937901, til:1350000, sats:0.166},
+    {fra:1350001, til:Infinity, sats:0.176}
+  ];
+  let trinnskatt = 0;
+  for(const t of trinngrenser){
+    if(bruttoAr > t.fra){
+      const skattbart = Math.min(bruttoAr, t.til) - t.fra + 1;
+      trinnskatt += skattbart * t.sats;
+    }
+  }
+  trinnskatt = Math.max(0, trinnskatt);
+
+  const totalSkatt = skattAlm + trygdeavgift + trinnskatt;
+  const nettoAr = bruttoAr - totalSkatt;
+  const effektivSats = (totalSkatt / bruttoAr) * 100;
+
+  // Vis resultater
+  const faktor = periode==='maned' ? 1/12 : 1;
+  const lbl = periode==='maned' ? 'Nettolønn per måned' : 'Nettolønn per år';
+
+  document.getElementById('res-netto').textContent = fmt(nettoAr * faktor);
+  document.getElementById('res-lbl').textContent = lbl;
+  document.getElementById('res-trygd').textContent = fmt(trygdeavgift * faktor);
+  document.getElementById('res-trinn').textContent = fmt(trinnskatt * faktor);
+  document.getElementById('res-alminnelig').textContent = fmt(skattAlm * faktor);
+
+  // Breakdown tabell
+  document.getElementById('breakdown-table').innerHTML = `
+    <table>
+      <thead><tr><th>Post</th><th>Beløp per år</th><th>Per måned</th></tr></thead>
+      <tbody>
+        <tr><td>Bruttolønn</td><td>${fmt(bruttoAr)}</td><td>${fmt(bruttoAr/12)}</td></tr>
+        <tr><td>− Trygdeavgift (7,8%)</td><td>−${fmt(trygdeavgift)}</td><td>−${fmt(trygdeavgift/12)}</td></tr>
+        <tr><td>− Trinnskatt</td><td>−${fmt(trinnskatt)}</td><td>−${fmt(trinnskatt/12)}</td></tr>
+        <tr><td>− Inntektsskatt (22%)</td><td>−${fmt(skattAlm)}</td><td>−${fmt(skattAlm/12)}</td></tr>
+        <tr><td><strong>= Nettolønn</strong></td><td><strong>${fmt(nettoAr)}</strong></td><td><strong>${fmt(nettoAr/12)}</strong></td></tr>
+      </tbody>
+    </table>`;
+
+  document.getElementById('res-tekst').textContent =
+    `Effektiv skattesats: ${fmtPct(effektivSats)} · Total skatt: ${fmt(totalSkatt)} · Minstefradrag: ${fmt(minstefradrag)} · Personfradrag: ${fmt(personfradrag)}`;
+
+  document.getElementById('result-box').classList.add('show');
+}
+
+function toggleMenu(){
+  document.getElementById('nav-mobile').classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){
+    m.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
