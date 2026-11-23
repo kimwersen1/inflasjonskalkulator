@@ -41,7 +41,6 @@ nav { background: var(--green-dark); padding: 0 1.5rem; display: flex; align-ite
 nav ul { display: flex; gap: 1.5rem; list-style: none; }
 nav ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
 nav ul a:hover { color: #fff; }
-
 .article-hero { background: var(--green-dark); padding: 3.5rem 1.5rem 4rem; }
 .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
 .breadcrumb { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
@@ -79,27 +78,17 @@ nav ul a:hover { color: #fff; }
 .related-box a:hover { text-decoration: underline; }
 footer { background: var(--green-dark); color: rgba(255,255,255,0.6); padding: 2rem 1.5rem; text-align: center; font-size: 0.88rem; }
 footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
-
   .relatert-seksjon { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; }
   .relatert-seksjon h2 { font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; color: var(--green-dark); margin-bottom: 1rem; letter-spacing: -0.02em; }
   .relatert-lenker { display: flex; flex-wrap: wrap; gap: 0.75rem; }
   .relatert-lenke { background: var(--green-light); color: var(--green-dark); text-decoration: none; font-weight: 500; font-size: 0.88rem; padding: 8px 16px; border-radius: 99px; border: 1px solid #b2dfc6; transition: background 0.15s; white-space: nowrap; }
   .relatert-lenke:hover { background: #c8ecd8; }
-
 .faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:0.75rem;overflow:hidden}
 .faq-q{font-family:var(--fh);font-weight:700;font-size:0.95rem;color:var(--green-dark);padding:1.1rem 1.25rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
 .faq-q::after{content:"+";font-size:1.4rem;color:var(--green);transition:transform 0.2s;flex-shrink:0}
 .faq-item.open .faq-q::after{transform:rotate(45deg)}
 .faq-a{padding:0 1.25rem;font-size:0.93rem;color:var(--text-muted);line-height:1.6;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease}
 .faq-item.open .faq-a{max-height:400px;padding:0 1.25rem 1.1rem}
-
-.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
-.nav-mobile.open{display:block}
-.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
-.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
-.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
-
 </style>
 <link rel="stylesheet" href="/nav.css">
 </head>
@@ -110,24 +99,24 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
   <ul class="nav-links">
     <li class="nav-dd">
       <a href="#">Kalkulatorer <span class="arr">▾</span></a>
-      <div class="nav-drop">
+            <div class="nav-drop">
         <a href="/">📊 Inflasjonskalkulator</a>
         <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
         <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
-  <a href="/nettolønn-kalkulator">💰 Nettolønnskalkulator</a>
+        <a href="/nettolønn-kalkulator">💰 Nettolønnskalkulator</a>
         <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
         <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
-  <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
-  <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
-  <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
-  <a href="/kjøregodtgjørelse-kalkulator">🚗 Kjøregodtgjørelse</a>
-  <a href="/sykepenger-kalkulator">🏥 Sykepengekalkulator</a>
-  <a href="/arveavgift-kalkulator">📜 Arveavgift kalkulator</a>
-  <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
         <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
-  <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
-  <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
         <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+        <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
+        <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
+        <a href="/kjøregodtgjørelse-kalkulator">🚗 Kjøregodtgjørelse</a>
+        <a href="/sykepenger-kalkulator">🏥 Sykepengekalkulator</a>
+        <a href="/arveavgift-kalkulator">📜 Arveavgift kalkulator</a>
+        <a href="/dagpenger-kalkulator">💼 Dagpenger kalkulator</a>
+        <a href="/bostøtte-kalkulator">🏘️ Bostøtte kalkulator</a>
+        <a href="/eiendomsskatt-kalkulator">🏡 Eiendomsskatt kalkulator</a>
+        <a href="/promille-kalkulator">🍺 Promillekalkulator</a>
         <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
         <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
         <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
@@ -137,7 +126,7 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
     </li>
     <li class="nav-dd">
       <a href="#">Artikler <span class="arr">▾</span></a>
-      <div class="nav-drop">
+            <div class="nav-drop">
         <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
         <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
         <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
@@ -162,9 +151,16 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
   <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
   <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
   <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
+  <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
   <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
   <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
-  <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+  <a href="/kjøregodtgjørelse-kalkulator">🚗 Kjøregodtgjørelse</a>
+  <a href="/sykepenger-kalkulator">🏥 Sykepengekalkulator</a>
+  <a href="/arveavgift-kalkulator">📜 Arveavgift kalkulator</a>
+  <a href="/dagpenger-kalkulator">💼 Dagpenger kalkulator</a>
+  <a href="/bostøtte-kalkulator">🏘️ Bostøtte kalkulator</a>
+  <a href="/eiendomsskatt-kalkulator">🏡 Eiendomsskatt kalkulator</a>
+  <a href="/promille-kalkulator">🍺 Promillekalkulator</a>
   <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
   <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
   <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>

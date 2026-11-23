@@ -28,7 +28,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --green: #1a7a4a;
     --green-light: #e8f5ee;
@@ -47,7 +46,6 @@
     --radius: 12px;
     --radius-sm: 8px;
   }
-
   body {
     font-family: var(--font-body);
     background: var(--bg);
@@ -55,7 +53,6 @@
     font-size: 17px;
     line-height: 1.7;
   }
-
   /* NAV */
   nav {
     background: var(--green-dark);
@@ -90,7 +87,6 @@
     transition: color 0.15s;
   }
   nav ul a:hover { color: #fff; }
-
   /* HERO */
   .hero {
     background: var(--green-dark);
@@ -137,11 +133,9 @@
     margin: 0 auto;
     font-weight: 300;
   }
-
   /* MAIN LAYOUT */
   .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
   .section { padding: 3.5rem 0; }
-
   /* CARD */
   .card {
     background: var(--white);
@@ -151,7 +145,6 @@
     padding: 2rem;
     margin-bottom: 1.5rem;
   }
-
   /* KATEGORI-TABS */
   .kat-tabs {
     display: flex; flex-wrap: wrap; gap: 8px;
@@ -173,7 +166,6 @@
     font-size: 0.82rem; color: var(--text-muted);
     margin-bottom: 1.25rem; min-height: 1.4em;
   }
-
   /* KALKULATOR */
   .kalk-wrap {
     margin-top: -2.5rem;
@@ -250,7 +242,6 @@
   }
   .kalk-btn:hover { background: var(--green-mid); }
   .kalk-btn:active { transform: scale(0.99); }
-
   .result-box {
     display: none;
     margin-top: 1.5rem;
@@ -283,7 +274,6 @@
     letter-spacing: 0.05em;
   }
   .result-item.highlight .val { color: var(--red); }
-
   /* SECTION TITLES */
   .sec-title {
     font-family: var(--font-head);
@@ -299,7 +289,6 @@
     margin-bottom: 2rem;
     font-weight: 300;
   }
-
   /* KATEGORI-TABELL */
   .cat-grid {
     display: grid;
@@ -343,7 +332,6 @@
   }
   .cat-pct.pos { color: var(--green); }
   .cat-pct.neg { color: var(--red); }
-
   /* TEKST-SEKSJON */
   .prose h2 {
     font-family: var(--font-head);
@@ -356,7 +344,6 @@
   .prose p { margin-bottom: 1rem; color: var(--text); }
   .prose ul { margin: 0.5rem 0 1rem 1.5rem; }
   .prose ul li { margin-bottom: 0.4rem; }
-
   /* FAQ */
   .faq-item {
     border-bottom: 1px solid var(--border);
@@ -391,7 +378,6 @@
     line-height: 1.7;
   }
   .faq-item.open .faq-a { display: block; }
-
   /* BLOGG */
   .blog-grid {
     display: grid;
@@ -446,7 +432,6 @@
     color: var(--text-muted);
     line-height: 1.6;
   }
-
   /* ARTIKKEL SIDE */
   .article-hero {
     background: var(--green-dark);
@@ -474,7 +459,6 @@
     letter-spacing: -0.02em;
   }
   .article-content p { margin-bottom: 1.25rem; }
-
   /* FOOTER */
   footer {
     background: var(--green-dark);
@@ -487,14 +471,12 @@
   footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
   footer a:hover { color: #fff; }
   .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap; }
-
   /* DIVIDER */
   .divider {
     border: none;
     border-top: 1px solid var(--border);
     margin: 0;
   }
-
   /* INFO BADGE */
   .ssb-badge {
     display: inline-flex;
@@ -513,7 +495,6 @@
     content: '✓';
     font-weight: 700;
   }
-
   /* HIGHLIGHTED BOX */
   .highlight-box {
     background: var(--green-light);
@@ -523,7 +504,6 @@
     margin: 1.5rem 0;
     font-size: 0.95rem;
   }
-
   /* KPI info bar */
   .kpi-bar {
     background: var(--green-dark);
@@ -546,16 +526,6 @@
   .kpi-bar-item .arrow.down { color: #ff8080; }
   .kpi-bar-item.hide-mobile { display: flex; }
   @media (max-width: 640px) { .kpi-bar-item.hide-mobile { display: none; } }
-
-
-
-.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
-.nav-mobile.open{display:block}
-.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
-.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
-.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
-
 </style>
 
 <script type="application/ld+json">
@@ -608,24 +578,24 @@
   <ul class="nav-links">
     <li class="nav-dd">
       <a href="#">Kalkulatorer <span class="arr">▾</span></a>
-      <div class="nav-drop">
+            <div class="nav-drop">
         <a href="/">📊 Inflasjonskalkulator</a>
         <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
         <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
-  <a href="/nettolønn-kalkulator">💰 Nettolønnskalkulator</a>
+        <a href="/nettolønn-kalkulator">💰 Nettolønnskalkulator</a>
         <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
         <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
-  <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
-  <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
-  <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
-  <a href="/kjøregodtgjørelse-kalkulator">🚗 Kjøregodtgjørelse</a>
-  <a href="/sykepenger-kalkulator">🏥 Sykepengekalkulator</a>
-  <a href="/arveavgift-kalkulator">📜 Arveavgift kalkulator</a>
-  <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
         <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
-  <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
-  <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
         <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+        <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
+        <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
+        <a href="/kjøregodtgjørelse-kalkulator">🚗 Kjøregodtgjørelse</a>
+        <a href="/sykepenger-kalkulator">🏥 Sykepengekalkulator</a>
+        <a href="/arveavgift-kalkulator">📜 Arveavgift kalkulator</a>
+        <a href="/dagpenger-kalkulator">💼 Dagpenger kalkulator</a>
+        <a href="/bostøtte-kalkulator">🏘️ Bostøtte kalkulator</a>
+        <a href="/eiendomsskatt-kalkulator">🏡 Eiendomsskatt kalkulator</a>
+        <a href="/promille-kalkulator">🍺 Promillekalkulator</a>
         <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
         <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
         <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
@@ -635,7 +605,7 @@
     </li>
     <li class="nav-dd">
       <a href="#">Artikler <span class="arr">▾</span></a>
-      <div class="nav-drop">
+            <div class="nav-drop">
         <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
         <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
         <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>

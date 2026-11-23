@@ -65,26 +65,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--red:#c0392b;--red-light:#fdf2f2;--yellow:#e67e22;--yellow-light:#fef9f0;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
 body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
-nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
-.nav-logo{font-family:var(--fh,'Syne',sans-serif);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
-.nav-logo span{color:#6ee09e}
-.nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center;margin:0;padding:0}
-.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
-.nav-links a:hover{color:#fff}
-.nav-dd{position:relative}
-.nav-dd>a{cursor:pointer}
-.nav-drop{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:var(--rs);box-shadow:0 8px 24px rgba(0,0,0,0.12);min-width:220px;z-index:300;padding:0.5rem 0}
-.nav-dd:hover .nav-drop{display:block}
-.nav-drop a{display:block;color:var(--text);padding:0.6rem 1.2rem;font-size:0.88rem;text-decoration:none;white-space:nowrap}
-.nav-drop a:hover{background:var(--green-light);color:var(--green-dark)}
-.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
-.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.2s}
-.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3);max-height:calc(100vh - 60px);overflow-y:auto}
-.nav-mobile.open{display:block}
-.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
-.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
-@media(min-width:769px){.nav-burger{display:none!important}.nav-mobile{display:none!important}}
-@media(max-width:768px){.nav-links{display:none}.nav-burger{display:flex}}
+.nav-dd:hover 
 
 .hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
 .wrap{max-width:800px;margin:0 auto;padding:0 1.5rem}
@@ -114,7 +95,6 @@ h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.35rem,3.2vw,2.3rem);c
 .kalk-btn:hover{background:var(--green-mid)}
 .result-box{display:none;margin-top:1.5rem}
 .result-box.show{display:block}
-
 /* Promille meter */
 .promille-meter{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:1.5rem;margin-bottom:1rem}
 .meter-label{font-family:var(--fh);font-weight:700;font-size:1rem;color:var(--green-dark);margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center}
@@ -132,7 +112,6 @@ h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.35rem,3.2vw,2.3rem);c
 .result-item .val{display:block;font-family:var(--fh);font-size:1.3rem;font-weight:800;color:var(--green-dark)}
 .result-item .lbl{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-top:4px}
 .disclaimer{background:#fffbea;border:1px solid #f0c040;border-radius:var(--rs);padding:1rem 1.25rem;font-size:0.85rem;color:#7a6000;margin-top:1rem}
-
 .section{padding:2.5rem 0}
 .sec-title{font-family:var(--fh);font-weight:700;font-size:1.35rem;color:var(--green-dark);margin-bottom:0.75rem}
 .prose p{margin-bottom:1rem;font-size:0.97rem}
@@ -157,6 +136,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5
 footer a{color:rgba(255,255,255,0.8);text-decoration:none}
 .fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
 </style>
+<link rel="stylesheet" href="/nav.css">
 </head>
 <body>
 <nav>
@@ -164,7 +144,7 @@ footer a{color:rgba(255,255,255,0.8);text-decoration:none}
   <ul class="nav-links">
     <li class="nav-dd">
       <a href="#">Kalkulatorer <span class="arr">▾</span></a>
-      <div class="nav-drop">
+            <div class="nav-drop">
         <a href="/">📊 Inflasjonskalkulator</a>
         <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
         <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
@@ -185,11 +165,13 @@ footer a{color:rgba(255,255,255,0.8);text-decoration:none}
         <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
         <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
         <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+        <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+        <a href="/barnebidrag-kalkulator">👶 Barnebidrag-kalkulator</a>
       </div>
     </li>
     <li class="nav-dd">
       <a href="#">Artikler <span class="arr">▾</span></a>
-      <div class="nav-drop">
+            <div class="nav-drop">
         <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
         <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
         <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
