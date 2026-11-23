@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bostøtte kalkulator 2026 – Beregn bostøtte fra Husbanken</title>
+<meta name="description" content="Beregn om du har rett på bostøtte i 2026. Gratis bostøtte kalkulator basert på Husbankens regler – finn din månedlige bostøtte ut fra inntekt, husleie og boforhold.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/bostøtte-kalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bostøtte kalkulator 2026 – Beregn bostøtte fra Husbanken">
+<meta property="og:description" content="Finn ut om du har rett på bostøtte og hvor mye du kan få. Gratis bostøtte kalkulator for 2026.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/bostøtte-kalkulator">
+<meta property="og:image" content="https://inflasjonskalkulator.no/og-lonn.svg">
+<meta property="og:locale" content="nb_NO">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Bostøtte kalkulator 2026",
+  "description": "Beregn bostøtte fra Husbanken for 2026. Finn din månedlige støtte basert på inntekt, husleie og antall i husstanden.",
+  "url": "https://inflasjonskalkulator.no/bostøtte-kalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "NOK"},
+  "publisher": {"@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvem kan søke bostøtte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du kan søke bostøtte hvis du er over 18 år, bor i en godkjent bolig (leid eller eid), og har lav inntekt og formue. Studenter uten barn har normalt ikke rett til bostøtte med mindre de har særlige behov. Inntektsgrensene avhenger av husstandens størrelse og kommunen du bor i."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er inntektsgrensen for bostøtte i 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Inntektsgrensene varierer etter husstandsstørrelse. For en enslig person er grensen ca. 290 000–320 000 kr i nettoinntekt (avhenger av kommunekategori). For par og familier er grensene høyere. Kontroller alltid med Husbanken da grensene justeres jevnlig."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvor mye bostøtte kan man få?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bostøtten beregnes ut fra differansen mellom faktisk boutgift og en egenandel basert på inntekten din. Husbanken dekker 70 % av boutgiftene over egenandelen, opp til en godkjent maksimalsats. Typisk bostøtte er 1 000–4 000 kr per måned."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan man søke bostøtte som leietaker?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Du kan søke bostøtte enten du leier eller eier boligen din. Leieboliger må ha en godkjent leiekontrakt og oppfylle visse krav til boligens størrelse og standard."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:var(--fh);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
+.nav-logo span{color:#6ee09e}
+.nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
+.nav-links a:hover{color:#fff}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+@media(max-width:768px){.nav-links{display:none}.nav-burger{display:flex}}
+.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
+.wrap{max-width:800px;margin:0 auto;padding:0 1.5rem}
+.bc{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
+.bc a{color:rgba(255,255,255,0.6);text-decoration:none}
+.bc span{margin:0 6px}
+.hero-tag{display:inline-block;background:rgba(110,224,158,0.15);border:1px solid rgba(110,224,158,0.3);color:#6ee09e;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;margin-bottom:1.1rem}
+h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.35rem,3.2vw,2.3rem);color:#fff;letter-spacing:-0.02em;line-height:1.15;margin-bottom:0.75rem}
+.hero p{color:rgba(255,255,255,0.65);font-size:1rem;max-width:560px;font-weight:300}
+.kalk-wrap{margin-top:-2rem;position:relative;z-index:10}
+.kalk-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.1);padding:2rem}
+.kalk-title{font-family:var(--fh);font-weight:700;font-size:1.25rem;color:var(--green-dark);margin-bottom:1.5rem;letter-spacing:-0.02em}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:5px}
+.field input,.field select{width:100%;height:48px;padding:0 1rem;border:1.5px solid var(--border);border-radius:var(--rs);font-family:var(--fb);font-size:1rem;color:var(--text);background:var(--bg);outline:none;-moz-appearance:textfield;transition:border-color 0.15s}
+.field input::-webkit-outer-spin-button,.field input::-webkit-inner-spin-button{-webkit-appearance:none}
+.field input:focus,.field select:focus{border-color:var(--green-mid);background:#fff}
+.field-hint{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:540px){.grid2{grid-template-columns:1fr}}
+.kalk-btn{width:100%;height:52px;background:var(--green);color:#fff;border:none;border-radius:var(--rs);font-family:var(--fh);font-weight:700;font-size:1rem;cursor:pointer;transition:background 0.15s;margin-top:0.5rem}
+.kalk-btn:hover{background:var(--green-mid)}
+.result-box{display:none;margin-top:1.5rem;background:var(--green-light);border:1.5px solid #b2dfc6;border-radius:var(--rs);padding:1.5rem}
+.result-box.show{display:block}
+.result-main{text-align:center;margin-bottom:1.25rem}
+.result-val{font-family:var(--fh);font-size:2.5rem;font-weight:800;color:var(--green-dark);letter-spacing:-0.03em;display:block}
+.result-lbl{font-size:0.85rem;color:var(--text-muted)}
+.result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;padding-top:1rem;border-top:1px solid #b2dfc6}
+.result-item{text-align:center}
+.result-item .val{display:block;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--green-dark)}
+.result-item .lbl{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+.result-tekst{margin-top:1rem;font-size:0.88rem;color:var(--text-muted);border-top:1px solid #b2dfc6;padding-top:0.85rem;line-height:1.6}
+.ingen-rett{display:none;background:#fff3f3;border:1.5px solid #ffb3b3;border-radius:var(--rs);padding:1rem 1.25rem;margin-top:1rem;font-size:0.88rem;color:#8b0000}
+.ingen-rett.show{display:block}
+.section{padding:2.5rem 0}
+.sec-title{font-family:var(--fh);font-weight:700;font-size:1.35rem;color:var(--green-dark);margin-bottom:0.75rem;letter-spacing:-0.02em}
+.prose p{margin-bottom:1rem;font-size:0.97rem}
+.prose h3{font-family:var(--fh);font-weight:600;font-size:1.05rem;color:var(--green-dark);margin:1.5rem 0 0.5rem}
+.prose ul{margin:0.5rem 0 1rem 1.5rem;font-size:0.97rem}
+.prose ul li{margin-bottom:0.35rem}
+.prose a{color:var(--green)}
+.hb{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 var(--rs) var(--rs) 0;padding:1rem 1.25rem;margin:1.25rem 0;font-size:0.95rem}
+.info-tabell{width:100%;border-collapse:collapse;font-size:0.9rem;margin:1rem 0}
+.info-tabell th{background:var(--green-dark);color:#fff;padding:0.6rem 1rem;text-align:left;font-family:var(--fh)}
+.info-tabell td{padding:0.6rem 1rem;border-bottom:1px solid var(--border)}
+.info-tabell tr:nth-child(even) td{background:#f0f4ee}
+.info-tabell tr:last-child td{border-bottom:none}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:0.75rem}
+.faq-q{font-family:var(--fh);font-weight:700;font-size:0.95rem;color:var(--green-dark);padding:1.1rem 1.25rem}
+.faq-a{padding:0 1.25rem 1.1rem;font-size:0.93rem;color:var(--text-muted);line-height:1.6}
+.relatert{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 2rem;margin:2rem 0}
+.relatert h2{font-family:var(--fh);font-weight:700;font-size:1.1rem;color:var(--green-dark);margin-bottom:1rem}
+.rl{display:flex;flex-wrap:wrap;gap:0.75rem}
+.rl a{background:var(--green-light);color:var(--green-dark);text-decoration:none;font-weight:500;font-size:0.88rem;padding:8px 16px;border-radius:99px;border:1px solid #b2dfc6;white-space:nowrap}
+footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:0.88rem;margin-top:2rem}
+footer a{color:rgba(255,255,255,0.8);text-decoration:none}
+.fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Hjem</a></li>
+    <li><a href="/husleiekalkulator">Husleie</a></li>
+    <li><a href="/lønnskalkulator">Lønn</a></li>
+    <li><a href="/dagpenger-kalkulator">Dagpenger</a></li>
+    <li><a href="/kpi-rapport">KPI</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/nettolønn-kalkulator">💰 Nettolønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+  <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
+  <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+  <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
+  <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
+  <a href="/kjøregodtgjørelse-kalkulator">🚗 Kjøregodtgjørelse</a>
+  <a href="/sykepenger-kalkulator">🏥 Sykepengekalkulator</a>
+  <a href="/arveavgift-kalkulator">📜 Arveavgift kalkulator</a>
+  <a href="/dagpenger-kalkulator">💼 Dagpenger kalkulator</a>
+  <a href="/bostøtte-kalkulator">🏘️ Bostøtte kalkulator</a>
+  <a href="/eiendomsskatt-kalkulator">🏡 Eiendomsskatt kalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/kpi-rapport">📋 KPI-rapport</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="bc"><a href="/">Hjem</a><span>›</span> Bostøtte kalkulator</div>
+    <div class="hero-tag">Husbanken 2026</div>
+    <h1>Bostøtte kalkulator 2026 – beregn bostøtte fra Husbanken</h1>
+    <p>Finn ut om du har rett på bostøtte og hvor mye du kan få per måned. Gratis kalkulator basert på Husbankens regler for 2026.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn bostøtte (Husbanken 2026)</div>
+
+      <div class="grid2">
+        <div class="field">
+          <label>Husstandens månedlige boutgift (kr)</label>
+          <input type="number" id="husleie" placeholder="8 500" min="0">
+          <div class="field-hint">Husleie, felleskostnader eller boliglånsrenter</div>
+        </div>
+        <div class="field">
+          <label>Husstandens bruttoinntekt per år (kr)</label>
+          <input type="number" id="inntekt" placeholder="280 000" min="0">
+          <div class="field-hint">Sum av alle inntekter i husstanden</div>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="field">
+          <label>Antall personer i husstanden</label>
+          <select id="husstand">
+            <option value="1">1 person</option>
+            <option value="2">2 personer</option>
+            <option value="3">3 personer</option>
+            <option value="4">4 eller flere</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Kommunekategori</label>
+          <select id="kommune">
+            <option value="oslo">Oslo / Bærum</option>
+            <option value="stor" selected>Store byer (Bergen, Trondheim, Stavanger m.fl.)</option>
+            <option value="middels">Mellomstore kommuner</option>
+            <option value="liten">Øvrige kommuner</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="kalk-btn" onclick="beregnBostotte()">Beregn bostøtte</button>
+
+      <div class="ingen-rett" id="ingenRett"></div>
+
+      <div class="result-box" id="resultBox">
+        <div class="result-main">
+          <span class="result-val" id="rManed">0 kr</span>
+          <span class="result-lbl">Estimert bostøtte per måned</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="rAr">0 kr</span>
+            <span class="lbl">Per år</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="rEgenandel">0 kr</span>
+            <span class="lbl">Din egenandel/mnd</span>
+          </div>
+        </div>
+        <div class="result-tekst" id="rTekst"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Slik beregnes bostøtte i 2026</div>
+    <div class="prose">
+      <p>Husbanken beregner bostøtte som <strong>70 % av boutgiftene over din egenandel</strong>, opp til en godkjent makssats for boutgifter.</p>
+
+      <h3>Beregningsformelen</h3>
+      <p><strong>Bostøtte = 70 % × (godkjent boutgift − egenandel)</strong></p>
+      <p>Egenandelen beregnes ut fra inntekt og husstandsstørrelse. Jo høyere inntekt, desto høyere egenandel.</p>
+
+      <div class="hb">
+        <strong>OBS:</strong> Dette er en estimatkalkulator. Husbanken bruker en mer detaljert beregning som inkluderer formue, spesifikke kommunegrenser og ulike boligtypekriterier. Søk alltid på <a href="https://www.husbanken.no/bostotte/" target="_blank" rel="noopener">husbanken.no</a> for eksakt beløp.
+      </div>
+
+      <h3>Maks godkjente boutgifter per måned (2026-satser, estimat)</h3>
+      <table class="info-tabell">
+        <thead>
+          <tr><th>Husstandsstørrelse</th><th>Oslo/Bærum</th><th>Store byer</th><th>Andre</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1 person</td><td>9 500 kr</td><td>8 800 kr</td><td>8 000 kr</td></tr>
+          <tr><td>2 personer</td><td>11 500 kr</td><td>10 500 kr</td><td>9 500 kr</td></tr>
+          <tr><td>3 personer</td><td>13 000 kr</td><td>12 000 kr</td><td>11 000 kr</td></tr>
+          <tr><td>4+ personer</td><td>14 500 kr</td><td>13 500 kr</td><td>12 500 kr</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Hvem kan søke bostøtte?</h3>
+      <ul>
+        <li>Du må være 18 år eller eldre (unntak for barnefamilier)</li>
+        <li>Du må bo fast i boligen og ikke eie boligen gjennom selskap</li>
+        <li>Boligen må ha egen inngang, bad og kjøkken</li>
+        <li>Studenter uten barn har normalt ikke rett til bostøtte</li>
+        <li>Inntektsgrensen er ca. 290 000–360 000 kr for enslige (avhenger av kommunekategori)</li>
+      </ul>
+
+      <h3>Søknadsfrist</h3>
+      <p>Du kan søke bostøtte løpende. Søknaden behandles for inneværende og to foregående måneder. Søk digitalt på <a href="https://www.husbanken.no" target="_blank" rel="noopener">husbanken.no</a>.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Ofte stilte spørsmål om bostøtte</div>
+    <div class="faq-item">
+      <div class="faq-q">Hvem har rett til bostøtte?</div>
+      <div class="faq-a">Alle over 18 år med lav inntekt som bor i godkjent bolig kan søke. Du trenger ikke eie boligen. Studenter uten barn og personer med for høy formue har normalt ikke rett.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Er bostøtte skattepliktig?</div>
+      <div class="faq-a">Nei. Bostøtte er ikke skattepliktig inntekt. Du behøver ikke oppgi den i skattemeldingen.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Kan leietakere søke bostøtte?</div>
+      <div class="faq-a">Ja. Leietakere kan søke bostøtte til husleien. Du trenger en gyldig leiekontrakt, og boligen må oppfylle kravene til godkjent bolig.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Hva skjer om inntekten øker?</div>
+      <div class="faq-a">Du har plikt til å melde fra til Husbanken dersom inntekten endres vesentlig. Dersom du mottar for mye bostøtte, kan Husbanken kreve tilbakebetaling.</div>
+    </div>
+  </div>
+
+  <div class="relatert">
+    <h2>🔗 Relaterte kalkulatorer</h2>
+    <div class="rl">
+      <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+      <a href="/dagpenger-kalkulator">💼 Dagpenger</a>
+      <a href="/uforetrygd-kalkulator">♿ Uføretrygd</a>
+      <a href="/nettolønn-kalkulator">💰 Nettolønn</a>
+      <a href="/barnebidrag-kalkulator">👶 Barnebidrag</a>
+      <a href="/artikler/indeksregulering-husleie">📋 Indeksregulering husleie</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="/">Hjem</a>
+      <a href="/husleiekalkulator">Husleiekalkulator</a>
+      <a href="/dagpenger-kalkulator">Dagpenger</a>
+      <a href="/ressurser">Ressurser</a>
+      <a href="/kpi-rapport">KPI-rapport</a>
+    </div>
+    <p>© 2026 inflasjonskalkulator.no – Gratis finanskalkulatorer for Norge. Tallene er estimater. Søk på husbanken.no for eksakt bostøtte.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  const open=m.classList.toggle('open');
+  b.setAttribute('aria-expanded', open);
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){
+    m.classList.remove('open');
+    b.setAttribute('aria-expanded','false');
+  }
+});
+
+function fmt(v){return new Intl.NumberFormat('nb-NO',{maximumFractionDigits:0}).format(v)+' kr'}
+
+// Maks godkjente boutgifter per måned (estimat 2026)
+const maksBoutgift = {
+  oslo:   [9500, 11500, 13000, 14500],
+  stor:   [8800, 10500, 12000, 13500],
+  middels:[8200, 9800,  11200, 12500],
+  liten:  [8000, 9500,  11000, 12500]
+};
+
+// Inntektsgrense for null bostøtte (estimat, enslig)
+const inntektsgrense = {
+  oslo:   [320000, 380000, 440000, 510000],
+  stor:   [305000, 365000, 420000, 490000],
+  middels:[295000, 350000, 405000, 475000],
+  liten:  [290000, 345000, 400000, 465000]
+};
+
+// Egenandel øker lineært med inntekt
+function beregnEgenandel(inntektAr, husstandIdx, kommuneKey){
+  const grense = inntektsgrense[kommuneKey][husstandIdx];
+  const minimumEgenandel = maksBoutgift[kommuneKey][husstandIdx] * 0.15; // 15% av maks boutgift
+  if(inntektAr <= 0) return minimumEgenandel;
+  const faktor = Math.min(inntektAr / grense, 1);
+  return minimumEgenandel + (maksBoutgift[kommuneKey][husstandIdx] - minimumEgenandel) * faktor;
+}
+
+function beregnBostotte(){
+  const husleie = parseFloat(document.getElementById('husleie').value)||0;
+  const inntektAr = parseFloat(document.getElementById('inntekt').value)||0;
+  const husstandStr = document.getElementById('husstand').value;
+  const kommuneKey = document.getElementById('kommune').value;
+  const husstandIdx = Math.min(parseInt(husstandStr)-1, 3);
+
+  const ingenRett = document.getElementById('ingenRett');
+  const res = document.getElementById('resultBox');
+
+  if(husleie===0 || inntektAr===0){return;}
+
+  const grense = inntektsgrense[kommuneKey][husstandIdx];
+  if(inntektAr >= grense){
+    ingenRett.textContent = `Inntekten din (${fmt(inntektAr)} per år) er over inntektsgrensen for ${husstandStr} person(er) i din kommunekategori (ca. ${fmt(grense)}). Du har sannsynligvis ikke rett til bostøtte.`;
+    ingenRett.classList.add('show');
+    res.classList.remove('show');
+    return;
+  }
+  ingenRett.classList.remove('show');
+
+  const maks = maksBoutgift[kommuneKey][husstandIdx];
+  const godkjentBoutgift = Math.min(husleie, maks);
+  const egenandel = beregnEgenandel(inntektAr, husstandIdx, kommuneKey);
+  const diff = godkjentBoutgift - egenandel;
+
+  if(diff <= 0){
+    ingenRett.textContent = `Boutgiftene dine etter egenandelfradrag er null eller negative. Du har sannsynligvis ikke rett til bostøtte med disse tallene.`;
+    ingenRett.classList.add('show');
+    res.classList.remove('show');
+    return;
+  }
+
+  const bostotteManed = Math.max(0, diff * 0.70);
+  const bostotteAr = bostotteManed * 12;
+
+  document.getElementById('rManed').textContent = fmt(Math.round(bostotteManed));
+  document.getElementById('rAr').textContent = fmt(Math.round(bostotteAr));
+  document.getElementById('rEgenandel').textContent = fmt(Math.round(egenandel));
+
+  let tekst = `Godkjent boutgift: ${fmt(Math.round(godkjentBoutgift))}/mnd (maks ${fmt(maks)}/mnd for din kategori). `;
+  tekst += `Egenandel: ${fmt(Math.round(egenandel))}/mnd. `;
+  tekst += `Husbanken dekker 70 % av ${fmt(Math.round(diff))} = ${fmt(Math.round(bostotteManed))}/mnd. `;
+  tekst += 'OBS: Dette er et estimat. Søk på husbanken.no for eksakt beløp.';
+
+  document.getElementById('rTekst').textContent = tekst;
+  res.classList.add('show');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dagpenger kalkulator 2026 – Beregn dagpenger fra NAV</title>
+<meta name="description" content="Beregn hvor mye du får i dagpenger fra NAV i 2026. Gratis dagpenger kalkulator basert på din inntekt de siste 12 eller 36 månedene. Finn din dagpengesats.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/dagpenger-kalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dagpenger kalkulator 2026 – Beregn dagpenger fra NAV">
+<meta property="og:description" content="Finn ut hvor mye du får i dagpenger. Gratis kalkulator for dagpenger 2026 basert på NAVs regler.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/dagpenger-kalkulator">
+<meta property="og:image" content="https://inflasjonskalkulator.no/og-lonn.svg">
+<meta property="og:locale" content="nb_NO">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Dagpenger kalkulator 2026",
+  "description": "Beregn dagpenger fra NAV for 2026 basert på inntekt de siste 12 eller 36 månedene.",
+  "url": "https://inflasjonskalkulator.no/dagpenger-kalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "NOK"},
+  "publisher": {"@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvor mye er dagpenger i 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dagpenger i 2026 er 62,4 % av dagpengegrunnlaget ditt per dag (5 dager i uka). Dagpengegrunnlaget er enten inntekten din siste 12 måneder eller gjennomsnittlig inntekt siste 36 måneder – du får det høyeste av disse. Maksimalt grunnlag er 6G (6 × 124 028 kr = 744 168 kr per år)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er minstekravet for å få dagpenger?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For å ha rett til dagpenger i 2026 må du ha hatt en inntekt på minst 1,5 G (186 042 kr) siste 12 måneder, eller minst 3 G (372 084 kr) totalt de siste 36 månedene. Du må også ha blitt arbeidsledig ufrivillig og melde deg som arbeidssøker hos NAV."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvor lenge kan man motta dagpenger?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du kan motta dagpenger i inntil 104 uker (2 år) dersom dagpengegrunnlaget er 2G eller mer. Er grunnlaget lavere enn 2G, er maksimal periode 52 uker (1 år). Det er en venteperiode (karenstid) på 3 dager (15 arbeidsdager ved egenoppsigelse)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Er dagpenger skattepliktig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, dagpenger er skattepliktig inntekt på lik linje med lønn. NAV trekker skatt etter skattekortet ditt. Dagpenger gir grunnlag for feriepenger (12 % for de første 52 ukene)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jeg ha deltidsjobb og motta dagpenger?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, du kan ha deltidsjobb og motta reduserte dagpenger. Dagpengene reduseres proporsjonalt med arbeidstiden. Du må melde fra til NAV om all inntekt og arbeidstid via meldekort."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:var(--fh);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
+.nav-logo span{color:#6ee09e}
+.nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
+.nav-links a:hover{color:#fff}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+@media(max-width:768px){.nav-links{display:none}.nav-burger{display:flex}}
+.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
+.wrap{max-width:800px;margin:0 auto;padding:0 1.5rem}
+.bc{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
+.bc a{color:rgba(255,255,255,0.6);text-decoration:none}
+.bc span{margin:0 6px}
+.hero-tag{display:inline-block;background:rgba(110,224,158,0.15);border:1px solid rgba(110,224,158,0.3);color:#6ee09e;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;margin-bottom:1.1rem}
+h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.35rem,3.2vw,2.3rem);color:#fff;letter-spacing:-0.02em;line-height:1.15;margin-bottom:0.75rem}
+.hero p{color:rgba(255,255,255,0.65);font-size:1rem;max-width:560px;font-weight:300}
+.kalk-wrap{margin-top:-2rem;position:relative;z-index:10}
+.kalk-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.1);padding:2rem}
+.kalk-title{font-family:var(--fh);font-weight:700;font-size:1.25rem;color:var(--green-dark);margin-bottom:1.5rem;letter-spacing:-0.02em}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:5px}
+.field input,.field select{width:100%;height:48px;padding:0 1rem;border:1.5px solid var(--border);border-radius:var(--rs);font-family:var(--fb);font-size:1rem;color:var(--text);background:var(--bg);outline:none;-moz-appearance:textfield;transition:border-color 0.15s}
+.field input::-webkit-outer-spin-button,.field input::-webkit-inner-spin-button{-webkit-appearance:none}
+.field input:focus,.field select:focus{border-color:var(--green-mid);background:#fff}
+.field-hint{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:540px){.grid2{grid-template-columns:1fr}}
+.kalk-btn{width:100%;height:52px;background:var(--green);color:#fff;border:none;border-radius:var(--rs);font-family:var(--fh);font-weight:700;font-size:1rem;cursor:pointer;transition:background 0.15s;margin-top:0.5rem}
+.kalk-btn:hover{background:var(--green-mid)}
+.result-box{display:none;margin-top:1.5rem;background:var(--green-light);border:1.5px solid #b2dfc6;border-radius:var(--rs);padding:1.5rem}
+.result-box.show{display:block}
+.result-main{text-align:center;margin-bottom:1.25rem}
+.result-val{font-family:var(--fh);font-size:2.5rem;font-weight:800;color:var(--green-dark);letter-spacing:-0.03em;display:block}
+.result-lbl{font-size:0.85rem;color:var(--text-muted)}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;padding-top:1rem;border-top:1px solid #b2dfc6}
+@media(max-width:500px){.result-grid{grid-template-columns:1fr 1fr}}
+.result-item{text-align:center}
+.result-item .val{display:block;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--green-dark)}
+.result-item .lbl{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+.result-tekst{margin-top:1rem;font-size:0.88rem;color:var(--text-muted);border-top:1px solid #b2dfc6;padding-top:0.85rem;line-height:1.6}
+.warn-box{background:#fff8e1;border:1.5px solid #ffe082;border-radius:var(--rs);padding:1rem 1.25rem;margin-top:1rem;font-size:0.88rem;color:#6d4c00;display:none}
+.warn-box.show{display:block}
+.section{padding:2.5rem 0}
+.sec-title{font-family:var(--fh);font-weight:700;font-size:1.35rem;color:var(--green-dark);margin-bottom:0.75rem;letter-spacing:-0.02em}
+.prose p{margin-bottom:1rem;font-size:0.97rem}
+.prose h3{font-family:var(--fh);font-weight:600;font-size:1.05rem;color:var(--green-dark);margin:1.5rem 0 0.5rem}
+.prose ul{margin:0.5rem 0 1rem 1.5rem;font-size:0.97rem}
+.prose ul li{margin-bottom:0.35rem}
+.prose a{color:var(--green)}
+.hb{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 var(--rs) var(--rs) 0;padding:1rem 1.25rem;margin:1.25rem 0;font-size:0.95rem}
+.info-tabell{width:100%;border-collapse:collapse;font-size:0.9rem;margin:1rem 0}
+.info-tabell th{background:var(--green-dark);color:#fff;padding:0.6rem 1rem;text-align:left;font-family:var(--fh)}
+.info-tabell td{padding:0.6rem 1rem;border-bottom:1px solid var(--border)}
+.info-tabell tr:nth-child(even) td{background:#f0f4ee}
+.info-tabell tr:last-child td{border-bottom:none}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:0.75rem}
+.faq-q{font-family:var(--fh);font-weight:700;font-size:0.95rem;color:var(--green-dark);padding:1.1rem 1.25rem}
+.faq-a{padding:0 1.25rem 1.1rem;font-size:0.93rem;color:var(--text-muted);line-height:1.6}
+.relatert{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 2rem;margin:2rem 0}
+.relatert h2{font-family:var(--fh);font-weight:700;font-size:1.1rem;color:var(--green-dark);margin-bottom:1rem}
+.rl{display:flex;flex-wrap:wrap;gap:0.75rem}
+.rl a{background:var(--green-light);color:var(--green-dark);text-decoration:none;font-weight:500;font-size:0.88rem;padding:8px 16px;border-radius:99px;border:1px solid #b2dfc6;white-space:nowrap}
+footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:0.88rem;margin-top:2rem}
+footer a{color:rgba(255,255,255,0.8);text-decoration:none}
+.fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Hjem</a></li>
+    <li><a href="/lønnskalkulator">Lønn</a></li>
+    <li><a href="/nettolønn-kalkulator">Nettolønn</a></li>
+    <li><a href="/tabelltrekk-kalkulator">Tabelltrekk</a></li>
+    <li><a href="/pensjonskalkulator">Pensjon</a></li>
+    <li><a href="/kpi-rapport">KPI</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/nettolønn-kalkulator">💰 Nettolønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+  <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
+  <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+  <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
+  <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
+  <a href="/kjøregodtgjørelse-kalkulator">🚗 Kjøregodtgjørelse</a>
+  <a href="/sykepenger-kalkulator">🏥 Sykepengekalkulator</a>
+  <a href="/arveavgift-kalkulator">📜 Arveavgift kalkulator</a>
+  <a href="/dagpenger-kalkulator">💼 Dagpenger kalkulator</a>
+  <a href="/bostøtte-kalkulator">🏘️ Bostøtte kalkulator</a>
+  <a href="/eiendomsskatt-kalkulator">🏡 Eiendomsskatt kalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/kpi-rapport">📋 KPI-rapport</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="bc"><a href="/">Hjem</a><span>›</span> Dagpenger kalkulator</div>
+    <div class="hero-tag">NAV 2026</div>
+    <h1>Dagpenger kalkulator 2026 – beregn dagpenger fra NAV</h1>
+    <p>Finn ut nøyaktig hvor mye du kan få i dagpenger. Gratis kalkulator basert på NAVs offisielle regler for 2026 – beregn daglig og månedlig utbetaling.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn dagpenger (NAV 2026)</div>
+
+      <div class="grid2">
+        <div class="field">
+          <label>Inntekt siste 12 måneder (kr)</label>
+          <input type="number" id="inntekt12" placeholder="550 000" min="0">
+          <div class="field-hint">Brutto arbeidsinntekt siste 12 mnd</div>
+        </div>
+        <div class="field">
+          <label>Gjennomsnittlig inntekt siste 36 mnd (kr)</label>
+          <input type="number" id="inntekt36" placeholder="500 000" min="0">
+          <div class="field-hint">Totalt delt på 3 år (valgfri)</div>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="field">
+          <label>Ønsket stillingsprosent (0 = fullt ledig)</label>
+          <select id="deltid">
+            <option value="0">Fullt arbeidsledig (100 % dagpenger)</option>
+            <option value="20">20 % jobb (80 % dagpenger)</option>
+            <option value="40">40 % jobb (60 % dagpenger)</option>
+            <option value="50">50 % jobb (50 % dagpenger)</option>
+            <option value="60">60 % jobb (40 % dagpenger)</option>
+            <option value="80">80 % jobb (20 % dagpenger)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Forsørger du barn under 18 år?</label>
+          <select id="barn">
+            <option value="0">Nei</option>
+            <option value="1">Ja</option>
+          </select>
+          <div class="field-hint">Barnetillegg: 17 kr/dag per barn</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Antall barn under 18 år (hvis aktuelt)</label>
+        <input type="number" id="antallbarn" placeholder="0" min="0" max="10" value="0">
+      </div>
+
+      <button class="kalk-btn" onclick="beregnDagpenger()">Beregn dagpenger</button>
+
+      <div class="warn-box" id="warnBox">
+        ⚠️ <strong>Ikke rett til dagpenger:</strong> Inntekten din er under minstekravet på 1,5 G (186 042 kr) siste 12 måneder eller 3 G (372 084 kr) siste 36 måneder.
+      </div>
+
+      <div class="result-box" id="resultBox">
+        <div class="result-main">
+          <span class="result-val" id="rDaglig">0 kr</span>
+          <span class="result-lbl">Daglig dagpenger (5 dager/uke)</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="rUkentlig">0 kr</span>
+            <span class="lbl">Per uke</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="rManedlig">0 kr</span>
+            <span class="lbl">Per måned</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="rArlig">0 kr</span>
+            <span class="lbl">Per år (maks)</span>
+          </div>
+        </div>
+        <div class="result-tekst" id="rTekst"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Slik beregnes dagpenger i 2026</div>
+    <div class="prose">
+      <p>NAV beregner dagpenger i tre trinn:</p>
+
+      <h3>1. Fastsett dagpengegrunnlaget</h3>
+      <p>Dagpengegrunnlaget er det høyeste av:</p>
+      <ul>
+        <li>Arbeidsinntekt siste 12 måneder (1 kalenderår)</li>
+        <li>Gjennomsnittlig arbeidsinntekt siste 36 måneder (3 kalenderår)</li>
+      </ul>
+      <p>Maks dagpengegrunnlag er <strong>6 G = 744 168 kr</strong> (G = 124 028 kr i 2026). Inntekt over 6G teller ikke med.</p>
+
+      <div class="hb">
+        <strong>Minstekrav 2026:</strong> Du må ha hatt minst 1,5 G (186 042 kr) i arbeidsinntekt siste 12 måneder, <em>eller</em> minst 3 G (372 084 kr) totalt siste 36 måneder.
+      </div>
+
+      <h3>2. Beregn daglig sats</h3>
+      <p>Dagpengegrunnlaget deles på 260 arbeidsdager per år, og deretter ganges med 62,4 %:</p>
+      <p><strong>Daglig sats = (grunnlag ÷ 260) × 62,4 %</strong></p>
+
+      <h3>3. Legg til barnetillegg</h3>
+      <p>Hvis du forsørger barn under 18 år, får du et barnetillegg på <strong>17 kr per dag per barn</strong> (skattefritt).</p>
+
+      <table class="info-tabell">
+        <thead>
+          <tr><th>Årslønn</th><th>Dagpengegrunnlag</th><th>Daglig sats</th><th>Per måned</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>400 000 kr</td><td>400 000 kr</td><td>960 kr</td><td>20 800 kr</td></tr>
+          <tr><td>600 000 kr</td><td>600 000 kr</td><td>1 440 kr</td><td>31 200 kr</td></tr>
+          <tr><td>744 168 kr (maks)</td><td>744 168 kr</td><td>1 786 kr</td><td>38 701 kr</td></tr>
+          <tr><td>900 000 kr</td><td>744 168 kr (tak)</td><td>1 786 kr</td><td>38 701 kr</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Viktige regler om dagpenger 2026</div>
+    <div class="prose">
+      <h3>Meldekort og aktivitetskrav</h3>
+      <p>Du må sende meldekort til NAV hver 14. dag og dokumentere at du aktivt søker arbeid. NAV kan kreve at du deltar på tiltak, kurs eller praksis.</p>
+
+      <h3>Karenstid</h3>
+      <p>Det er normalt 3 dagers ventetid (karens) fra du melder deg ledig til dagpengene starter. Har du sagt opp selv uten rimelig grunn, er karenstiden <strong>18 uker</strong>.</p>
+
+      <h3>Maks periode</h3>
+      <ul>
+        <li><strong>104 uker (2 år)</strong> – dersom dagpengegrunnlaget er 2G (248 056 kr) eller mer</li>
+        <li><strong>52 uker (1 år)</strong> – dersom dagpengegrunnlaget er under 2G</li>
+      </ul>
+
+      <h3>Dagpenger og deltidsjobb</h3>
+      <p>Du kan kombinere dagpenger med deltidsjobb. Dagpengene reduseres proporsjonalt. Jobber du f.eks. 40 %, får du 60 % av full dagpengesats.</p>
+
+      <h3>Dagpenger gir rett til feriepenger</h3>
+      <p>Du opptjener feriepenger på dagpenger de første 52 ukene. Feriepengene er 12 % av dagpengebeløpet og utbetales neste år av NAV.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Ofte stilte spørsmål om dagpenger</div>
+    <div class="faq-item">
+      <div class="faq-q">Hvor mye er dagpenger i 2026?</div>
+      <div class="faq-a">Dagpenger er 62,4 % av dagpengegrunnlaget per dag (man–fre). Maksimalt dagpengegrunnlag er 6G = 744 168 kr, noe som gir maks daglig sats på 1 786 kr og ca. 38 700 kr per måned.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Hva er minstekravet for å få dagpenger?</div>
+      <div class="faq-a">Du må ha tjent minst 1,5 G (186 042 kr) siste 12 måneder, eller 3 G (372 084 kr) totalt siste 36 måneder. Du må også ha blitt ufrivillig arbeidsledig og melde deg hos NAV.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Kan jeg søke dagpenger om jeg har sagt opp selv?</div>
+      <div class="faq-a">Ja, men du må ha hatt rimelig grunn (f.eks. helsemessige årsaker, trakassering på jobb). Uten rimelig grunn er karenstiden 18 uker.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Er dagpenger skattepliktig?</div>
+      <div class="faq-a">Ja. Dagpenger er skattepliktig som vanlig inntekt. NAV trekker skatt etter skattekortet ditt. Du betaler ikke trygdeavgift av dagpenger.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Kan jeg motta dagpenger og studere?</div>
+      <div class="faq-a">Normalt ikke. Du kan som regel ikke motta dagpenger om du tar ordinær utdanning på fulltid. Korte kurs godkjent av NAV er unntaket.</div>
+    </div>
+  </div>
+
+  <div class="relatert">
+    <h2>🔗 Relaterte kalkulatorer</h2>
+    <div class="rl">
+      <a href="/sykepenger-kalkulator">🏥 Sykepenger</a>
+      <a href="/nettolønn-kalkulator">💰 Nettolønn</a>
+      <a href="/uforetrygd-kalkulator">♿ Uføretrygd</a>
+      <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger</a>
+      <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk</a>
+      <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="/">Hjem</a>
+      <a href="/lønnskalkulator">Lønnskalkulator</a>
+      <a href="/pensjonskalkulator">Pensjonskalkulator</a>
+      <a href="/ressurser">Ressurser</a>
+      <a href="/kpi-rapport">KPI-rapport</a>
+    </div>
+    <p>© 2026 inflasjonskalkulator.no – Gratis finanskalkulatorer for Norge. Tallene er veiledende og basert på NAVs regler for 2026.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  const open=m.classList.toggle('open');
+  b.setAttribute('aria-expanded', open);
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){
+    m.classList.remove('open');
+    b.setAttribute('aria-expanded','false');
+  }
+});
+
+const G2026 = 124028;
+const sekG = G2026 * 6; // 744 168
+const minsteKrav12 = G2026 * 1.5; // 186 042
+const minsteKrav36 = G2026 * 3;   // 372 084
+const dagpengeProsent = 0.624;
+const arbDagerAar = 260;
+const barnetillegg = 17; // kr/dag/barn
+
+function fmt(v){return new Intl.NumberFormat('nb-NO',{maximumFractionDigits:0}).format(v)+' kr'}
+
+function beregnDagpenger(){
+  const inn12 = parseFloat(document.getElementById('inntekt12').value)||0;
+  const inn36 = parseFloat(document.getElementById('inntekt36').value)||0;
+  const deltidPct = parseInt(document.getElementById('deltid').value)||0;
+  const harBarn = parseInt(document.getElementById('barn').value)||0;
+  const antBarn = harBarn ? (parseInt(document.getElementById('antallbarn').value)||0) : 0;
+
+  const warn = document.getElementById('warnBox');
+  const res = document.getElementById('resultBox');
+
+  // Sjekk minstekrav
+  const harRett = inn12 >= minsteKrav12 || inn36 >= minsteKrav36;
+  if(!harRett && (inn12>0 || inn36>0)){
+    warn.classList.add('show');
+    res.classList.remove('show');
+    return;
+  }
+  warn.classList.remove('show');
+
+  if(inn12===0 && inn36===0){return;}
+
+  // Dagpengegrunnlag = høyeste av 12-mnd eller 36-mnd-snitt
+  const grunnlag = Math.min(Math.max(inn12, inn36), sekG);
+
+  // Daglig sats (full)
+  const dagligFull = (grunnlag / arbDagerAar) * dagpengeProsent;
+
+  // Reduksjon for deltidsjobb
+  const dagligFaktor = (100 - deltidPct) / 100;
+  const dagligNetto = dagligFull * dagligFaktor;
+
+  // Barnetillegg
+  const dagligBarn = antBarn * barnetillegg;
+  const dagligTotal = dagligNetto + dagligBarn;
+
+  const ukentlig = dagligTotal * 5;
+  const manedlig = dagligTotal * (arbDagerAar / 12);
+  const arlig = dagligTotal * arbDagerAar;
+
+  document.getElementById('rDaglig').textContent = fmt(Math.round(dagligTotal));
+  document.getElementById('rUkentlig').textContent = fmt(Math.round(ukentlig));
+  document.getElementById('rManedlig').textContent = fmt(Math.round(manedlig));
+  document.getElementById('rArlig').textContent = fmt(Math.round(arlig));
+
+  let tekst = `Grunnlag: ${fmt(Math.round(grunnlag))} (maks 6G = ${fmt(sekG)}). `;
+  tekst += `Full dagssats: ${fmt(Math.round(dagligFull))}/dag. `;
+  if(deltidPct>0) tekst += `Redusert til ${100-deltidPct}% (${fmt(Math.round(dagligNetto))}/dag) pga. ${deltidPct}% jobb. `;
+  if(antBarn>0) tekst += `Barnetillegg: ${antBarn} barn × 17 kr = ${fmt(antBarn*17)}/dag. `;
+  tekst += `Dagpenger er skattepliktig. Maks periode: ${grunnlag >= G2026*2 ? '104 uker (2 år)' : '52 uker (1 år)'}.`;
+
+  document.getElementById('rTekst').textContent = tekst;
+  res.classList.add('show');
+}
+
+document.getElementById('barn').addEventListener('change',function(){
+  document.getElementById('antallbarn').style.display = this.value==='1'?'block':'none';
+});
+</script>
+</body>
+</html>

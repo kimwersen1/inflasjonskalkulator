@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eiendomsskatt kalkulator 2026 – Beregn eiendomsskatt på boligen din</title>
+<meta name="description" content="Beregn eiendomsskatten på boligen din for 2026. Gratis kalkulator basert på formuesverdi, kommunens promilleskattesats og boligtype. Se hva du skal betale.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/eiendomsskatt-kalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Eiendomsskatt kalkulator 2026">
+<meta property="og:description" content="Finn ut hva du betaler i eiendomsskatt. Gratis kalkulator for norsk eiendomsskatt 2026.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/eiendomsskatt-kalkulator">
+<meta property="og:image" content="https://inflasjonskalkulator.no/og-lonn.svg">
+<meta property="og:locale" content="nb_NO">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Eiendomsskatt kalkulator 2026",
+  "description": "Beregn eiendomsskatt på bolig og fritidseiendom i Norge for 2026 basert på formuesverdi og kommunens skattesats.",
+  "url": "https://inflasjonskalkulator.no/eiendomsskatt-kalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "NOK"},
+  "publisher": {"@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er eiendomsskatt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eiendomsskatt er en kommunal skatt på fast eiendom (bolig, fritidseiendom, næringseiendom). Kommunen bestemmer selv om den vil ha eiendomsskatt og hvilken sats (promille) som brukes. Ikke alle kommuner har eiendomsskatt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er eiendomsskattesatsen i 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kommunene kan velge en sats mellom 1 og 7 promille av skattetaksten. For boliger og fritidsboliger er maksimalsatsen 4 promille. Mange kommuner bruker 2–3 promille for boligeiendommer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvilken verdi beregnes eiendomsskatten av?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eiendomsskatt beregnes av kommunens skattetakst, ikke markedsverdien. Skattetaksten kan fastsettes lokalt eller baseres på Skatteetatens formuesverdi (boligverdi). For primærbolig gjelder at skattetaksten ikke kan overstige 70 % av markedsverdien. For fritidsbolig er grensen 100 %."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Er det bunnfradrag i eiendomsskatten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Mange kommuner har et bunnfradrag – et beløp som trekkes fra takstverdien før skatten beregnes. Bunnfradraget varierer mye mellom kommuner: vanlige beløp er 500 000–1 000 000 kr for primærboliger. Sjekk din kommune for eksakt bunnfradrag."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvilke kommuner har ikke eiendomsskatt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En rekke norske kommuner har ikke innført eiendomsskatt, eller har kun eiendomsskatt på næringseiendom og ikke boliger. Eksempler inkluderer Bærum og Stavanger (per 2026). Sjekk kommunens hjemmeside for å se om din kommune har eiendomsskatt."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:var(--fh);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
+.nav-logo span{color:#6ee09e}
+.nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
+.nav-links a:hover{color:#fff}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+@media(max-width:768px){.nav-links{display:none}.nav-burger{display:flex}}
+.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
+.wrap{max-width:800px;margin:0 auto;padding:0 1.5rem}
+.bc{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
+.bc a{color:rgba(255,255,255,0.6);text-decoration:none}
+.bc span{margin:0 6px}
+.hero-tag{display:inline-block;background:rgba(110,224,158,0.15);border:1px solid rgba(110,224,158,0.3);color:#6ee09e;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;margin-bottom:1.1rem}
+h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.35rem,3.2vw,2.3rem);color:#fff;letter-spacing:-0.02em;line-height:1.15;margin-bottom:0.75rem}
+.hero p{color:rgba(255,255,255,0.65);font-size:1rem;max-width:560px;font-weight:300}
+.kalk-wrap{margin-top:-2rem;position:relative;z-index:10}
+.kalk-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.1);padding:2rem}
+.kalk-title{font-family:var(--fh);font-weight:700;font-size:1.25rem;color:var(--green-dark);margin-bottom:1.5rem;letter-spacing:-0.02em}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:5px}
+.field input,.field select{width:100%;height:48px;padding:0 1rem;border:1.5px solid var(--border);border-radius:var(--rs);font-family:var(--fb);font-size:1rem;color:var(--text);background:var(--bg);outline:none;-moz-appearance:textfield;transition:border-color 0.15s}
+.field input::-webkit-outer-spin-button,.field input::-webkit-inner-spin-button{-webkit-appearance:none}
+.field input:focus,.field select:focus{border-color:var(--green-mid);background:#fff}
+.field-hint{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:540px){.grid2{grid-template-columns:1fr}}
+.kalk-btn{width:100%;height:52px;background:var(--green);color:#fff;border:none;border-radius:var(--rs);font-family:var(--fh);font-weight:700;font-size:1rem;cursor:pointer;transition:background 0.15s;margin-top:0.5rem}
+.kalk-btn:hover{background:var(--green-mid)}
+.result-box{display:none;margin-top:1.5rem;background:var(--green-light);border:1.5px solid #b2dfc6;border-radius:var(--rs);padding:1.5rem}
+.result-box.show{display:block}
+.result-main{text-align:center;margin-bottom:1.25rem}
+.result-val{font-family:var(--fh);font-size:2.5rem;font-weight:800;color:var(--green-dark);letter-spacing:-0.03em;display:block}
+.result-lbl{font-size:0.85rem;color:var(--text-muted)}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;padding-top:1rem;border-top:1px solid #b2dfc6}
+.result-item{text-align:center}
+.result-item .val{display:block;font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--green-dark)}
+.result-item .lbl{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+.result-tekst{margin-top:1rem;font-size:0.88rem;color:var(--text-muted);border-top:1px solid #b2dfc6;padding-top:0.85rem;line-height:1.6}
+.section{padding:2.5rem 0}
+.sec-title{font-family:var(--fh);font-weight:700;font-size:1.35rem;color:var(--green-dark);margin-bottom:0.75rem;letter-spacing:-0.02em}
+.prose p{margin-bottom:1rem;font-size:0.97rem}
+.prose h3{font-family:var(--fh);font-weight:600;font-size:1.05rem;color:var(--green-dark);margin:1.5rem 0 0.5rem}
+.prose ul{margin:0.5rem 0 1rem 1.5rem;font-size:0.97rem}
+.prose ul li{margin-bottom:0.35rem}
+.prose a{color:var(--green)}
+.hb{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 var(--rs) var(--rs) 0;padding:1rem 1.25rem;margin:1.25rem 0;font-size:0.95rem}
+.info-tabell{width:100%;border-collapse:collapse;font-size:0.9rem;margin:1rem 0}
+.info-tabell th{background:var(--green-dark);color:#fff;padding:0.6rem 1rem;text-align:left;font-family:var(--fh)}
+.info-tabell td{padding:0.6rem 1rem;border-bottom:1px solid var(--border)}
+.info-tabell tr:nth-child(even) td{background:#f0f4ee}
+.info-tabell tr:last-child td{border-bottom:none}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:0.75rem}
+.faq-q{font-family:var(--fh);font-weight:700;font-size:0.95rem;color:var(--green-dark);padding:1.1rem 1.25rem}
+.faq-a{padding:0 1.25rem 1.1rem;font-size:0.93rem;color:var(--text-muted);line-height:1.6}
+.relatert{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 2rem;margin:2rem 0}
+.relatert h2{font-family:var(--fh);font-weight:700;font-size:1.1rem;color:var(--green-dark);margin-bottom:1rem}
+.rl{display:flex;flex-wrap:wrap;gap:0.75rem}
+.rl a{background:var(--green-light);color:var(--green-dark);text-decoration:none;font-weight:500;font-size:0.88rem;padding:8px 16px;border-radius:99px;border:1px solid #b2dfc6;white-space:nowrap}
+footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:0.88rem;margin-top:2rem}
+footer a{color:rgba(255,255,255,0.8);text-decoration:none}
+.fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Hjem</a></li>
+    <li><a href="/husleiekalkulator">Husleie</a></li>
+    <li><a href="/lønnskalkulator">Lønn</a></li>
+    <li><a href="/eiendomsskatt-kalkulator" style="color:#fff">Eiendomsskatt</a></li>
+    <li><a href="/kpi-rapport">KPI</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/nettolønn-kalkulator">💰 Nettolønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+  <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
+  <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+  <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
+  <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
+  <a href="/kjøregodtgjørelse-kalkulator">🚗 Kjøregodtgjørelse</a>
+  <a href="/sykepenger-kalkulator">🏥 Sykepengekalkulator</a>
+  <a href="/arveavgift-kalkulator">📜 Arveavgift kalkulator</a>
+  <a href="/dagpenger-kalkulator">💼 Dagpenger kalkulator</a>
+  <a href="/bostøtte-kalkulator">🏘️ Bostøtte kalkulator</a>
+  <a href="/eiendomsskatt-kalkulator">🏡 Eiendomsskatt kalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/kpi-rapport">📋 KPI-rapport</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="bc"><a href="/">Hjem</a><span>›</span> Eiendomsskatt kalkulator</div>
+    <div class="hero-tag">Kommunal skatt 2026</div>
+    <h1>Eiendomsskatt kalkulator 2026 – beregn eiendomsskatten din</h1>
+    <p>Beregn hva du betaler i eiendomsskatt basert på boligens verdi, kommunens skattesats og eventuelle bunnfradrag. Gratis kalkulator for norske boligeiere.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn eiendomsskatt (2026)</div>
+
+      <div class="grid2">
+        <div class="field">
+          <label>Boligens markedsverdi (kr)</label>
+          <input type="number" id="markedsverdi" placeholder="4 500 000" min="0">
+          <div class="field-hint">Omsetningsverdi / takstverdi</div>
+        </div>
+        <div class="field">
+          <label>Boligtype</label>
+          <select id="boligtype">
+            <option value="primaer">Primærbolig (fast bosted)</option>
+            <option value="fritid">Fritidsbolig / hytte</option>
+            <option value="naring">Næringseiendom</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="field">
+          <label>Kommunens eiendomsskattesats (promille)</label>
+          <input type="number" id="promille" placeholder="2.5" min="0" max="7" step="0.1" value="2.5">
+          <div class="field-hint">Mellom 1 og 7 promille (bolig maks 4 ‰). Sjekk kommunen din.</div>
+        </div>
+        <div class="field">
+          <label>Bunnfradrag (kr, hvis aktuelt)</label>
+          <input type="number" id="bunnfradrag" placeholder="500 000" min="0" value="0">
+          <div class="field-hint">Fradraget varierer per kommune (ofte 0–1 000 000 kr)</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Andel av skattetakst / formuesverdi</label>
+        <select id="takstprosent">
+          <option value="0.70">70 % av markedsverdi (primærbolig, Skatteetaten)</option>
+          <option value="0.70" selected>70 % av markedsverdi (standard kommunalt)</option>
+          <option value="1.00">100 % (fritidseiendom / lokal takst)</option>
+          <option value="0.80">80 % (lokal takst)</option>
+          <option value="0.60">60 % (lokal takst)</option>
+        </select>
+      </div>
+
+      <button class="kalk-btn" onclick="beregnEiendomsskatt()">Beregn eiendomsskatt</button>
+
+      <div class="result-box" id="resultBox">
+        <div class="result-main">
+          <span class="result-val" id="rAr">0 kr</span>
+          <span class="result-lbl">Estimert eiendomsskatt per år</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="rKvartal">0 kr</span>
+            <span class="lbl">Per kvartal</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="rManed">0 kr</span>
+            <span class="lbl">Per måned</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="rTakst">0 kr</span>
+            <span class="lbl">Skattetakst</span>
+          </div>
+        </div>
+        <div class="result-tekst" id="rTekst"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Slik beregnes eiendomsskatt i 2026</div>
+    <div class="prose">
+      <p>Eiendomsskatt er en kommunal skatt og beregnes slik:</p>
+      <p><strong>Eiendomsskatt = (skattetakst − bunnfradrag) × promilleskattesats</strong></p>
+      <p>Skattetaksten fastsettes enten av kommunen lokalt, eller med utgangspunkt i Skatteetatens beregnede formuesverdi (boligverdi). For primærboliger kan skattetaksten ikke overstige 70 % av markedsverdien.</p>
+
+      <h3>Eksempel – primærbolig i Bergen</h3>
+      <ul>
+        <li>Markedsverdi: 4 500 000 kr</li>
+        <li>Skattetakst (70 %): 3 150 000 kr</li>
+        <li>Bunnfradrag i Bergen: 500 000 kr</li>
+        <li>Skattepliktig verdi: 2 650 000 kr</li>
+        <li>Skattesats: 2,5 promille</li>
+        <li>Eiendomsskatt: <strong>6 625 kr per år</strong></li>
+      </ul>
+
+      <div class="hb">
+        <strong>Merk:</strong> Ikke alle kommuner har eiendomsskatt. Sjekk kommunens nettside for gjeldende satser og bunnfradrag for 2026.
+      </div>
+
+      <h3>Skattesatser og regler 2026</h3>
+      <table class="info-tabell">
+        <thead>
+          <tr><th>Boligtype</th><th>Maks sats</th><th>Regler</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Primærbolig</td><td>4 promille</td><td>Skattetakst maks 70 % av markedsverdi</td></tr>
+          <tr><td>Fritidsbolig</td><td>4 promille</td><td>Kan settes til 100 % av verdi</td></tr>
+          <tr><td>Næringseiendom</td><td>7 promille</td><td>Egne takseringsregler</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Eksempler på kommunale satser (2025–2026)</h3>
+      <table class="info-tabell">
+        <thead>
+          <tr><th>Kommune</th><th>Sats</th><th>Bunnfradrag</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Oslo</td><td>2–3 ‰</td><td>Varierer per sone</td></tr>
+          <tr><td>Bergen</td><td>2,5 ‰</td><td>500 000 kr</td></tr>
+          <tr><td>Trondheim</td><td>3,5 ‰</td><td>Ingen</td></tr>
+          <tr><td>Kristiansand</td><td>3 ‰</td><td>500 000 kr</td></tr>
+          <tr><td>Bærum</td><td>Ingen</td><td>–</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Ofte stilte spørsmål om eiendomsskatt</div>
+    <div class="faq-item">
+      <div class="faq-q">Hvem bestemmer eiendomsskatten?</div>
+      <div class="faq-a">Kommunestyret bestemmer om kommunen skal ha eiendomsskatt og hvilken sats som gjelder. Satsen kan endres hvert år ved budsjettbehandlingen.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Når betales eiendomsskatten?</div>
+      <div class="faq-a">De fleste kommuner sender ut faktura i to eller fire terminer per år (halvår eller kvartal). Noen krever betaling i én sum.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Kan man klage på eiendomsskatten?</div>
+      <div class="faq-a">Ja. Du kan klage på skattetaksten til kommunen dersom du mener verdsettelsen er for høy. Klagefristen er vanligvis 6 uker fra fakturamottakelse.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Er eiendomsskatt fradragsberettiget?</div>
+      <div class="faq-a">Nei. Eiendomsskatt på privatbolig er ikke fradragsberettiget i inntektsskatten. For næringseiendom og utleieboliger kan det stille seg annerledes.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Hva er fritak fra eiendomsskatt?</div>
+      <div class="faq-a">Kommunene kan innvilge fritak for eiendomsskatt til blant annet kirker, historiske bygninger, ideelle organisasjoner og visse andre eiendommer. Pensjonister og uføre kan søke om nedsatt eiendomsskatt i noen kommuner.</div>
+    </div>
+  </div>
+
+  <div class="relatert">
+    <h2>🔗 Relaterte kalkulatorer</h2>
+    <div class="rl">
+      <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+      <a href="/bostøtte-kalkulator">🏘️ Bostøtte</a>
+      <a href="/arveavgift-kalkulator">📜 Arveavgift</a>
+      <a href="/nettolønn-kalkulator">💰 Nettolønn</a>
+      <a href="/skatt-pensjon-kalkulator">🏦 Skatt pensjon</a>
+      <a href="/renters-rente-kalkulator">📈 Renters rente</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <a href="/">Hjem</a>
+      <a href="/husleiekalkulator">Husleiekalkulator</a>
+      <a href="/eiendomsskatt-kalkulator">Eiendomsskatt</a>
+      <a href="/ressurser">Ressurser</a>
+      <a href="/kpi-rapport">KPI-rapport</a>
+    </div>
+    <p>© 2026 inflasjonskalkulator.no – Gratis finanskalkulatorer for Norge. Tallene er estimater. Sjekk kommunens nettside for eksakt eiendomsskatt.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  const open=m.classList.toggle('open');
+  b.setAttribute('aria-expanded', open);
+}
+document.addEventListener('click',function(e){
+  const m=document.getElementById('nav-mobile');
+  const b=document.getElementById('nav-burger');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){
+    m.classList.remove('open');
+    b.setAttribute('aria-expanded','false');
+  }
+});
+
+function fmt(v){return new Intl.NumberFormat('nb-NO',{maximumFractionDigits:0}).format(v)+' kr'}
+
+function beregnEiendomsskatt(){
+  const markedsverdi = parseFloat(document.getElementById('markedsverdi').value)||0;
+  const promille = parseFloat(document.getElementById('promille').value)||0;
+  const bunnfradrag = parseFloat(document.getElementById('bunnfradrag').value)||0;
+  const takstprosent = parseFloat(document.getElementById('takstprosent').value)||0.7;
+
+  if(markedsverdi === 0){return;}
+
+  const skattetakst = markedsverdi * takstprosent;
+  const skattepliktig = Math.max(0, skattetakst - bunnfradrag);
+  const aarlig = skattepliktig * (promille / 1000);
+  const kvartal = aarlig / 4;
+  const maned = aarlig / 12;
+
+  document.getElementById('rAr').textContent = fmt(Math.round(aarlig));
+  document.getElementById('rKvartal').textContent = fmt(Math.round(kvartal));
+  document.getElementById('rManed').textContent = fmt(Math.round(maned));
+  document.getElementById('rTakst').textContent = fmt(Math.round(skattetakst));
+
+  let tekst = `Skattetakst (${Math.round(takstprosent*100)}% av markedsverdi): ${fmt(Math.round(skattetakst))}. `;
+  if(bunnfradrag > 0) tekst += `Etter bunnfradrag på ${fmt(bunnfradrag)}: ${fmt(Math.round(skattepliktig))}. `;
+  tekst += `Skatt: ${skattepliktig > 0 ? promille : 0}‰ × ${fmt(Math.round(skattepliktig))} = ${fmt(Math.round(aarlig))}/år. `;
+  tekst += 'OBS: Sjekk gjeldende satser og bunnfradrag i din kommune.';
+
+  document.getElementById('rTekst').textContent = tekst;
+  document.getElementById('resultBox').classList.add('show');
+}
+</script>
+</body>
+</html>

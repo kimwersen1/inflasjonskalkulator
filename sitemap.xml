@@ -318,4 +318,40 @@
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://inflasjonskalkulator.no/dagpenger-kalkulator</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://inflasjonskalkulator.no/bost%C3%B8tte-kalkulator</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://inflasjonskalkulator.no/eiendomsskatt-kalkulator</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://inflasjonskalkulator.no/artikler/skatt-pa-aksjegevinst</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inflasjonskalkulator.no/artikler/skatt-pa-utbytte</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inflasjonskalkulator.no/artikler/sifo-budsjett</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
