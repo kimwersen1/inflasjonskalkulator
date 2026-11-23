@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promillekalkulator – Beregn promille og promillegrense 2026</title>
+<meta name="description" content="Bruk vår gratis promillekalkulator og finn ut din estimerte promille. Beregn enkelt basert på kjønn, vekt, antall drikker og tid. Promillegrense i Norge er 0,2 promille.">
+<link rel="canonical" href="https://inflasjonskalkulator.no/promille-kalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Promillekalkulator – Beregn promille og promillegrense 2026">
+<meta property="og:description" content="Gratis promillekalkulator for Norge. Finn estimert promillenivå basert på kjønn, vekt, antall drikker og drikketid.">
+<meta property="og:url" content="https://inflasjonskalkulator.no/promille-kalkulator">
+<meta property="og:image" content="https://inflasjonskalkulator.no/og-index.svg">
+<meta property="og:locale" content="nb_NO">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Promillekalkulator",
+  "description": "Beregn estimert promillenivå basert på kjønn, vekt, antall drikker og tid. Viser promillegrenser og konsekvenser.",
+  "url": "https://inflasjonskalkulator.no/promille-kalkulator",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "NOK"},
+  "publisher": {"@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er promillegrensen i Norge?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Promillegrensen i Norge er 0,2 promille for bilkjøring. Det vil si at du ikke kan ha mer enn 0,2 gram alkohol per kilo blod når du kjører bil. Grensen ble senket fra 0,5 til 0,2 promille i 2001."}
+    },
+    {
+      "@type": "Question",
+      "name": "Hvordan regner man ut promille?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Promille beregnes med Widmarks formel: Promille = (alkohol i gram) / (kroppsvekt i kg × distribusjonsfaktor). Distribusjonsfaktoren er 0,7 for menn og 0,6 for kvinner. I tillegg forbrennes alkohol med ca. 0,15 promille per time."}
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er straffen for promillekjøring i Norge?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Straffen avhenger av promillenivå: 0,2–0,5 promille gir normalt bøter tilsvarende 1,5 månedslønn. 0,5–1,2 promille gir vanligvis tap av førerkort og betinget/ubetinget fengsel. Over 1,2 promille gir ubetinget fengsel og minst 2 års tap av førerkort."}
+    },
+    {
+      "@type": "Question",
+      "name": "Hvor lenge tar det å bli edru?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Kroppen forbrenner alkohol med ca. 0,10–0,15 promille per time. Gjennomsnittlig forbrenningshastighet er 0,15 promille per time. Det finnes ingen rask måte å bli edru på – kaffe, mat eller vann øker ikke forbrenningshastigheten."}
+    },
+    {
+      "@type": "Question",
+      "name": "Er promillekalkulator nøyaktig?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Promillekalkulator gir kun et estimat basert på gjennomsnittsverdier. Faktisk promille kan variere med faktorer som medisiner, matvaner, alkoholtoleranse og individuelle forskjeller i metabolisme. Kalkulatoren skal aldri brukes som grunnlag for å bestemme om man kan kjøre bil."}
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#1a7a4a;--green-light:#e8f5ee;--green-mid:#2a9d60;--green-dark:#114d2e;--text:#1a1a1a;--text-muted:#5a6472;--bg:#f7f8f5;--white:#ffffff;--border:#dde3d8;--red:#c0392b;--red-light:#fdf2f2;--yellow:#e67e22;--yellow-light:#fef9f0;--fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:12px;--rs:8px}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+nav{background:var(--green-dark);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:200}
+.nav-logo{font-family:var(--fh,'Syne',sans-serif);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
+.nav-logo span{color:#6ee09e}
+.nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;white-space:nowrap;transition:color 0.15s}
+.nav-links a:hover{color:#fff}
+.nav-dd{position:relative}
+.nav-dd>a{cursor:pointer}
+.nav-drop{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:var(--rs);box-shadow:0 8px 24px rgba(0,0,0,0.12);min-width:220px;z-index:300;padding:0.5rem 0}
+.nav-dd:hover .nav-drop{display:block}
+.nav-drop a{display:block;color:var(--text);padding:0.6rem 1.2rem;font-size:0.88rem;text-decoration:none;white-space:nowrap}
+.nav-drop a:hover{background:var(--green-light);color:var(--green-dark)}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.nav-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.2s}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--green-dark);z-index:199;padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 24px rgba(0,0,0,0.3);max-height:calc(100vh - 60px);overflow-y:auto}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:0.75rem 1.5rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-mobile a:hover{background:rgba(255,255,255,0.06)}
+@media(min-width:769px){.nav-burger{display:none!important}.nav-mobile{display:none!important}}
+@media(max-width:768px){.nav-links{display:none}.nav-burger{display:flex}}
+
+.hero{background:var(--green-dark);padding:3.5rem 1.5rem 4.5rem}
+.wrap{max-width:800px;margin:0 auto;padding:0 1.5rem}
+.bc{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem}
+.bc a{color:rgba(255,255,255,0.6);text-decoration:none}
+.bc span{margin:0 6px}
+.hero-tag{display:inline-block;background:rgba(110,224,158,0.15);border:1px solid rgba(110,224,158,0.3);color:#6ee09e;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;margin-bottom:1.1rem}
+h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.35rem,3.2vw,2.3rem);color:#fff;letter-spacing:-0.03em;line-height:1.1;margin-bottom:0.75rem}
+.hero p{color:rgba(255,255,255,0.65);font-size:1rem;max-width:560px;font-weight:300}
+.kalk-wrap{margin-top:-2rem;position:relative;z-index:10}
+.kalk-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.1);padding:2rem}
+.kalk-title{font-family:var(--fh);font-weight:700;font-size:1.25rem;color:var(--green-dark);margin-bottom:1.5rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:540px){.grid2{grid-template-columns:1fr}}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:5px}
+.field input,.field select{width:100%;height:48px;padding:0 1rem;border:1.5px solid var(--border);border-radius:var(--rs);font-family:var(--fb);font-size:1rem;color:var(--text);background:var(--bg);outline:none;transition:border-color 0.15s;-moz-appearance:textfield}
+.field input::-webkit-outer-spin-button,.field input::-webkit-inner-spin-button{-webkit-appearance:none}
+.field input:focus,.field select:focus{border-color:var(--green-mid);background:#fff}
+.drink-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:0.75rem;align-items:end;margin-bottom:0.75rem}
+@media(max-width:480px){.drink-row{grid-template-columns:1fr 1fr;}.drink-row .field:first-child{grid-column:1/-1}}
+.add-drink-btn{background:transparent;border:1.5px dashed var(--border);border-radius:var(--rs);color:var(--green);font-family:var(--fh);font-weight:700;font-size:0.88rem;padding:0.65rem 1rem;cursor:pointer;width:100%;margin-bottom:1rem;transition:all 0.15s}
+.add-drink-btn:hover{border-color:var(--green);background:var(--green-light)}
+.remove-btn{height:48px;width:40px;border:none;background:transparent;color:#aaa;font-size:1.3rem;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center}
+.remove-btn:hover{color:var(--red)}
+.kalk-btn{width:100%;height:52px;background:var(--green);color:#fff;border:none;border-radius:var(--rs);font-family:var(--fh);font-weight:700;font-size:1rem;cursor:pointer;transition:background 0.15s;margin-top:0.5rem}
+.kalk-btn:hover{background:var(--green-mid)}
+.result-box{display:none;margin-top:1.5rem}
+.result-box.show{display:block}
+
+/* Promille meter */
+.promille-meter{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:1.5rem;margin-bottom:1rem}
+.meter-label{font-family:var(--fh);font-weight:700;font-size:1rem;color:var(--green-dark);margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center}
+.meter-value{font-size:2.2rem;font-weight:800}
+.meter-bar-wrap{background:#eee;border-radius:99px;height:14px;overflow:hidden;position:relative;margin-bottom:0.5rem}
+.meter-bar{height:100%;border-radius:99px;transition:width 0.6s ease,background 0.4s}
+.meter-zones{display:flex;justify-content:space-between;font-size:0.72rem;color:var(--text-muted)}
+.status-box{border-radius:var(--rs);padding:1rem 1.25rem;margin-top:0.75rem;font-weight:500;font-size:0.95rem}
+.status-green{background:var(--green-light);border:1px solid #b2dfc6;color:var(--green-dark)}
+.status-yellow{background:var(--yellow-light);border:1px solid #f0c080;color:#7d4a00}
+.status-red{background:var(--red-light);border:1px solid #f0b8b8;color:var(--red)}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1rem}
+@media(max-width:500px){.result-grid{grid-template-columns:1fr 1fr}}
+.result-item{background:var(--green-light);border:1px solid #b2dfc6;border-radius:var(--rs);padding:1rem;text-align:center}
+.result-item .val{display:block;font-family:var(--fh);font-size:1.3rem;font-weight:800;color:var(--green-dark)}
+.result-item .lbl{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-top:4px}
+.disclaimer{background:#fffbea;border:1px solid #f0c040;border-radius:var(--rs);padding:1rem 1.25rem;font-size:0.85rem;color:#7a6000;margin-top:1rem}
+
+.section{padding:2.5rem 0}
+.sec-title{font-family:var(--fh);font-weight:700;font-size:1.35rem;color:var(--green-dark);margin-bottom:0.75rem}
+.prose p{margin-bottom:1rem;font-size:0.97rem}
+.prose h3{font-family:var(--fh);font-weight:600;font-size:1.05rem;color:var(--green-dark);margin:1.5rem 0 0.5rem}
+.promille-tabell{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.93rem}
+.promille-tabell th{background:var(--green-dark);color:#fff;padding:0.75rem 1rem;text-align:left;font-family:var(--fh);font-size:0.85rem}
+.promille-tabell td{padding:0.7rem 1rem;border-bottom:1px solid var(--border)}
+.promille-tabell tr:nth-child(even){background:var(--green-light)}
+.badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:0.78rem;font-weight:600}
+.badge-green{background:#d4f0e2;color:#155c35}
+.badge-yellow{background:#fce9c8;color:#8a4e00}
+.badge-red{background:#fddede;color:#8b1a1a}
+.badge-dark-red{background:#f5b8b8;color:#6b0000}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:0.75rem}
+.faq-q{font-family:var(--fh);font-weight:700;font-size:0.95rem;color:var(--green-dark);padding:1.1rem 1.25rem}
+.faq-a{padding:0 1.25rem 1.1rem;font-size:0.93rem;color:var(--text-muted);line-height:1.6}
+.relatert{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 2rem;margin:2rem 0}
+.relatert h2{font-family:var(--fh);font-weight:700;font-size:1.1rem;color:var(--green-dark);margin-bottom:1rem}
+.rl{display:flex;flex-wrap:wrap;gap:0.75rem}
+.rl a{background:var(--green-light);color:var(--green-dark);text-decoration:none;font-weight:500;font-size:0.88rem;padding:8px 16px;border-radius:99px;border:1px solid #b2dfc6;white-space:nowrap}
+footer{background:var(--green-dark);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:0.88rem;margin-top:2rem}
+footer a{color:rgba(255,255,255,0.8);text-decoration:none}
+.fl{display:flex;justify-content:center;gap:2rem;margin-bottom:0.75rem;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li class="nav-dd">
+      <a href="#">Kalkulatorer <span class="arr">▾</span></a>
+      <div class="nav-drop">
+        <a href="/">📊 Inflasjonskalkulator</a>
+        <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+        <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+        <a href="/nettolønn-kalkulator">💰 Nettolønnskalkulator</a>
+        <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+        <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+        <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
+        <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+        <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
+        <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
+        <a href="/kjøregodtgjørelse-kalkulator">🚗 Kjøregodtgjørelse</a>
+        <a href="/sykepenger-kalkulator">🏥 Sykepengekalkulator</a>
+        <a href="/arveavgift-kalkulator">📜 Arveavgift kalkulator</a>
+        <a href="/dagpenger-kalkulator">💼 Dagpenger kalkulator</a>
+        <a href="/bostøtte-kalkulator">🏘️ Bostøtte kalkulator</a>
+        <a href="/eiendomsskatt-kalkulator">🏡 Eiendomsskatt kalkulator</a>
+        <a href="/promille-kalkulator">🍺 Promillekalkulator</a>
+        <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+        <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+        <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+      </div>
+    </li>
+    <li class="nav-dd">
+      <a href="#">Artikler <span class="arr">▾</span></a>
+      <div class="nav-drop">
+        <a href="/artikler/hva-er-inflasjon">📖 Hva er inflasjon?</a>
+        <a href="/artikler/husleieoekning-2026">🏠 Husleieøkning 2026</a>
+        <a href="/artikler/reallonnsvekst-2026">💼 Reallønnsvekst 2026</a>
+        <a href="/artikler/nominell-rente">💰 Nominell vs. effektiv rente</a>
+        <a href="/artikler/kroneverdi-historisk">📈 Kroneverdi historisk</a>
+        <a href="/artikler/feriepenger-prosent">🏖️ Feriepenger prosent</a>
+        <a href="/artikler/indeksregulering-husleie">🏠 Indeksregulering husleie</a>
+      </div>
+    </li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/nettolønn-kalkulator">💰 Nettolønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+  <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
+  <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+  <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
+  <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
+  <a href="/kjøregodtgjørelse-kalkulator">🚗 Kjøregodtgjørelse</a>
+  <a href="/sykepenger-kalkulator">🏥 Sykepengekalkulator</a>
+  <a href="/arveavgift-kalkulator">📜 Arveavgift kalkulator</a>
+  <a href="/dagpenger-kalkulator">💼 Dagpenger kalkulator</a>
+  <a href="/bostøtte-kalkulator">🏘️ Bostøtte kalkulator</a>
+  <a href="/eiendomsskatt-kalkulator">🏡 Eiendomsskatt kalkulator</a>
+  <a href="/promille-kalkulator">🍺 Promillekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/kpi-rapport">📋 KPI-rapport</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="bc"><a href="/">Hjem</a><span>›</span>Promillekalkulator</div>
+    <div class="hero-tag">🍺 Gratis kalkulator</div>
+    <h1>Promillekalkulator</h1>
+    <p>Beregn estimert promille basert på kjønn, vekt, antall drikker og drikketid. Promillegrensen i Norge er 0,2 promille.</p>
+  </div>
+</div>
+
+<div class="wrap kalk-wrap">
+  <div class="kalk-card">
+    <div class="kalk-title">🍺 Beregn din estimerte promille</div>
+
+    <div class="grid2">
+      <div class="field">
+        <label>Kjønn</label>
+        <select id="kjonn">
+          <option value="mann">Mann</option>
+          <option value="kvinne">Kvinne</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Kroppsvekt (kg)</label>
+        <input type="number" id="vekt" value="75" min="30" max="200" step="1">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Drikketid (timer)</label>
+      <input type="number" id="drikketid" value="2" min="0" max="24" step="0.5">
+    </div>
+
+    <div class="field">
+      <label>Drikker</label>
+      <div id="drikker-liste">
+        <div class="drink-row" data-idx="0">
+          <div class="field">
+            <label>Type drikke</label>
+            <select class="drink-type">
+              <option value="0.5|4.7">Øl, pils (0,5 l, 4,7%)</option>
+              <option value="0.33|4.7">Øl, pils (0,33 l, 4,7%)</option>
+              <option value="0.5|3.5">Lettøl (0,5 l, 3,5%)</option>
+              <option value="0.5|7.0">Sterk øl (0,5 l, 7%)</option>
+              <option value="0.15|12">Vin, glass (1,5 dl, 12%)</option>
+              <option value="0.75|12">Vin, flaske (0,75 l, 12%)</option>
+              <option value="0.04|40">Brennevin, shot (4 cl, 40%)</option>
+              <option value="0.33|5.0">Cider (0,33 l, 5%)</option>
+              <option value="custom">Egendefinert</option>
+            </select>
+          </div>
+          <div class="field custom-fields" style="display:none">
+            <label>cl</label>
+            <input type="number" class="drink-cl" value="50" min="1" max="1000" step="1" placeholder="cl">
+          </div>
+          <div class="field custom-fields" style="display:none">
+            <label>%</label>
+            <input type="number" class="drink-pct" value="5" min="0" max="96" step="0.1" placeholder="%">
+          </div>
+          <div class="field">
+            <label>Antall</label>
+            <input type="number" class="drink-antall" value="2" min="1" max="30" step="1">
+          </div>
+          <button class="remove-btn" onclick="removeDrink(this)" title="Fjern">×</button>
+        </div>
+      </div>
+      <button class="add-drink-btn" onclick="addDrink()">+ Legg til drikke</button>
+    </div>
+
+    <button class="kalk-btn" onclick="beregn()">Beregn promille</button>
+
+    <div class="result-box" id="result">
+      <div class="promille-meter">
+        <div class="meter-label">
+          <span>Estimert promille</span>
+          <span class="meter-value" id="promille-val">0,00</span>
+        </div>
+        <div class="meter-bar-wrap">
+          <div class="meter-bar" id="meter-bar" style="width:0%;background:var(--green)"></div>
+        </div>
+        <div class="meter-zones">
+          <span>0,0</span>
+          <span>0,2 (grense)</span>
+          <span>0,5</span>
+          <span>1,2+</span>
+        </div>
+        <div class="status-box" id="status-box"></div>
+      </div>
+
+      <div class="result-grid">
+        <div class="result-item">
+          <span class="val" id="res-alkohol">0 g</span>
+          <span class="lbl">Alkohol inntatt</span>
+        </div>
+        <div class="result-item">
+          <span class="val" id="res-peak">0,00</span>
+          <span class="lbl">Topp-promille</span>
+        </div>
+        <div class="result-item">
+          <span class="val" id="res-edru">0 t</span>
+          <span class="lbl">Timer til 0,0 ‰</span>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        ⚠️ <strong>Viktig:</strong> Kalkulatoren gir kun et estimat. Faktisk promille varierer med individuelle faktorer. Bruk aldri kalkulatoren som grunnlag for å bestemme om du kan kjøre bil.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="sec-title">Promillegrenser og straff i Norge</h2>
+    <table class="promille-tabell">
+      <thead>
+        <tr><th>Promillenivå</th><th>Kategori</th><th>Konsekvenser</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Under 0,2 ‰</td>
+          <td><span class="badge badge-green">Lovlig</span></td>
+          <td>Lovlig å kjøre. Kan likevel påvirke kjøringen.</td>
+        </tr>
+        <tr>
+          <td>0,2 – 0,5 ‰</td>
+          <td><span class="badge badge-yellow">Straffbart</span></td>
+          <td>Bøter ≈ 1,5 månedslønn. Normalt ikke tap av førerrett.</td>
+        </tr>
+        <tr>
+          <td>0,5 – 1,2 ‰</td>
+          <td><span class="badge badge-red">Alvorlig</span></td>
+          <td>Tap av førerrett 12–24 mnd. Betinget/ubetinget fengsel.</td>
+        </tr>
+        <tr>
+          <td>Over 1,2 ‰</td>
+          <td><span class="badge badge-dark-red">Meget alvorlig</span></td>
+          <td>Ubetinget fengsel. Tap av førerrett minimum 2 år.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="prose">
+      <p>Norges promillegrense på <strong>0,2 promille</strong> er blant de laveste i Europa. Grensen ble senket fra 0,5 promille til 0,2 promille i 2001. Selv om du er under grensen, kan alkohol påvirke reaksjonstid og kjøreevne.</p>
+      <h3>Hva skjer ved 0,5–1,2 promille?</h3>
+      <p>Forbudet mot promillekjøring over 0,5 promille fører vanligvis til tap av førerrett i 12–24 måneder avhengig av eksakt promille, betinget eller ubetinget fengsel, og en bot. Gjentatte lovbrudd straffes strengere.</p>
+      <h3>Over 1,2 promille</h3>
+      <p>Ved over 1,2 promille regnes dette som grov promillekjøring. Du risikerer ubetinget fengsel, tap av førerrett i minimum 2 år, og inndragning av bil i gjentakelsestilfeller.</p>
+    </div>
+  </div>
+
+  <div class="section" style="border-top:1px solid var(--border)">
+    <h2 class="sec-title">Slik beregnes promille – Widmarks formel</h2>
+    <div class="prose">
+      <p>Promille beregnes med <strong>Widmarks formel</strong>, oppkalt etter den svenske legen Erik Widmark:</p>
+      <p style="background:var(--green-light);border:1px solid #b2dfc6;border-radius:var(--rs);padding:1rem;font-family:monospace;font-size:0.93rem">Promille = alkohol (gram) ÷ (kroppsvekt × distribusjonsfaktor)</p>
+      <h3>Distribusjonsfaktor</h3>
+      <p>Distribusjonsfaktoren er 0,7 for menn og 0,6 for kvinner. Kvinner har typisk høyere fettprosent og lavere andel kroppsvann, som betyr at alkoholen fordeles i et mindre volum.</p>
+      <h3>Forbrenningshastighet</h3>
+      <p>Kroppen forbrenner alkohol med <strong>ca. 0,10–0,15 promille per time</strong> (gjennomsnitt: 0,15). Det betyr at kaffe, vann, mat eller søvn ikke hjelper – kroppen bruker den tiden den trenger. Bare tid hjelper.</p>
+      <h3>Omregning av alkohol</h3>
+      <p>En flaske pils (0,5 liter, 4,7 %) inneholder: 0,5 × 0,047 × 0,789 (tetthet) × 1000 = <strong>ca. 18,5 gram</strong> ren alkohol. En standard vin-enhet (1,5 dl, 12 %) inneholder ca. 14,2 gram.</p>
+    </div>
+  </div>
+
+  <div class="section" style="border-top:1px solid var(--border)">
+    <h2 class="sec-title">Vanlige spørsmål om promille</h2>
+    <div class="faq-item">
+      <div class="faq-q">Hva er promillegrensen i Norge?</div>
+      <div class="faq-a">Promillegrensen i Norge er 0,2 promille for bilkjøring. Grensen ble senket fra 0,5 til 0,2 promille i 2001. For yrkessjåfører og de som kjører med passasjerer i næring gjelder 0,0-grense.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Hvor lenge er man påvirket av alkohol?</div>
+      <div class="faq-a">Kroppen forbrenner 0,10–0,15 promille per time. Hvis du har 1,0 promille, tar det ca. 7–8 timer å komme ned til 0,0. Merk at du kan ha alkohol i kroppen neste morgen etter en kveld med mye drikking.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Kan man drikke noe og kjøre bil?</div>
+      <div class="faq-a">Teknisk sett er grensen 0,2 promille. For en person på 80 kg betyr det ca. 1 enhet alkohol (1 pils). Men selv under grensen kan alkohol påvirke reaksjonstid og vurderingsevne. Det tryggeste er å ikke drikke noe hvis man skal kjøre.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Er promillekalkulator nøyaktig?</div>
+      <div class="faq-a">En promillekalkulator gir kun et estimat. Faktisk promille varierer basert på individuelle faktorer som metabolisme, medisiner, matvaner og alkoholtoleranse. Bruk aldri kalkulatoren til å avgjøre om du kan kjøre bil.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Hjelper mat å senke promillen raskere?</div>
+      <div class="faq-a">Mat kan bremse opptaket av alkohol i blodet, noe som gjør at topp-promillen blir noe lavere og nåes seinere. Men mat øker ikke forbrenningshastigheten. Kroppen forbrenner alkohol i samme tempo uavhengig av mat, kaffe eller søvn.</div>
+    </div>
+  </div>
+
+  <div class="relatert">
+    <h2>🔗 Relaterte kalkulatorer</h2>
+    <div class="rl">
+      <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+      <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+      <a href="/nettolønn-kalkulator">💰 Nettolønnskalkulator</a>
+      <a href="/sykepenger-kalkulator">🏥 Sykepengekalkulator</a>
+      <a href="/dagpenger-kalkulator">💼 Dagpenger kalkulator</a>
+      <a href="/bostøtte-kalkulator">🏘️ Bostøtte kalkulator</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fl">
+    <a href="/">Inflasjonskalkulator</a>
+    <a href="/personvern">Personvern</a>
+    <a href="/ressurser">Ressurser</a>
+    <a href="/kpi-rapport">KPI-rapport</a>
+  </div>
+  <div>© 2026 inflasjonskalkulator.no – Alle kalkulatorer er veiledende</div>
+</footer>
+
+<script>
+function toggleMenu() {
+  const m = document.getElementById('nav-mobile');
+  const b = document.getElementById('nav-burger');
+  const open = m.classList.toggle('open');
+  b.setAttribute('aria-expanded', open);
+}
+
+const DRINK_TEMPLATES = {
+  'mann': { r: 0.7 },
+  'kvinne': { r: 0.6 }
+};
+
+function getAlkoholGram(drinkRow) {
+  const type = drinkRow.querySelector('.drink-type').value;
+  const antall = parseFloat(drinkRow.querySelector('.drink-antall').value) || 0;
+  let liter, pct;
+  if (type === 'custom') {
+    const cl = parseFloat(drinkRow.querySelector('.drink-cl').value) || 0;
+    pct = parseFloat(drinkRow.querySelector('.drink-pct').value) || 0;
+    liter = cl / 100;
+  } else {
+    const parts = type.split('|');
+    liter = parseFloat(parts[0]);
+    pct = parseFloat(parts[1]);
+  }
+  // Alkohol gram = liter × (pct/100) × 789 (tetthet alkohol g/L)
+  return antall * liter * (pct / 100) * 789;
+}
+
+function beregn() {
+  const kjonn = document.getElementById('kjonn').value;
+  const vekt = parseFloat(document.getElementById('vekt').value) || 70;
+  const drikketid = parseFloat(document.getElementById('drikketid').value) || 0;
+  const r = kjonn === 'mann' ? 0.7 : 0.6;
+  const forbrenning = 0.15; // promille per time
+
+  const rows = document.querySelectorAll('#drikker-liste .drink-row');
+  let totalAlkohol = 0;
+  rows.forEach(row => { totalAlkohol += getAlkoholGram(row); });
+
+  // Widmarks formel
+  const promille_topp = totalAlkohol / (vekt * r * 1000) * 1000;
+  // Etter drikketid har man allerede forbrent noe
+  const promille_nu = Math.max(0, promille_topp - (forbrenning * drikketid));
+  const timer_til_null = Math.max(0, promille_nu / forbrenning);
+
+  // Vis resultat
+  document.getElementById('promille-val').textContent = promille_nu.toFixed(2).replace('.', ',');
+  document.getElementById('res-alkohol').textContent = Math.round(totalAlkohol) + ' g';
+  document.getElementById('res-peak').textContent = promille_topp.toFixed(2).replace('.', ',');
+  document.getElementById('res-edru').textContent = timer_til_null.toFixed(1).replace('.', ',') + ' t';
+
+  // Meter bar (skala 0–1.5 promille)
+  const pct = Math.min(100, (promille_nu / 1.5) * 100);
+  const bar = document.getElementById('meter-bar');
+  bar.style.width = pct + '%';
+
+  let barColor, statusHtml, statusClass;
+  if (promille_nu < 0.2) {
+    barColor = '#1a7a4a';
+    statusClass = 'status-green';
+    statusHtml = '✅ Under lovlig grense (0,2 ‰) – men alkohol kan likevel påvirke kjøringen.';
+  } else if (promille_nu < 0.5) {
+    barColor = '#e67e22';
+    statusClass = 'status-yellow';
+    statusHtml = '⚠️ Over promillegrensen (0,2 ‰) – straffbart. Bøter tilsvarende ca. 1,5 månedslønn.';
+  } else if (promille_nu < 1.2) {
+    barColor = '#c0392b';
+    statusClass = 'status-red';
+    statusHtml = '🚨 Alvorlig promillekjøring – tap av førerrett og fengsel. Ikke kjør!';
+  } else {
+    barColor = '#8b0000';
+    statusClass = 'status-red';
+    statusHtml = '🚨 Meget alvorlig – ubetinget fengsel og tap av førerrett i minimum 2 år. Absolutt ikke kjør!';
+  }
+  bar.style.background = barColor;
+  const sb = document.getElementById('status-box');
+  sb.className = 'status-box ' + statusClass;
+  sb.innerHTML = statusHtml;
+
+  document.getElementById('result').classList.add('show');
+}
+
+function addDrink() {
+  const liste = document.getElementById('drikker-liste');
+  const idx = liste.querySelectorAll('.drink-row').length;
+  const div = document.createElement('div');
+  div.className = 'drink-row';
+  div.dataset.idx = idx;
+  div.innerHTML = `
+    <div class="field">
+      <label>Type drikke</label>
+      <select class="drink-type" onchange="toggleCustom(this)">
+        <option value="0.5|4.7">Øl, pils (0,5 l, 4,7%)</option>
+        <option value="0.33|4.7">Øl, pils (0,33 l, 4,7%)</option>
+        <option value="0.5|3.5">Lettøl (0,5 l, 3,5%)</option>
+        <option value="0.5|7.0">Sterk øl (0,5 l, 7%)</option>
+        <option value="0.15|12">Vin, glass (1,5 dl, 12%)</option>
+        <option value="0.75|12">Vin, flaske (0,75 l, 12%)</option>
+        <option value="0.04|40">Brennevin, shot (4 cl, 40%)</option>
+        <option value="0.33|5.0">Cider (0,33 l, 5%)</option>
+        <option value="custom">Egendefinert</option>
+      </select>
+    </div>
+    <div class="field custom-fields" style="display:none">
+      <label>cl</label>
+      <input type="number" class="drink-cl" value="50" min="1" max="1000" step="1">
+    </div>
+    <div class="field custom-fields" style="display:none">
+      <label>%</label>
+      <input type="number" class="drink-pct" value="5" min="0" max="96" step="0.1">
+    </div>
+    <div class="field">
+      <label>Antall</label>
+      <input type="number" class="drink-antall" value="1" min="1" max="30" step="1">
+    </div>
+    <button class="remove-btn" onclick="removeDrink(this)" title="Fjern">×</button>
+  `;
+  liste.appendChild(div);
+}
+
+function removeDrink(btn) {
+  const rows = document.querySelectorAll('#drikker-liste .drink-row');
+  if (rows.length <= 1) return; // behold minst én
+  btn.closest('.drink-row').remove();
+}
+
+function toggleCustom(sel) {
+  const row = sel.closest('.drink-row');
+  const customFields = row.querySelectorAll('.custom-fields');
+  customFields.forEach(f => f.style.display = sel.value === 'custom' ? '' : 'none');
+}
+
+// Bind initial drink-type change
+document.querySelector('.drink-type').addEventListener('change', function(){ toggleCustom(this); });
+</script>
+</body>
+</html>
