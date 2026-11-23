@@ -28,14 +28,17 @@ nav {
 
 .nav-logo span { color: #6ee09e !important; }
 
-/* Desktop lenker – ingen dropdown */
+/* Desktop lenker – ingen dropdown, midtstilt */
 .nav-links {
   display: flex !important;
   gap: 0.1rem !important;
   list-style: none !important;
-  margin: 0 !important;
+  margin: 0 auto !important;
   padding: 0 !important;
   align-items: center !important;
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
 }
 
 .nav-links > li > a {
@@ -269,4 +272,72 @@ nav {
   .nav-mobile { display: none !important; }
   .nav-mobile.open { display: none !important; }
   .nav-burger { display: none !important; }
+}
+
+/* =====================
+   Site footer
+   ===================== */
+.site-footer {
+  background: #0d3d22 !important;
+  color: rgba(255,255,255,0.65) !important;
+  padding: 3rem 1.5rem 2rem !important;
+  margin-top: 4rem !important;
+  font-size: 0.85rem !important;
+}
+
+.site-footer .footer-inner {
+  max-width: 900px !important;
+  margin: 0 auto !important;
+}
+
+.footer-cols {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+  gap: 2rem !important;
+  margin-bottom: 2.5rem !important;
+}
+
+.footer-col-title {
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.4) !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.site-footer a {
+  color: rgba(255,255,255,0.7) !important;
+  text-decoration: none !important;
+  display: block !important;
+  padding: 3px 0 !important;
+  transition: color 0.15s !important;
+  line-height: 1.6 !important;
+}
+
+.site-footer a:hover { color: #fff !important; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+  padding-top: 1.25rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
+  color: rgba(255,255,255,0.3) !important;
+  font-size: 0.78rem !important;
+}
+
+.footer-bottom a {
+  color: rgba(255,255,255,0.4) !important;
+  display: inline !important;
+  padding: 0 !important;
+}
+
+.footer-bottom a:hover { color: rgba(255,255,255,0.7) !important; }
+
+@media (max-width: 600px) {
+  .footer-cols { grid-template-columns: 1fr 1fr !important; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
