@@ -1,6 +1,6 @@
 /* =====================
    inflasjonskalkulator.no – nav.css
-   Ekstern nav-stil som overstyrer inline nav-CSS
+   Versjon 2: søk + enkle lenker, ingen dropdown
    ===================== */
 
 nav {
@@ -13,6 +13,7 @@ nav {
   position: sticky !important;
   top: 0 !important;
   z-index: 200 !important;
+  gap: 1rem !important;
 }
 
 .nav-logo {
@@ -27,10 +28,10 @@ nav {
 
 .nav-logo span { color: #6ee09e !important; }
 
-/* Desktop lenker */
+/* Desktop lenker – ingen dropdown */
 .nav-links {
   display: flex !important;
-  gap: 0.25rem !important;
+  gap: 0.1rem !important;
   list-style: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -50,64 +51,147 @@ nav {
   transition: background 0.15s, color 0.15s !important;
 }
 
-.nav-links > li > a:hover {
+.nav-links > li > a:hover,
+.nav-links > li > a.active {
   color: #fff !important;
-  background: rgba(255,255,255,0.08) !important;
+  background: rgba(255,255,255,0.1) !important;
 }
 
-/* Dropdown */
-.nav-dd { position: relative !important; }
-
-.nav-dd > a .arr {
-  font-size: 0.6rem !important;
-  transition: transform 0.2s !important;
-  opacity: 0.6 !important;
-}
-
-.nav-dd:hover > a .arr { transform: rotate(180deg) !important; }
-
-.nav-drop {
-  display: none !important;
-  position: absolute !important;
-  top: calc(100% + 4px) !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  background: #0d3d22 !important;
-  border-radius: 12px !important;
-  padding: 10px !important;
-  width: 460px !important;
-  box-shadow: 0 12px 36px rgba(0,0,0,0.45) !important;
-  z-index: 300 !important;
-  border: 1px solid rgba(255,255,255,0.1) !important;
-  display: none !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 2px !important;
-}
-
-.nav-dd:hover .nav-drop {
-  display: grid !important;
-}
-
-.nav-drop a {
+/* Søkeknapp i nav */
+.nav-search-btn {
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  color: rgba(255,255,255,0.7) !important;
+  border-radius: 8px !important;
+  padding: 0.4rem 0.9rem !important;
+  font-size: 0.85rem !important;
+  cursor: pointer !important;
   display: flex !important;
   align-items: center !important;
-  gap: 8px !important;
-  padding: 8px 12px !important;
-  color: rgba(255,255,255,0.82) !important;
-  text-decoration: none !important;
-  font-size: 0.82rem !important;
+  gap: 6px !important;
+  transition: background 0.15s, color 0.15s !important;
   white-space: nowrap !important;
-  transition: background 0.15s !important;
-  background: none !important;
-  border-radius: 7px !important;
+  flex-shrink: 0 !important;
+  font-family: 'DM Sans', sans-serif !important;
 }
 
-.nav-drop a:hover {
-  background: rgba(255,255,255,0.09) !important;
+.nav-search-btn:hover {
+  background: rgba(255,255,255,0.18) !important;
   color: #fff !important;
 }
 
-/* Hamburger-knapp */
+/* Søkepanel overlay */
+.nav-search-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 500;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.nav-search-overlay.open { display: flex; align-items: flex-start; justify-content: center; padding-top: 80px; }
+
+.nav-search-box {
+  background: #0d3d22;
+  border-radius: 16px;
+  width: min(600px, calc(100vw - 2rem));
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-search-input-wrap {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  gap: 0.75rem;
+}
+
+.nav-search-input-wrap svg {
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.nav-search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.nav-search-input::placeholder { color: rgba(255,255,255,0.35); }
+
+.nav-search-close {
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: rgba(255,255,255,0.6);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.nav-search-results {
+  max-height: 420px;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+.nav-search-section {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  padding: 0.75rem 0.75rem 0.4rem;
+}
+
+.nav-search-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.12s;
+}
+
+.nav-search-item:hover,
+.nav-search-item.selected {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.nav-search-item-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+.nav-search-item-label { flex: 1; }
+
+.nav-search-item-type {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+.nav-search-empty {
+  padding: 2rem;
+  text-align: center;
+  color: rgba(255,255,255,0.35);
+  font-size: 0.9rem;
+}
+
+/* Hamburger */
 .nav-burger {
   display: none !important;
   flex-direction: column !important;
@@ -177,6 +261,7 @@ nav {
 /* Responsiv */
 @media (max-width: 860px) {
   .nav-links { display: none !important; }
+  .nav-search-btn span.nav-search-label { display: none !important; }
   .nav-burger { display: flex !important; }
 }
 
