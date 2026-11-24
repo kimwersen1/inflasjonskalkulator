@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strømkalkulator 2026 – Beregn strømregning og strømforbruk</title>
+<meta name="description" content="Beregn strømregningen din med vår gratis strømkalkulator. Finn ut hva strømmen koster basert på forbruk og strømpris – oppdatert for 2026.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Strømkalkulator 2026 – Beregn strømregning og strømforbruk">
+  <meta property="og:description" content="Beregn strømregningen din med vår gratis strømkalkulator. Finn ut hva strømmen koster basert på forbruk og strømpris – oppdatert for 2026.">
+  <meta property="og:url" content="https://inflasjonskalkulator.no/stromkalkulator">
+  <meta property="og:image" content="https://inflasjonskalkulator.no/og-strom.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="inflasjonskalkulator.no">
+  <meta property="og:locale" content="nb_NO">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Strømkalkulator 2026 – Beregn strømregning og strømforbruk">
+  <meta name="twitter:description" content="Beregn strømregningen din med vår gratis strømkalkulator. Finn ut hva strømmen koster basert på forbruk og strømpris – oppdatert for 2026.">
+  <meta name="twitter:image" content="https://inflasjonskalkulator.no/og-strom.svg">
+  <link rel="canonical" href="https://inflasjonskalkulator.no/stromkalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Strømkalkulator 2026",
+  "description": "Beregn strømregningen din basert på forbruk og strømpris. Gratis strømkalkulator for 2026.",
+  "url": "https://inflasjonskalkulator.no/stromkalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NOK" },
+  "publisher": { "@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva koster strøm per kWh i 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Strømprisen i Norge varierer etter prissone og tid. I 2026 ligger spotprisen typisk mellom 50 og 150 øre per kWh, med tillegg for nettleie (ca. 40–80 øre/kWh) og avgifter. Totalkostnaden er ofte 1,00–2,50 kr per kWh."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvor mye strøm bruker en norsk husstand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En gjennomsnittlig norsk husstand bruker ca. 16 000–20 000 kWh per år. En enpersonshusstand bruker ca. 8 000–10 000 kWh, mens en barnefamilie kan bruke 20 000–25 000 kWh."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er nettleie og hvorfor betaler jeg det?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nettleie er betaling for å bruke strømnettet – selve transporten av strøm hjem til deg. Nettleien inkluderer et fastledd (månedlig beløp) og et energiledd (øre per kWh). Dette betales til nettselskapet, ikke strømleverandøren."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #1a7a4a; --green-light: #e8f5ee; --green-mid: #2a9d60;
+  --green-dark: #114d2e; --red: #c0392b; --text: #1a1a1a; --text-muted: #5a6472;
+  --bg: #f7f8f5; --white: #ffffff; --border: #dde3d8;
+  --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --radius: 12px; --radius-sm: 8px;
+}
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.7; }
+nav { background: var(--green-dark); padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+.nav-logo span { color: #6ee09e; }
+nav ul { display: flex; gap: 1.5rem; list-style: none; }
+nav ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
+nav ul a:hover { color: #fff; }
+.hero { background: var(--green-dark); padding: 3.5rem 1.5rem 4.5rem; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+.breadcrumb { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+.breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.breadcrumb span { margin: 0 6px; }
+.hero-tag { display: inline-block; background: rgba(110,224,158,0.15); border: 1px solid rgba(110,224,158,0.3); color: #6ee09e; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 14px; border-radius: 99px; margin-bottom: 1.1rem; }
+.hero h1 { font-family: var(--font-head); font-weight: 800; font-size: clamp(1.4rem, 3.5vw, 2.4rem); color: #fff; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 0.75rem; word-break: break-word; }
+.hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 560px; font-weight: 300; }
+.kalk-wrap { margin-top: -2rem; position: relative; z-index: 10; }
+.kalk-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.1); padding: 2rem; }
+.kalk-title { font-family: var(--font-head); font-weight: 700; font-size: 1.25rem; color: var(--green-dark); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+.kalk-sub { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 540px) { .grid2 { grid-template-columns: 1fr; } }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+@media (max-width: 600px) { .grid3 { grid-template-columns: 1fr; } }
+.field { margin-bottom: 1rem; }
+.field label { display: block; font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 5px; }
+.field input, .field select { width: 100%; height: 48px; padding: 0 1rem; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 1rem; color: var(--text); background: var(--bg); outline: none; -moz-appearance: textfield; transition: border-color 0.15s; }
+.field input::-webkit-outer-spin-button, .field input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.field input:focus, .field select:focus { border-color: var(--green-mid); background: #fff; }
+.field-hint { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+.kalk-btn { width: 100%; height: 52px; background: var(--green); color: #fff; border: none; border-radius: var(--radius-sm); font-family: var(--font-head); font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.15s; margin-top: 0.5rem; }
+.kalk-btn:hover { background: var(--green-mid); }
+.result-box { display: none; margin-top: 1.5rem; border-radius: var(--radius-sm); padding: 1.5rem; background: var(--green-light); border: 1.5px solid #b2dfc6; }
+.result-box.show { display: block; }
+.result-main { text-align: center; margin-bottom: 1.25rem; }
+.result-val { font-family: var(--font-head); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; display: block; color: var(--green); }
+.result-lbl { font-size: 0.85rem; color: var(--text-muted); }
+.result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.08); margin-bottom: 1rem; }
+@media (max-width: 500px) { .result-grid { grid-template-columns: 1fr 1fr; } }
+.result-item { text-align: center; }
+.result-item .val { display: block; font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--green); }
+.result-item .lbl { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.result-tekst { font-size: 0.88rem; color: var(--text-muted); border-top: 1px solid rgba(0,0,0,0.08); padding-top: 0.85rem; line-height: 1.6; }
+.section { padding: 2.5rem 0; }
+.info-box { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; }
+.info-box h2 { font-family: var(--font-head); font-weight: 700; font-size: 1.15rem; color: var(--green-dark); margin-bottom: 0.75rem; }
+.info-box p { font-size: 0.95rem; margin-bottom: 0.75rem; }
+.info-box p:last-child { margin-bottom: 0; }
+.info-box ul { margin: 0.5rem 0 1rem 1.5rem; font-size: 0.95rem; }
+.info-box ul li { margin-bottom: 0.4rem; }
+.highlight-box { background: var(--green-light); border-left: 4px solid var(--green); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 0.93rem; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #fff; text-decoration: none; font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; padding: 12px 22px; border-radius: var(--radius-sm); margin-top: 1rem; transition: background 0.15s; }
+.back-link:hover { background: var(--green-mid); }
+footer { background: var(--green-dark); color: rgba(255,255,255,0.6); padding: 2rem 1.5rem; text-align: center; font-size: 0.88rem; margin-top: 2rem; }
+footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+.footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.relatert-seksjon { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; }
+.relatert-seksjon h2 { font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; color: var(--green-dark); margin-bottom: 1rem; letter-spacing: -0.02em; }
+.relatert-lenker { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.relatert-lenke { background: var(--green-light); color: var(--green-dark); text-decoration: none; font-weight: 500; font-size: 0.88rem; padding: 8px 16px; border-radius: 99px; border: 1px solid #b2dfc6; transition: background 0.15s; white-space: nowrap; }
+.relatert-lenke:hover { background: #c8ecd8; }
+.forbruk-tips { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.forbruk-tip { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; }
+.forbruk-tip .tip-title { font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; color: var(--green-dark); margin-bottom: 0.4rem; }
+.forbruk-tip p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+</style>
+<link rel="stylesheet" href="/nav.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/kalkulatorer">Kalkulatorer</a></li>
+    <li><a href="/artikler">Artikler</a></li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Søk">
+    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <span class="nav-search-label">Søk</span>
+  </button>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/kalkulatorer">🧮 Alle kalkulatorer</a>
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/nettolønn-kalkulator">💰 Nettolønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+  <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
+  <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+  <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
+  <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
+  <a href="/kjøregodtgjørelse-kalkulator">🚗 Kjøregodtgjørelse</a>
+  <a href="/sykepenger-kalkulator">🏥 Sykepengekalkulator</a>
+  <a href="/arveavgift-kalkulator">📜 Arveavgift kalkulator</a>
+  <a href="/dagpenger-kalkulator">💼 Dagpenger kalkulator</a>
+  <a href="/bostøtte-kalkulator">🏘️ Bostøtte kalkulator</a>
+  <a href="/eiendomsskatt-kalkulator">🏡 Eiendomsskatt kalkulator</a>
+  <a href="/promille-kalkulator">🍺 Promillekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+  <a href="/barnebidrag-kalkulator">👶 Barnebidrag-kalkulator</a>
+  <a href="/stromkalkulator">⚡ Strømkalkulator</a>
+  <a href="/boliglånskalkulator">🏠 Boliglånskalkulator</a>
+  <a href="/artikler">📰 Artikler</a>
+  <a href="/kpi-rapport">📋 KPI-rapport</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+<div class="nav-search-overlay" id="searchOverlay" onclick="closeSearchOnBg(event)">
+  <div class="nav-search-box">
+    <div class="nav-search-input-wrap">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input class="nav-search-input" id="searchInput" placeholder="Søk etter kalkulator eller artikkel..." autocomplete="off" oninput="doSearch(this.value)" onkeydown="searchKey(event)">
+      <button class="nav-search-close" onclick="closeSearch()">ESC</button>
+    </div>
+    <div class="nav-search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Hjem</a><span>›</span> Strømkalkulator</div>
+    <div class="hero-tag">Gratis verktøy</div>
+    <h1>Strømkalkulator – Beregn strømregning og forbruk</h1>
+    <p>Finn ut hva strømmen koster i måneden eller året basert på ditt forbruk og gjeldende strømpris.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn strømregning</div>
+      <div class="kalk-sub">Legg inn strømforbruk og priser – kalkulatoren beregner månedlig og årlig kostnad.</div>
+
+      <div class="grid2">
+        <div class="field">
+          <label>Strømforbruk (kWh/år)</label>
+          <input type="number" id="forbruk" placeholder="16 000" min="0" value="16000">
+          <div class="field-hint">Finner du på strømregningen eller hos nettselskapet.</div>
+        </div>
+        <div class="field">
+          <label>Strømpris – spotpris (øre/kWh)</label>
+          <input type="number" id="spotpris" placeholder="80" min="0" value="80" step="0.1">
+          <div class="field-hint">Gjennomsnittlig spotpris. Sjekk strømleverandøren din.</div>
+        </div>
+        <div class="field">
+          <label>Nettleie – energiledd (øre/kWh)</label>
+          <input type="number" id="nettleie" placeholder="45" min="0" value="45" step="0.1">
+          <div class="field-hint">Betales til nettselskapet, ikke strømleverandøren.</div>
+        </div>
+        <div class="field">
+          <label>Nettleie – fastledd (kr/mnd)</label>
+          <input type="number" id="fastledd" placeholder="150" min="0" value="150">
+          <div class="field-hint">Fast månedlig beløp uavhengig av forbruk.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Strømstøtte (% av pris over 73 øre/kWh)</label>
+        <select id="stromstoette">
+          <option value="0.90">90 % – Standard husholdning (gjeldende)</option>
+          <option value="0.80">80 % – Redusert støtte</option>
+          <option value="0">0 % – Ingen støtte (næringsliv)</option>
+        </select>
+        <div class="field-hint">Staten dekker 90 % av spotpris over 73 øre/kWh for husholdninger (nov 2026).</div>
+      </div>
+
+      <button class="kalk-btn" onclick="beregnStrom()">Beregn strømregning</button>
+
+      <div class="result-box" id="result-box">
+        <div class="result-main">
+          <span class="result-val" id="res-maned">—</span>
+          <span class="result-lbl">Estimert strømkostnad per måned</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="res-aar">—</span>
+            <span class="lbl">Per år</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-kwh-pris">—</span>
+            <span class="lbl">Totalpris per kWh</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-stoette">—</span>
+            <span class="lbl">Strømstøtte/år</span>
+          </div>
+        </div>
+        <div class="result-tekst" id="res-tekst"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="info-box">
+      <h2>Hva er inkludert i strømregningen?</h2>
+      <p>En norsk strømregning består av tre hoveddeler:</p>
+      <ul>
+        <li><strong>Strømpris (kraftpris):</strong> Det du betaler for selve energien til strømleverandøren. Oftest basert på Nord Pool spotpris + påslag.</li>
+        <li><strong>Nettleie:</strong> Betaling for transport av strøm gjennom nettet til nettselskapet. Inkluderer fastledd (månedlig) og energiledd (per kWh).</li>
+        <li><strong>Avgifter:</strong> Elavgift (fra 1. jan 2026: 15,41 øre/kWh) og merverdiavgift (25 %) på hele regningen.</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Strømstøtte 2026:</strong> Staten dekker 90 % av spotprisandelen som overstiger 73 øre/kWh (ekskl. mva.). Gjelder husholdninger og visse andre grupper.
+      </div>
+      <p>Vår kalkulator inkluderer strømpris og nettleie. Merk at elavgift og MVA er inkludert i estimatene over via gjennomsnittspriser.</p>
+    </div>
+
+    <div class="info-box">
+      <h2>Gjennomsnittlig strømforbruk i Norge</h2>
+      <p>Strømforbruket varierer mye etter husstandsstørrelse, boligtype og adferd:</p>
+      <div class="forbruk-tips">
+        <div class="forbruk-tip">
+          <div class="tip-title">⚡ Leilighet (1 pers)</div>
+          <p>8 000–10 000 kWh/år. Typisk for en person i by uten elektrisk oppvarming.</p>
+        </div>
+        <div class="forbruk-tip">
+          <div class="tip-title">🏠 Enebolig (2 pers)</div>
+          <p>15 000–18 000 kWh/år. Gjennomsnitt for en typisk norsk barnefamilie.</p>
+        </div>
+        <div class="forbruk-tip">
+          <div class="tip-title">🏡 Stor enebolig</div>
+          <p>20 000–30 000 kWh/år. Store boliger med elektrisk oppvarming og varmtvann.</p>
+        </div>
+        <div class="forbruk-tip">
+          <div class="tip-title">🌡️ Med varmepumpe</div>
+          <p>Reduserer forbruket med 30–60 % sammenlignet med direktevirkende varme.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h2>Slik sparer du på strøm</h2>
+      <ul>
+        <li><strong>Bytt til timesavtale:</strong> Betal spotpris time for time og forskyv forbruk til billige timer.</li>
+        <li><strong>Installer varmepumpe:</strong> En god investering som vanligvis betaler seg inn på 3–6 år.</li>
+        <li><strong>Isoler bedre:</strong> Etterisolering av loft og vegger kan kutte varmeforbruket med 20–40 %.</li>
+        <li><strong>Bruk tidsur:</strong> Sett varmtvannsberederen på nattariff – billigste strøm typisk kl. 22–06.</li>
+        <li><strong>Sammenlign strømleverandører:</strong> Bruk Strømpris.no eller Forbrukerportalen til å finne beste avtale.</li>
+        <li><strong>LED-pærer:</strong> Bruker 80–90 % mindre energi enn glødepærer og har lang levetid.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="relatert-seksjon">
+    <h2>Relaterte verktøy og artikler</h2>
+    <div class="relatert-lenker">
+      <a href="/" class="relatert-lenke">📊 Inflasjonskalkulator</a>
+      <a href="/husleiekalkulator" class="relatert-lenke">🏠 Husleiekalkulator</a>
+      <a href="/boliglånskalkulator" class="relatert-lenke">🏡 Boliglånskalkulator</a>
+      <a href="/renters-rente-kalkulator" class="relatert-lenke">📈 Renters rente-kalkulator</a>
+      <a href="/lønnskalkulator" class="relatert-lenke">💼 Lønnskalkulator</a>
+      <a href="/artikler/beste-sparekonto-2026" class="relatert-lenke">💰 Beste sparekonto</a>
+      <a href="/artikler/hva-er-inflasjon" class="relatert-lenke">📖 Hva er inflasjon?</a>
+      <a href="/ressurser" class="relatert-lenke">🔗 Ressurser</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-cols">
+      <div>
+        <div class="footer-col-title">Lønn &amp; skatt</div>
+        <a href="/lønnskalkulator">Lønnskalkulator</a>
+        <a href="/nettolønn-kalkulator">Nettolønnskalkulator</a>
+        <a href="/timelønnskalkulator">Timelønn kalkulator</a>
+        <a href="/tabelltrekk-kalkulator">Tabelltrekk kalkulator</a>
+        <a href="/kjøregodtgjørelse-kalkulator">Kjøregodtgjørelse</a>
+        <a href="/feriepengekalkulator">Feriepengekalkulator</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Trygd &amp; støtte</div>
+        <a href="/sykepenger-kalkulator">Sykepengekalkulator</a>
+        <a href="/foreldrepenger-kalkulator">Foreldrepenger</a>
+        <a href="/uforetrygd-kalkulator">Uføretrygd kalkulator</a>
+        <a href="/dagpenger-kalkulator">Dagpenger kalkulator</a>
+        <a href="/bostøtte-kalkulator">Bostøtte kalkulator</a>
+        <a href="/barnebidrag-kalkulator">Barnebidrag kalkulator</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Bolig &amp; energi</div>
+        <a href="/stromkalkulator">Strømkalkulator</a>
+        <a href="/boliglånskalkulator">Boliglånskalkulator</a>
+        <a href="/husleiekalkulator">Husleiekalkulator</a>
+        <a href="/eiendomsskatt-kalkulator">Eiendomsskatt</a>
+        <a href="/renters-rente-kalkulator">Renters rente</a>
+        <a href="/">Inflasjonskalkulator</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Artikler</div>
+        <a href="/artikler/beste-sparekonto-2026">Beste sparekonto</a>
+        <a href="/artikler/beste-kredittkort-2026">Beste kredittkort</a>
+        <a href="/artikler/beste-forbrukslan-2026">Beste forbrukslån</a>
+        <a href="/artikler/bsu-2026">BSU 2026</a>
+        <a href="/artikler/skatt-pa-aksjegevinst">Skatt aksjegevinst</a>
+        <a href="/artikler">Alle artikler →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Estimater basert på gjennomsnittspriser. Kun veiledende.</span>
+      <span>&copy; 2026 inflasjonskalkulator.no</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function beregnStrom() {
+  const forbruk = parseFloat(document.getElementById('forbruk').value) || 0;
+  const spotpris = parseFloat(document.getElementById('spotpris').value) || 0;
+  const nettleieEnergi = parseFloat(document.getElementById('nettleie').value) || 0;
+  const fastledd = parseFloat(document.getElementById('fastledd').value) || 0;
+  const stoetteAndel = parseFloat(document.getElementById('stromstoette').value);
+
+  if (!forbruk || !spotpris) {
+    document.getElementById('result-box').classList.remove('show');
+    return;
+  }
+
+  const terskel = 73; // øre/kWh - statlig støttegrense
+  const elavgift = 15.41; // øre/kWh (2026)
+  const mva = 1.25; // 25 % mva
+
+  // Strømpris med støtte
+  let effektivSpot = spotpris;
+  if (stoetteAndel > 0 && spotpris > terskel) {
+    const overstiger = spotpris - terskel;
+    effektivSpot = terskel + (overstiger * (1 - stoetteAndel));
+  }
+
+  // Totalt per kWh (øre)
+  const totaltPerKwhOere = (effektivSpot + nettleieEnergi + elavgift) * mva;
+  const totaltPerKwhKr = totaltPerKwhOere / 100;
+
+  // Energikostnad per år
+  const energiKostAar = forbruk * totaltPerKwhKr;
+  const fastleddAar = fastledd * 12;
+  const totalAar = energiKostAar + fastleddAar;
+  const totalManed = totalAar / 12;
+
+  // Støttebeløp per år
+  let stoetteAar = 0;
+  if (stoetteAndel > 0 && spotpris > terskel) {
+    const overstiger = spotpris - terskel;
+    stoetteAar = forbruk * (overstiger * stoetteAndel / 100);
+  }
+
+  const fmtKr = n => Math.round(n).toLocaleString('nb-NO') + ' kr';
+  const fmtOere = n => n.toFixed(1).replace('.', ',') + ' kr/kWh';
+
+  document.getElementById('res-maned').textContent = fmtKr(totalManed);
+  document.getElementById('res-aar').textContent = fmtKr(totalAar);
+  document.getElementById('res-kwh-pris').textContent = fmtOere(totaltPerKwhKr);
+  document.getElementById('res-stoette').textContent = stoetteAar > 0 ? fmtKr(stoetteAar) : '— (under terskel)';
+
+  const maanedForbruk = forbruk / 12;
+  document.getElementById('res-tekst').innerHTML =
+    `Med et forbruk på ${Math.round(maanedForbruk).toLocaleString('nb-NO')} kWh/mnd og en effektiv strømpris på ${(effektivSpot).toFixed(1)} øre/kWh ` +
+    `(etter evt. strømstøtte) utgjør den totale strømkostnaden ca. <strong>${fmtKr(totalManed)}</strong> per måned. ` +
+    (stoetteAar > 0 ? `Strømstøtten sparer deg for ca. ${fmtKr(stoetteAar)} per år. ` : '') +
+    `Husk at dette er et estimat – faktisk kostnad varierer med årstid og strømpris.`;
+
+  document.getElementById('result-box').classList.add('show');
+}
+</script>
+<script src="/nav.js"></script>
+</body>
+</html>

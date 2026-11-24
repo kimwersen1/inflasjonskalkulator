@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boliglånskalkulator 2026 – Beregn månedlig terminbeløp og rente</title>
+<meta name="description" content="Beregn månedlig terminbeløp på boliglån med vår gratis boliglånskalkulator. Sammenlign annuitetslån og serielån – oppdatert med 2026-renter.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Boliglånskalkulator 2026 – Beregn månedlig terminbeløp og rente">
+  <meta property="og:description" content="Beregn månedlig terminbeløp på boliglån med vår gratis boliglånskalkulator. Sammenlign annuitetslån og serielån – oppdatert med 2026-renter.">
+  <meta property="og:url" content="https://inflasjonskalkulator.no/boliglånskalkulator">
+  <meta property="og:image" content="https://inflasjonskalkulator.no/og-boliglan.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="inflasjonskalkulator.no">
+  <meta property="og:locale" content="nb_NO">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Boliglånskalkulator 2026 – Beregn månedlig terminbeløp og rente">
+  <meta name="twitter:description" content="Beregn månedlig terminbeløp på boliglån med vår gratis boliglånskalkulator. Sammenlign annuitetslån og serielån – oppdatert med 2026-renter.">
+  <meta name="twitter:image" content="https://inflasjonskalkulator.no/og-boliglan.svg">
+  <link rel="canonical" href="https://inflasjonskalkulator.no/boliglånskalkulator">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Boliglånskalkulator 2026",
+  "description": "Beregn månedlig terminbeløp på boliglån. Sammenlign annuitetslån og serielån med vår gratis boliglånskalkulator.",
+  "url": "https://inflasjonskalkulator.no/boliglånskalkulator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NOK" },
+  "publisher": { "@type": "Organization", "name": "inflasjonskalkulator.no", "url": "https://inflasjonskalkulator.no" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er forskjellen på annuitetslån og serielån?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Annuitetslån har fast månedlig terminbeløp gjennom hele låneperioden. Serielån har fast avdrag, men terminbeløpet synker over tid fordi rentedelen reduseres. Totalt betaler du mindre renter med serielån, men de månedlige kostnadene er høyere i starten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er boliglånsrenten i Norge i 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Boliglånsrenten i Norge varierte i 2026 typisk mellom 5,0 % og 7,0 % for flytende rente. Norges Bank begynte rentekutt i 2024 og renten er ventet å falle videre. Sjekk din bank for gjeldende rente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er egenkapitalkravet for boliglån?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I Norge kreves minimum 15 % egenkapital av boligens kjøpspris. I Oslo gjelder strengere krav: maks 5 ganger bruttoinntekt i lån. Unge under 34 år kan bruke BSU-sparing som egenkapital."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er boliglånsserielån?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Serielån er et lån der du betaler like store avdrag hver måned, men rentekostnaden synker fordi gjelden reduseres. Totalt betaler du mindre renter enn annuitetslån, men terminbeløpet er høyere de første årene."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #1a7a4a; --green-light: #e8f5ee; --green-mid: #2a9d60;
+  --green-dark: #114d2e; --red: #c0392b; --text: #1a1a1a; --text-muted: #5a6472;
+  --bg: #f7f8f5; --white: #ffffff; --border: #dde3d8;
+  --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --radius: 12px; --radius-sm: 8px;
+}
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.7; }
+nav { background: var(--green-dark); padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+.nav-logo span { color: #6ee09e; }
+nav ul { display: flex; gap: 1.5rem; list-style: none; }
+nav ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
+nav ul a:hover { color: #fff; }
+.hero { background: var(--green-dark); padding: 3.5rem 1.5rem 4.5rem; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+.breadcrumb { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+.breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.breadcrumb span { margin: 0 6px; }
+.hero-tag { display: inline-block; background: rgba(110,224,158,0.15); border: 1px solid rgba(110,224,158,0.3); color: #6ee09e; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 14px; border-radius: 99px; margin-bottom: 1.1rem; }
+.hero h1 { font-family: var(--font-head); font-weight: 800; font-size: clamp(1.4rem, 3.5vw, 2.4rem); color: #fff; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 0.75rem; word-break: break-word; }
+.hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 560px; font-weight: 300; }
+.kalk-wrap { margin-top: -2rem; position: relative; z-index: 10; }
+.kalk-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.1); padding: 2rem; }
+.kalk-title { font-family: var(--font-head); font-weight: 700; font-size: 1.25rem; color: var(--green-dark); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+.kalk-sub { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 540px) { .grid2 { grid-template-columns: 1fr; } }
+.field { margin-bottom: 1rem; }
+.field label { display: block; font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 5px; }
+.field input, .field select { width: 100%; height: 48px; padding: 0 1rem; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 1rem; color: var(--text); background: var(--bg); outline: none; -moz-appearance: textfield; transition: border-color 0.15s; }
+.field input::-webkit-outer-spin-button, .field input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.field input:focus, .field select:focus { border-color: var(--green-mid); background: #fff; }
+.field-hint { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+.kalk-btn { width: 100%; height: 52px; background: var(--green); color: #fff; border: none; border-radius: var(--radius-sm); font-family: var(--font-head); font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.15s; margin-top: 0.5rem; }
+.kalk-btn:hover { background: var(--green-mid); }
+.result-box { display: none; margin-top: 1.5rem; border-radius: var(--radius-sm); padding: 1.5rem; background: var(--green-light); border: 1.5px solid #b2dfc6; }
+.result-box.show { display: block; }
+.result-main { text-align: center; margin-bottom: 1.25rem; }
+.result-val { font-family: var(--font-head); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; display: block; color: var(--green); }
+.result-lbl { font-size: 0.85rem; color: var(--text-muted); }
+.result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.08); margin-bottom: 1rem; }
+@media (max-width: 500px) { .result-grid { grid-template-columns: 1fr 1fr; } }
+.result-item { text-align: center; }
+.result-item .val { display: block; font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--green); }
+.result-item .lbl { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.result-tekst { font-size: 0.88rem; color: var(--text-muted); border-top: 1px solid rgba(0,0,0,0.08); padding-top: 0.85rem; line-height: 1.6; }
+.serie-info { margin-top: 1rem; padding: 0.75rem 1rem; background: rgba(255,255,255,0.7); border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--text-muted); }
+.section { padding: 2.5rem 0; }
+.info-box { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; }
+.info-box h2 { font-family: var(--font-head); font-weight: 700; font-size: 1.15rem; color: var(--green-dark); margin-bottom: 0.75rem; }
+.info-box p { font-size: 0.95rem; margin-bottom: 0.75rem; }
+.info-box p:last-child { margin-bottom: 0; }
+.info-box ul { margin: 0.5rem 0 1rem 1.5rem; font-size: 0.95rem; }
+.info-box ul li { margin-bottom: 0.4rem; }
+.info-box table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 1rem 0; }
+.info-box table th { background: var(--green-light); padding: 0.6rem 0.8rem; text-align: left; font-family: var(--font-head); font-weight: 600; font-size: 0.82rem; color: var(--green-dark); border-bottom: 1.5px solid #b2dfc6; }
+.info-box table td { padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border); }
+.info-box table tr:last-child td { border-bottom: none; }
+.highlight-box { background: var(--green-light); border-left: 4px solid var(--green); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 0.93rem; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #fff; text-decoration: none; font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; padding: 12px 22px; border-radius: var(--radius-sm); margin-top: 1rem; transition: background 0.15s; }
+.back-link:hover { background: var(--green-mid); }
+footer { background: var(--green-dark); color: rgba(255,255,255,0.6); padding: 2rem 1.5rem; text-align: center; font-size: 0.88rem; margin-top: 2rem; }
+footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+.footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.relatert-seksjon { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; }
+.relatert-seksjon h2 { font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; color: var(--green-dark); margin-bottom: 1rem; letter-spacing: -0.02em; }
+.relatert-lenker { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.relatert-lenke { background: var(--green-light); color: var(--green-dark); text-decoration: none; font-weight: 500; font-size: 0.88rem; padding: 8px 16px; border-radius: 99px; border: 1px solid #b2dfc6; transition: background 0.15s; white-space: nowrap; }
+.relatert-lenke:hover { background: #c8ecd8; }
+</style>
+<link rel="stylesheet" href="/nav.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/kalkulatorer">Kalkulatorer</a></li>
+    <li><a href="/artikler">Artikler</a></li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Søk">
+    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <span class="nav-search-label">Søk</span>
+  </button>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/kalkulatorer">🧮 Alle kalkulatorer</a>
+  <a href="/">📊 Inflasjonskalkulator</a>
+  <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
+  <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
+  <a href="/nettolønn-kalkulator">💰 Nettolønnskalkulator</a>
+  <a href="/feriepengekalkulator">🏖️ Feriepengekalkulator</a>
+  <a href="/tabelltrekk-kalkulator">💳 Tabelltrekk kalkulator</a>
+  <a href="/foreldrepenger-kalkulator">👶 Foreldrepenger kalkulator</a>
+  <a href="/skatt-pensjon-kalkulator">🏦 Skatt på pensjon</a>
+  <a href="/timelønnskalkulator">⏱️ Timelønn kalkulator</a>
+  <a href="/uforetrygd-kalkulator">♿ Uføretrygd kalkulator</a>
+  <a href="/kjøregodtgjørelse-kalkulator">🚗 Kjøregodtgjørelse</a>
+  <a href="/sykepenger-kalkulator">🏥 Sykepengekalkulator</a>
+  <a href="/arveavgift-kalkulator">📜 Arveavgift kalkulator</a>
+  <a href="/dagpenger-kalkulator">💼 Dagpenger kalkulator</a>
+  <a href="/bostøtte-kalkulator">🏘️ Bostøtte kalkulator</a>
+  <a href="/eiendomsskatt-kalkulator">🏡 Eiendomsskatt kalkulator</a>
+  <a href="/promille-kalkulator">🍺 Promillekalkulator</a>
+  <a href="/renters-rente-kalkulator">📈 Renters rente-kalkulator</a>
+  <a href="/mva-kalkulator">🧾 MVA-kalkulator</a>
+  <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
+  <a href="/formuesskatt-kalkulator">💰 Formuesskatt-kalkulator</a>
+  <a href="/barnebidrag-kalkulator">👶 Barnebidrag-kalkulator</a>
+  <a href="/stromkalkulator">⚡ Strømkalkulator</a>
+  <a href="/boliglånskalkulator">🏠 Boliglånskalkulator</a>
+  <a href="/artikler">📰 Artikler</a>
+  <a href="/kpi-rapport">📋 KPI-rapport</a>
+  <a href="/ressurser">🔗 Ressurser</a>
+</div>
+<div class="nav-search-overlay" id="searchOverlay" onclick="closeSearchOnBg(event)">
+  <div class="nav-search-box">
+    <div class="nav-search-input-wrap">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input class="nav-search-input" id="searchInput" placeholder="Søk etter kalkulator eller artikkel..." autocomplete="off" oninput="doSearch(this.value)" onkeydown="searchKey(event)">
+      <button class="nav-search-close" onclick="closeSearch()">ESC</button>
+    </div>
+    <div class="nav-search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Hjem</a><span>›</span> Boliglånskalkulator</div>
+    <div class="hero-tag">Gratis verktøy</div>
+    <h1>Boliglånskalkulator – Beregn terminbeløp og totalkostnad</h1>
+    <p>Finn ut hva boliglånet koster per måned. Sammenlign annuitetslån og serielån med oppdaterte renter for 2026.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="kalk-wrap">
+    <div class="kalk-card">
+      <div class="kalk-title">Beregn boliglån</div>
+      <div class="kalk-sub">Legg inn lånebeløp, rente og løpetid for å beregne månedlig terminbeløp og totale rentekostnader.</div>
+
+      <div class="grid2">
+        <div class="field">
+          <label>Lånebeløp (kr)</label>
+          <input type="number" id="lanebelop" placeholder="3 500 000" min="0" step="10000">
+          <div class="field-hint">Totalt boliglån etter egenkapital.</div>
+        </div>
+        <div class="field">
+          <label>Nominell rente (% per år)</label>
+          <input type="number" id="rente" placeholder="5.5" min="0" max="30" step="0.1" value="5.5">
+          <div class="field-hint">Flytende boliglånsrente 2026: ca. 5–7 %.</div>
+        </div>
+        <div class="field">
+          <label>Nedbetalingstid (år)</label>
+          <input type="number" id="lopetid" placeholder="25" min="1" max="50" value="25">
+          <div class="field-hint">Typisk 20–30 år for boliglån.</div>
+        </div>
+        <div class="field">
+          <label>Lånetype</label>
+          <select id="lanetype">
+            <option value="annuitet">Annuitetslån (fast terminbeløp)</option>
+            <option value="serie">Serielån (fast avdrag)</option>
+          </select>
+          <div class="field-hint">Annuitetslån: fast beløp. Serielån: synkende beløp.</div>
+        </div>
+      </div>
+
+      <button class="kalk-btn" onclick="beregnLan()">Beregn boliglån</button>
+
+      <div class="result-box" id="result-box">
+        <div class="result-main">
+          <span class="result-val" id="res-maned">—</span>
+          <span class="result-lbl" id="res-maned-lbl">Månedlig terminbeløp (1. termin)</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="val" id="res-total-renter">—</span>
+            <span class="lbl">Totale renter</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-total-betalt">—</span>
+            <span class="lbl">Totalt betalt</span>
+          </div>
+          <div class="result-item">
+            <span class="val" id="res-maned-siste">—</span>
+            <span class="lbl">Siste terminbeløp</span>
+          </div>
+        </div>
+        <div class="serie-info" id="serie-info"></div>
+        <div class="result-tekst" id="res-tekst"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="info-box">
+      <h2>Annuitetslån vs. serielån – hva er best?</h2>
+      <p>De to vanligste boliglåntypene i Norge er annuitetslån og serielån. Begge amortiserer lånet fullt ut over nedbetalingstiden, men på ulike måter:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Egenskap</th>
+            <th>Annuitetslån</th>
+            <th>Serielån</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Månedlig beløp</td>
+            <td>Fast gjennom hele perioden</td>
+            <td>Høyest i starten, synker over tid</td>
+          </tr>
+          <tr>
+            <td>Avdrag per termin</td>
+            <td>Stiger over tid</td>
+            <td>Fast gjennom hele perioden</td>
+          </tr>
+          <tr>
+            <td>Totale renter</td>
+            <td>Høyere totalt</td>
+            <td>Lavere totalt</td>
+          </tr>
+          <tr>
+            <td>Passer for</td>
+            <td>Forutsigbar økonomi, førstegangskjøpere</td>
+            <td>God inntekt, vil spare renter</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box">
+        <strong>Tommelfingerregel:</strong> Med serielån betaler du typisk 15–25 % mindre i totale rentekostnader sammenlignet med annuitetslån over samme periode.
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h2>Boliglånsregler i Norge 2026</h2>
+      <p>Finanstilsynets boliglånsforskrift stiller krav til boliglån i Norge:</p>
+      <ul>
+        <li><strong>Egenkapital:</strong> Minimum 15 % av boligens kjøpspris (85 % belåningsgrad)</li>
+        <li><strong>Gjeldsbetjeningsevne:</strong> Lånet skal tåle 3 prosentpoeng renteøkning</li>
+        <li><strong>Gjeld i forhold til inntekt:</strong> Maks 5 ganger bruttoinntekt (Oslo: samme)</li>
+        <li><strong>Nedbetalingstid:</strong> Maks 30 år for lån over 60 % belåningsgrad</li>
+        <li><strong>Avdragsfrihet:</strong> Kun tillatt ved belåningsgrad under 60 %</li>
+      </ul>
+      <p>Bankene kan gi 10 % av innvilgede lån til kunder som ikke oppfyller alle kravene (fleksibilitetskvoten).</p>
+    </div>
+
+    <div class="info-box">
+      <h2>Boliglånsrenter 2026</h2>
+      <p>Norges Bank hevet styringsrenten kraftig i 2022–2023 for å bekjempe inflasjon. I september 2024 ble renten satt ned for første gang på tre år. Boliglånsrenter flytende (typisk):</p>
+      <ul>
+        <li><strong>Lavt (gode vilkår/mye egenkapital):</strong> ca. 5,0–5,5 %</li>
+        <li><strong>Gjennomsnitt markedet:</strong> ca. 5,5–6,0 %</li>
+        <li><strong>Høyt (lite egenkapital/dårlig kredittscore):</strong> ca. 6,0–7,0 %</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Tips:</strong> Forhandle rente med banken din – det er helt vanlig og bankene forventer det. Sammenlign gjerne med andre banker ved hjelp av Finansportalen.no (Forbrukertilsynet).
+      </div>
+    </div>
+  </div>
+
+  <div class="relatert-seksjon">
+    <h2>Relaterte verktøy og artikler</h2>
+    <div class="relatert-lenker">
+      <a href="/" class="relatert-lenke">📊 Inflasjonskalkulator</a>
+      <a href="/husleiekalkulator" class="relatert-lenke">🏠 Husleiekalkulator</a>
+      <a href="/stromkalkulator" class="relatert-lenke">⚡ Strømkalkulator</a>
+      <a href="/renters-rente-kalkulator" class="relatert-lenke">📈 Renters rente-kalkulator</a>
+      <a href="/eiendomsskatt-kalkulator" class="relatert-lenke">🏡 Eiendomsskatt kalkulator</a>
+      <a href="/nettolønn-kalkulator" class="relatert-lenke">💰 Nettolønnskalkulator</a>
+      <a href="/artikler/beste-sparekonto-2026" class="relatert-lenke">💰 Beste sparekonto</a>
+      <a href="/artikler/bsu-2026" class="relatert-lenke">📖 BSU 2026</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-cols">
+      <div>
+        <div class="footer-col-title">Lønn &amp; skatt</div>
+        <a href="/lønnskalkulator">Lønnskalkulator</a>
+        <a href="/nettolønn-kalkulator">Nettolønnskalkulator</a>
+        <a href="/timelønnskalkulator">Timelønn kalkulator</a>
+        <a href="/tabelltrekk-kalkulator">Tabelltrekk kalkulator</a>
+        <a href="/kjøregodtgjørelse-kalkulator">Kjøregodtgjørelse</a>
+        <a href="/feriepengekalkulator">Feriepengekalkulator</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Trygd &amp; støtte</div>
+        <a href="/sykepenger-kalkulator">Sykepengekalkulator</a>
+        <a href="/foreldrepenger-kalkulator">Foreldrepenger</a>
+        <a href="/uforetrygd-kalkulator">Uføretrygd kalkulator</a>
+        <a href="/dagpenger-kalkulator">Dagpenger kalkulator</a>
+        <a href="/bostøtte-kalkulator">Bostøtte kalkulator</a>
+        <a href="/barnebidrag-kalkulator">Barnebidrag kalkulator</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Bolig &amp; energi</div>
+        <a href="/boliglånskalkulator">Boliglånskalkulator</a>
+        <a href="/stromkalkulator">Strømkalkulator</a>
+        <a href="/husleiekalkulator">Husleiekalkulator</a>
+        <a href="/eiendomsskatt-kalkulator">Eiendomsskatt</a>
+        <a href="/renters-rente-kalkulator">Renters rente</a>
+        <a href="/">Inflasjonskalkulator</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Artikler</div>
+        <a href="/artikler/beste-sparekonto-2026">Beste sparekonto</a>
+        <a href="/artikler/beste-kredittkort-2026">Beste kredittkort</a>
+        <a href="/artikler/beste-forbrukslan-2026">Beste forbrukslån</a>
+        <a href="/artikler/bsu-2026">BSU 2026</a>
+        <a href="/artikler/skatt-pa-aksjegevinst">Skatt aksjegevinst</a>
+        <a href="/artikler">Alle artikler →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Beregninger er veiledende. Kontakt banken din for nøyaktige lånetilbud.</span>
+      <span>&copy; 2026 inflasjonskalkulator.no</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function beregnLan() {
+  const P = parseFloat(document.getElementById('lanebelop').value);
+  const arligRente = parseFloat(document.getElementById('rente').value);
+  const ar = parseInt(document.getElementById('lopetid').value);
+  const type = document.getElementById('lanetype').value;
+
+  if (!P || !arligRente || !ar || isNaN(P) || isNaN(arligRente) || isNaN(ar)) {
+    document.getElementById('result-box').classList.remove('show');
+    return;
+  }
+
+  const r = arligRente / 100 / 12; // månedlig rente
+  const n = ar * 12; // antall terminer
+
+  const fmtKr = num => Math.round(num).toLocaleString('nb-NO') + ' kr';
+
+  let maanedligForste, maanedligSiste, totalRenter, totalBetalt;
+  let serieInfo = '';
+
+  if (type === 'annuitet') {
+    // Annuitetslån: fast terminbeløp
+    if (r === 0) {
+      maanedligForste = P / n;
+    } else {
+      maanedligForste = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    }
+    maanedligSiste = maanedligForste;
+    totalBetalt = maanedligForste * n;
+    totalRenter = totalBetalt - P;
+
+    document.getElementById('res-maned-lbl').textContent = 'Månedlig terminbeløp (fast)';
+  } else {
+    // Serielån: fast avdrag
+    const fastAvdrag = P / n;
+    maanedligForste = fastAvdrag + P * r;
+    maanedligSiste = fastAvdrag + fastAvdrag * r; // siste termin
+
+    totalRenter = 0;
+    for (let i = 1; i <= n; i++) {
+      const gjeld = P - fastAvdrag * (i - 1);
+      totalRenter += gjeld * r;
+    }
+    totalBetalt = P + totalRenter;
+
+    serieInfo = `Fast avdrag per måned: <strong>${fmtKr(fastAvdrag)}</strong>. Terminbeløpet synker fra ${fmtKr(maanedligForste)} (1. termin) til ${fmtKr(maanedligSiste)} (siste termin) etter hvert som gjelden reduseres.`;
+    document.getElementById('res-maned-lbl').textContent = 'Månedlig terminbeløp (1. termin)';
+  }
+
+  document.getElementById('res-maned').textContent = fmtKr(maanedligForste);
+  document.getElementById('res-total-renter').textContent = fmtKr(totalRenter);
+  document.getElementById('res-total-betalt').textContent = fmtKr(totalBetalt);
+  document.getElementById('res-maned-siste').textContent = fmtKr(maanedligSiste);
+
+  const serieEl = document.getElementById('serie-info');
+  serieEl.innerHTML = serieInfo;
+  serieEl.style.display = serieInfo ? 'block' : 'none';
+
+  const typeTekst = type === 'annuitet' ? 'annuitetslån' : 'serielån';
+  document.getElementById('res-tekst').innerHTML =
+    `Med et ${typeTekst} på ${fmtKr(P)} til ${arligRente.toString().replace('.', ',')} % rente over ${ar} år betaler du totalt ` +
+    `<strong>${fmtKr(totalRenter)}</strong> i renter. Total tilbakebetaling blir <strong>${fmtKr(totalBetalt)}</strong>. ` +
+    `Rentekostnaden utgjør ${((totalRenter / P) * 100).toFixed(0)} % av lånebeløpet. ` +
+    `Husk at dette er et estimat – effektiv rente inkluderer etableringsgebyr og termingebyr.`;
+
+  document.getElementById('result-box').classList.add('show');
+}
+</script>
+<script src="/nav.js"></script>
+</body>
+</html>
