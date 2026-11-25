@@ -247,13 +247,21 @@ nav {
 }
 
 .nav-mobile a {
-  display: block !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
   color: rgba(255,255,255,0.85) !important;
   text-decoration: none !important;
   padding: 0.85rem 1.5rem !important;
   font-size: 1rem !important;
   border-bottom: 1px solid rgba(255,255,255,0.06) !important;
   background: none !important;
+}
+
+.nav-mobile-alle {
+  color: #6ee09e !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
 }
 
 .nav-mobile a:hover {
