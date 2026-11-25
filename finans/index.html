@@ -107,24 +107,6 @@ footer a { color: #6ee09e; text-decoration: none; }
 </head>
 <body>
 
-<nav>
-  <a href="/" class="nav-logo">inflasjonskalkulator<span>.no</span></a>
-  <ul class="nav-links">
-    <li><a href="/kalkulatorer">Kalkulatorer</a></li>
-    <li><a href="/artikler">Artikler</a></li>
-    <li><a href="/kpi-rapport">KPI-rapport</a></li>
-    <li><a href="/ressurser">Ressurser</a></li>
-  </ul>
-  <button class="nav-search-btn" onclick="openSearch()" aria-label="Søk">
-    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <span class="nav-search-label">Søk</span>
-  </button>
-  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="nav-mobile" id="nav-mobile">
-  <div class="nav-section">Kalkulatorer</div>
   <a href="/">📊 Inflasjonskalkulator</a>
   <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
   <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
@@ -340,33 +322,6 @@ footer a { color: #6ee09e; text-decoration: none; }
 </footer>
 
 <script>
-function toggleMenu(){
-  const m=document.getElementById('nav-mobile');
-  const b=document.getElementById('nav-burger');
-  const open=!m.classList.contains('open');
-  m.classList.toggle('open',open);
-  b.classList.toggle('open',open);
-  b.setAttribute('aria-expanded',open);
-}
-document.addEventListener('click',function(e){
-  const m=document.getElementById('nav-mobile');
-  const b=document.getElementById('nav-burger');
-  if(m&&b&&!m.contains(e.target)&&!b.contains(e.target)){
-    m.classList.remove('open');
-    b.classList.remove('open');
-    b.setAttribute('aria-expanded',false);
-  }
-});
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){
-    const m=document.getElementById('nav-mobile');
-    const b=document.getElementById('nav-burger');
-    if(m){m.classList.remove('open');}
-    if(b){b.classList.remove('open');b.setAttribute('aria-expanded',false);}
-  }
-});
-</script>
-<script>
 const PAGES=[{icon:'📊',name:'Inflasjonskalkulator',url:'/',type:'Kalkulator'},{icon:'🏠',name:'Husleiekalkulator',url:'/husleiekalkulator',type:'Kalkulator'},{icon:'💼',name:'Lønnskalkulator',url:'/lønnskalkulator',type:'Kalkulator'},{icon:'💰',name:'Nettolønnskalkulator',url:'/nettolønn-kalkulator',type:'Kalkulator'},{icon:'🏖️',name:'Feriepengekalkulator',url:'/feriepengekalkulator',type:'Kalkulator'},{icon:'💳',name:'Tabelltrekk kalkulator',url:'/tabelltrekk-kalkulator',type:'Kalkulator'},{icon:'👶',name:'Foreldrepenger kalkulator',url:'/foreldrepenger-kalkulator',type:'Kalkulator'},{icon:'🏛️',name:'Skatt på pensjon',url:'/skatt-pensjon-kalkulator',type:'Kalkulator'},{icon:'⏱️',name:'Timelønn kalkulator',url:'/timelønnskalkulator',type:'Kalkulator'},{icon:'♿',name:'Uføretrygd kalkulator',url:'/uforetrygd-kalkulator',type:'Kalkulator'},{icon:'🚗',name:'Kjøregodtgjørelse',url:'/kjøregodtgjørelse-kalkulator',type:'Kalkulator'},{icon:'🏥',name:'Sykepengekalkulator',url:'/sykepenger-kalkulator',type:'Kalkulator'},{icon:'📜',name:'Arveavgift kalkulator',url:'/arveavgift-kalkulator',type:'Kalkulator'},{icon:'💼',name:'Dagpenger kalkulator',url:'/dagpenger-kalkulator',type:'Kalkulator'},{icon:'🏘️',name:'Bostøtte kalkulator',url:'/bostøtte-kalkulator',type:'Kalkulator'},{icon:'🏡',name:'Eiendomsskatt kalkulator',url:'/eiendomsskatt-kalkulator',type:'Kalkulator'},{icon:'🍺',name:'Promillekalkulator',url:'/promille-kalkulator',type:'Kalkulator'},{icon:'📈',name:'Renters rente-kalkulator',url:'/renters-rente-kalkulator',type:'Kalkulator'},{icon:'🧾',name:'MVA-kalkulator',url:'/mva-kalkulator',type:'Kalkulator'},{icon:'🏦',name:'Pensjonskalkulator',url:'/pensjonskalkulator',type:'Kalkulator'},{icon:'💰',name:'Formuesskatt kalkulator',url:'/formuesskatt-kalkulator',type:'Kalkulator'},{icon:'👶',name:'Barnebidrag kalkulator',url:'/barnebidrag-kalkulator',type:'Kalkulator'},{icon:'📖',name:'Hva er inflasjon?',url:'/artikler/hva-er-inflasjon',type:'Artikkel'},{icon:'🏠',name:'Husleieøkning 2026',url:'/artikler/husleieoekning-2026',type:'Artikkel'},{icon:'💼',name:'Reallønnsvekst 2026',url:'/artikler/reallonnsvekst-2026',type:'Artikkel'},{icon:'💰',name:'Nominell rente',url:'/artikler/nominell-rente',type:'Artikkel'},{icon:'📈',name:'Kroneverdi historisk',url:'/artikler/kroneverdi-historisk',type:'Artikkel'},{icon:'🏖️',name:'Feriepenger prosent',url:'/artikler/feriepenger-prosent',type:'Artikkel'},{icon:'🏠',name:'Indeksregulering husleie',url:'/artikler/indeksregulering-husleie',type:'Artikkel'},{icon:'📊',name:'Konsumprisindeksen 2026',url:'/artikler/konsumprisindeksen-2026',type:'Artikkel'},{icon:'📉',name:'Rentehevinger og inflasjon',url:'/artikler/rentehevinger-og-inflasjon',type:'Artikkel'},{icon:'🛡️',name:'Beskytt sparepengene',url:'/artikler/slik-beskytter-du-sparepengene',type:'Artikkel'},{icon:'📊',name:'Norsk inflasjon historisk',url:'/artikler/norsk-inflasjon-historisk',type:'Artikkel'},{icon:'💳',name:'Beste kredittkort 2026',url:'/artikler/beste-kredittkort-2026',type:'Artikkel'},{icon:'🏦',name:'Beste sparekonto 2026',url:'/artikler/beste-sparekonto-2026',type:'Artikkel'},{icon:'💸',name:'Beste forbrukslån 2026',url:'/artikler/beste-forbrukslan-2026',type:'Artikkel'},{icon:'🔄',name:'Refinansiering av gjeld',url:'/artikler/refinansiering-av-gjeld',type:'Artikkel'},{icon:'🏦',name:'BSU 2026',url:'/artikler/bsu-2026',type:'Artikkel'},{icon:'📋',name:'SIFO-budsjett',url:'/artikler/sifo-budsjett',type:'Artikkel'},{icon:'📈',name:'Skatt på aksjegevinst',url:'/artikler/skatt-pa-aksjegevinst',type:'Artikkel'},{icon:'💰',name:'Skatt på utbytte',url:'/artikler/skatt-pa-utbytte',type:'Artikkel'}];
 let selIdx=-1;
 function openSearch(){document.getElementById('searchOverlay').classList.add('open');setTimeout(()=>document.getElementById('searchInput').focus(),50);doSearch('');}
@@ -377,7 +332,7 @@ function doSearch(q){const r=document.getElementById('searchResults');selIdx=-1;
 function renderItem(p){return`<a href="${p.url}" class="nav-search-item"><span class="nav-search-item-icon">${p.icon}</span><span class="nav-search-item-label">${p.name}</span><span class="nav-search-item-type">${p.type}</span></a>`;}
 function searchKey(e){const items=document.querySelectorAll('.nav-search-item');if(e.key==='ArrowDown'){selIdx=Math.min(selIdx+1,items.length-1);highlight(items);e.preventDefault();}if(e.key==='ArrowUp'){selIdx=Math.max(selIdx-1,0);highlight(items);e.preventDefault();}if(e.key==='Enter'&&selIdx>=0){items[selIdx].click();}}
 function highlight(items){items.forEach((el,i)=>el.classList.toggle('selected',i===selIdx));}
-function toggleMenu(){const m=document.getElementById('nav-mobile');const b=document.getElementById('nav-burger');const open=m.classList.toggle('open');b.classList.toggle('open',open);b.setAttribute('aria-expanded',open);}
 </script>
+<script src="/nav.js"></script>
 </body>
 </html>

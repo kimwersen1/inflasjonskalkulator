@@ -126,24 +126,7 @@ footer a{color:rgba(255,255,255,0.8);text-decoration:none}
 <link rel="stylesheet" href="/nav.css">
 </head>
 <body>
-<nav>
-  <a href="/" class="nav-logo">inflasjonskalkulator<span>.no</span></a>
-  <ul class="nav-links">
-    <li><a href="/kalkulatorer">Kalkulatorer</a></li>
-    <li><a href="/artikler">Artikler</a></li>
-    <li><a href="/kpi-rapport">KPI-rapport</a></li>
-    <li><a href="/ressurser">Ressurser</a></li>
-  </ul>
-  <button class="nav-search-btn" onclick="openSearch()" aria-label="Søk">
-    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <span class="nav-search-label">Søk</span>
-  </button>
-  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="nav-mobile" id="nav-mobile">
-  <div class="nav-section">Kalkulatorer</div>
+
   <a href="/">📊 Inflasjonskalkulator</a>
   <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
   <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
@@ -377,9 +360,6 @@ function beregnUforetrygd(){
   document.getElementById('result-box').classList.add('show');
 }
 
-function toggleMenu(){
-  document.getElementById('nav-mobile').classList.toggle('open');
-}
 document.addEventListener('click',function(e){
   const m=document.getElementById('nav-mobile');
   const b=document.getElementById('nav-burger');
@@ -399,7 +379,7 @@ function doSearch(q){const r=document.getElementById('searchResults');selIdx=-1;
 function renderItem(p){return`<a href="${p.url}" class="nav-search-item"><span class="nav-search-item-icon">${p.icon}</span><span class="nav-search-item-label">${p.name}</span><span class="nav-search-item-type">${p.type}</span></a>`;}
 function searchKey(e){const items=document.querySelectorAll('.nav-search-item');if(e.key==='ArrowDown'){selIdx=Math.min(selIdx+1,items.length-1);highlight(items);e.preventDefault();}if(e.key==='ArrowUp'){selIdx=Math.max(selIdx-1,0);highlight(items);e.preventDefault();}if(e.key==='Enter'&&selIdx>=0){items[selIdx].click();}}
 function highlight(items){items.forEach((el,i)=>el.classList.toggle('selected',i===selIdx));}
-function toggleMenu(){const m=document.getElementById('nav-mobile');const b=document.getElementById('nav-burger');const open=m.classList.toggle('open');b.classList.toggle('open',open);b.setAttribute('aria-expanded',open);}
 </script>
+<script src="/nav.js"></script>
 </body>
 </html>

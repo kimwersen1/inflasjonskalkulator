@@ -117,24 +117,7 @@ h1{font-family:var(--fh);font-weight:800;font-size:clamp(1.6rem,4vw,2.8rem);colo
 <link rel="stylesheet" href="/nav.css">
 </head>
 <body>
-<nav>
-  <a href="/" class="nav-logo">inflasjonskalkulator<span>.no</span></a>
-  <ul class="nav-links">
-    <li><a href="/kalkulatorer">Kalkulatorer</a></li>
-    <li><a href="/artikler">Artikler</a></li>
-    <li><a href="/kpi-rapport">KPI-rapport</a></li>
-    <li><a href="/ressurser">Ressurser</a></li>
-  </ul>
-  <button class="nav-search-btn" onclick="openSearch()" aria-label="Søk">
-    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <span class="nav-search-label">Søk</span>
-  </button>
-  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="nav-mobile" id="nav-mobile">
-  <div class="nav-section">Kalkulatorer</div>
+
   <a href="/">📊 Inflasjonskalkulator</a>
   <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
   <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
@@ -409,14 +392,6 @@ document.querySelectorAll('.faq-q').forEach(q => {
     if (!wasOpen) item.classList.add('open');
   });
 });
-function toggleMenu(){
-  const m=document.getElementById('nav-mobile');
-  const b=document.getElementById('nav-burger');
-  const open=!m.classList.contains('open');
-  m.classList.toggle('open',open);
-  b.classList.toggle('open',open);
-  b.setAttribute('aria-expanded',open);
-}
 document.addEventListener('click',function(e){
   const m=document.getElementById('nav-mobile');
   const b=document.getElementById('nav-burger');
@@ -437,5 +412,6 @@ function renderItem(p){return`<a href="${p.url}" class="nav-search-item"><span c
 function searchKey(e){const items=document.querySelectorAll('.nav-search-item');if(e.key==='ArrowDown'){selIdx=Math.min(selIdx+1,items.length-1);highlight(items);e.preventDefault();}if(e.key==='ArrowUp'){selIdx=Math.max(selIdx-1,0);highlight(items);e.preventDefault();}if(e.key==='Enter'&&selIdx>=0){items[selIdx].click();}}
 function highlight(items){items.forEach((el,i)=>el.classList.toggle('selected',i===selIdx));}
 </script>
+<script src="/nav.js"></script>
 </body>
 </html>

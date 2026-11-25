@@ -82,25 +82,6 @@
 </head>
 <body>
 
-<nav>
-  <a href="/" class="nav-logo">inflasjonskalkulator<span>.no</span></a>
-  <ul class="nav-links">
-    <li><a href="/kalkulatorer" class="active">Kalkulatorer</a></li>
-    <li><a href="/artikler">Artikler</a></li>
-    <li><a href="/kpi-rapport">KPI-rapport</a></li>
-    <li><a href="/ressurser">Ressurser</a></li>
-  </ul>
-  <button class="nav-search-btn" onclick="openSearch()" aria-label="Søk">
-    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <span class="nav-search-label">Søk</span>
-  </button>
-  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div class="nav-mobile" id="nav-mobile">
-  <div class="nav-section">Kalkulatorer</div>
   <a href="/">📊 Inflasjonskalkulator</a>
   <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
   <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
@@ -280,13 +261,6 @@ function searchKey(e) {
 }
 function highlight(items) { items.forEach((el,i) => el.classList.toggle('selected', i===selIdx)); }
 
-function toggleMenu() {
-  const m = document.getElementById('nav-mobile');
-  const b = document.getElementById('nav-burger');
-  const open = m.classList.toggle('open');
-  b.classList.toggle('open', open);
-  b.setAttribute('aria-expanded', open);
-}
 </script>
 <footer class="site-footer">
   <div class="footer-inner">
@@ -334,5 +308,6 @@ function toggleMenu() {
     </div>
   </div>
 </footer>
+<script src="/nav.js"></script>
 </body>
 </html>
