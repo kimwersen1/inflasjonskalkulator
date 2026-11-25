@@ -270,7 +270,7 @@ nav {
 }
 
 /* Responsiv */
-@media (max-width: 860px) {
+@media (max-width: 768px) {
   .nav-links { display: none !important; }
   .nav-search-btn span.nav-search-label { display: none !important; }
   .nav-burger { display: flex !important; }
@@ -296,7 +296,7 @@ nav {
   .nav-search-btn { display: none !important; }
 }
 
-@media (min-width: 861px) {
+@media (min-width: 769px) {
   .nav-mobile { display: none !important; }
   .nav-mobile.open { display: none !important; }
   .nav-burger { display: none !important; }
