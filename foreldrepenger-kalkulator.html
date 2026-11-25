@@ -130,7 +130,24 @@ footer a{color:rgba(255,255,255,0.8);text-decoration:none}
 <link rel="stylesheet" href="/nav.css">
 </head>
 <body>
-
+<nav>
+  <a href="/" class="nav-logo">inflasjonskalkulator<span>.no</span></a>
+  <ul class="nav-links">
+    <li><a href="/kalkulatorer">Kalkulatorer</a></li>
+    <li><a href="/artikler">Artikler</a></li>
+    <li><a href="/kpi-rapport">KPI-rapport</a></li>
+    <li><a href="/ressurser">Ressurser</a></li>
+  </ul>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Søk">
+    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <span class="nav-search-label">Søk</span>
+  </button>
+  <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Åpne meny" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <div class="nav-section">Kalkulatorer</div>
   <a href="/">📊 Inflasjonskalkulator</a>
   <a href="/husleiekalkulator">🏠 Husleiekalkulator</a>
   <a href="/lønnskalkulator">💼 Lønnskalkulator</a>
@@ -138,8 +155,8 @@ footer a{color:rgba(255,255,255,0.8);text-decoration:none}
   <a href="/renters-rente-kalkulator">📈 Renters rente</a>
   <a href="/nettolønn-kalkulator">💰 Nettolønnskalkulator</a>
   <a href="/pensjonskalkulator">🏦 Pensjonskalkulator</a>
-  <a href="/kalkulatorer" style="color:#6ee09e !important; font-weight:600;">→ Se alle kalkulatorer</a>
-  <div class="nav-section">Artikler & mer</div>
+  <a href="/kalkulatorer" class="nav-mobile-alle">→ Se alle kalkulatorer</a>
+  <div class="nav-section">Artikler &amp; mer</div>
   <a href="/artikler">📰 Artikler</a>
   <a href="/kpi-rapport">📋 KPI-rapport</a>
   <a href="/ressurser">🔗 Ressurser</a>
