@@ -266,6 +266,26 @@ nav {
   .nav-links { display: none !important; }
   .nav-search-btn span.nav-search-label { display: none !important; }
   .nav-burger { display: flex !important; }
+
+  /* Logo tillater krymping på mobil */
+  .nav-logo {
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  /* Søkeknapp: kompakt på mobil */
+  .nav-search-btn {
+    flex-shrink: 0 !important;
+    padding: 0.4rem 0.6rem !important;
+  }
+}
+
+/* Skjul søkeknapp på veldig smal mobil for å gi plass til burger */
+@media (max-width: 480px) {
+  .nav-search-btn { display: none !important; }
 }
 
 @media (min-width: 861px) {

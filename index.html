@@ -53,40 +53,8 @@
     font-size: 17px;
     line-height: 1.7;
   }
-  /* NAV */
-  nav {
-    background: var(--green-dark);
-    padding: 0 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .nav-logo {
-    font-family: var(--font-head);
-    font-weight: 800;
-    font-size: 1.2rem;
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: -0.02em;
-  }
-  .nav-logo span { color: #6ee09e; }
-  nav ul {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-  }
-  nav ul a {
-    color: rgba(255,255,255,0.75);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 400;
-    transition: color 0.15s;
-  }
-  nav ul a:hover { color: #fff; }
+  /* NAV – styres av nav.css; minimale overrides kun her */
+  nav { z-index: 100; }
   /* HERO */
   .hero {
     background: var(--green-dark);
@@ -195,7 +163,6 @@
   }
   @media (max-width: 640px) {
     .kalk-grid { grid-template-columns: 1fr; }
-    nav ul { display: none; }
   }
   .field label {
     display: block;
