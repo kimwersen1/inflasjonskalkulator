@@ -115,6 +115,24 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://inflasjonskalkulator.no/artikler/inflasjon-2025-norge</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://inflasjonskalkulator.no/artikler/inflasjon-2024-norge</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://inflasjonskalkulator.no/artikler/kpi-historisk-tabell</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://inflasjonskalkulator.no/artikler/hva-er-inflasjon</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>yearly</changefreq>
