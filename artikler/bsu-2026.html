@@ -77,6 +77,8 @@ nav ul a:hover { color: #fff; }
 .bank-name { font-family: var(--font-head); font-weight: 700; color: var(--green-dark); font-size: 1rem; }
 .rente-tall { font-family: var(--font-head); font-weight: 800; font-size: 1.1rem; color: var(--green); }
 .badge-top { display: inline-block; background: var(--green); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 99px; margin-left: 6px; vertical-align: middle; }
+.score-cell { font-family: var(--font-head); font-weight: 800; font-size: 1rem; color: var(--green-dark); white-space: nowrap; }
+.score-stars { color: #e6a817; font-size: 0.8rem; display: block; }
 /* CTA card */
 .cta-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.75rem; margin: 2.5rem 0; display: flex; align-items: center; gap: 1.25rem; }
 .cta-card .cta-icon { font-size: 2rem; flex-shrink: 0; }
@@ -116,7 +118,10 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
 @media(max-width:600px){.see-also-link-desc{display:none;}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"BSU 2026 – beste BSU-rente og regler for ungdom","description":"Sammenlign BSU-renter 2026 og finn banken med høyest rente. Se regler, skattefradrag og beregn hva BSU kan gi deg i boligsparing.","url":"https://inflasjonskalkulator.no/artikler/bsu-2026","datePublished":"2026-11-23","dateModified":"2026-11-23","publisher":{"@type":"Organization","name":"inflasjonskalkulator.no","url":"https://inflasjonskalkulator.no"}}
+{"@context":"https://schema.org","@type":"Article","headline":"BSU 2026 – beste BSU-rente og regler for ungdom","description":"Sammenlign BSU-renter 2026 og finn banken med høyest rente. Se regler, skattefradrag og beregn hva BSU kan gi deg i boligsparing.","url":"https://inflasjonskalkulator.no/artikler/bsu-2026","datePublished":"2026-11-23","dateModified":"2026-11-27","publisher":{"@type":"Organization","name":"inflasjonskalkulator.no","url":"https://inflasjonskalkulator.no"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kan jeg ha BSU i flere banker?","acceptedAnswer":{"@type":"Answer","text":"Nei, du kan bare ha én BSU-konto. Ønsker du å bytte bank, må du flytte hele BSU-saldoen til ny bank. Husk at skattefradraget knyttes til årets innskudd – ikke saldoen."}},{"@type":"Question","name":"Hva skjer med BSU-pengene hvis jeg ikke kjøper bolig?","acceptedAnswer":{"@type":"Answer","text":"Du kan beholde pengene stående på BSU-kontoen, men du mister retten til skattefradrag når du fyller 34 år. Penger du allerede har spart vil fortsatt vokse med bankrenten. Rentene er vanligvis gode sammenlignet med andre sparekontoer."}},{"@type":"Question","name":"Hva er BSU-grensen i 2026?","acceptedAnswer":{"@type":"Answer","text":"I 2026 er maksimalt innskudd 27 500 kr per år, og maksimal total saldo er 300 000 kr. Skattefradraget er 10 % av årets innskudd, maksimalt 2 750 kr."}},{"@type":"Question","name":"Er BSU verdt det sammenlignet med aksjer?","acceptedAnswer":{"@type":"Answer","text":"BSU er uten tvil det beste alternativet for boligsparing under 34 år, på grunn av skattefordelen. Kombinert med en god BSU-rente på 5 % og skattefradraget tilsvarer avkastningen 15–20 % effektivt det første året. Når BSU-kvoten er fylt opp, kan aksjer via aksjesparekonto (ASK) gi høyere forventet avkastning over tid, men med høyere risiko."}},{"@type":"Question","name":"Kan jeg ta ut penger fra BSU?","acceptedAnswer":{"@type":"Answer","text":"Ja, men da mister du skattefradraget du har fått for det beløpet du tar ut. Du vil måtte betale tilbake skattefradraget for de midlene du tar ut til andre formål enn bolig. Unntaket er at du fritt kan ta ut penger til boligkjøp."}}]}
 </script>
 </head>
 <body>
@@ -194,6 +199,7 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
         <th>BSU-rente</th>
         <th>Maks innskudd/år</th>
         <th>Merknad</th>
+        <th>Score</th>
       </tr>
     </thead>
     <tbody>
@@ -202,30 +208,35 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
         <td><span class="rente-tall">5,10 %</span></td>
         <td>27 500 kr</td>
         <td>Krever kundeforhold</td>
+        <td><span class="score-cell">9,0/10</span><span class="score-stars">★★★★★</span></td>
       </tr>
       <tr>
         <td><span class="bank-name">Nordea</span></td>
         <td><span class="rente-tall">5,00 %</span></td>
         <td>27 500 kr</td>
         <td>Digital opprettelse</td>
+        <td><span class="score-cell">8,8/10</span><span class="score-stars">★★★★½</span></td>
       </tr>
       <tr>
         <td><span class="bank-name">DNB</span></td>
         <td><span class="rente-tall">4,80 %</span></td>
         <td>27 500 kr</td>
         <td>Norges største bank</td>
+        <td><span class="score-cell">8,5/10</span><span class="score-stars">★★★★½</span></td>
       </tr>
       <tr>
         <td><span class="bank-name">Storebrand</span></td>
         <td><span class="rente-tall">4,75 %</span></td>
         <td>27 500 kr</td>
         <td>Kombinert med pensjon</td>
+        <td><span class="score-cell">8,3/10</span><span class="score-stars">★★★★</span></td>
       </tr>
       <tr>
         <td><span class="bank-name">Bank Norwegian</span></td>
         <td><span class="rente-tall">4,60 %</span></td>
         <td>27 500 kr</td>
         <td>Nettbank, enkel søknad</td>
+        <td><span class="score-cell">8,0/10</span><span class="score-stars">★★★★</span></td>
       </tr>
     </tbody>
   </table>

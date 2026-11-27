@@ -89,6 +89,8 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
 .bank-name { font-family: var(--font-head); font-weight: 700; color: var(--green-dark); font-size: 1rem; }
 .rente-tall { font-family: var(--font-head); font-weight: 800; font-size: 1.1rem; color: var(--green); }
 .badge-top { display: inline-block; background: var(--green); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 99px; margin-left: 6px; vertical-align: middle; }
+.score-cell { font-family: var(--font-head); font-weight: 800; font-size: 1rem; color: var(--green-dark); white-space: nowrap; }
+.score-stars { color: #e6a817; font-size: 0.8rem; display: block; }
 /* CTA card */
 .cta-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.75rem; margin: 2.5rem 0; display: flex; align-items: center; gap: 1.25rem; }
 .cta-card .cta-icon { font-size: 2rem; flex-shrink: 0; }
@@ -121,7 +123,10 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
 @media(max-width:600px){.see-also-link-desc{display:none;}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Beste sparekonto 2026 – høyest rente i Norge","description":"Sammenlign de beste sparekontoene i Norge 2026. Se hvilke banker som gir høyest rente, og finn sparekontoen som slår inflasjonen og passer deg best.","url":"https://inflasjonskalkulator.no/artikler/beste-sparekonto-2026","datePublished":"2026-11-23","dateModified":"2026-11-23","publisher":{"@type":"Organization","name":"inflasjonskalkulator.no","url":"https://inflasjonskalkulator.no"}}
+{"@context":"https://schema.org","@type":"Article","headline":"Beste sparekonto 2026 – høyest rente i Norge","description":"Sammenlign de beste sparekontoene i Norge 2026. Se hvilke banker som gir høyest rente, og finn sparekontoen som slår inflasjonen og passer deg best.","url":"https://inflasjonskalkulator.no/artikler/beste-sparekonto-2026","datePublished":"2026-11-23","dateModified":"2026-11-27","publisher":{"@type":"Organization","name":"inflasjonskalkulator.no","url":"https://inflasjonskalkulator.no"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Er pengene sikre på en høyrentekonto?","acceptedAnswer":{"@type":"Answer","text":"Ja. Norske banker er tilknyttet Bankenes sikringsfond, som garanterer innskudd opp til 2 millioner kroner per innskyter per bank. Nettbanker som er filialer av EØS-banker er som regel dekket av hjemlandets tilsvarende ordning."}},{"@type":"Question","name":"Kan renten på sparekontoen min synke?","acceptedAnswer":{"@type":"Answer","text":"Ja. Renten er flytende og følger markedsrentene. Når Norges Bank senker styringsrenten, senker bankene normalt også innskuddsrentene. Bankene plikter å varsle deg 6 uker i forveien ved renteendringer."}},{"@type":"Question","name":"Betaler jeg skatt på renteinntekter?","acceptedAnswer":{"@type":"Answer","text":"Ja. Renteinntekter skattlegges som kapitalinntekt med 22 %. Banken rapporterer rentene direkte til Skatteetaten, og de legges til i skattemeldingen din automatisk."}},{"@type":"Question","name":"Kan jeg ha sparekonto i flere banker?","acceptedAnswer":{"@type":"Answer","text":"Absolutt. Mange velger å spre sparepenger mellom to eller tre banker, enten for å utnytte innskuddsgarantien fullt ut (2 mill. per bank) eller for å sikre seg ulike rentebetingelser. Du kan ha så mange sparekontoer du vil."}}]}
 </script>
 </head>
 <body>
@@ -198,6 +203,7 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
         <th>Rente (nom.)</th>
         <th>Maks beløp</th>
         <th>Uttak</th>
+        <th>Score</th>
       </tr>
     </thead>
     <tbody>
@@ -206,30 +212,35 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
         <td><span class="rente-tall">4,75 %</span></td>
         <td>Ubegrenset</td>
         <td>Fritt</td>
+        <td><span class="score-cell">9,4/10</span><span class="score-stars">★★★★★</span></td>
       </tr>
       <tr>
         <td><span class="bank-name">Santander</span></td>
         <td><span class="rente-tall">4,60 %</span></td>
         <td>2 mill. kr</td>
         <td>Fritt</td>
+        <td><span class="score-cell">9,0/10</span><span class="score-stars">★★★★★</span></td>
       </tr>
       <tr>
         <td><span class="bank-name">Instabank</span></td>
         <td><span class="rente-tall">4,55 %</span></td>
         <td>5 mill. kr</td>
         <td>Fritt</td>
+        <td><span class="score-cell">8,8/10</span><span class="score-stars">★★★★½</span></td>
       </tr>
       <tr>
         <td><span class="bank-name">Morrow Bank</span></td>
         <td><span class="rente-tall">4,50 %</span></td>
         <td>2 mill. kr</td>
         <td>Fritt</td>
+        <td><span class="score-cell">8,6/10</span><span class="score-stars">★★★★½</span></td>
       </tr>
       <tr>
         <td><span class="bank-name">Nordnet Sparekonto+</span></td>
         <td><span class="rente-tall">4,30 %</span></td>
         <td>Ubegrenset</td>
         <td>Fritt</td>
+        <td><span class="score-cell">8,2/10</span><span class="score-stars">★★★★</span></td>
       </tr>
     </tbody>
   </table>

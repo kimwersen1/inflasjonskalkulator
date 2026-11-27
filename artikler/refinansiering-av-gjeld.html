@@ -88,6 +88,10 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
 .compare-table tr:last-child td { border-bottom: none; }
 .compare-table tr:nth-child(even) td { background: #fafbf8; }
 .bank-name { font-family: var(--font-head); font-weight: 700; color: var(--green-dark); font-size: 1rem; }
+.rente-tall { font-family: var(--font-head); font-weight: 800; font-size: 1.1rem; color: var(--green); }
+.badge-top { display: inline-block; background: var(--green); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 99px; margin-left: 6px; vertical-align: middle; }
+.score-cell { font-family: var(--font-head); font-weight: 800; font-size: 1rem; color: var(--green-dark); white-space: nowrap; }
+.score-stars { color: #e6a817; font-size: 0.8rem; display: block; }
 /* Savings example */
 .savings-example { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; }
 .savings-example h3 { font-family: var(--font-head); font-weight: 700; color: var(--green-dark); margin-bottom: 1rem; font-size: 1.05rem; }
@@ -135,7 +139,10 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
 @media(max-width:600px){.see-also-link-desc{display:none;}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Refinansiering av gjeld 2026 – spar tusener","description":"Samle kredittkortgjeld og forbrukslån i ett billigere lån og spar tusener. Vi forklarer hva refinansiering er, når det lønner seg, og hvem som tilbyr ","url":"https://inflasjonskalkulator.no/artikler/refinansiering-av-gjeld","datePublished":"2026-11-23","dateModified":"2026-11-23","publisher":{"@type":"Organization","name":"inflasjonskalkulator.no","url":"https://inflasjonskalkulator.no"}}
+{"@context":"https://schema.org","@type":"Article","headline":"Refinansiering av gjeld 2026 – spar tusener","description":"Samle kredittkortgjeld og forbrukslån i ett billigere lån og spar tusener. Vi forklarer hva refinansiering er, når det lønner seg, og hvem som tilbyr ","url":"https://inflasjonskalkulator.no/artikler/refinansiering-av-gjeld","datePublished":"2026-11-23","dateModified":"2026-11-27","publisher":{"@type":"Organization","name":"inflasjonskalkulator.no","url":"https://inflasjonskalkulator.no"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kan jeg refinansiere med betalingsanmerkning?","acceptedAnswer":{"@type":"Answer","text":"Det er mulig, men vanskeligere. Noen spesialiserte selskaper tilbyr refinansiering til personer med betalingsanmerkning, men renten er normalt høyere. Alternativt kan du søke om å inkludere gjelden i boliglånet hvis du har nok egenkapital – boliglån gis uavhengig av betalingsanmerkning i de fleste tilfeller."}},{"@type":"Question","name":"Hva koster det å refinansiere gjeld?","acceptedAnswer":{"@type":"Answer","text":"Kostnadene varierer mellom banker. Typisk betaler du et etableringsgebyr på 500–2 000 kr og termingebyr på 40–80 kr per måned. Noen banker tilbyr refinansiering uten etableringsgebyr. Besparelsen i renter er som regel langt større enn gebyrene, spesielt om du samler dyr kredittkortgjeld med renter på 20–25 % i et forbrukslån med 10–15 %."}},{"@type":"Question","name":"Kan jeg refinansiere forbrukslån inn i boliglånet?","acceptedAnswer":{"@type":"Answer","text":"Ja, det er mulig hvis du har tilstrekkelig egenkapital. Banker krever normalt at du har minst 15 % egenkapital igjen etter refinansieringen. Boliglånsrenten er typisk 5–6 %, mot 15–25 % på forbrukslån, så gevinsten kan bli svært stor. Husk at du da sikrer usikret gjeld med boligen som pant."}},{"@type":"Question","name":"Hvor lang tid tar en refinansiering?","acceptedAnswer":{"@type":"Answer","text":"En vanlig refinansiering tar normalt 1–5 virkedager fra søknad til pengene er utbetalt. Nettbanker og fintechselskaper er ofte raskest. Refinansiering via boliglånet tar lengre tid – gjerne 2–4 uker – fordi det krever ny takst og tinglysing."}}]}
 </script>
 </head>
 <body>
@@ -370,13 +377,56 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
 
   <h2>Banker for refinansiering uten sikkerhet</h2>
   <p>Disse bankene spesialiserer seg på refinansiering av gjeld uten sikkerhet:</p>
-  <ul>
-    <li><strong>Bank Norwegian:</strong> Opp til 600 000 kr, fleksibel nedbetaling, rask behandling</li>
-    <li><strong>Lendo:</strong> Sammenligningstjeneste – en søknad til mange banker</li>
-    <li><strong>Uno Finans:</strong> Spesialist på refinansiering med betalingsanmerkninger (høyere rente)</li>
-    <li><strong>TF Bank:</strong> Opp til 500 000 kr, konkurranse­dyktig rente</li>
-    <li><strong>Morrow Bank:</strong> God nettbankopplevelse, opp til 500 000 kr</li>
-  </ul>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Bank / tjeneste</th>
+        <th>Rente fra (nom.)</th>
+        <th>Maks beløp</th>
+        <th>Merknad</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="bank-name">Lendo</span> <span class="badge-top">Anbefalt</span></td>
+        <td><span class="rente-tall">Fra 7,9 %</span></td>
+        <td>500 000 kr</td>
+        <td>Én søknad til mange banker</td>
+        <td><span class="score-cell">9,3/10</span><span class="score-stars">★★★★★</span></td>
+      </tr>
+      <tr>
+        <td><span class="bank-name">Bank Norwegian</span></td>
+        <td><span class="rente-tall">9,99 %</span></td>
+        <td>600 000 kr</td>
+        <td>Fleksibel nedbetaling, rask</td>
+        <td><span class="score-cell">8,9/10</span><span class="score-stars">★★★★½</span></td>
+      </tr>
+      <tr>
+        <td><span class="bank-name">TF Bank</span></td>
+        <td><span class="rente-tall">11,37 %</span></td>
+        <td>500 000 kr</td>
+        <td>Konkurransedyktig rente</td>
+        <td><span class="score-cell">8,4/10</span><span class="score-stars">★★★★</span></td>
+      </tr>
+      <tr>
+        <td><span class="bank-name">Morrow Bank</span></td>
+        <td><span class="rente-tall">11,49 %</span></td>
+        <td>500 000 kr</td>
+        <td>God nettbankopplevelse</td>
+        <td><span class="score-cell">8,2/10</span><span class="score-stars">★★★★</span></td>
+      </tr>
+      <tr>
+        <td><span class="bank-name">Uno Finans</span></td>
+        <td><span class="rente-tall">Fra 15,0 %</span></td>
+        <td>400 000 kr</td>
+        <td>Spesialist ved betalingsanm.</td>
+        <td><span class="score-cell">7,5/10</span><span class="score-stars">★★★★</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p><em>Kilde: bankenes egne nettsider, november 2026. Rentene er representativt eksempel og avhenger av din kredittvurdering.</em></p>
 
   <div class="cta-card">
     <div class="cta-icon">📈</div>

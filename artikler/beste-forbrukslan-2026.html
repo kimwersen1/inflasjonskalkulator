@@ -79,6 +79,8 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
 .bank-name { font-family: var(--font-head); font-weight: 700; color: var(--green-dark); font-size: 1rem; }
 .rente-tall { font-family: var(--font-head); font-weight: 800; font-size: 1.1rem; color: var(--green); }
 .badge-top { display: inline-block; background: var(--green); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 99px; margin-left: 6px; vertical-align: middle; }
+.score-cell { font-family: var(--font-head); font-weight: 800; font-size: 1rem; color: var(--green-dark); white-space: nowrap; }
+.score-stars { color: #e6a817; font-size: 0.8rem; display: block; }
 /* CTA card */
 .cta-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.75rem; margin: 2.5rem 0; display: flex; align-items: center; gap: 1.25rem; }
 .cta-card .cta-icon { font-size: 2rem; flex-shrink: 0; }
@@ -111,7 +113,10 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
 @media(max-width:600px){.see-also-link-desc{display:none;}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Beste forbrukslån 2026 – sammenlign rente og vilkår","description":"Sammenlign de beste forbrukslånene i Norge 2026. Se hvilke banker som tilbyr lavest rente, og finn det forbrukslånet som passer din situasjon.","url":"https://inflasjonskalkulator.no/artikler/beste-forbrukslan-2026","datePublished":"2026-11-23","dateModified":"2026-11-23","publisher":{"@type":"Organization","name":"inflasjonskalkulator.no","url":"https://inflasjonskalkulator.no"}}
+{"@context":"https://schema.org","@type":"Article","headline":"Beste forbrukslån 2026 – sammenlign rente og vilkår","description":"Sammenlign de beste forbrukslånene i Norge 2026. Se hvilke banker som tilbyr lavest rente, og finn det forbrukslånet som passer din situasjon.","url":"https://inflasjonskalkulator.no/artikler/beste-forbrukslan-2026","datePublished":"2026-11-23","dateModified":"2026-11-27","publisher":{"@type":"Organization","name":"inflasjonskalkulator.no","url":"https://inflasjonskalkulator.no"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kan jeg søke om forbrukslån med betalingsanmerkning?","acceptedAnswer":{"@type":"Answer","text":"De fleste norske banker krever at du ikke har aktive betalingsanmerkninger for å innvilge forbrukslån. Noen spesialiserte selskaper tilbyr lån til slike kunder, men til svært høy rente. Det beste rådet er å fjerne anmerkningen først – kontakt inkassoselskapet for å inngå en betalingsavtale."}},{"@type":"Question","name":"Kan jeg betale ned forbrukslånet raskere enn avtalt?","acceptedAnswer":{"@type":"Answer","text":"Ja, de fleste banker lar deg betale inn ekstra eller innfri lånet tidlig uten ekstragebyr. Sjekk alltid lånevilkårene. Ekstra innbetalinger reduserer rentekostnaden betraktelig over tid."}},{"@type":"Question","name":"Påvirker forbrukslånsøknaden kredittvurderingen min?","acceptedAnswer":{"@type":"Answer","text":"Ja, bankene gjør en kredittsjekk når du søker, og mange søknader på kort tid kan gi negativt utslag i kredittvurderingen. Bruk en sammenligningstjeneste (som Lendo) der én søknad sendes til mange banker – det teller normalt som én forespørsel."}},{"@type":"Question","name":"Er det skatt på rentekostnader for forbrukslån?","acceptedAnswer":{"@type":"Answer","text":"Ja, du får fradrag for gjeldsrenter i skattemeldingen, også for forbrukslån. Fradraget er 22 % av rentekostnaden. Banken rapporterer rentene direkte til Skatteetaten. For 10 000 kr i renter får du tilbake ca. 2 200 kr i skatt."}}]}
 </script>
 </head>
 <body>
@@ -188,6 +193,7 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
         <th>Rente fra (nom.)</th>
         <th>Maks beløp</th>
         <th>Maks løpetid</th>
+        <th>Score</th>
       </tr>
     </thead>
     <tbody>
@@ -196,30 +202,35 @@ footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
         <td><span class="rente-tall">9,99 %</span></td>
         <td>600 000 kr</td>
         <td>15 år</td>
+        <td><span class="score-cell">9,2/10</span><span class="score-stars">★★★★★</span></td>
       </tr>
       <tr>
         <td><span class="bank-name">Lendo (sammenligner)</span></td>
         <td><span class="rente-tall">Fra 7,9 %</span></td>
         <td>500 000 kr</td>
         <td>15 år</td>
+        <td><span class="score-cell">9,0/10</span><span class="score-stars">★★★★★</span></td>
       </tr>
       <tr>
         <td><span class="bank-name">Santander</span></td>
         <td><span class="rente-tall">10,52 %</span></td>
         <td>350 000 kr</td>
         <td>12 år</td>
+        <td><span class="score-cell">8,5/10</span><span class="score-stars">★★★★½</span></td>
       </tr>
       <tr>
         <td><span class="bank-name">TF Bank</span></td>
         <td><span class="rente-tall">11,37 %</span></td>
         <td>500 000 kr</td>
         <td>15 år</td>
+        <td><span class="score-cell">8,2/10</span><span class="score-stars">★★★★</span></td>
       </tr>
       <tr>
         <td><span class="bank-name">Morrow Bank</span></td>
         <td><span class="rente-tall">11,49 %</span></td>
         <td>500 000 kr</td>
         <td>15 år</td>
+        <td><span class="score-cell">7,9/10</span><span class="score-stars">★★★★</span></td>
       </tr>
     </tbody>
   </table>
